@@ -1,0 +1,15 @@
+C:\Users\NATALIA\source\repos\SocioDeCampo1\bin\Debug\SocioDeCampo1.exe.config
+C:\Users\NATALIA\source\repos\SocioDeCampo1\bin\Debug\SocioDeCampo1.exe
+C:\Users\NATALIA\source\repos\SocioDeCampo1\bin\Debug\SocioDeCampo1.pdb
+C:\Users\NATALIA\source\repos\SocioDeCampo1\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\NATALIA\source\repos\SocioDeCampo1\bin\Debug\Guna.UI.dll
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.csproj.AssemblyReference.cache
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.Properties.Resources.resources
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.csproj.GenerateResource.cache
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.csproj.CoreCompileInputs.cache
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.csproj.CopyComplete
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.exe
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.pdb
+C:\Users\NATALIA\source\repos\SocioDeCampo1\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.form1.resources
+C:\Users\NATALIA\source\repos\SocioDeCampo1\obj\Debug\SocioDeCampo1.form2.resources
