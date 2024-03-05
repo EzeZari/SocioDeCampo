@@ -37,7 +37,7 @@ namespace Presentacion
                     else {
                         msgError("El usuario o contraseña no son correctos");
                         txtuser.Text = ""; //Limpiamos el txt user. 
-                        txtpassword.Text = "";
+                        txtpassword.Text = "Password";
                         txtpassword.Focus(); //Te lleva el cursos a txtPassword.
                     }
                 
@@ -53,11 +53,12 @@ namespace Presentacion
             }
         private void Logout(object sender, FormClosedEventArgs e)
         {
-            txtuser.Text = " "; //Borramos los inputs
-            txtpassword.Text = " ";
+            txtpassword.Text = "Password";
+            txtpassword.UseSystemPasswordChar = false;//Borramos los inputs
+            txtuser.Text = "Username";
             lblErrorMessagge.Visible = false; //Escondemos el mensaje de error.
             this.Show(); //Al cerrar sesion volvemos a mostrar el Form Login.
-            txtuser.Focus();
+            //txtuser.Focus();
         }
     }
 }
