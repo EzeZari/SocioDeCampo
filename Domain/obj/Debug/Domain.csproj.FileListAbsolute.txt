@@ -7,3 +7,5 @@ C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\obj\Debug\Domain.csp
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\obj\Debug\Domain.csproj.CopyComplete
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\obj\Debug\Domain.dll
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\obj\Debug\Domain.pdb
+C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\bin\Debug\Common.dll
+C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\bin\Debug\Common.pdb

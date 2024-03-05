@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{7c5bde2b-0ee1-4a3c-825b-f7d39735bca1}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{1aa910c7-d29c-4c11-9045-6ddac43c33ff}</Project>
       <Name>DataAccess</Name>

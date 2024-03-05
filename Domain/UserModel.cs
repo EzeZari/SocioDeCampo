@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+using Common.Cache;
 
 namespace Domain
 {
@@ -14,5 +15,6 @@ namespace Domain
         {
             return userDao.Login(user,pass);
         }
+        
     }
 }

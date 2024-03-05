@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using Common.Cache;
 
 namespace Presentacion
 {
@@ -30,6 +31,7 @@ namespace Presentacion
                     if(validLogin == true)//Si el inicio de sesion es verdadero mostramos el form principal
                     {
                         FormPrincipal mainMenu = new FormPrincipal();
+                        MessageBox.Show("Bienvenido "+UserLoginCache.FirstName + ", "+ UserLoginCache.LastName); //Alerta de bienvenida al iniciar sesion.
                         mainMenu.Show();  //Mostramos el form principal
                         mainMenu.FormClosed += Logout;
                         this.Hide();     //Ocultamos el Login
