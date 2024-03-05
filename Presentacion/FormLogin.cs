@@ -23,22 +23,23 @@ namespace Presentacion
             
                 if (txtuser.Text != "Username")
                 {
-                    if (txtpassword.Text != "Password") {
+                    if (txtpassword.Text != "Password") 
+                    {
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtuser.Text, txtpassword.Text);
                     if(validLogin == true)//Si el inicio de sesion es verdadero mostramos el form principal
                     {
                         FormPrincipal mainMenu = new FormPrincipal();
                         mainMenu.Show();  //Mostramos el form principal
+                        mainMenu.FormClosed += Logout;
                         this.Hide();     //Ocultamos el Login
                     }
-                    else
-                    {
+                    else {
                         msgError("El usuario o contraseña no son correctos");
-                        txtuser.Text = ""; //Limpiamos el txt user 
-                        txtpassword.Focus();
+                        txtuser.Text = ""; //Limpiamos el txt user. 
+                        txtpassword.Text = "";
+                        txtpassword.Focus(); //Te lleva el cursos a txtPassword.
                     }
-                
                 
                 }
                     else msgError("Por favot ingresa tu contraseña");
@@ -49,7 +50,14 @@ namespace Presentacion
             {
                 lblErrorMessagge.Text = " " + msg;
                 lblErrorMessagge.Visible = true;
-            
             }
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtuser.Text = " "; //Borramos los inputs
+            txtpassword.Text = " ";
+            lblErrorMessagge.Visible = false; //Escondemos el mensaje de error.
+            this.Show(); //Al cerrar sesion volvemos a mostrar el Form Login.
+            txtuser.Focus();
+        }
     }
 }
