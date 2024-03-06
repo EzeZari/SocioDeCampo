@@ -27,15 +27,25 @@ namespace Presentacion
 
         private void LoadUserData()
         {
-            lblName.Text = UserLoginCache.FirstName;   //+", "+UserLoginCache.LastName
-            lblLastName.Text = UserLoginCache.LastName;
-            lblEmail.Text = UserLoginCache.Email; //Mostrarlos en pantalla
-            lblPosition.Text = UserLoginCache.Position;
+            lblName.Text = UserCache.FirstName;   //+", "+UserLoginCache.LastName
+            lblLastName.Text = UserCache.LastName;
+            lblEmail.Text = UserCache.Email; //Mostrarlos en pantalla
+            lblPosition.Text = UserCache.Position;
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             LoadUserData();
+
+            //Permisos Admin
+            if(UserCache.Position == Position.AyudanteDeCampo)
+            {
+                btnLogout.Visible = false; //Le desactivamos el acceso a tal boton
+            }
+            if (UserCache.Position == Position.Entrenador)
+            {
+                // btnLogout.Enabled = false; Le desactivamos el acceso a tal boton
+            } //EN EL FORM QUE YO QUIERA OCULTAR UN BOTON, LO HAGO DE LA MISMA MANERA. //Lo puedo hacer asi, o hacer una funcion y desp llamarla en "FormPrincipal_Load"
         }
     }
 }

@@ -29,11 +29,11 @@ namespace DataAccess
                         {
                             while (reader.Read())
                            {
-                                UserLoginCache.UserID = reader.GetInt32(0);
-                                UserLoginCache.FirstName = reader.GetString(2);
-                                UserLoginCache.LastName = reader.GetString(3);
-                                UserLoginCache.Email = reader.GetString(4);
-                                UserLoginCache.Position = reader.GetString(6);
+                                UserCache.UserID = reader.GetInt32(0);
+                                UserCache.FirstName = reader.GetString(2);
+                                UserCache.LastName = reader.GetString(3);
+                                UserCache.Email = reader.GetString(4);
+                                UserCache.Position = reader.GetString(6);
                             }
 
                         return true;
@@ -41,6 +41,19 @@ namespace DataAccess
                     else
                         return false;
                 }
+            }
+
+            
+        }
+        public void AnyMethod() //COMO NO HACERLO
+        {
+            if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa
+            {
+                //Codigo
+            }
+            if(UserCache.Position == Position.Entrenador || UserCache.Position == Position.AyudanteDeCampo) //Cuando entra Entrenador o ayudante tecnico, pasa otra cosa
+            {
+                //Codigo
             }
         }
     }

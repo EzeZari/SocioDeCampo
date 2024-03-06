@@ -34,6 +34,7 @@ namespace Presentacion
             this.txtuser = new Guna.UI.WinForms.GunaTextBox();
             this.txtpassword = new Guna.UI.WinForms.GunaTextBox();
             this.lblErrorMessagge = new Guna.UI.WinForms.GunaLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -103,11 +104,21 @@ namespace Presentacion
             this.lblErrorMessagge.Text = "Error";
             this.lblErrorMessagge.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(108, 96);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblErrorMessagge);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtuser);
@@ -125,6 +136,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaTextBox txtuser;
         private Guna.UI.WinForms.GunaTextBox txtpassword;
         private Guna.UI.WinForms.GunaLabel lblErrorMessagge;
+        private System.Windows.Forms.Button button1;
     }
 }
 

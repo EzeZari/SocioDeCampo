@@ -15,6 +15,16 @@ namespace Domain
         {
             return userDao.Login(user,pass);
         }
-        
+        public void AnyMethod() 
+        {
+            if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa
+            {
+                //Codigo
+            }
+            if (UserCache.Position == Position.Entrenador || UserCache.Position == Position.AyudanteDeCampo) //Cuando entra Entrenador o ayudante tecnico, pasa otra cosa
+            {
+                //Codigo
+            }
+        }
     }
 }
