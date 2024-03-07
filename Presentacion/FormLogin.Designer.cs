@@ -36,6 +36,7 @@ namespace Presentacion
             this.lblErrorMessagge = new Guna.UI.WinForms.GunaLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.lblOlvidastePassword = new System.Windows.Forms.LinkLabel();
+            this.lblRegister = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -126,11 +127,24 @@ namespace Presentacion
             this.lblOlvidastePassword.Text = "¿Olvidaste tu contraseña?";
             this.lblOlvidastePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblOlvidastePassword_LinkClicked);
             // 
+            // lblRegister
+            // 
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.LinkColor = System.Drawing.Color.Black;
+            this.lblRegister.Location = new System.Drawing.Point(569, 377);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(60, 13);
+            this.lblRegister.TabIndex = 7;
+            this.lblRegister.TabStop = true;
+            this.lblRegister.Text = "Registrarse";
+            this.lblRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRegister_LinkClicked);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.lblOlvidastePassword);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblErrorMessagge);
@@ -152,6 +166,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaLabel lblErrorMessagge;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel lblOlvidastePassword;
+        private System.Windows.Forms.LinkLabel lblRegister;
     }
 }
 

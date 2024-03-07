@@ -68,5 +68,11 @@ namespace Presentacion
             var recoverPassword = new FormRecoverPassword();
             recoverPassword.ShowDialog();
         }
+
+        private void lblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var Register = new FormRegister();
+            Register.ShowDialog();
+        }
     }
 }
