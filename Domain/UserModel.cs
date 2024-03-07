@@ -15,6 +15,11 @@ namespace Domain
         {
             return userDao.Login(user,pass);
         }
+
+        public string recoverPassword(string userRequesting)
+        {
+            return userDao.recoverPassword(userRequesting); //Retornamos el mensaje q retorna el metodo de la capa de acceso a datos. (Enviamos usuario solicitante)
+        }
         public void AnyMethod() 
         {
             if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa

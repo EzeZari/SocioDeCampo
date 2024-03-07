@@ -45,7 +45,43 @@ namespace DataAccess
 
             
         }
-        public void AnyMethod() //COMO NO HACERLO
+
+        public string recoverPassword(string userRequesting) //Funcion para recuperar contraseña
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand()) //Instanciamos al comando sql
+                {
+                    command.Connection = connection; //Especificamos la conexion al comando.
+                    command.CommandText = "select *from Users where LoginName=@user or Email=@mail"; //Seleccionamos td de la tabla User (Lo puede soliciar mediante correo o User )
+                    command.Parameters.AddWithValue("@user", userRequesting); //Agregamos valor al parametro con el dato que se recibe del usuario solicitante.
+                    command.Parameters.AddWithValue("@mail", userRequesting);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader(); //Declaramos un lector de datos de sql y ejecutamos el lector.
+
+                    if (reader.Read() == true) //Si la consulta existe tenemos los datos del usuario.
+                    {
+                        string userName = reader.GetString(2) + " " + reader.GetString(3);
+                        string userMail = reader.GetString(4);
+                        string accountPassword = reader.GetString(5);
+
+                        var mailService = new MailServices.SystemSupportMail();
+                        mailService.sendMail( //Requiere que mandemos el cuerpo y titulo.
+                            subject: "Recuperar contraseña",
+                            body: "Hola, " + userName + ". \nLe recordamos que su contraseña es: " + accountPassword + " \nPor favor cambie su contraseña una vez ingresado al Sistema.",
+                            recipientMail: new List<string> { userMail }
+                            );
+                        return "Hola " +userName + " Olvidaste tu contraseña \n " + " Revisa en tu correo "+userMail;
+                    }
+                    else
+                        return "No existe una cuenta con este Usuario o correo electronico";
+                }
+            }
+        }
+
+
+        public void AnyMethod()
         {
             if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa
             {

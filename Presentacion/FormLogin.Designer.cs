@@ -35,6 +35,7 @@ namespace Presentacion
             this.txtpassword = new Guna.UI.WinForms.GunaTextBox();
             this.lblErrorMessagge = new Guna.UI.WinForms.GunaLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblOlvidastePassword = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -113,11 +114,24 @@ namespace Presentacion
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lblOlvidastePassword
+            // 
+            this.lblOlvidastePassword.AutoSize = true;
+            this.lblOlvidastePassword.LinkColor = System.Drawing.Color.Black;
+            this.lblOlvidastePassword.Location = new System.Drawing.Point(548, 292);
+            this.lblOlvidastePassword.Name = "lblOlvidastePassword";
+            this.lblOlvidastePassword.Size = new System.Drawing.Size(131, 13);
+            this.lblOlvidastePassword.TabIndex = 6;
+            this.lblOlvidastePassword.TabStop = true;
+            this.lblOlvidastePassword.Text = "¿Olvidaste tu contraseña?";
+            this.lblOlvidastePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblOlvidastePassword_LinkClicked);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblOlvidastePassword);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblErrorMessagge);
             this.Controls.Add(this.txtpassword);
@@ -137,6 +151,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaTextBox txtpassword;
         private Guna.UI.WinForms.GunaLabel lblErrorMessagge;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel lblOlvidastePassword;
     }
 }
 

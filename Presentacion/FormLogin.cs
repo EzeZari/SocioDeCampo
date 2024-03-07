@@ -62,5 +62,11 @@ namespace Presentacion
             this.Show(); //Al cerrar sesion volvemos a mostrar el Form Login.
             //txtuser.Focus();
         }
+
+        private void lblOlvidastePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recoverPassword = new FormRecoverPassword();
+            recoverPassword.ShowDialog();
+        }
     }
 }
