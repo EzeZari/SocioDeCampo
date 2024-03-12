@@ -29,6 +29,7 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.txtFirstName = new Guna.UI.WinForms.GunaTextBox();
             this.txtLastName = new Guna.UI.WinForms.GunaTextBox();
             this.txtLoginName = new Guna.UI.WinForms.GunaTextBox();
@@ -36,6 +37,7 @@ namespace Presentacion
             this.txtPosition = new Guna.UI.WinForms.GunaComboBox();
             this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
             this.txtPasswordRepeat = new Guna.UI.WinForms.GunaTextBox();
+            this.btnRegister = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -155,11 +157,36 @@ namespace Presentacion
             this.txtPasswordRepeat.TabIndex = 6;
             this.txtPasswordRepeat.Text = "Repetir contraseña";
             // 
+            // btnRegister
+            // 
+            this.btnRegister.AnimationHoverSpeed = 0.07F;
+            this.btnRegister.AnimationSpeed = 0.03F;
+            this.btnRegister.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnRegister.BorderColor = System.Drawing.Color.Black;
+            this.btnRegister.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRegister.FocusedColor = System.Drawing.Color.Empty;
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.Image")));
+            this.btnRegister.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnRegister.Location = new System.Drawing.Point(250, 389);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnRegister.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnRegister.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnRegister.OnHoverImage = null;
+            this.btnRegister.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRegister.Size = new System.Drawing.Size(149, 37);
+            this.btnRegister.TabIndex = 7;
+            this.btnRegister.Text = "Registrarse";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPasswordRepeat);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtPosition);
@@ -182,5 +209,6 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaComboBox txtPosition;
         private Guna.UI.WinForms.GunaTextBox txtPassword;
         private Guna.UI.WinForms.GunaTextBox txtPasswordRepeat;
+        private Guna.UI.WinForms.GunaButton btnRegister;
     }
 }

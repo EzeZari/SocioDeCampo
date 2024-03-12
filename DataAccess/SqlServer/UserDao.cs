@@ -7,9 +7,10 @@ using System.Data;
 using System.Data.SqlClient;
 using Common.Cache;
 
+
 namespace DataAccess
 {
-    public class UserDao:ConnectionToSQL
+    public class UserDao : ConnectionToSQL
     {
         public bool Login(string user, string pass)
         {
@@ -17,7 +18,7 @@ namespace DataAccess
             {
                 connection.Open();//Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
                 using (var command = new SqlCommand())
-                { 
+                {
                     command.Connection = connection;
                     command.CommandText = "select * from Users where LoginName=@user and Password=@pass";
                     command.Parameters.AddWithValue("@user", user); //Le asignamos el valor de entrada usuario.
@@ -28,7 +29,7 @@ namespace DataAccess
                         if (reader.HasRows)
                         {
                             while (reader.Read())
-                           {
+                            {
                                 UserCache.UserID = reader.GetInt32(0);
                                 UserCache.FirstName = reader.GetString(2);
                                 UserCache.LastName = reader.GetString(3);
@@ -36,14 +37,14 @@ namespace DataAccess
                                 UserCache.Position = reader.GetString(6);
                             }
 
-                        return true;
-                    }
-                    else
-                        return false;
+                            return true;
+                        }
+                        else
+                            return false;
                 }
             }
 
-            
+
         }
 
         public string recoverPassword(string userRequesting) //Funcion para recuperar contraseña
@@ -72,10 +73,26 @@ namespace DataAccess
                             body: "Hola, " + userName + ". \nLe recordamos que su contraseña es: " + accountPassword + " \nPor favor cambie su contraseña una vez ingresado al Sistema.",
                             recipientMail: new List<string> { userMail }
                             );
-                        return "Hola " +userName + " Olvidaste tu contraseña \n " + " Revisa en tu correo "+userMail;
+                        return "Hola " + userName + " Olvidaste tu contraseña \n " + " Revisa en tu correo " + userMail;
                     }
                     else
                         return "No existe una cuenta con este Usuario o correo electronico";
+                }
+            }
+        }
+
+        public void AddUser(string loginName, string firstName, string lastName, string Email, string pass, string position)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();//Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "insert into Users values ('"+loginName+"','"+firstName+"','"+lastName+"','"+Email+"','"+pass+"','"+position+"') ";
+                    command.ExecuteNonQuery();
+                    command.CommandType = CommandType.Text;
+                    
                 }
             }
         }
