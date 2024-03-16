@@ -20,3 +20,4 @@ C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Comm
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Common.pdb
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormRecoverPassword.resources
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormRegister.resources
+C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\FontAwesome.Sharp.dll

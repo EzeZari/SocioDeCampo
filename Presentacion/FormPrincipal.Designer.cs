@@ -36,6 +36,14 @@ namespace Presentacion
             this.lblLastName = new Guna.UI.WinForms.GunaLabel();
             this.lblEmail = new Guna.UI.WinForms.GunaLabel();
             this.lblPosition = new Guna.UI.WinForms.GunaLabel();
+            this.PanelMenu = new Guna.UI.WinForms.GunaPanel();
+            this.btnPartidos = new Guna.UI.WinForms.GunaButton();
+            this.btnEntrenadores = new Guna.UI.WinForms.GunaButton();
+            this.btnFinanzas = new Guna.UI.WinForms.GunaButton();
+            this.btnJugadores = new Guna.UI.WinForms.GunaButton();
+            this.btnInicio = new Guna.UI.WinForms.GunaButton();
+            this.PanelLogo = new Guna.UI.WinForms.GunaPanel();
+            this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaLabel1
@@ -60,7 +68,7 @@ namespace Presentacion
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogout.Location = new System.Drawing.Point(54, 379);
+            this.btnLogout.Location = new System.Drawing.Point(426, 351);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnLogout.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -76,7 +84,7 @@ namespace Presentacion
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblName.Location = new System.Drawing.Point(77, 96);
+            this.lblName.Location = new System.Drawing.Point(684, 175);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(51, 15);
             this.lblName.TabIndex = 2;
@@ -86,7 +94,7 @@ namespace Presentacion
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblLastName.Location = new System.Drawing.Point(77, 126);
+            this.lblLastName.Location = new System.Drawing.Point(684, 205);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(51, 15);
             this.lblLastName.TabIndex = 3;
@@ -96,7 +104,7 @@ namespace Presentacion
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblEmail.Location = new System.Drawing.Point(75, 161);
+            this.lblEmail.Location = new System.Drawing.Point(682, 240);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(36, 15);
             this.lblEmail.TabIndex = 4;
@@ -106,17 +114,166 @@ namespace Presentacion
             // 
             this.lblPosition.AutoSize = true;
             this.lblPosition.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPosition.Location = new System.Drawing.Point(75, 190);
+            this.lblPosition.Location = new System.Drawing.Point(682, 269);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(43, 15);
             this.lblPosition.TabIndex = 5;
             this.lblPosition.Text = "Puesto";
+            // 
+            // PanelMenu
+            // 
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.PanelMenu.Controls.Add(this.btnPartidos);
+            this.PanelMenu.Controls.Add(this.btnEntrenadores);
+            this.PanelMenu.Controls.Add(this.btnFinanzas);
+            this.PanelMenu.Controls.Add(this.btnJugadores);
+            this.PanelMenu.Controls.Add(this.btnInicio);
+            this.PanelMenu.Controls.Add(this.PanelLogo);
+            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelMenu.Location = new System.Drawing.Point(0, 0);
+            this.PanelMenu.Name = "PanelMenu";
+            this.PanelMenu.Size = new System.Drawing.Size(180, 450);
+            this.PanelMenu.TabIndex = 6;
+            // 
+            // btnPartidos
+            // 
+            this.btnPartidos.AnimationHoverSpeed = 0.07F;
+            this.btnPartidos.AnimationSpeed = 0.03F;
+            this.btnPartidos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPartidos.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnPartidos.BorderColor = System.Drawing.Color.Black;
+            this.btnPartidos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPartidos.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPartidos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPartidos.ForeColor = System.Drawing.Color.White;
+            this.btnPartidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPartidos.Image")));
+            this.btnPartidos.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPartidos.Location = new System.Drawing.Point(0, 305);
+            this.btnPartidos.Name = "btnPartidos";
+            this.btnPartidos.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
+            this.btnPartidos.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPartidos.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPartidos.OnHoverImage = null;
+            this.btnPartidos.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPartidos.Size = new System.Drawing.Size(180, 42);
+            this.btnPartidos.TabIndex = 5;
+            this.btnPartidos.Text = "Partidos";
+            this.btnPartidos.Click += new System.EventHandler(this.btnPartidos_Click);
+            // 
+            // btnEntrenadores
+            // 
+            this.btnEntrenadores.AnimationHoverSpeed = 0.07F;
+            this.btnEntrenadores.AnimationSpeed = 0.03F;
+            this.btnEntrenadores.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEntrenadores.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnEntrenadores.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnEntrenadores.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEntrenadores.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEntrenadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrenadores.ForeColor = System.Drawing.Color.White;
+            this.btnEntrenadores.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrenadores.Image")));
+            this.btnEntrenadores.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEntrenadores.Location = new System.Drawing.Point(0, 257);
+            this.btnEntrenadores.Name = "btnEntrenadores";
+            this.btnEntrenadores.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
+            this.btnEntrenadores.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEntrenadores.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEntrenadores.OnHoverImage = null;
+            this.btnEntrenadores.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEntrenadores.Size = new System.Drawing.Size(180, 42);
+            this.btnEntrenadores.TabIndex = 4;
+            this.btnEntrenadores.Text = "Entrenadores";
+            this.btnEntrenadores.Click += new System.EventHandler(this.btnEntrenadores_Click);
+            // 
+            // btnFinanzas
+            // 
+            this.btnFinanzas.AnimationHoverSpeed = 0.07F;
+            this.btnFinanzas.AnimationSpeed = 0.03F;
+            this.btnFinanzas.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFinanzas.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnFinanzas.BorderColor = System.Drawing.Color.Black;
+            this.btnFinanzas.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnFinanzas.FocusedColor = System.Drawing.Color.Empty;
+            this.btnFinanzas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinanzas.ForeColor = System.Drawing.Color.White;
+            this.btnFinanzas.Image = ((System.Drawing.Image)(resources.GetObject("btnFinanzas.Image")));
+            this.btnFinanzas.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnFinanzas.Location = new System.Drawing.Point(0, 205);
+            this.btnFinanzas.Name = "btnFinanzas";
+            this.btnFinanzas.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
+            this.btnFinanzas.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnFinanzas.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnFinanzas.OnHoverImage = null;
+            this.btnFinanzas.OnPressedColor = System.Drawing.Color.Black;
+            this.btnFinanzas.Size = new System.Drawing.Size(180, 42);
+            this.btnFinanzas.TabIndex = 3;
+            this.btnFinanzas.Text = "Finanzas";
+            this.btnFinanzas.Click += new System.EventHandler(this.btnFinanzas_Click);
+            // 
+            // btnJugadores
+            // 
+            this.btnJugadores.AnimationHoverSpeed = 0.07F;
+            this.btnJugadores.AnimationSpeed = 0.03F;
+            this.btnJugadores.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnJugadores.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnJugadores.BorderColor = System.Drawing.Color.Black;
+            this.btnJugadores.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnJugadores.FocusedColor = System.Drawing.Color.Empty;
+            this.btnJugadores.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJugadores.ForeColor = System.Drawing.Color.White;
+            this.btnJugadores.Image = ((System.Drawing.Image)(resources.GetObject("btnJugadores.Image")));
+            this.btnJugadores.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnJugadores.Location = new System.Drawing.Point(0, 153);
+            this.btnJugadores.Name = "btnJugadores";
+            this.btnJugadores.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
+            this.btnJugadores.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnJugadores.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnJugadores.OnHoverImage = null;
+            this.btnJugadores.OnPressedColor = System.Drawing.Color.Black;
+            this.btnJugadores.Size = new System.Drawing.Size(180, 42);
+            this.btnJugadores.TabIndex = 2;
+            this.btnJugadores.Text = "Jugadores";
+            this.btnJugadores.Click += new System.EventHandler(this.btnJugadores_Click);
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.AnimationHoverSpeed = 0.07F;
+            this.btnInicio.AnimationSpeed = 0.03F;
+            this.btnInicio.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnInicio.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnInicio.BorderColor = System.Drawing.Color.Black;
+            this.btnInicio.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnInicio.FocusedColor = System.Drawing.Color.Empty;
+            this.btnInicio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.ForeColor = System.Drawing.Color.White;
+            this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
+            this.btnInicio.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnInicio.Location = new System.Drawing.Point(0, 105);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
+            this.btnInicio.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnInicio.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnInicio.OnHoverImage = null;
+            this.btnInicio.OnPressedColor = System.Drawing.Color.Black;
+            this.btnInicio.Size = new System.Drawing.Size(180, 42);
+            this.btnInicio.TabIndex = 1;
+            this.btnInicio.Text = "Inicio";
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // PanelLogo
+            // 
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(180, 80);
+            this.PanelLogo.TabIndex = 0;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.lblPosition);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblLastName);
@@ -126,6 +283,7 @@ namespace Presentacion
             this.Name = "FormPrincipal";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
+            this.PanelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +297,12 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaLabel lblLastName;
         private Guna.UI.WinForms.GunaLabel lblEmail;
         private Guna.UI.WinForms.GunaLabel lblPosition;
+        private Guna.UI.WinForms.GunaPanel PanelMenu;
+        private Guna.UI.WinForms.GunaButton btnInicio;
+        private Guna.UI.WinForms.GunaPanel PanelLogo;
+        private Guna.UI.WinForms.GunaButton btnPartidos;
+        private Guna.UI.WinForms.GunaButton btnEntrenadores;
+        private Guna.UI.WinForms.GunaButton btnFinanzas;
+        private Guna.UI.WinForms.GunaButton btnJugadores;
     }
 }

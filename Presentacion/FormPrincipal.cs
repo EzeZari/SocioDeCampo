@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
+using FontAwesome.Sharp;
 
 namespace Presentacion
 {
     public partial class FormPrincipal : Form
     {
+
+        private Guna.UI.WinForms.GunaButton currentButton;  //Variable para Almacenar btn actual.
         public FormPrincipal()
         {
             InitializeComponent();
@@ -46,6 +49,62 @@ namespace Presentacion
             {
                 // btnLogout.Enabled = false; Le desactivamos el acceso a tal boton
             } //EN EL FORM QUE YO QUIERA OCULTAR UN BOTON, LO HAGO DE LA MISMA MANERA. //Lo puedo hacer asi, o hacer una funcion y desp llamarla en "FormPrincipal_Load"
+        }
+
+        
+        private void ActivateButton (Object btnSender) //Activamos el boton cuando esta presionado
+        {
+            if (btnSender != null) // Comprobar si el objeto enviado es un botón
+            {
+                if (currentButton != (Guna.UI.WinForms.GunaButton)btnSender)
+                {
+                    DisableButton();
+                    Color color = Color.FromArgb(70,130,180) ;
+                    currentButton = (Guna.UI.WinForms.GunaButton)btnSender;
+                    currentButton.BaseColor = color;        //Fondo
+                    currentButton.ForeColor = Color.White; //Letras 
+                }
+            }
+        }
+        private void DisableButton()
+        {
+            foreach (Control previousBtn in PanelMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Guna.UI.WinForms.GunaButton)) // Verifica si el botón es de tipo GunaButton
+                {
+                    Guna.UI.WinForms.GunaButton gunaButton = (Guna.UI.WinForms.GunaButton)previousBtn;
+                    gunaButton.BaseColor = Color.FromArgb(38, 84, 124); // Restablece el color de fondo a su estado normal
+                    gunaButton.ForeColor = Color.White; 
+
+                }
+            }
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            // Llamamos a ActivateButton y pasamos el botón actual (sender)
+            ActivateButton(sender);
+        }
+
+        private void btnJugadores_Click(object sender, EventArgs e)
+        {
+            // Llamamos a ActivateButton y pasamos el botón actual (sender)
+            ActivateButton(sender);
+        }
+
+        private void btnFinanzas_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void btnEntrenadores_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void btnPartidos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
         }
     }
 }
