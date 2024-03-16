@@ -79,22 +79,40 @@ namespace Presentacion
                 }
             }
         }
+        private Form activeForm = null;
+        private void OpenChildForm(Form childForm) //Metodo para abrir los formularios hijos en el metodo contenedor. (ONLY FORM)
+        {
+            if (activeForm != null) //Si form activo es diferente a null.
+                activeForm.Close(); //Cerramos el form activo.
+
+                activeForm = childForm; //Almacenamos el form activo.
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None; //Sacamos el borde del form.
+                childForm.Dock = DockStyle.Fill; //Establecemos que rellene todo el panel.
+                panelChildFrom.Controls.Add(childForm);
+                panelChildFrom.Tag = childForm;//Asociamos el form con el panel contenedor.
+                childForm.BringToFront();//Traemos el form al frente por si hay un logo en el fondo.
+                childForm.Show();// Mostramos el Form hijo
+
+            
+        }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            // Llamamos a ActivateButton y pasamos el botón actual (sender)
-            ActivateButton(sender);
+            OpenChildForm(new FormInicio()); // Abrir el formulario hijo primero
+            ActivateButton(sender); // Llamar a ActivateButton después de abrir el formulario hijo
         }
 
         private void btnJugadores_Click(object sender, EventArgs e)
         {
-            // Llamamos a ActivateButton y pasamos el botón actual (sender)
-            ActivateButton(sender);
+            OpenChildForm(new FormJugadores()); // Abrir el formulario hijo primero
+            ActivateButton(sender); // Llamamos a ActivateButton y pasamos el botón actual (sender)
         }
 
         private void btnFinanzas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            OpenChildForm(new FormFinanzas());
         }
 
         private void btnEntrenadores_Click(object sender, EventArgs e)
@@ -105,6 +123,11 @@ namespace Presentacion
         private void btnPartidos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+        }
+
+        private void panelChildFrom_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
