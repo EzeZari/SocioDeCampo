@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
 
 namespace Presentacion
 {
     public partial class FormJugadores : Form
     {
+        UserModel objeto = new UserModel();
         public FormJugadores()
         {
             InitializeComponent();
+        }
+
+        private void FormJugadores_Load(object sender, EventArgs e)
+        {
+            MostrarJugadores();
+        }
+        private void MostrarJugadores()
+        {
+            dataGridView1.DataSource = objeto.MostrarJugadores();
         }
     }
 }

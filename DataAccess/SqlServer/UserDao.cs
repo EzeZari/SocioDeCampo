@@ -46,7 +46,6 @@ namespace DataAccess
 
 
         }
-
         public string recoverPassword(string userRequesting) //Funcion para recuperar contraseña
         {
             using (var connection = GetConnection())
@@ -85,7 +84,7 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
-                connection.Open();//Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -95,6 +94,30 @@ namespace DataAccess
                     
                 }
             }
+        }
+
+
+       //private ConnectionToSQL conexion = new ConnectionToSQL();
+        SqlDataReader leer;
+        DataTable tabla = new DataTable(); //Agregammos
+        SqlCommand comando = new SqlCommand(); //Para ejecutar instrucciones o procedimientos almacenados.
+
+        public DataTable Mostrar() //Mostrar registros de tabla Jugadores
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select * from Jugadores";
+                    leer = command.ExecuteReader(); // 
+                    tabla.Load(leer); //Nuestra tabla sera rellenada con el resultado de data reader. 
+                    connection.Close();
+                    return tabla;
+                }
+            }
+
         }
 
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DataAccess;
 using Common.Cache;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Domain
 {
@@ -27,6 +28,12 @@ namespace Domain
             userDao.AddUser(loginName,firstName,lastName,Email,pass,position);
         }
 
+         public DataTable MostrarJugadores()
+        {
+            DataTable tabla = new DataTable();//Creamos un registro para guardar lo q nos devuelve el DataAcces.
+            tabla = userDao.Mostrar();
+            return tabla;
+        }
 
         public void AnyMethod() 
         {

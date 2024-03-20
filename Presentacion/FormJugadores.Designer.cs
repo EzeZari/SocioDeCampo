@@ -30,17 +30,27 @@ namespace Presentacion
         private void InitializeComponent()
         {
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(227, 200);
+            this.gunaLabel1.Location = new System.Drawing.Point(449, 47);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(131, 21);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Form Jugadores";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 47);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(420, 352);
+            this.dataGridView1.TabIndex = 1;
             // 
             // FormJugadores
             // 
@@ -48,9 +58,12 @@ namespace Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(604, 411);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gunaLabel1);
             this.Name = "FormJugadores";
             this.Text = "FormJugadores";
+            this.Load += new System.EventHandler(this.FormJugadores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,5 +72,6 @@ namespace Presentacion
         #endregion
 
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

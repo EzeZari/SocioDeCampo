@@ -16,6 +16,12 @@ namespace DataAccess
         protected SqlConnection GetConnection() {
             return new SqlConnection(connectionString);
         }
-
+        protected void CloseConnection(SqlConnection connection)
+        {
+            if (connection != null && connection.State != System.Data.ConnectionState.Closed)
+            {
+                connection.Close();
+            }
+        }
     }
 }
