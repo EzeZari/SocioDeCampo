@@ -121,6 +121,32 @@ namespace DataAccess
 
         }
 
+        public void AddJugador(string Name, string LastName, string Birthdate, string Nationality, string Position)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "InsertarJugador"; //Remplazamos esto por lo de abajo.
+                    //"insert into Jugadores values ('" + Name + "','" + LastName + "','" + Brithdate + "','" + Nationality + "','" + Position + "') ";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Name", Name);
+                    command.Parameters.AddWithValue("@LastName", LastName);
+                    command.Parameters.AddWithValue("@Birthdate", Birthdate);
+                    command.Parameters.AddWithValue("@Nationality", Nationality);
+                    command.Parameters.AddWithValue("@Position", Position);
+                    command.ExecuteNonQuery();
+                    
+
+                }
+                
+            }
+
+        }
+
+        
 
         public void AnyMethod()
         {

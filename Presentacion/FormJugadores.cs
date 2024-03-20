@@ -25,7 +25,22 @@ namespace Presentacion
         }
         private void MostrarJugadores()
         {
-            dataGridView1.DataSource = objeto.MostrarJugadores();
+            UserModel objetoCD = new UserModel();
+            dataGridView1.DataSource = objetoCD.MostrarJugadores();
+        }
+
+        private void btnSaveJugador_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                objeto.AddJugador(txtName.Text, txtLastNameJug.Text, txtBirthdate.Text,txtNationality.Text, txtPositionJug.Text); //Los ponemos sin convertirlos pq la capa dominio se encarga de hacer eso.
+                MessageBox.Show("Se inserto correctamente");
+                MostrarJugadores(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo añadir el usuario debido a:  " + ex);
+            }
         }
     }
 }

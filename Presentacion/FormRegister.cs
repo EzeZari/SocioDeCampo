@@ -31,6 +31,7 @@ namespace Presentacion
             {
                 objetoCN.AddUsuario(txtLoginName.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, txtPosition.Text); //Los ponemos sin convertirlos pq la capa dominio se encarga de hacer eso.
                 MessageBox.Show("Se inserto correctamente");
+                
             }
             catch (Exception ex)
             {

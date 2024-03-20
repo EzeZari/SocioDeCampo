@@ -28,12 +28,20 @@ namespace Domain
             userDao.AddUser(loginName,firstName,lastName,Email,pass,position);
         }
 
+
+        //FORM JUGADORES
          public DataTable MostrarJugadores()
         {
             DataTable tabla = new DataTable();//Creamos un registro para guardar lo q nos devuelve el DataAcces.
             tabla = userDao.Mostrar();
             return tabla;
         }
+
+        public void AddJugador(string Name, string LastName, string Birthdate, string Nationality, string Position)
+        {
+            userDao.AddJugador(Name, LastName, Birthdate, Nationality, Position);
+        }
+
 
         public void AnyMethod() 
         {
