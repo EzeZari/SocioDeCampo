@@ -110,7 +110,8 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select * from Jugadores";
+                    command.CommandText = "MostrarJugadores"; //Cambiamos select * from Jugadores por MostrarJugadores
+                    command.CommandType = CommandType.StoredProcedure;
                     leer = command.ExecuteReader(); // 
                     tabla.Load(leer); //Nuestra tabla sera rellenada con el resultado de data reader. 
                     connection.Close();
