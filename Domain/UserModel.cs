@@ -13,6 +13,7 @@ namespace Domain
     public class UserModel
     {
         UserDao userDao = new UserDao();
+        
         public bool LoginUser(string user, string pass)
         {
             return userDao.Login(user, pass);
@@ -40,6 +41,16 @@ namespace Domain
         public void AddJugador(string Name, string LastName, string Birthdate, string Nationality, string Position)
         {
             userDao.AddJugador(Name, LastName, Birthdate, Nationality, Position);
+        }
+
+        public void EditarJugador(string Name, string LastName, string Birthdate, string Nationality, string Position, string idJugador)
+        {
+            userDao.Editar(Name, LastName, Birthdate, Nationality, Position, Convert.ToInt32(idJugador));
+        }
+
+        public void EliminarJugador( string idJugador)
+        {
+            userDao.Eliminar(Convert.ToInt32(idJugador));
         }
 
 

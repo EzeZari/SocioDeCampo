@@ -138,12 +138,60 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@Nationality", Nationality);
                     command.Parameters.AddWithValue("@Position", Position);
                     command.ExecuteNonQuery();
-                    
+
+                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+                    //Y asi reutilizamos el mismo "Command" y no creamos uno nuevo.
 
                 }
                 
             }
 
+        }
+
+        public void Editar(string Name, string LastName, string Birthdate, string Nationality, string Position, int idJugador)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "EditarJugador"; 
+                    
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Name", Name);
+                    command.Parameters.AddWithValue("@LastName", LastName);
+                    command.Parameters.AddWithValue("@Birthdate", Birthdate);
+                    command.Parameters.AddWithValue("@Nationality", Nationality);
+                    command.Parameters.AddWithValue("@Position", Position);
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+                    command.ExecuteNonQuery();
+
+                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+
+
+                }
+
+            }
+        }
+
+        public void Eliminar(int idJugador) {
+
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection; //Abrimos la conexion
+                    command.CommandText = "EliminarJugador";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idJugador", idJugador);
+                    command.ExecuteNonQuery();
+
+                    command.Parameters.Clear();
+                }
+
+            }
         }
 
         

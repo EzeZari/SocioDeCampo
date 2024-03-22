@@ -37,6 +37,8 @@ namespace Presentacion
             this.btnSaveJugador = new Guna.UI.WinForms.GunaButton();
             this.txtNationality = new Guna.UI.WinForms.GunaTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new Guna.UI.WinForms.GunaButton();
+            this.btnEliminar = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@ namespace Presentacion
             this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtName.Location = new System.Drawing.Point(633, 47);
+            this.txtName.Location = new System.Drawing.Point(549, 89);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.Size = new System.Drawing.Size(160, 30);
@@ -65,7 +67,7 @@ namespace Presentacion
             this.txtLastNameJug.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLastNameJug.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLastNameJug.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLastNameJug.Location = new System.Drawing.Point(633, 97);
+            this.txtLastNameJug.Location = new System.Drawing.Point(549, 139);
             this.txtLastNameJug.Name = "txtLastNameJug";
             this.txtLastNameJug.PasswordChar = '\0';
             this.txtLastNameJug.Size = new System.Drawing.Size(160, 30);
@@ -81,7 +83,7 @@ namespace Presentacion
             this.txtBirthdate.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtBirthdate.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBirthdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBirthdate.Location = new System.Drawing.Point(633, 153);
+            this.txtBirthdate.Location = new System.Drawing.Point(549, 195);
             this.txtBirthdate.Name = "txtBirthdate";
             this.txtBirthdate.PasswordChar = '\0';
             this.txtBirthdate.Size = new System.Drawing.Size(160, 30);
@@ -97,7 +99,7 @@ namespace Presentacion
             this.txtPositionJug.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPositionJug.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPositionJug.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPositionJug.Location = new System.Drawing.Point(633, 255);
+            this.txtPositionJug.Location = new System.Drawing.Point(549, 297);
             this.txtPositionJug.Name = "txtPositionJug";
             this.txtPositionJug.PasswordChar = '\0';
             this.txtPositionJug.Size = new System.Drawing.Size(160, 30);
@@ -116,7 +118,7 @@ namespace Presentacion
             this.btnSaveJugador.ForeColor = System.Drawing.Color.White;
             this.btnSaveJugador.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveJugador.Image")));
             this.btnSaveJugador.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSaveJugador.Location = new System.Drawing.Point(633, 307);
+            this.btnSaveJugador.Location = new System.Drawing.Point(549, 349);
             this.btnSaveJugador.Name = "btnSaveJugador";
             this.btnSaveJugador.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSaveJugador.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -137,7 +139,7 @@ namespace Presentacion
             this.txtNationality.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtNationality.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNationality.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNationality.Location = new System.Drawing.Point(633, 207);
+            this.txtNationality.Location = new System.Drawing.Point(549, 249);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.PasswordChar = '\0';
             this.txtNationality.Size = new System.Drawing.Size(160, 30);
@@ -147,10 +149,58 @@ namespace Presentacion
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(58, 129);
+            this.dataGridView1.Location = new System.Drawing.Point(40, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(485, 291);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.AnimationHoverSpeed = 0.07F;
+            this.btnEditar.AnimationSpeed = 0.03F;
+            this.btnEditar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnEditar.BorderColor = System.Drawing.Color.Black;
+            this.btnEditar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEditar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditar.Location = new System.Drawing.Point(104, 349);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEditar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditar.OnHoverImage = null;
+            this.btnEditar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditar.Size = new System.Drawing.Size(160, 42);
+            this.btnEditar.TabIndex = 9;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AnimationHoverSpeed = 0.07F;
+            this.btnEliminar.AnimationSpeed = 0.03F;
+            this.btnEliminar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnEliminar.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEliminar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEliminar.Location = new System.Drawing.Point(287, 349);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEliminar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEliminar.OnHoverImage = null;
+            this.btnEliminar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEliminar.Size = new System.Drawing.Size(160, 42);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FormJugadores
             // 
@@ -158,6 +208,8 @@ namespace Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(876, 543);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtNationality);
             this.Controls.Add(this.btnSaveJugador);
@@ -181,5 +233,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnSaveJugador;
         private Guna.UI.WinForms.GunaTextBox txtNationality;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI.WinForms.GunaButton btnEditar;
+        private Guna.UI.WinForms.GunaButton btnEliminar;
     }
 }
