@@ -33,38 +33,39 @@ namespace Presentacion
 
         private void btnSaveJugador_Click(object sender, EventArgs e)
         {
-            //INSERTAR
-            if(Editar == false) //Si editar es falso, agrega el registro.
+            // INSERTAR
+            if (Editar == false) // Si editar es falso, agrega el registro.
             {
-            try
-            {
-                objeto.AddJugador(txtName.Text, txtLastNameJug.Text, txtBirthdate.Text,txtNationality.Text, txtPositionJug.Text); //Los ponemos sin convertirlos pq la capa dominio se encarga de hacer eso.
-                MessageBox.Show("Se insertó correctamente");
-                MostrarJugadores(); 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo añadir el Jugador debido a:  " + ex);
-            }
+                try
+                {
+                    objeto.AddJugador(txtName.Text, txtLastNameJug.Text, txtBirthdate.Text, txtNationality.Text, txtPositionJug.Text); // Los ponemos sin convertirlos pq la capa dominio se encarga de hacer eso.
+                    MessageBox.Show("Se insertó correctamente");
+                    MostrarJugadores();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo añadir el Jugador debido a:  " + ex);
+                }
             }
 
-            //EDITAR
-            if (Editar == true) //Si editar es verdadero,editara el registro.
+            // EDITAR
+            if (Editar == true) // Si editar es verdadero, editará el registro.
             {
                 try
                 {
                     objeto.EditarJugador(txtName.Text, txtLastNameJug.Text, txtBirthdate.Text, txtNationality.Text, txtPositionJug.Text, idJugador);
-                    MessageBox.Show("Se Edito correctamente");
+                    MessageBox.Show("Se Editó correctamente");
                     MostrarJugadores();
                     clearForm();
-                    Editar = false; //Lo volvemos a pasar a falso para reinicializar y q el boton siga agregando registros.
+                    Editar = false; // Lo volvemos a pasar a falso para reinicializar y que el botón siga agregando registros.
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("No se pudo editar el jugador debido a:  " + ex);
                 }
             }
         }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -84,7 +85,7 @@ namespace Presentacion
             }
         }
 
-        private void clearForm() //Funcion para que se limpien los textBox una vez q se edite o se agregue un jugador.
+        private void clearForm() // Funcion para que se limpien los textBox una vez que se edite o se agregue un jugador.
         {
             txtName.Text = "";
             txtLastNameJug.Text = "";
@@ -107,5 +108,6 @@ namespace Presentacion
                 MessageBox.Show("Seleccione una fila por favor");
             }
         }
+
     }
 }

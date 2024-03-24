@@ -39,10 +39,11 @@ namespace Presentacion
             this.btnInicio = new Guna.UI.WinForms.GunaButton();
             this.PanelLogo = new Guna.UI.WinForms.GunaPanel();
             this.panelChildFrom = new System.Windows.Forms.Panel();
-            this.lblName = new Guna.UI.WinForms.GunaLabel();
+            this.lblLastName = new Guna.UI.WinForms.GunaLabel();
             this.lblPosition = new Guna.UI.WinForms.GunaLabel();
             this.lblEmail = new Guna.UI.WinForms.GunaLabel();
-            this.lblLastName = new Guna.UI.WinForms.GunaLabel();
+            this.lblName = new Guna.UI.WinForms.GunaLabel();
+            this.btnPerfil = new Guna.UI.WinForms.GunaButton();
             this.PanelMenu.SuspendLayout();
             this.panelChildFrom.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +76,7 @@ namespace Presentacion
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.PanelMenu.Controls.Add(this.btnPerfil);
             this.PanelMenu.Controls.Add(this.btnPartidos);
             this.PanelMenu.Controls.Add(this.btnEntrenadores);
             this.PanelMenu.Controls.Add(this.btnFinanzas);
@@ -235,15 +237,15 @@ namespace Presentacion
             this.panelChildFrom.TabIndex = 7;
             this.panelChildFrom.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildFrom_Paint);
             // 
-            // lblName
+            // lblLastName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblName.Location = new System.Drawing.Point(253, 241);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 15);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "Nombre";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblLastName.Location = new System.Drawing.Point(253, 141);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(51, 15);
+            this.lblLastName.TabIndex = 3;
+            this.lblLastName.Text = "Apellido";
             // 
             // lblPosition
             // 
@@ -265,15 +267,40 @@ namespace Presentacion
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email";
             // 
-            // lblLastName
+            // lblName
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblLastName.Location = new System.Drawing.Point(253, 141);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(51, 15);
-            this.lblLastName.TabIndex = 3;
-            this.lblLastName.Text = "Apellido";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblName.Location = new System.Drawing.Point(253, 241);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(51, 15);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Nombre";
+            // 
+            // btnPerfil
+            // 
+            this.btnPerfil.AnimationHoverSpeed = 0.07F;
+            this.btnPerfil.AnimationSpeed = 0.03F;
+            this.btnPerfil.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPerfil.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnPerfil.BorderColor = System.Drawing.Color.Black;
+            this.btnPerfil.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPerfil.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPerfil.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.ForeColor = System.Drawing.Color.White;
+            this.btnPerfil.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfil.Image")));
+            this.btnPerfil.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPerfil.Location = new System.Drawing.Point(0, 370);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
+            this.btnPerfil.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPerfil.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPerfil.OnHoverImage = null;
+            this.btnPerfil.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPerfil.Size = new System.Drawing.Size(180, 42);
+            this.btnPerfil.TabIndex = 6;
+            this.btnPerfil.Text = "Mi perfil";
+            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
             // 
             // FormPrincipal
             // 
@@ -307,5 +334,6 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaLabel lblPosition;
         private Guna.UI.WinForms.GunaLabel lblEmail;
         private Guna.UI.WinForms.GunaLabel lblName;
+        private Guna.UI.WinForms.GunaButton btnPerfil;
     }
 }

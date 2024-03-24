@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
-using FontAwesome.Sharp;
 
 namespace Presentacion
 {
@@ -96,7 +95,7 @@ namespace Presentacion
 
             
         }
-
+        #region Botones
         private void btnInicio_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormInicio()); // Abrir el formulario hijo primero
@@ -124,10 +123,18 @@ namespace Presentacion
         {
             ActivateButton(sender);
         }
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new FormPerfil());
+        }
+        #endregion
 
         private void panelChildFrom_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        
     }
 }

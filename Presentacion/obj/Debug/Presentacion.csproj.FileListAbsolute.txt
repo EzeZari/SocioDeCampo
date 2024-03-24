@@ -2,9 +2,7 @@ C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Pres
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Presentacion.exe.config
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Presentacion.exe
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Presentacion.pdb
-C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Domain.dll
-C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Guna.UI.dll
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\DataAccess.dll
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Domain.pdb
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\DataAccess.pdb
@@ -24,3 +22,4 @@ C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Font
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormFinanzas.resources
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormJugadores.resources
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormInicio.resources
+C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormPerfil.resources

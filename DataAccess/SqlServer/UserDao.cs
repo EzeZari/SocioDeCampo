@@ -16,24 +16,27 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
-                connection.Open();//Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                connection.Open(); // Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
                     command.CommandText = "select * from Users where LoginName=@user and Password=@pass";
-                    command.Parameters.AddWithValue("@user", user); //Le asignamos el valor de entrada usuario.
+                    command.Parameters.AddWithValue("@user", user); // Le asignamos el valor de entrada usuario.
                     command.Parameters.AddWithValue("@pass", pass);
                     command.CommandType = CommandType.Text;
                     using (var reader = command.ExecuteReader())
-                        //SqlDataAdapter reader = command.ExecuteReader(); //SI ALGO NO ANDA, VER ACA EL ERROR
+                    {
+                        // SqlDataAdapter reader = command.ExecuteReader(); // SI ALGO NO ANDA, VER ACA EL ERROR
                         if (reader.HasRows)
                         {
                             while (reader.Read())
                             {
                                 UserCache.UserID = reader.GetInt32(0);
+                                UserCache.LoginName = reader.GetString(1);
                                 UserCache.FirstName = reader.GetString(2);
                                 UserCache.LastName = reader.GetString(3);
                                 UserCache.Email = reader.GetString(4);
+                                UserCache.Password = reader.GetString(5);
                                 UserCache.Position = reader.GetString(6);
                             }
 
@@ -41,33 +44,35 @@ namespace DataAccess
                         }
                         else
                             return false;
+                    }
                 }
             }
-
-
         }
-        public string recoverPassword(string userRequesting) //Funcion para recuperar contraseña
+
+
+        #region Registro de Usuario
+        public string recoverPassword(string userRequesting) // Funcion para recuperar contraseña
         {
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new SqlCommand()) //Instanciamos al comando sql
+                using (var command = new SqlCommand()) // Instanciamos al comando sql
                 {
-                    command.Connection = connection; //Especificamos la conexion al comando.
-                    command.CommandText = "select *from Users where LoginName=@user or Email=@mail"; //Seleccionamos td de la tabla User (Lo puede soliciar mediante correo o User )
-                    command.Parameters.AddWithValue("@user", userRequesting); //Agregamos valor al parametro con el dato que se recibe del usuario solicitante.
+                    command.Connection = connection; // Especificamos la conexion al comando.
+                    command.CommandText = "select * from Users where LoginName=@user or Email=@mail"; // Seleccionamos td de la tabla User (Lo puede soliciar mediante correo o User )
+                    command.Parameters.AddWithValue("@user", userRequesting); // Agregamos valor al parametro con el dato que se recibe del usuario solicitante.
                     command.Parameters.AddWithValue("@mail", userRequesting);
                     command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader(); //Declaramos un lector de datos de sql y ejecutamos el lector.
+                    SqlDataReader reader = command.ExecuteReader(); // Declaramos un lector de datos de sql y ejecutamos el lector.
 
-                    if (reader.Read() == true) //Si la consulta existe tenemos los datos del usuario.
+                    if (reader.Read() == true) // Si la consulta existe tenemos los datos del usuario.
                     {
                         string userName = reader.GetString(2) + " " + reader.GetString(3);
                         string userMail = reader.GetString(4);
                         string accountPassword = reader.GetString(5);
 
                         var mailService = new MailServices.SystemSupportMail();
-                        mailService.sendMail( //Requiere que mandemos el cuerpo y titulo.
+                        mailService.sendMail( // Requiere que mandemos el cuerpo y titulo.
                             subject: "Recuperar contraseña",
                             body: "Hola, " + userName + ". \nLe recordamos que su contraseña es: " + accountPassword + " \nPor favor cambie su contraseña una vez ingresado al Sistema.",
                             recipientMail: new List<string> { userMail }
@@ -75,7 +80,7 @@ namespace DataAccess
                         return "Hola " + userName + " Olvidaste tu contraseña \n " + " Revisa en tu correo " + userMail;
                     }
                     else
-                        return "No existe una cuenta con este Usuario o correo electronico";
+                        return "No existe una cuenta con este Usuario o correo electrónico";
                 }
             }
         }
@@ -84,42 +89,42 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
-                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                connection.Open(); // Abrimos la conexión, no hace falta cerrarlo, porque al usar "Using" es desechable
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into Users values ('"+loginName+"','"+firstName+"','"+lastName+"','"+Email+"','"+pass+"','"+position+"') ";
-                    command.ExecuteNonQuery();
+                    command.CommandText = "insert into Users values ('" + loginName + "','" + firstName + "','" + lastName + "','" + Email + "','" + pass + "','" + position + "') ";
                     command.CommandType = CommandType.Text;
-                    
+                    command.ExecuteNonQuery();
                 }
             }
         }
 
+        #endregion
 
-       //private ConnectionToSQL conexion = new ConnectionToSQL();
+        #region Mostrar, Añadir, Editar y Eliminar Jugador
         SqlDataReader leer;
-        DataTable tabla = new DataTable(); //Agregammos
-        SqlCommand comando = new SqlCommand(); //Para ejecutar instrucciones o procedimientos almacenados.
+        DataTable tabla = new DataTable();      // Agregamos
+        SqlCommand comando = new SqlCommand(); // Para ejecutar instrucciones o procedimientos almacenados.
 
-        public DataTable Mostrar() //Mostrar registros de tabla Jugadores
+        public DataTable Mostrar() // Mostrar registros de tabla Jugadores
         {
             using (var connection = GetConnection())
             {
-                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                connection.Open(); // Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "MostrarJugadores"; //Cambiamos select * from Jugadores por MostrarJugadores
+                    command.CommandText = "MostrarJugadores"; // Cambiamos select * from Jugadores por MostrarJugadores
                     command.CommandType = CommandType.StoredProcedure;
-                    leer = command.ExecuteReader(); // 
-                    tabla.Load(leer); //Nuestra tabla sera rellenada con el resultado de data reader. 
+                    leer = command.ExecuteReader(); 
+                    tabla.Load(leer); // Nuestra tabla sera rellenada con el resultado de data reader. 
                     connection.Close();
                     return tabla;
                 }
             }
-
         }
+
 
         public void AddJugador(string Name, string LastName, string Birthdate, string Nationality, string Position)
         {
@@ -157,8 +162,8 @@ namespace DataAccess
                 {
                     command.Connection = connection;
                     command.CommandText = "EditarJugador"; 
-                    
                     command.CommandType = CommandType.StoredProcedure;
+
                     command.Parameters.AddWithValue("@Name", Name);
                     command.Parameters.AddWithValue("@LastName", LastName);
                     command.Parameters.AddWithValue("@Birthdate", Birthdate);
@@ -168,10 +173,7 @@ namespace DataAccess
                     command.ExecuteNonQuery();
 
                     command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
-
-
                 }
-
             }
         }
 
@@ -193,8 +195,8 @@ namespace DataAccess
 
             }
         }
+        #endregion
 
-        
 
         public void AnyMethod()
         {

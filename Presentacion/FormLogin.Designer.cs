@@ -34,7 +34,6 @@ namespace Presentacion
             this.txtuser = new Guna.UI.WinForms.GunaTextBox();
             this.txtpassword = new Guna.UI.WinForms.GunaTextBox();
             this.lblErrorMessagge = new Guna.UI.WinForms.GunaLabel();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblOlvidastePassword = new System.Windows.Forms.LinkLabel();
             this.lblRegister = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
@@ -51,7 +50,7 @@ namespace Presentacion
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogin.Location = new System.Drawing.Point(351, 348);
+            this.btnLogin.Location = new System.Drawing.Point(420, 341);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -60,7 +59,7 @@ namespace Presentacion
             this.btnLogin.OnPressedColor = System.Drawing.Color.Black;
             this.btnLogin.Size = new System.Drawing.Size(160, 42);
             this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "gunaButton1";
+            this.btnLogin.Text = "Ingresar";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtuser
@@ -106,20 +105,11 @@ namespace Presentacion
             this.lblErrorMessagge.Text = "Error";
             this.lblErrorMessagge.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(108, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // lblOlvidastePassword
             // 
             this.lblOlvidastePassword.AutoSize = true;
             this.lblOlvidastePassword.LinkColor = System.Drawing.Color.Black;
-            this.lblOlvidastePassword.Location = new System.Drawing.Point(548, 292);
+            this.lblOlvidastePassword.Location = new System.Drawing.Point(514, 276);
             this.lblOlvidastePassword.Name = "lblOlvidastePassword";
             this.lblOlvidastePassword.Size = new System.Drawing.Size(131, 13);
             this.lblOlvidastePassword.TabIndex = 6;
@@ -131,7 +121,7 @@ namespace Presentacion
             // 
             this.lblRegister.AutoSize = true;
             this.lblRegister.LinkColor = System.Drawing.Color.Black;
-            this.lblRegister.Location = new System.Drawing.Point(569, 377);
+            this.lblRegister.Location = new System.Drawing.Point(417, 400);
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(60, 13);
             this.lblRegister.TabIndex = 7;
@@ -146,13 +136,12 @@ namespace Presentacion
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.lblOlvidastePassword);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblErrorMessagge);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.btnLogin);
             this.Name = "FormLogin";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,7 +153,6 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaTextBox txtuser;
         private Guna.UI.WinForms.GunaTextBox txtpassword;
         private Guna.UI.WinForms.GunaLabel lblErrorMessagge;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.LinkLabel lblOlvidastePassword;
         private System.Windows.Forms.LinkLabel lblRegister;
     }

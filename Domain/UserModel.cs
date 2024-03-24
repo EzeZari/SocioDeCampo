@@ -19,6 +19,7 @@ namespace Domain
             return userDao.Login(user, pass);
         }
 
+        #region Formulario Registrarse
         public string recoverPassword(string userRequesting)
         {
             return userDao.recoverPassword(userRequesting); //Retornamos el mensaje q retorna el metodo de la capa de acceso a datos. (Enviamos usuario solicitante)
@@ -28,10 +29,10 @@ namespace Domain
         {
             userDao.AddUser(loginName,firstName,lastName,Email,pass,position);
         }
+        #endregion
 
-
-        //FORM JUGADORES
-         public DataTable MostrarJugadores()
+        #region Formulario de Jugadores
+        public DataTable MostrarJugadores()
         {
             DataTable tabla = new DataTable();//Creamos un registro para guardar lo q nos devuelve el DataAcces.
             tabla = userDao.Mostrar();
@@ -52,7 +53,7 @@ namespace Domain
         {
             userDao.Eliminar(Convert.ToInt32(idJugador));
         }
-
+        #endregion
 
         public void AnyMethod() 
         {
