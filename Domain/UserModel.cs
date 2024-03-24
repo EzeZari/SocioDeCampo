@@ -54,7 +54,10 @@ namespace Domain
             userDao.Eliminar(Convert.ToInt32(idJugador));
         }
         #endregion
-
+        public void EditarUser(string LoginName, string FirstName, string LastName, string Email, string Password, string Position, int UserID)
+        {
+            userDao.EditarDatosPerfil(LoginName, FirstName,LastName, Email, Password, Position, Convert.ToInt32(UserID));
+        }
         public void AnyMethod() 
         {
             if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa

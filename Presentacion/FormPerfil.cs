@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
+using Domain;
 
 namespace Presentacion
 {
     public partial class FormPerfil : Form
     {
+        UserModel objeto = new UserModel();
+        private int UserID ;
+        
         public FormPerfil()
         {
             InitializeComponent();
@@ -24,7 +28,8 @@ namespace Presentacion
             txtLoginName.Text = UserCache.LoginName;
             txtEmail.Text = UserCache.Email; //Mostrarlos en pantalla
             txtPosition.Text = UserCache.Position;
-            txtPassword.Text = UserCache.Password; 
+            txtPassword.Text = UserCache.Password;
+            UserID = UserCache.UserID;
         }
         private void TextBoxOn() //Funcion para que se puedan editar los txt.
         {
@@ -35,6 +40,19 @@ namespace Presentacion
             txtPosition.Enabled = true;
             txtPassword.Enabled = true;
             txtPassword.PasswordChar = '\0';
+        }
+        private void EditUserr()
+        {
+            try
+            {
+                objeto.EditarUser(txtLoginName.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, txtPosition.Text, UserID);
+                MessageBox.Show("Se Editó correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo editar el Usuario debido a:  " + ex);
+            }
+
         }
         private void FormPerfil_Load(object sender, EventArgs e)
         {
@@ -49,6 +67,11 @@ namespace Presentacion
             btnCancel.Visible = true;
             btnEditProfile.Visible = false; 
             
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            EditUserr();
         }
     }
 }

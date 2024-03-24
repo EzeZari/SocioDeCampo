@@ -198,6 +198,31 @@ namespace DataAccess
         #endregion
 
 
+        public void EditarDatosPerfil(string LoginName, string FirstName, string LastName, string Email, string Password,string Position, int UserID)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "EditarUsuario";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@LoginName", LoginName);
+                    command.Parameters.AddWithValue("@FirstName", FirstName);
+                    command.Parameters.AddWithValue("@LastName", LastName);
+                    command.Parameters.AddWithValue("@Email", Email);
+                    command.Parameters.AddWithValue("@Password", Password);
+                    command.Parameters.AddWithValue("@Position", Position);
+                    command.Parameters.AddWithValue("@UserID", UserID);
+                    command.ExecuteNonQuery();
+
+                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+                }
+            }
+        }
+
         public void AnyMethod()
         {
             if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa

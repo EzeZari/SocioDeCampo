@@ -209,7 +209,7 @@ namespace Presentacion
             this.btnEditProfile.ForeColor = System.Drawing.Color.White;
             this.btnEditProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnEditProfile.Image")));
             this.btnEditProfile.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditProfile.Location = new System.Drawing.Point(296, 383);
+            this.btnEditProfile.Location = new System.Drawing.Point(301, 383);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnEditProfile.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -235,7 +235,7 @@ namespace Presentacion
             this.btnConfirm.ImageSize = new System.Drawing.Size(20, 20);
             this.btnConfirm.Location = new System.Drawing.Point(210, 383);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.OnHoverBaseColor = System.Drawing.Color.Green;
+            this.btnConfirm.OnHoverBaseColor = System.Drawing.Color.PaleGreen;
             this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnConfirm.OnHoverForeColor = System.Drawing.Color.White;
             this.btnConfirm.OnHoverImage = null;
@@ -244,6 +244,7 @@ namespace Presentacion
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Confirmar Cambios";
             this.btnConfirm.Visible = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -259,7 +260,7 @@ namespace Presentacion
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
             this.btnCancel.Location = new System.Drawing.Point(381, 383);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.OnHoverBaseColor = System.Drawing.Color.Green;
+            this.btnCancel.OnHoverBaseColor = System.Drawing.Color.DarkRed;
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
             this.btnCancel.OnHoverImage = null;
