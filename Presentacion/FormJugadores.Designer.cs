@@ -39,6 +39,7 @@ namespace Presentacion
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEditar = new Guna.UI.WinForms.GunaButton();
             this.btnEliminar = new Guna.UI.WinForms.GunaButton();
+            this.btnAdd = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +129,6 @@ namespace Presentacion
             this.btnSaveJugador.Size = new System.Drawing.Size(160, 42);
             this.btnSaveJugador.TabIndex = 6;
             this.btnSaveJugador.Text = "Guardar ";
-            this.btnSaveJugador.Click += new System.EventHandler(this.btnSaveJugador_Click);
             // 
             // txtNationality
             // 
@@ -202,12 +202,37 @@ namespace Presentacion
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.AnimationHoverSpeed = 0.07F;
+            this.btnAdd.AnimationSpeed = 0.03F;
+            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.Black;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAdd.Location = new System.Drawing.Point(104, 416);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAdd.OnHoverImage = null;
+            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAdd.Size = new System.Drawing.Size(160, 42);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // FormJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(876, 543);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dataGridView1);
@@ -235,5 +260,6 @@ namespace Presentacion
         private System.Windows.Forms.DataGridView dataGridView1;
         private Guna.UI.WinForms.GunaButton btnEditar;
         private Guna.UI.WinForms.GunaButton btnEliminar;
+        private Guna.UI.WinForms.GunaButton btnAdd;
     }
 }

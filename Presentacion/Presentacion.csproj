@@ -79,11 +79,23 @@
     <Compile Include="FormJugadores.Designer.cs">
       <DependentUpon>FormJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPerfil.cs">
+    <Compile Include="FormJugadoresAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPerfil.Designer.cs">
-      <DependentUpon>FormPerfil.cs</DependentUpon>
+    <Compile Include="FormJugadoresAdd.Designer.cs">
+      <DependentUpon>FormJugadoresAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJugadoresEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJugadoresEdit.Designer.cs">
+      <DependentUpon>FormJugadoresEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -120,11 +132,17 @@
     <EmbeddedResource Include="FormJugadores.resx">
       <DependentUpon>FormJugadores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormJugadoresAdd.resx">
+      <DependentUpon>FormJugadoresAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJugadoresEdit.resx">
+      <DependentUpon>FormJugadoresEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPerfil.resx">
-      <DependentUpon>FormPerfil.cs</DependentUpon>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

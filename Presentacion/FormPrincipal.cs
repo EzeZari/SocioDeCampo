@@ -126,7 +126,7 @@ namespace Presentacion
         private void btnPerfil_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormPerfil());
+            OpenChildForm(new FormProfile());
         }
         #endregion
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Presentacion
 {
-    partial class FormPerfil
+    partial class FormProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerfil));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfile));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -267,7 +267,7 @@ namespace Presentacion
             this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
             this.btnCancel.Size = new System.Drawing.Size(160, 42);
             this.btnCancel.TabIndex = 14;
-            this.btnCancel.Text = "Confirmar Cambios";
+            this.btnCancel.Text = "Descartar Cambios";
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 

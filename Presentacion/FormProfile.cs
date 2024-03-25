@@ -12,12 +12,12 @@ using Domain;
 
 namespace Presentacion
 {
-    public partial class FormPerfil : Form
+    public partial class FormProfile : Form
     {
         UserModel objeto = new UserModel(); 
         private int UserID;
 
-        public FormPerfil()
+        public FormProfile()
         {
             InitializeComponent();
         }
@@ -123,6 +123,7 @@ namespace Presentacion
         {
             TextBoxOff();
             btnProfileOn();
+            LoadUserData();
         }
     }
 

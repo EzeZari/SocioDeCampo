@@ -22,4 +22,6 @@ C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\bin\Debug\Font
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormFinanzas.resources
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormJugadores.resources
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormInicio.resources
-C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormPerfil.resources
+C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormProfile.resources
+C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormJugadoresAdd.resources
+C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Presentacion\obj\Debug\Presentacion.FormJugadoresEdit.resources
