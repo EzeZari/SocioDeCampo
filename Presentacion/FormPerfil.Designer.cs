@@ -269,6 +269,7 @@ namespace Presentacion
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Confirmar Cambios";
             this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FormPerfil
             // 
