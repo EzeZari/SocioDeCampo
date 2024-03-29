@@ -38,6 +38,11 @@ namespace Presentacion
             this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
             this.txtPasswordRepeat = new Guna.UI.WinForms.GunaTextBox();
             this.btnRegister = new Guna.UI.WinForms.GunaButton();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblLoginName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -49,12 +54,13 @@ namespace Presentacion
             this.txtFirstName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtFirstName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFirstName.Location = new System.Drawing.Point(95, 21);
+            this.txtFirstName.Location = new System.Drawing.Point(95, 36);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
             this.txtFirstName.Size = new System.Drawing.Size(160, 30);
             this.txtFirstName.TabIndex = 0;
-            this.txtFirstName.Text = "Nombre";
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
             // 
             // txtLastName
             // 
@@ -65,12 +71,13 @@ namespace Presentacion
             this.txtLastName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLastName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLastName.Location = new System.Drawing.Point(95, 95);
+            this.txtLastName.Location = new System.Drawing.Point(289, 36);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.PasswordChar = '\0';
             this.txtLastName.Size = new System.Drawing.Size(160, 30);
             this.txtLastName.TabIndex = 1;
-            this.txtLastName.Text = "Apellido";
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
             // 
             // txtLoginName
             // 
@@ -81,12 +88,12 @@ namespace Presentacion
             this.txtLoginName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLoginName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLoginName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLoginName.Location = new System.Drawing.Point(95, 168);
+            this.txtLoginName.Location = new System.Drawing.Point(95, 114);
             this.txtLoginName.Name = "txtLoginName";
             this.txtLoginName.PasswordChar = '\0';
             this.txtLoginName.Size = new System.Drawing.Size(160, 30);
             this.txtLoginName.TabIndex = 2;
-            this.txtLoginName.Text = "Nombre de Usuario";
+            this.txtLoginName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             // 
             // txtEmail
             // 
@@ -97,12 +104,14 @@ namespace Presentacion
             this.txtEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.Location = new System.Drawing.Point(95, 237);
+            this.txtEmail.Location = new System.Drawing.Point(95, 179);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.Size = new System.Drawing.Size(160, 30);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.Text = "Correo electronico";
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtPosition
             // 
@@ -118,12 +127,13 @@ namespace Presentacion
             this.txtPosition.Items.AddRange(new object[] {
             "Entrenador",
             "Ayudante de campo"});
-            this.txtPosition.Location = new System.Drawing.Point(95, 302);
+            this.txtPosition.Location = new System.Drawing.Point(95, 264);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPosition.OnHoverItemForeColor = System.Drawing.Color.White;
             this.txtPosition.Size = new System.Drawing.Size(160, 26);
             this.txtPosition.TabIndex = 4;
+            this.txtPosition.SelectedIndexChanged += new System.EventHandler(this.txtFull_TextChanged);
             // 
             // txtPassword
             // 
@@ -134,12 +144,13 @@ namespace Presentacion
             this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPassword.Location = new System.Drawing.Point(378, 237);
+            this.txtPassword.Location = new System.Drawing.Point(289, 179);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.Size = new System.Drawing.Size(160, 30);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Text = "Contraseña";
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             // 
             // txtPasswordRepeat
             // 
@@ -150,12 +161,13 @@ namespace Presentacion
             this.txtPasswordRepeat.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPasswordRepeat.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPasswordRepeat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPasswordRepeat.Location = new System.Drawing.Point(378, 302);
+            this.txtPasswordRepeat.Location = new System.Drawing.Point(289, 260);
             this.txtPasswordRepeat.Name = "txtPasswordRepeat";
             this.txtPasswordRepeat.PasswordChar = '\0';
             this.txtPasswordRepeat.Size = new System.Drawing.Size(160, 30);
             this.txtPasswordRepeat.TabIndex = 6;
             this.txtPasswordRepeat.Text = "Repetir contraseña";
+            this.txtPasswordRepeat.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             // 
             // btnRegister
             // 
@@ -181,11 +193,59 @@ namespace Presentacion
             this.btnRegister.Text = "Registrarse";
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(92, 20);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(44, 13);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "Nombre";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(286, 20);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(44, 13);
+            this.lblLastName.TabIndex = 9;
+            this.lblLastName.Text = "Apellido";
+            // 
+            // lblLoginName
+            // 
+            this.lblLoginName.AutoSize = true;
+            this.lblLoginName.Location = new System.Drawing.Point(92, 98);
+            this.lblLoginName.Name = "lblLoginName";
+            this.lblLoginName.Size = new System.Drawing.Size(98, 13);
+            this.lblLoginName.TabIndex = 11;
+            this.lblLoginName.Text = "Nombre de Usuario";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(92, 248);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Puesto de trabajo";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(625, 118);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 13;
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblLoginName);
+            this.Controls.Add(this.lblLastName);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.txtPasswordRepeat);
             this.Controls.Add(this.txtPassword);
@@ -194,9 +254,12 @@ namespace Presentacion
             this.Controls.Add(this.txtLoginName);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegister";
             this.Text = "FormRegister";
+            this.Load += new System.EventHandler(this.FormRegister_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -210,5 +273,10 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaTextBox txtPassword;
         private Guna.UI.WinForms.GunaTextBox txtPasswordRepeat;
         private Guna.UI.WinForms.GunaButton btnRegister;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblLoginName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

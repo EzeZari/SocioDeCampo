@@ -36,6 +36,10 @@ namespace Presentacion
             this.lblErrorMessagge = new Guna.UI.WinForms.GunaLabel();
             this.lblOlvidastePassword = new System.Windows.Forms.LinkLabel();
             this.lblRegister = new System.Windows.Forms.LinkLabel();
+            this.passShow = new System.Windows.Forms.PictureBox();
+            this.passHide = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.passShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passHide)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -89,7 +93,7 @@ namespace Presentacion
             this.txtpassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtpassword.Location = new System.Drawing.Point(420, 222);
             this.txtpassword.Name = "txtpassword";
-            this.txtpassword.PasswordChar = '\0';
+            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(160, 30);
             this.txtpassword.TabIndex = 2;
             this.txtpassword.Text = "admin";
@@ -129,11 +133,36 @@ namespace Presentacion
             this.lblRegister.Text = "Registrarse";
             this.lblRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblRegister_LinkClicked);
             // 
+            // passShow
+            // 
+            this.passShow.Image = ((System.Drawing.Image)(resources.GetObject("passShow.Image")));
+            this.passShow.Location = new System.Drawing.Point(586, 222);
+            this.passShow.Name = "passShow";
+            this.passShow.Size = new System.Drawing.Size(33, 28);
+            this.passShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.passShow.TabIndex = 8;
+            this.passShow.TabStop = false;
+            this.passShow.Click += new System.EventHandler(this.passShow_Click);
+            // 
+            // passHide
+            // 
+            this.passHide.Image = ((System.Drawing.Image)(resources.GetObject("passHide.Image")));
+            this.passHide.Location = new System.Drawing.Point(586, 222);
+            this.passHide.Name = "passHide";
+            this.passHide.Size = new System.Drawing.Size(33, 28);
+            this.passHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.passHide.TabIndex = 9;
+            this.passHide.TabStop = false;
+            this.passHide.Visible = false;
+            this.passHide.Click += new System.EventHandler(this.passHide_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.passShow);
+            this.Controls.Add(this.passHide);
             this.Controls.Add(this.lblRegister);
             this.Controls.Add(this.lblOlvidastePassword);
             this.Controls.Add(this.lblErrorMessagge);
@@ -142,6 +171,8 @@ namespace Presentacion
             this.Controls.Add(this.btnLogin);
             this.Name = "FormLogin";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.passShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passHide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +186,8 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaLabel lblErrorMessagge;
         private System.Windows.Forms.LinkLabel lblOlvidastePassword;
         private System.Windows.Forms.LinkLabel lblRegister;
+        private System.Windows.Forms.PictureBox passShow;
+        private System.Windows.Forms.PictureBox passHide;
     }
 }
 

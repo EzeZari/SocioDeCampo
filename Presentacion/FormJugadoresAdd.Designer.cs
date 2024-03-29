@@ -36,6 +36,8 @@ namespace Presentacion
             this.txtBirthdate = new Guna.UI.WinForms.GunaTextBox();
             this.txtLastNameJug = new Guna.UI.WinForms.GunaTextBox();
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtNationality
@@ -47,7 +49,7 @@ namespace Presentacion
             this.txtNationality.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtNationality.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNationality.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNationality.Location = new System.Drawing.Point(320, 234);
+            this.txtNationality.Location = new System.Drawing.Point(80, 231);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.PasswordChar = '\0';
             this.txtNationality.Size = new System.Drawing.Size(160, 30);
@@ -66,7 +68,7 @@ namespace Presentacion
             this.btnSaveJugador.ForeColor = System.Drawing.Color.White;
             this.btnSaveJugador.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveJugador.Image")));
             this.btnSaveJugador.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSaveJugador.Location = new System.Drawing.Point(320, 334);
+            this.btnSaveJugador.Location = new System.Drawing.Point(237, 373);
             this.btnSaveJugador.Name = "btnSaveJugador";
             this.btnSaveJugador.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSaveJugador.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -87,7 +89,7 @@ namespace Presentacion
             this.txtPositionJug.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPositionJug.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPositionJug.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPositionJug.Location = new System.Drawing.Point(320, 282);
+            this.txtPositionJug.Location = new System.Drawing.Point(80, 279);
             this.txtPositionJug.Name = "txtPositionJug";
             this.txtPositionJug.PasswordChar = '\0';
             this.txtPositionJug.Size = new System.Drawing.Size(160, 30);
@@ -103,7 +105,7 @@ namespace Presentacion
             this.txtBirthdate.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtBirthdate.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBirthdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBirthdate.Location = new System.Drawing.Point(320, 180);
+            this.txtBirthdate.Location = new System.Drawing.Point(80, 177);
             this.txtBirthdate.Name = "txtBirthdate";
             this.txtBirthdate.PasswordChar = '\0';
             this.txtBirthdate.Size = new System.Drawing.Size(160, 30);
@@ -119,7 +121,7 @@ namespace Presentacion
             this.txtLastNameJug.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLastNameJug.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLastNameJug.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLastNameJug.Location = new System.Drawing.Point(320, 124);
+            this.txtLastNameJug.Location = new System.Drawing.Point(80, 121);
             this.txtLastNameJug.Name = "txtLastNameJug";
             this.txtLastNameJug.PasswordChar = '\0';
             this.txtLastNameJug.Size = new System.Drawing.Size(160, 30);
@@ -135,18 +137,34 @@ namespace Presentacion
             this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtName.Location = new System.Drawing.Point(320, 74);
+            this.txtName.Location = new System.Drawing.Point(80, 71);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.Size = new System.Drawing.Size(160, 30);
             this.txtName.TabIndex = 8;
             this.txtName.Text = "Nombre";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(502, 100);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(216, 20);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(499, 202);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(218, 20);
+            this.dateTimePicker2.TabIndex = 15;
+            // 
             // FormJugadoresAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(808, 450);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtNationality);
             this.Controls.Add(this.btnSaveJugador);
             this.Controls.Add(this.txtPositionJug);
@@ -167,5 +185,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaTextBox txtBirthdate;
         private Guna.UI.WinForms.GunaTextBox txtLastNameJug;
         private Guna.UI.WinForms.GunaTextBox txtName;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

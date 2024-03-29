@@ -74,5 +74,21 @@ namespace Presentacion
             var Register = new FormRegister();
             Register.ShowDialog();
         }
+
+        private void passShow_Click(object sender, EventArgs e)
+        {
+            passShow.BringToFront();
+            txtpassword.PasswordChar = '\0';
+            passShow.Visible = false;
+            passHide.Visible = true;
+        }
+
+        private void passHide_Click(object sender, EventArgs e)
+        {
+            passHide.BringToFront();
+            passHide.Visible = false;
+            passShow.Visible = true;
+            txtpassword.PasswordChar = '*';
+        }
     }
 }
