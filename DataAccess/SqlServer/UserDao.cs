@@ -223,6 +223,44 @@ namespace DataAccess
             }
         }
 
+        public bool ConsultLoginName(string LoginName)
+        {
+            bool loginNameExists = false;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "ConsultLoginName";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@LoginName", LoginName);
+                    int count = (int)command.ExecuteScalar();
+                    loginNameExists = (count > 0);
+                }
+            }
+            return loginNameExists;
+        }
+        public bool ConsultEmail(string Email)
+        {
+            bool emailExists = false;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "ConsultEmail";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Email", Email);
+                    int count = (int)command.ExecuteScalar();
+                    emailExists = (count > 0);
+                }
+            }
+            return emailExists;
+        }
+
+
         public void AnyMethod()
         {
             if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa

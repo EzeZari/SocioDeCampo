@@ -113,7 +113,7 @@ namespace Presentacion
             // 
             this.lblOlvidastePassword.AutoSize = true;
             this.lblOlvidastePassword.LinkColor = System.Drawing.Color.Black;
-            this.lblOlvidastePassword.Location = new System.Drawing.Point(514, 276);
+            this.lblOlvidastePassword.Location = new System.Drawing.Point(478, 294);
             this.lblOlvidastePassword.Name = "lblOlvidastePassword";
             this.lblOlvidastePassword.Size = new System.Drawing.Size(131, 13);
             this.lblOlvidastePassword.TabIndex = 6;

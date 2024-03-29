@@ -58,6 +58,15 @@ namespace Domain
         {
             userDao.EditarDatosPerfil(LoginName, FirstName,LastName, Email, Password, Position, Convert.ToInt32(UserID));
         }
+
+        public bool ConsultLoginName(string LoginName)
+        {
+            return userDao.ConsultLoginName(LoginName);
+        }
+        public bool ConsultEmail(string Email)
+        {
+            return userDao.ConsultEmail(Email);
+        }
         public void AnyMethod() 
         {
             if (UserCache.Position == Position.Administrador) //Cuando entra el admin, pasa tal cosa

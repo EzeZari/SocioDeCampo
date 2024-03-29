@@ -31,35 +31,49 @@ namespace Presentacion
         {
             try
             {
-                objetoCN.AddUsuario(txtLoginName.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, txtPosition.Text); //Los ponemos sin convertirlos pq la capa dominio se encarga de hacer eso.
-                MessageBox.Show("Se inserto correctamente");
-                
+                // Verificar si el LoginName ya existe en la base de datos
+                if (objetoCN.ConsultLoginName(txtLoginName.Text))
+                {
+                    // El LoginName ya existe, mostrar un mensaje de error
+                    MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                else if (objetoCN.ConsultEmail(txtEmail.Text))
+                {
+                    MessageBox.Show("El correo electronico ya está en uso. Por favor, elija otro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // El Email no existe, proceder con el registro del usuario
+                    objetoCN.AddUsuario(txtLoginName.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, txtPosition.Text);
+                    MessageBox.Show("Se insertó correctamente");
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo añadir el usuario debido a:  " + ex);
             }
         }
+
+
+        #region Validaciones de los TextBox
+        //VALIDACIONES
         private void fullTxt()
         {
-            var vr = 
+            var vr =
                    !string.IsNullOrEmpty(txtFirstName.Text) &&
                    !string.IsNullOrEmpty(txtLastName.Text) &&
                    !string.IsNullOrEmpty(txtLoginName.Text) &&
                    !string.IsNullOrEmpty(txtEmail.Text) &&
                    !string.IsNullOrEmpty(txtPassword.Text) &&
                    txtPosition.SelectedItem != null;
-                   btnRegister.Enabled = vr;
+            btnRegister.Enabled = vr;
         }
         // Evento TextChanged para todos los GunaTextBox
         private void txtFull_TextChanged(object sender, EventArgs e)
         {
             fullTxt();
         }
-
-        #region Validaciones de los TextBox
-        //VALIDACIONES
-
 
         ErrorProvider errorPo = new ErrorProvider();
 
@@ -93,7 +107,7 @@ namespace Presentacion
                 errorProvider.SetError(ptxt, ""); // Limpiar el error si el campo no está vacío
             }
         }
-        #endregion
+       
 
         // Evento Leave para validar si el correo electrónico es válido
         private void txtEmail_Leave(object sender, EventArgs e)
@@ -122,7 +136,7 @@ namespace Presentacion
         //    }
         //}
         // Método para verificar si todos los campos están llenos
-        
+
         //public void TextVacio()
         //{
         //    Validations verificador = new Validations();
@@ -135,6 +149,6 @@ namespace Presentacion
         //        MessageBox.Show("El texto está vacío. Por favor ingresa algún valor.");
         //    }
         //}
-        
+        #endregion
     }
 }
