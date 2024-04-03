@@ -42,7 +42,9 @@ namespace Presentacion
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblLoginName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCorreoelectronico = new System.Windows.Forms.Label();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblRepeatPass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -61,6 +63,7 @@ namespace Presentacion
             this.txtFirstName.TabIndex = 0;
             this.txtFirstName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
+            this.txtFirstName.Leave += new System.EventHandler(this.TextEmpty_Leave);
             // 
             // txtLastName
             // 
@@ -78,6 +81,7 @@ namespace Presentacion
             this.txtLastName.TabIndex = 1;
             this.txtLastName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
+            this.txtLastName.Leave += new System.EventHandler(this.TextEmpty_Leave);
             // 
             // txtLoginName
             // 
@@ -94,6 +98,7 @@ namespace Presentacion
             this.txtLoginName.Size = new System.Drawing.Size(160, 30);
             this.txtLoginName.TabIndex = 2;
             this.txtLoginName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtLoginName.Leave += new System.EventHandler(this.TextEmpty_Leave);
             // 
             // txtEmail
             // 
@@ -109,7 +114,6 @@ namespace Presentacion
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.Size = new System.Drawing.Size(160, 30);
             this.txtEmail.TabIndex = 3;
-            this.txtEmail.Text = "Correo electronico";
             this.txtEmail.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
@@ -127,13 +131,14 @@ namespace Presentacion
             this.txtPosition.Items.AddRange(new object[] {
             "Entrenador",
             "Ayudante de campo"});
-            this.txtPosition.Location = new System.Drawing.Point(95, 264);
+            this.txtPosition.Location = new System.Drawing.Point(95, 260);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPosition.OnHoverItemForeColor = System.Drawing.Color.White;
             this.txtPosition.Size = new System.Drawing.Size(160, 26);
             this.txtPosition.TabIndex = 4;
             this.txtPosition.SelectedIndexChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtPosition.Leave += new System.EventHandler(this.ComboBoxEmpty_Leave);
             // 
             // txtPassword
             // 
@@ -149,8 +154,8 @@ namespace Presentacion
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.Size = new System.Drawing.Size(160, 30);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.Text = "Contraseña";
             this.txtPassword.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtPassword.Leave += new System.EventHandler(this.TextEmpty_Leave);
             // 
             // txtPasswordRepeat
             // 
@@ -166,8 +171,8 @@ namespace Presentacion
             this.txtPasswordRepeat.PasswordChar = '\0';
             this.txtPasswordRepeat.Size = new System.Drawing.Size(160, 30);
             this.txtPasswordRepeat.TabIndex = 6;
-            this.txtPasswordRepeat.Text = "Repetir contraseña";
             this.txtPasswordRepeat.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtPasswordRepeat.Leave += new System.EventHandler(this.TextEmpty_Leave);
             // 
             // btnRegister
             // 
@@ -223,25 +228,47 @@ namespace Presentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 248);
+            this.label2.Location = new System.Drawing.Point(92, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Puesto de trabajo";
             // 
-            // textBox1
+            // lblCorreoelectronico
             // 
-            this.textBox1.Location = new System.Drawing.Point(625, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 13;
+            this.lblCorreoelectronico.AutoSize = true;
+            this.lblCorreoelectronico.Location = new System.Drawing.Point(98, 165);
+            this.lblCorreoelectronico.Name = "lblCorreoelectronico";
+            this.lblCorreoelectronico.Size = new System.Drawing.Size(93, 13);
+            this.lblCorreoelectronico.TabIndex = 13;
+            this.lblCorreoelectronico.Text = "Correo electronico";
+            // 
+            // lblContraseña
+            // 
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Location = new System.Drawing.Point(286, 165);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(61, 13);
+            this.lblContraseña.TabIndex = 14;
+            this.lblContraseña.Text = "Contraseña";
+            // 
+            // lblRepeatPass
+            // 
+            this.lblRepeatPass.AutoSize = true;
+            this.lblRepeatPass.Location = new System.Drawing.Point(286, 244);
+            this.lblRepeatPass.Name = "lblRepeatPass";
+            this.lblRepeatPass.Size = new System.Drawing.Size(97, 13);
+            this.lblRepeatPass.TabIndex = 15;
+            this.lblRepeatPass.Text = "Repetir contraseña";
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblRepeatPass);
+            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblCorreoelectronico);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblLoginName);
             this.Controls.Add(this.lblLastName);
@@ -277,6 +304,8 @@ namespace Presentacion
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblLoginName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblCorreoelectronico;
+        private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Label lblRepeatPass;
     }
 }

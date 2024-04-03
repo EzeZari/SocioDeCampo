@@ -11,6 +11,7 @@ namespace Presentacion
 {
     class Validations
     {
+        //Solos Numeros
         public static bool onlyNumbers(KeyPressEventArgs e)
         {
             if (char.IsNumber(e.KeyChar))
@@ -28,6 +29,8 @@ namespace Presentacion
                 return false;
             }
         }
+
+        //Solo Letras
         public static bool onlyLetters(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
@@ -42,42 +45,40 @@ namespace Presentacion
             }
         }
 
-
-        public bool VerificarTextoNoVacio(TextBox textBox)
+        //Texto Vacio
+        public static bool TxtEmpty(GunaTextBox pTxt)
         {
-            if (string.IsNullOrWhiteSpace(textBox.Text))
+            if (pTxt.Text == string.Empty)
             {
-                return false; // El texto está vacío o contiene solo espacios en blanco
+                return true; // Si el texto está vacío, devolver true
             }
             else
             {
-                return true; // El texto no está vacío
+                return false; 
             }
         }
-        
 
-
-
-        public static bool IsEmpty(GunaTextBox currentTextBox, GunaTextBox nextTextBox)
+        //Combobox
+        public static bool ComboBoxEmpty(Guna.UI.WinForms.GunaComboBox comboBox)
         {
-            if (string.IsNullOrWhiteSpace(currentTextBox.Text))
+            if (comboBox.SelectedIndex == -1)
             {
-                currentTextBox.Focus();
                 return true;
             }
             else
             {
-                // Si se proporciona un siguiente TextBox, establecer el foco en él
-                nextTextBox?.Focus();
                 return false;
             }
         }
 
+        //Mails
         public static bool validMail(string pMail)
         {
             return pMail != null && Regex.IsMatch(pMail,
                 @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
+
+
         public static bool passwordSafe(string password)
         {
             bool mayuscula = false, minuscula = false, number = false;

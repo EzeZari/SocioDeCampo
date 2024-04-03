@@ -19,6 +19,8 @@ namespace Presentacion
     public partial class FormRegister : Form
     {
         UserModel objetoCN = new UserModel();
+        static bool error;
+
         public FormRegister()
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace Presentacion
             try
             {
                 // Verificar si el LoginName ya existe en la base de datos
+                
                 if (objetoCN.ConsultLoginName(txtLoginName.Text))
                 {
                     // El LoginName ya existe, mostrar un mensaje de error
@@ -41,11 +44,16 @@ namespace Presentacion
                 {
                     MessageBox.Show("El correo electronico ya está en uso. Por favor, elija otro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else if (error == true)
+                {
+                    MessageBox.Show("Hay errores en los campos de texto. Por favor, corrígelos antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 else
                 {
                     // El Email no existe, proceder con el registro del usuario
                     objetoCN.AddUsuario(txtLoginName.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, txtPosition.Text);
-                    MessageBox.Show("Se insertó correctamente");
+                    MessageBox.Show("Se insertó correctamente","Exito",MessageBoxButtons.OK);
                     this.Close();
                 }
             }
@@ -57,7 +65,10 @@ namespace Presentacion
 
 
         #region Validaciones de los TextBox
+
         //VALIDACIONES
+        ErrorProvider errorPo = new ErrorProvider();
+
         private void fullTxt()
         {
             var vr =
@@ -69,18 +80,18 @@ namespace Presentacion
                    txtPosition.SelectedItem != null;
             btnRegister.Enabled = vr;
         }
+
         // Evento TextChanged para todos los GunaTextBox
         private void txtFull_TextChanged(object sender, EventArgs e)
         {
             fullTxt();
         }
-
-        ErrorProvider errorPo = new ErrorProvider();
-
-        //SOLO LETRAS
+        
+        //Validacion solo LETRAS
         private void OnlyLetters_KeyPress(object sender, KeyPressEventArgs e)
         {
             GunaTextBox gunaTextBox = (GunaTextBox)sender; // Convertir el sender a GunaTextBox
+
             bool valida = Validations.onlyLetters(e);
             if (!valida)
             {
@@ -94,61 +105,64 @@ namespace Presentacion
                 errorPo.Clear();
             }
         }
-
-        public void TextEmpty_(GunaTextBox ptxt, ErrorProvider errorProvider, EventArgs e)
-        {
-            if (ptxt.Text == string.Empty)
-            {
-                errorProvider.SetError(ptxt, "Este campo no puede estar vacío");
-                ptxt.Focus();
-            }
-            else
-            {
-                errorProvider.SetError(ptxt, ""); // Limpiar el error si el campo no está vacío
-            }
-        }
-       
-
-        // Evento Leave para validar si el correo electrónico es válido
+        //Validaciion Mail
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             GunaTextBox txtEmail = (GunaTextBox)sender; // Convertir el sender a GunaTextBox
             if (!Validations.validMail(txtEmail.Text))
             {
                 errorPo.SetError(txtEmail, "Correo no válido");
+                txtEmail.BorderColor = Color.Red;
+                txtEmail.FocusedBorderColor = Color.Red;
+                error = true;
             }
             else
             {
+                txtEmail.BorderColor = Color.FromArgb(232, 233, 234);
+                txtEmail.FocusedBorderColor = Color.Blue;
                 errorPo.Clear();
+                error = false;
             }
         }
-        //private void gunaTextBox_Leave(object sender, EventArgs e)
-        //{
-        //    GunaTextBox gunaTextBox = (GunaTextBox)sender; // Convertir el sender a GunaTextBox
-        //    if (Validations.textEmpty(gunaTextBox))
-        //    {
-        //        errorPo.SetError(gunaTextBox, "No puede estar vacío");
-        //        gunaTextBox.Focus();
-        //    }
-        //    else
-        //    {
-        //        errorPo.Clear();
-        //    }
-        //}
-        // Método para verificar si todos los campos están llenos
+        //Validacion txt Vacios
+       private void TextEmpty_Leave(object sender, EventArgs e)
+        {
+            GunaTextBox textBox = (GunaTextBox)sender; // Convertir el control a GunaTextBox
+            
+            if (Validations.TxtEmpty(textBox))
+            {
+                errorPo.SetError(textBox, "No se puede dejar vacio");
+                textBox.BorderColor = Color.Red;
+                textBox.FocusedBorderColor = Color.Red;
+                error = true;
+            }
+            else
+            {
+                textBox.BorderColor = Color.FromArgb(232, 233, 234);
+                errorPo.Clear();
+                error = false;
 
-        //public void TextVacio()
-        //{
-        //    Validations verificador = new Validations();
-        //    if (verificador.VerificarTextoNoVacio(textBox1.Text))
-        //    {
-        //        // El texto no está vacío, realiza alguna acción aquí
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("El texto está vacío. Por favor ingresa algún valor.");
-        //    }
-        //}
+            }
+        }
+
+        private void ComboBoxEmpty_Leave(object sender, EventArgs e)
+        {
+            Guna.UI.WinForms.GunaComboBox comboBox = (Guna.UI.WinForms.GunaComboBox)sender; // Convertir el control a GunaComboBox
+
+            if (Validations.ComboBoxEmpty(comboBox))
+            {
+                errorPo.SetError(comboBox, "No se puede dejar vacio");
+                comboBox.BorderColor = Color.Red;
+                error = true;
+            }
+            else
+            {
+                comboBox.BorderColor = Color.FromArgb(232, 233, 234);
+                errorPo.Clear();
+                error = false;
+            }
+        }
+
         #endregion
     }
 }

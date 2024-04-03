@@ -21,34 +21,45 @@ namespace Presentacion
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
-                if (txtuser.Text != "Username")
+            // Verificar si se ha ingresado un nombre de usuario
+            if (txtuser.Text != "Usuario")
+            {
+                // Verificar si se ha ingresado una contraseña
+                if (txtpassword.Text != "Contraseña")
                 {
-                    if (txtpassword.Text != "Password") 
-                    {
+                    // Crear una instancia del modelo de usuario
                     UserModel user = new UserModel();
                     var validLogin = user.LoginUser(txtuser.Text, txtpassword.Text);
-                    if(validLogin == true)//Si el inicio de sesion es verdadero mostramos el form principal
+                    // Si el inicio de sesión es exitoso, mostrar el formulario principal
+                    if (validLogin == true)
                     {
                         FormPrincipal mainMenu = new FormPrincipal();
-                        MessageBox.Show("Bienvenido "+UserCache.FirstName + ", "+ UserCache.LastName); //Alerta de bienvenida al iniciar sesion.
-                        mainMenu.Show();  //Mostramos el form principal
+                        MessageBox.Show("Hola de nuevo " + UserCache.FirstName + ", " + UserCache.LastName, "Bienvenido");
+                        mainMenu.Show();
                         mainMenu.FormClosed += Logout;
-                        this.Hide();     //Ocultamos el Login
+                        this.Hide();
                     }
-                    else {
+                    else if (txtuser.Text == "")
+                    {
+                        msgError("Por favor ingresa tu Usuario");
+                    }
+                    else if (txtpassword.Text == "")
+                    {
+                        msgError("Por favor ingresa tu Contraseña");
+                    }
+                    else
+                    {
                         msgError("El usuario o contraseña no son correctos");
-                        txtuser.Text = ""; //Limpiamos el txt user. 
+                        //txtuser.Text = ""; // Limpiamos el txt user. 
+                        txtpassword.Text = ""; // Limpiamos el txt user.
                         txtpassword.Text = "Password";
-                        txtpassword.Focus(); //Te lleva el cursos a txtPassword.
+                        txtpassword.Focus(); // Te lleva el cursor a txtPassword.
                     }
-                
                 }
-                    else msgError("Por favot ingresa tu contraseña");
-                }
-                else msgError(" Por favor ingresa tu Usuario");
             }
-            private void msgError(string msg)
+        }
+
+        private void msgError(string msg)
             {
                 lblErrorMessagge.Text = " " + msg;
                 lblErrorMessagge.Visible = true;
@@ -63,18 +74,22 @@ namespace Presentacion
             //txtuser.Focus();
         }
 
-        private void lblOlvidastePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        #region Botones
+        //Boton ¿Olvidaste tu contraseña?
+        private void lblForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var recoverPassword = new FormRecoverPassword();
             recoverPassword.ShowDialog();
         }
-
+        //Boton Registrarse
         private void lblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var Register = new FormRegister();
             Register.ShowDialog();
         }
 
+        //Boton Ver y Ocultar contraseña
         private void passShow_Click(object sender, EventArgs e)
         {
             passShow.BringToFront();
@@ -90,5 +105,7 @@ namespace Presentacion
             passShow.Visible = true;
             txtpassword.PasswordChar = '*';
         }
+        #endregion
+
     }
 }

@@ -73,22 +73,22 @@
     <Compile Include="FormInicio.Designer.cs">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormJugadores.cs">
+    <Compile Include="Forms Jugadores\FormJugadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormJugadores.Designer.cs">
+    <Compile Include="Forms Jugadores\FormJugadores.Designer.cs">
       <DependentUpon>FormJugadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormJugadoresAdd.cs">
+    <Compile Include="Forms Jugadores\FormJugadoresAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormJugadoresAdd.Designer.cs">
+    <Compile Include="Forms Jugadores\FormJugadoresAdd.Designer.cs">
       <DependentUpon>FormJugadoresAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormJugadoresEdit.cs">
+    <Compile Include="Forms Jugadores\FormJugadoresEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormJugadoresEdit.Designer.cs">
+    <Compile Include="Forms Jugadores\FormJugadoresEdit.Designer.cs">
       <DependentUpon>FormJugadoresEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProfile.cs">
@@ -109,16 +109,16 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRecoverPassword.cs">
+    <Compile Include="Form Register\FormRecoverPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRecoverPassword.Designer.cs">
+    <Compile Include="Form Register\FormRecoverPassword.Designer.cs">
       <DependentUpon>FormRecoverPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegister.cs">
+    <Compile Include="Form Register\FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegister.Designer.cs">
+    <Compile Include="Form Register\FormRegister.Designer.cs">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -130,13 +130,13 @@
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormJugadores.resx">
+    <EmbeddedResource Include="Forms Jugadores\FormJugadores.resx">
       <DependentUpon>FormJugadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormJugadoresAdd.resx">
+    <EmbeddedResource Include="Forms Jugadores\FormJugadoresAdd.resx">
       <DependentUpon>FormJugadoresAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormJugadoresEdit.resx">
+    <EmbeddedResource Include="Forms Jugadores\FormJugadoresEdit.resx">
       <DependentUpon>FormJugadoresEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
@@ -148,10 +148,10 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRecoverPassword.resx">
+    <EmbeddedResource Include="Form Register\FormRecoverPassword.resx">
       <DependentUpon>FormRecoverPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegister.resx">
+    <EmbeddedResource Include="Form Register\FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

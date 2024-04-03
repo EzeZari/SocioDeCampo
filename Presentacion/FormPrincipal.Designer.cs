@@ -32,6 +32,7 @@ namespace Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.btnLogout = new Guna.UI.WinForms.GunaButton();
             this.PanelMenu = new Guna.UI.WinForms.GunaPanel();
+            this.btnPerfil = new Guna.UI.WinForms.GunaButton();
             this.btnPartidos = new Guna.UI.WinForms.GunaButton();
             this.btnEntrenadores = new Guna.UI.WinForms.GunaButton();
             this.btnFinanzas = new Guna.UI.WinForms.GunaButton();
@@ -43,7 +44,6 @@ namespace Presentacion
             this.lblPosition = new Guna.UI.WinForms.GunaLabel();
             this.lblEmail = new Guna.UI.WinForms.GunaLabel();
             this.lblName = new Guna.UI.WinForms.GunaLabel();
-            this.btnPerfil = new Guna.UI.WinForms.GunaButton();
             this.PanelMenu.SuspendLayout();
             this.panelChildFrom.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@ namespace Presentacion
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogout.Location = new System.Drawing.Point(0, 408);
+            this.btnLogout.Location = new System.Drawing.Point(0, 687);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnLogout.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -87,8 +87,33 @@ namespace Presentacion
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(180, 450);
+            this.PanelMenu.Size = new System.Drawing.Size(180, 729);
             this.PanelMenu.TabIndex = 6;
+            // 
+            // btnPerfil
+            // 
+            this.btnPerfil.AnimationHoverSpeed = 0.07F;
+            this.btnPerfil.AnimationSpeed = 0.03F;
+            this.btnPerfil.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPerfil.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnPerfil.BorderColor = System.Drawing.Color.Black;
+            this.btnPerfil.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPerfil.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPerfil.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.ForeColor = System.Drawing.Color.White;
+            this.btnPerfil.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfil.Image")));
+            this.btnPerfil.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPerfil.Location = new System.Drawing.Point(0, 370);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
+            this.btnPerfil.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPerfil.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPerfil.OnHoverImage = null;
+            this.btnPerfil.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPerfil.Size = new System.Drawing.Size(180, 42);
+            this.btnPerfil.TabIndex = 6;
+            this.btnPerfil.Text = "Mi perfil";
+            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
             // 
             // btnPartidos
             // 
@@ -233,7 +258,7 @@ namespace Presentacion
             this.panelChildFrom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildFrom.Location = new System.Drawing.Point(180, 0);
             this.panelChildFrom.Name = "panelChildFrom";
-            this.panelChildFrom.Size = new System.Drawing.Size(620, 450);
+            this.panelChildFrom.Size = new System.Drawing.Size(1170, 729);
             this.panelChildFrom.TabIndex = 7;
             this.panelChildFrom.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildFrom_Paint);
             // 
@@ -277,36 +302,11 @@ namespace Presentacion
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Nombre";
             // 
-            // btnPerfil
-            // 
-            this.btnPerfil.AnimationHoverSpeed = 0.07F;
-            this.btnPerfil.AnimationSpeed = 0.03F;
-            this.btnPerfil.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPerfil.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.btnPerfil.BorderColor = System.Drawing.Color.Black;
-            this.btnPerfil.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPerfil.FocusedColor = System.Drawing.Color.Empty;
-            this.btnPerfil.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerfil.ForeColor = System.Drawing.Color.White;
-            this.btnPerfil.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfil.Image")));
-            this.btnPerfil.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPerfil.Location = new System.Drawing.Point(0, 370);
-            this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
-            this.btnPerfil.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnPerfil.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnPerfil.OnHoverImage = null;
-            this.btnPerfil.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPerfil.Size = new System.Drawing.Size(180, 42);
-            this.btnPerfil.TabIndex = 6;
-            this.btnPerfil.Text = "Mi perfil";
-            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panelChildFrom);
             this.Controls.Add(this.PanelMenu);
             this.MinimumSize = new System.Drawing.Size(816, 489);

@@ -80,7 +80,7 @@ namespace Presentacion
             this.txtuser.PasswordChar = '\0';
             this.txtuser.Size = new System.Drawing.Size(160, 30);
             this.txtuser.TabIndex = 1;
-            this.txtuser.Text = "admin";
+            this.txtuser.Text = "Usuario";
             // 
             // txtpassword
             // 
@@ -96,7 +96,7 @@ namespace Presentacion
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(160, 30);
             this.txtpassword.TabIndex = 2;
-            this.txtpassword.Text = "admin";
+            this.txtpassword.Text = "Contraseña";
             // 
             // lblErrorMessagge
             // 
@@ -119,7 +119,7 @@ namespace Presentacion
             this.lblOlvidastePassword.TabIndex = 6;
             this.lblOlvidastePassword.TabStop = true;
             this.lblOlvidastePassword.Text = "¿Olvidaste tu contraseña?";
-            this.lblOlvidastePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblOlvidastePassword_LinkClicked);
+            this.lblOlvidastePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblForgetPassword_LinkClicked);
             // 
             // lblRegister
             // 
