@@ -34,26 +34,25 @@ namespace Presentacion
             try
             {
                 // Verificar si el LoginName ya existe en la base de datos
-                
-                if (objetoCN.ConsultLoginName(txtLoginName.Text))
+                if (error == true)
+                {
+                    MessageBox.Show("Hay errores en los campos de texto. Por favor, corrígelos antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (objetoCN.ConsultLoginName(txtLoginName.Text))
                 {
                     // El LoginName ya existe, mostrar un mensaje de error
-                    MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (objetoCN.ConsultEmail(txtEmail.Text))
                 {
                     MessageBox.Show("El correo electronico ya está en uso. Por favor, elija otro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (error == true)
-                {
-                    MessageBox.Show("Hay errores en los campos de texto. Por favor, corrígelos antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
                 else
                 {
                     // El Email no existe, proceder con el registro del usuario
                     objetoCN.AddUsuario(txtLoginName.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, txtPosition.Text);
-                    MessageBox.Show("Se insertó correctamente","Exito",MessageBoxButtons.OK);
+                    MessageBox.Show("Se insertó correctamente", "Exito", MessageBoxButtons.OK);
                     this.Close();
                 }
             }
