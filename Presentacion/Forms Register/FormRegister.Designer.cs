@@ -45,6 +45,8 @@ namespace Presentacion
             this.lblCorreoelectronico = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblRepeatPass = new System.Windows.Forms.Label();
+            this.gBoxTxt = new System.Windows.Forms.GroupBox();
+            this.gBoxTxt.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -56,7 +58,7 @@ namespace Presentacion
             this.txtFirstName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtFirstName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFirstName.Location = new System.Drawing.Point(95, 36);
+            this.txtFirstName.Location = new System.Drawing.Point(23, 23);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
             this.txtFirstName.Size = new System.Drawing.Size(160, 30);
@@ -74,7 +76,7 @@ namespace Presentacion
             this.txtLastName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLastName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLastName.Location = new System.Drawing.Point(289, 36);
+            this.txtLastName.Location = new System.Drawing.Point(217, 23);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.PasswordChar = '\0';
             this.txtLastName.Size = new System.Drawing.Size(160, 30);
@@ -92,7 +94,7 @@ namespace Presentacion
             this.txtLoginName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLoginName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLoginName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLoginName.Location = new System.Drawing.Point(95, 114);
+            this.txtLoginName.Location = new System.Drawing.Point(23, 101);
             this.txtLoginName.Name = "txtLoginName";
             this.txtLoginName.PasswordChar = '\0';
             this.txtLoginName.Size = new System.Drawing.Size(160, 30);
@@ -109,7 +111,7 @@ namespace Presentacion
             this.txtEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.Location = new System.Drawing.Point(95, 179);
+            this.txtEmail.Location = new System.Drawing.Point(23, 166);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.Size = new System.Drawing.Size(160, 30);
@@ -131,7 +133,7 @@ namespace Presentacion
             this.txtPosition.Items.AddRange(new object[] {
             "Entrenador",
             "Ayudante de campo"});
-            this.txtPosition.Location = new System.Drawing.Point(95, 260);
+            this.txtPosition.Location = new System.Drawing.Point(23, 247);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPosition.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -149,7 +151,7 @@ namespace Presentacion
             this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPassword.Location = new System.Drawing.Point(289, 179);
+            this.txtPassword.Location = new System.Drawing.Point(217, 166);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.Size = new System.Drawing.Size(160, 30);
@@ -166,7 +168,7 @@ namespace Presentacion
             this.txtPasswordRepeat.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPasswordRepeat.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPasswordRepeat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPasswordRepeat.Location = new System.Drawing.Point(289, 260);
+            this.txtPasswordRepeat.Location = new System.Drawing.Point(217, 247);
             this.txtPasswordRepeat.Name = "txtPasswordRepeat";
             this.txtPasswordRepeat.PasswordChar = '\0';
             this.txtPasswordRepeat.Size = new System.Drawing.Size(160, 30);
@@ -201,7 +203,7 @@ namespace Presentacion
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(92, 20);
+            this.lblName.Location = new System.Drawing.Point(20, 7);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(44, 13);
             this.lblName.TabIndex = 8;
@@ -210,7 +212,7 @@ namespace Presentacion
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(286, 20);
+            this.lblLastName.Location = new System.Drawing.Point(214, 7);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(44, 13);
             this.lblLastName.TabIndex = 9;
@@ -219,7 +221,7 @@ namespace Presentacion
             // lblLoginName
             // 
             this.lblLoginName.AutoSize = true;
-            this.lblLoginName.Location = new System.Drawing.Point(92, 98);
+            this.lblLoginName.Location = new System.Drawing.Point(20, 85);
             this.lblLoginName.Name = "lblLoginName";
             this.lblLoginName.Size = new System.Drawing.Size(98, 13);
             this.lblLoginName.TabIndex = 11;
@@ -228,7 +230,7 @@ namespace Presentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 244);
+            this.label2.Location = new System.Drawing.Point(20, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 12;
@@ -237,7 +239,7 @@ namespace Presentacion
             // lblCorreoelectronico
             // 
             this.lblCorreoelectronico.AutoSize = true;
-            this.lblCorreoelectronico.Location = new System.Drawing.Point(98, 165);
+            this.lblCorreoelectronico.Location = new System.Drawing.Point(26, 152);
             this.lblCorreoelectronico.Name = "lblCorreoelectronico";
             this.lblCorreoelectronico.Size = new System.Drawing.Size(93, 13);
             this.lblCorreoelectronico.TabIndex = 13;
@@ -246,7 +248,7 @@ namespace Presentacion
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(286, 165);
+            this.lblContraseña.Location = new System.Drawing.Point(214, 152);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
             this.lblContraseña.TabIndex = 14;
@@ -255,38 +257,48 @@ namespace Presentacion
             // lblRepeatPass
             // 
             this.lblRepeatPass.AutoSize = true;
-            this.lblRepeatPass.Location = new System.Drawing.Point(286, 244);
+            this.lblRepeatPass.Location = new System.Drawing.Point(214, 231);
             this.lblRepeatPass.Name = "lblRepeatPass";
             this.lblRepeatPass.Size = new System.Drawing.Size(97, 13);
             this.lblRepeatPass.TabIndex = 15;
             this.lblRepeatPass.Text = "Repetir contraseña";
+            // 
+            // gBoxTxt
+            // 
+            this.gBoxTxt.Controls.Add(this.lblRepeatPass);
+            this.gBoxTxt.Controls.Add(this.lblContraseña);
+            this.gBoxTxt.Controls.Add(this.lblCorreoelectronico);
+            this.gBoxTxt.Controls.Add(this.label2);
+            this.gBoxTxt.Controls.Add(this.lblLoginName);
+            this.gBoxTxt.Controls.Add(this.lblLastName);
+            this.gBoxTxt.Controls.Add(this.lblName);
+            this.gBoxTxt.Controls.Add(this.txtPasswordRepeat);
+            this.gBoxTxt.Controls.Add(this.txtPassword);
+            this.gBoxTxt.Controls.Add(this.txtPosition);
+            this.gBoxTxt.Controls.Add(this.txtEmail);
+            this.gBoxTxt.Controls.Add(this.txtLoginName);
+            this.gBoxTxt.Controls.Add(this.txtLastName);
+            this.gBoxTxt.Controls.Add(this.txtFirstName);
+            this.gBoxTxt.Location = new System.Drawing.Point(99, 29);
+            this.gBoxTxt.Name = "gBoxTxt";
+            this.gBoxTxt.Size = new System.Drawing.Size(400, 324);
+            this.gBoxTxt.TabIndex = 16;
+            this.gBoxTxt.TabStop = false;
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblRepeatPass);
-            this.Controls.Add(this.lblContraseña);
-            this.Controls.Add(this.lblCorreoelectronico);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblLoginName);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.gBoxTxt);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.txtPasswordRepeat);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtPosition);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtLoginName);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegister";
             this.Text = "FormRegister";
             this.Load += new System.EventHandler(this.FormRegister_Load);
+            this.gBoxTxt.ResumeLayout(false);
+            this.gBoxTxt.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -307,5 +319,6 @@ namespace Presentacion
         private System.Windows.Forms.Label lblCorreoelectronico;
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblRepeatPass;
+        private System.Windows.Forms.GroupBox gBoxTxt;
     }
 }
