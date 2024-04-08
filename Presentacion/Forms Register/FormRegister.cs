@@ -66,6 +66,43 @@ namespace Presentacion
             }
         }
 
+        private void passwordLogic_TextChanged(object sender, EventArgs e)
+        {
+            GunaTextBox textBox = sender as GunaTextBox; // Convertir el sender a GunaTextBox
+
+            if (textBox != null)
+            {
+                string password = textBox.Text; // Obtener el texto del GunaTextBox
+
+                // Llamar a la función passwordSafe para validar la contraseña
+                bool isPasswordSafe = Validations.passwordSafe(password); // Llama a passwordSafe desde Validations
+
+                if (isPasswordSafe)
+                {
+                    // La contraseña es segura, limpiar cualquier mensaje de error
+                    errorPo.SetError(textBox, ""); // Limpiar mensaje de error si es seguro
+                    textBox.BorderColor = Color.FromArgb(232, 233, 234); // Restaurar color de borde
+                    textBox.FocusedBorderColor = Color.Blue; // Restaurar color de borde enfocado
+                }
+                else
+                {
+                    // La contraseña no es segura, mostrar mensaje de error usando errorPo
+                    errorPo.SetError(textBox, "La contraseña no es segura");
+                    textBox.BorderColor = Color.Red; // Cambiar color de borde a rojo
+                    textBox.FocusedBorderColor = Color.Red; // Cambiar color de borde enfocado a rojo
+                }
+            }
+            else
+            {
+                // El sender no es un GunaTextBox, manejar esta situación según sea necesario
+                Console.WriteLine("Error: El sender no es un GunaTextBox.");
+            }
+        }
+
+
+
+
+
         #region Validaciones de los TextBox
 
         //VALIDACIONES
@@ -101,15 +138,17 @@ namespace Presentacion
             isValid &= !Validations.TxtEmpty(txtLastName);
             isValid &= !Validations.TxtEmpty(txtLoginName);
             isValid &= Validations.validMail(txtEmail.Text);
-            isValid &= !string.IsNullOrEmpty(txtPassword.Text);
-            isValid &= !Validations.ComboBoxEmpty(txtPosition);
+            isValid &= !string.IsNullOrEmpty(txtPassword.Text); // Verificar que la contraseña no esté vacía
+            isValid &= Validations.passwordSafe(txtPassword.Text); // Verificar que la contraseña sea segura
 
+            isValid &= !Validations.ComboBoxEmpty(txtPosition);
 
             // Si alguno de los campos no es válido, establecer el estado de error en true
             error = !isValid;
 
             return isValid;
         }
+
 
         //Validacion solo LETRAS
         private void OnlyLetters_KeyPress(object sender, KeyPressEventArgs e)
@@ -129,6 +168,7 @@ namespace Presentacion
                 errorPo.Clear();
             }
         }
+
         //Validaciion Mail
         private void txtEmail_Leave(object sender, EventArgs e)
         {
@@ -148,6 +188,7 @@ namespace Presentacion
 
             }
         }
+
         //Validacion txt Vacios
         private void TextEmpty_Leave(object sender, EventArgs e)
         {
@@ -181,6 +222,34 @@ namespace Presentacion
                 errorPo.Clear();
             }
         }
+
+        //Contrañas distintas
+        private void txtPasswordRepeat_TextChanged(object sender, EventArgs e)
+        {
+            GunaTextBox textBox = (GunaTextBox)sender; // Convertir el control a GunaTextBox
+
+            // Obtener los textos de los campos de contraseña principal y repetida
+            string password = txtPassword.Text;
+            string repeatPassword = txtPasswordRepeat.Text;
+
+            // Verificar si los textos de las contraseñas no coinciden
+            if (password != repeatPassword)
+            {
+                // Mostrar un mensaje de error usando errorPo en el campo repetido
+                errorPo.SetError(textBox, "Las contraseñas no coinciden");
+                textBox.BorderColor = Color.Red; // Cambiar color de borde a rojo
+                textBox.FocusedBorderColor = Color.Red; // Cambiar color de borde enfocado a rojo
+            }
+            else
+            {
+                // Las contraseñas coinciden, limpiar cualquier mensaje de error
+                errorPo.SetError(textBox, ""); // Limpiar mensaje de error si coinciden
+                textBox.BorderColor = Color.FromArgb(232, 233, 234); // Restaurar color de borde
+                textBox.FocusedBorderColor = Color.Blue; // Restaurar color de borde enfocado
+            }
+        }
         #endregion
+
+
     }
 }

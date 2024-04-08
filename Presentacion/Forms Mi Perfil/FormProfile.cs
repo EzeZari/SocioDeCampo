@@ -14,7 +14,7 @@ namespace Presentacion
 {
     public partial class FormProfile : Form
     {
-        UserModel objeto = new UserModel(); 
+        UserModel objeto = new UserModel();
         private int UserID;
 
         public FormProfile()
@@ -25,20 +25,20 @@ namespace Presentacion
         // Método para cargar los datos del usuario desde UserCache
         private void LoadUserData()
         {
-            txtFirstName.Text = UserCache.FirstName;   
-            txtLastName.Text = UserCache.LastName; 
-            txtLoginName.Text = UserCache.LoginName; 
-            txtEmail.Text = UserCache.Email; 
-            txtPosition.Text = UserCache.Position; 
-            txtPassword.Text = UserCache.Password; 
+            txtFirstName.Text = UserCache.FirstName;
+            txtLastName.Text = UserCache.LastName;
+            txtLoginName.Text = UserCache.LoginName;
+            txtEmail.Text = UserCache.Email;
+            txtPosition.Text = UserCache.Position;
+            txtPassword.Text = UserCache.Password;
             UserID = UserCache.UserID;
         }
         #region Txt ON/OFF
         // Método para habilitar la edición de los campos de texto
         private void TextBoxOn()
         {
-            txtFirstName.Enabled = true; 
-            txtLastName.Enabled = true; 
+            txtFirstName.Enabled = true;
+            txtLastName.Enabled = true;
             txtLoginName.Enabled = true;
             txtEmail.Enabled = true;
             txtPosition.Enabled = true;
@@ -49,12 +49,12 @@ namespace Presentacion
         // Método para deshabilitar la edición de los campos de texto
         private void TextBoxOff()
         {
-            txtFirstName.Enabled = false; 
-            txtLastName.Enabled = false; 
-            txtLoginName.Enabled = false; 
-            txtEmail.Enabled = false; 
-            txtPosition.Enabled = false; 
-            txtPassword.Enabled = false; 
+            txtFirstName.Enabled = false;
+            txtLastName.Enabled = false;
+            txtLoginName.Enabled = false;
+            txtEmail.Enabled = false;
+            txtPosition.Enabled = false;
+            txtPassword.Enabled = false;
             txtPassword.PasswordChar = '*'; // Mostrar asteriscos en campo de contraseña
         }
         #endregion
@@ -85,7 +85,7 @@ namespace Presentacion
                 if (result == DialogResult.Yes)
                 {
                     objeto.EditarUser(txtLoginName.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text, txtPosition.Text, UserID);
-                    MessageBox.Show("Se Editó correctamente tu perfil");
+                    MessageBox.Show("Se Editó correctamente tu perfil","Exito");
                     btnProfileOn(); // Habilitar perfil
                 }
                 else

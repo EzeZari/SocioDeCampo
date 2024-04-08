@@ -156,7 +156,7 @@ namespace Presentacion
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.Size = new System.Drawing.Size(160, 30);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtPassword.TextChanged += new System.EventHandler(this.passwordLogic_TextChanged);
             this.txtPassword.Leave += new System.EventHandler(this.TextEmpty_Leave);
             // 
             // txtPasswordRepeat
@@ -173,7 +173,7 @@ namespace Presentacion
             this.txtPasswordRepeat.PasswordChar = '\0';
             this.txtPasswordRepeat.Size = new System.Drawing.Size(160, 30);
             this.txtPasswordRepeat.TabIndex = 6;
-            this.txtPasswordRepeat.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
+            this.txtPasswordRepeat.TextChanged += new System.EventHandler(this.txtPasswordRepeat_TextChanged);
             this.txtPasswordRepeat.Leave += new System.EventHandler(this.TextEmpty_Leave);
             // 
             // btnRegister

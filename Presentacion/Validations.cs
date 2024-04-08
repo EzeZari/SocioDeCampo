@@ -78,29 +78,46 @@ namespace Presentacion
                 @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
 
-
+        //Contraseña
         public static bool passwordSafe(string password)
+{
+    // Verificar si la contraseña contiene espacios en blanco
+    if (password.Contains(" "))
+    {
+        return false; // La contraseña contiene espacios en blanco, no es segura
+    }
+
+    // Variables para verificar la presencia de mayúsculas, minúsculas y dígitos
+    bool mayuscula = false, minuscula = false, number = false;
+
+    // Verificar cada carácter de la contraseña
+    for (int i = 0; i < password.Length; i++)
+    {
+        char currentChar = password[i];
+
+        if (char.IsUpper(currentChar))
         {
-            bool mayuscula = false, minuscula = false, number = false;
-            for(int i =0; i<password.Length; i++)
-            if (char.IsUpper(password, i))
-            {
-                    mayuscula = true;
-            }
-            else if (char.IsLower(password, i))
-            {
-                    minuscula = true;
-            }
-            else if (char.IsDigit(password, i))
-            {
-                    number = true;
-            }
-            if(mayuscula && minuscula && number && password.Length >= 8)
-            {
-                return true;
-            }
-            return false;
+            mayuscula = true;
         }
+        else if (char.IsLower(currentChar))
+        {
+            minuscula = true;
+        }
+        else if (char.IsDigit(currentChar))
+        {
+            number = true;
+        }
+    }
+
+    // Verificar todas las condiciones para determinar si la contraseña es segura
+    if (mayuscula && minuscula && number && password.Length >= 8)
+    {
+        return true; // La contraseña cumple con todos los criterios de seguridad
+    }
+
+    return false; // La contraseña no es segura
+}
+
 
         private void txtFull_TextChanged(object sender, EventArgs e)
         {
