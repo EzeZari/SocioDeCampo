@@ -81,6 +81,7 @@ namespace Presentacion
             this.txtuser.Size = new System.Drawing.Size(160, 30);
             this.txtuser.TabIndex = 1;
             this.txtuser.Text = "Usuario";
+            this.txtuser.Enter += new System.EventHandler(this.clearTxt_Enter);
             // 
             // txtpassword
             // 
@@ -97,6 +98,7 @@ namespace Presentacion
             this.txtpassword.Size = new System.Drawing.Size(160, 30);
             this.txtpassword.TabIndex = 2;
             this.txtpassword.Text = "Contraseña";
+            this.txtpassword.Enter += new System.EventHandler(this.clearTxt_Enter);
             // 
             // lblErrorMessagge
             // 

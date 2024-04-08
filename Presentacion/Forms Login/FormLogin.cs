@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
 using Common.Cache;
+using Guna.UI.WinForms;
 
 namespace Presentacion
 {
@@ -60,10 +61,10 @@ namespace Presentacion
         }
 
         private void msgError(string msg)
-            {
-                lblErrorMessagge.Text = " " + msg;
-                lblErrorMessagge.Visible = true;
-            }
+        {
+            lblErrorMessagge.Text = " " + msg;
+            lblErrorMessagge.Visible = true;
+        }
         private void Logout(object sender, FormClosedEventArgs e)
         {
             txtpassword.Text = "Password";
@@ -74,6 +75,17 @@ namespace Presentacion
             //txtuser.Focus();
         }
 
+        //Vaciar el textbox al hacer Click 
+        private void clearTxt_Enter(object sender, EventArgs e)
+        {
+            if (sender is Guna.UI.WinForms.GunaTextBox textBox)
+            {
+                if (textBox.Text == "Usuario" || textBox.Text == "Contraseña")
+                {
+                    textBox.Text = "";  // Establecer el texto del GunaTextBox como una cadena vacía al entrar en el control
+                }
+            }
+        }
 
         #region Botones
         //Boton ¿Olvidaste tu contraseña?
@@ -106,6 +118,5 @@ namespace Presentacion
             txtpassword.PasswordChar = '*';
         }
         #endregion
-
     }
 }

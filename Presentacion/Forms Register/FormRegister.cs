@@ -41,7 +41,7 @@ namespace Presentacion
                 // Verificar si el LoginName ya existe en la base de datos
                 else if (objetoCN.ConsultLoginName(txtLoginName.Text))
                 {
-                    
+
                     MessageBox.Show("El nombre de usuario ya está en uso. Por favor, elija otro.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (objetoCN.ConsultEmail(txtEmail.Text))
@@ -69,7 +69,7 @@ namespace Presentacion
         #region Validaciones de los TextBox
 
         //VALIDACIONES
-        
+
         // btn escondido, hasta que se completen todos los espacios vacios.
         //private void fullTxt()
         //{
@@ -138,21 +138,21 @@ namespace Presentacion
                 errorPo.SetError(txtEmail, "Correo no válido");
                 txtEmail.BorderColor = Color.Red;
                 txtEmail.FocusedBorderColor = Color.Red;
-                
+
             }
             else
             {
                 txtEmail.BorderColor = Color.FromArgb(232, 233, 234);
                 txtEmail.FocusedBorderColor = Color.Blue;
                 errorPo.Clear();
-               
+
             }
         }
         //Validacion txt Vacios
-       private void TextEmpty_Leave(object sender, EventArgs e)
+        private void TextEmpty_Leave(object sender, EventArgs e)
         {
             GunaTextBox textBox = (GunaTextBox)sender; // Convertir el control a GunaTextBox
-            
+
             if (Validations.TxtEmpty(textBox))
             {
                 errorPo.SetError(textBox, "No se puede dejar vacio");
