@@ -7,6 +7,7 @@ C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\DataAccess\obj\Debug\DataAc
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\DataAccess\bin\Debug\Common.dll
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\DataAccess\bin\Debug\Common.pdb
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+<<<<<<< Updated upstream
 C:\Users\Maximo\Desktop\SocioDeCampo-Backend\DataAccess\bin\Debug\DataAccess.dll
 C:\Users\Maximo\Desktop\SocioDeCampo-Backend\DataAccess\bin\Debug\DataAccess.pdb
 C:\Users\Maximo\Desktop\SocioDeCampo-Backend\DataAccess\bin\Debug\Common.dll
@@ -16,3 +17,14 @@ C:\Users\Maximo\Desktop\SocioDeCampo-Backend\DataAccess\obj\Debug\DataAccess.csp
 C:\Users\Maximo\Desktop\SocioDeCampo-Backend\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 C:\Users\Maximo\Desktop\SocioDeCampo-Backend\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Maximo\Desktop\SocioDeCampo-Backend\DataAccess\obj\Debug\DataAccess.pdb
+=======
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\bin\Debug\Common.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\bin\Debug\Common.pdb
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\DataAccess\obj\Debug\DataAccess.pdb
+>>>>>>> Stashed changes

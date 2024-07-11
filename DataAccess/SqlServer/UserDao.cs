@@ -16,7 +16,11 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
+<<<<<<< Updated upstream
                 connection.Open();//Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+=======
+               // connection.Open(); // Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+>>>>>>> Stashed changes
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -51,8 +55,14 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
+<<<<<<< Updated upstream
                 connection.Open();
                 using (var command = new SqlCommand()) //Instanciamos al comando sql
+=======
+                //connection.Open();
+
+                using (var command = new SqlCommand()) // Instanciamos al comando sql
+>>>>>>> Stashed changes
                 {
                     command.Connection = connection; //Especificamos la conexion al comando.
                     command.CommandText = "select *from Users where LoginName=@user or Email=@mail"; //Seleccionamos td de la tabla User (Lo puede soliciar mediante correo o User )
@@ -97,6 +107,184 @@ namespace DataAccess
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        #endregion
+
+        #region Mostrar, Añadir, Editar y Eliminar Jugador
+        SqlDataReader leer;
+        DataTable tabla = new DataTable();      // Agregamos
+        SqlCommand comando = new SqlCommand(); // Para ejecutar instrucciones o procedimientos almacenados.
+
+        public DataTable Mostrar() // Mostrar registros de tabla Jugadores
+        {
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open(); // Abrimos la conexión
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "MostrarJugadores"; // Usamos el procedimiento almacenado
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        using (var leer = command.ExecuteReader())
+                        {
+                            var tabla = new DataTable();
+                            tabla.Load(leer); // Nuestra tabla será rellenada con el resultado del DataReader.
+                            return tabla;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar excepción
+                // Por ejemplo, puedes registrar el error o mostrar un mensaje
+                Console.WriteLine("Error: " + ex.Message);
+                return null;
+            }
+        }
+
+
+
+        public void AddJugador(string Name, string LastName, string Birthdate, string Nationality, string Position)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "InsertarJugador"; //Remplazamos esto por lo de abajo.
+                    //"insert into Jugadores values ('" + Name + "','" + LastName + "','" + Brithdate + "','" + Nationality + "','" + Position + "') ";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Name", Name);
+                    command.Parameters.AddWithValue("@LastName", LastName);
+                    command.Parameters.AddWithValue("@Birthdate", Birthdate);
+                    command.Parameters.AddWithValue("@Nationality", Nationality);
+                    command.Parameters.AddWithValue("@Position", Position);
+                    command.ExecuteNonQuery();
+
+                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+                    //Y asi reutilizamos el mismo "Command" y no creamos uno nuevo.
+
+                }
+                
+            }
+
+        }
+
+        public void Editar(string Name, string LastName, string Birthdate, string Nationality, string Position, int idJugador)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "EditarJugador"; 
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@Name", Name);
+                    command.Parameters.AddWithValue("@LastName", LastName);
+                    command.Parameters.AddWithValue("@Birthdate", Birthdate);
+                    command.Parameters.AddWithValue("@Nationality", Nationality);
+                    command.Parameters.AddWithValue("@Position", Position);
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+                    command.ExecuteNonQuery();
+
+                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+                }
+            }
+        }
+
+        public void Eliminar(int idJugador) {
+
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection; //Abrimos la conexion
+                    command.CommandText = "EliminarJugador";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idJugador", idJugador);
+                    command.ExecuteNonQuery();
+
+                    command.Parameters.Clear();
+                }
+
+            }
+        }
+        #endregion
+
+
+        public void EditarDatosPerfil(string LoginName, string FirstName, string LastName, string Email, string Password,string Position, int UserID)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "EditarUsuario";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@LoginName", LoginName);
+                    command.Parameters.AddWithValue("@FirstName", FirstName);
+                    command.Parameters.AddWithValue("@LastName", LastName);
+                    command.Parameters.AddWithValue("@Email", Email);
+                    command.Parameters.AddWithValue("@Password", Password);
+                    command.Parameters.AddWithValue("@Position", Position);
+                    command.Parameters.AddWithValue("@UserID", UserID);
+                    command.ExecuteNonQuery();
+
+                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+                }
+            }
+        }
+
+        public bool ConsultLoginName(string LoginName)
+        {
+            bool loginNameExists = false;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "ConsultLoginName";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@LoginName", LoginName);
+                    int count = (int)command.ExecuteScalar();
+                    loginNameExists = (count > 0);
+                }
+            }
+            return loginNameExists;
+        }
+        public bool ConsultEmail(string Email)
+        {
+            bool emailExists = false;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "ConsultEmail";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Email", Email);
+                    int count = (int)command.ExecuteScalar();
+                    emailExists = (count > 0);
+                }
+            }
+            return emailExists;
+        }
+
+>>>>>>> Stashed changes
 
         public void AnyMethod()
         {
