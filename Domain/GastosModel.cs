@@ -30,6 +30,15 @@ namespace Domain
         {
             gastosDao.EliminarGasto(idGasto);
         }
+
+         public DataTable FiltrarGasto(DateTime fechainicio, DateTime fechafinal)
+        {
+            DataTable tabla = new DataTable();
+            tabla = gastosDao.FiltrarGasto (fechainicio , fechafinal);
+            return tabla;
+        }
+
+
     }
 
 

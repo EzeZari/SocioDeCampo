@@ -152,6 +152,7 @@ namespace Presentacion
             this.DTPFechaHasta.Name = "DTPFechaHasta";
             this.DTPFechaHasta.Size = new System.Drawing.Size(200, 22);
             this.DTPFechaHasta.TabIndex = 4;
+            this.DTPFechaHasta.ValueChanged += new System.EventHandler(this.DTPFechaHasta_ValueChanged);
             // 
             // btnAgregar
             // 

@@ -11,12 +11,12 @@ namespace DataAccess
  
     {
         private readonly string connectionString;
-<<<<<<< Updated upstream
-        public ConnectionToSQL() {
-=======
+
+        
+
         public ConnectionToSQL()
         {
->>>>>>> Stashed changes
+
             connectionString = "server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security= true";
         }
         protected SqlConnection GetConnection()

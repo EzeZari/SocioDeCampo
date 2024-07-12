@@ -48,7 +48,7 @@ namespace DataAccess.SqlServer
             {
                 using (var connection = GetConnection())
                 {
-                     //connection.Open(); // Abrimos la conexión
+                    //connection.Open(); // Abrimos la conexión
 
                     using (var command = new SqlCommand())
                     {
@@ -87,6 +87,8 @@ namespace DataAccess.SqlServer
                         command.Parameters.AddWithValue("@idGasto", idGasto);
                         command.CommandType = CommandType.Text;
                         command.ExecuteNonQuery(); // Ejecuta la consulta
+
+
                     }
                 }
             }
@@ -95,6 +97,42 @@ namespace DataAccess.SqlServer
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
+
+
+        public DataTable FiltrarGasto( DateTime fechainicio , DateTime fechafinal )
+        {
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT FROM dbo.gastos WHERE Fecha BETWEEN @Fechainicio AND @Fechafinal ";
+                        command.Parameters.AddWithValue("@Fechainicio", fechainicio);
+                        command.Parameters.AddWithValue("@Fechafinal", fechafinal);
+                        command.CommandType = CommandType.Text;
+                        command.ExecuteNonQuery(); // Ejecuta la consulta
+
+
+                        using (var leer = command.ExecuteReader())
+                        {
+                            var tabla = new DataTable();
+                            tabla.Load(leer); // Nuestra tabla será rellenada con el resultado del DataReader.
+                            return tabla;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var tabla = new DataTable();
+             
+                return tabla;
+            }
+        }
+
+
     }
 
 

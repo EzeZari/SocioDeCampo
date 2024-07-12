@@ -99,10 +99,21 @@ namespace Presentacion
             }
         }
 
+        private void DTPFechaHasta_ValueChanged(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                DateTime fechainicio = DTPFcheDesde.Value;
+                DateTime fechafinal = DTPFechaHasta.Value;
+                dgvDatos.DataSource = gatosModel.FiltrarGasto(fechainicio, fechafinal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
-
-
-
+        }
     }
 }
 

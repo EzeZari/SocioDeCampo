@@ -59,12 +59,6 @@ C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\P
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Common.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Domain.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Microsoft.ReportViewer.Common.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Microsoft.ReportViewer.Design.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\DataAccess.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\EnvDTE.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll

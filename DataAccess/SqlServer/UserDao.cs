@@ -16,11 +16,11 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
-<<<<<<< Updated upstream
-                connection.Open();//Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
-=======
+
+          
+
                // connection.Open(); // Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
->>>>>>> Stashed changes
+
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -55,14 +55,11 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
-<<<<<<< Updated upstream
-                connection.Open();
-                using (var command = new SqlCommand()) //Instanciamos al comando sql
-=======
+
                 //connection.Open();
 
                 using (var command = new SqlCommand()) // Instanciamos al comando sql
->>>>>>> Stashed changes
+
                 {
                     command.Connection = connection; //Especificamos la conexion al comando.
                     command.CommandText = "select *from Users where LoginName=@user or Email=@mail"; //Seleccionamos td de la tabla User (Lo puede soliciar mediante correo o User )
@@ -107,9 +104,8 @@ namespace DataAccess
             }
         }
 
-<<<<<<< Updated upstream
-=======
-        #endregion
+
+    
 
         #region Mostrar, Añadir, Editar y Eliminar Jugador
         SqlDataReader leer;
@@ -284,7 +280,7 @@ namespace DataAccess
             return emailExists;
         }
 
->>>>>>> Stashed changes
+
 
         public void AnyMethod()
         {
