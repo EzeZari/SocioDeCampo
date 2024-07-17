@@ -9,3 +9,14 @@ C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\obj\Debug\Domain.dll
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\obj\Debug\Domain.pdb
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\bin\Debug\Common.dll
 C:\Users\NATALIA\Desktop\Socio de Campo\ConectionSQL\Domain\bin\Debug\Common.pdb
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\bin\Debug\Domain.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\bin\Debug\Domain.pdb
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\bin\Debug\Common.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\bin\Debug\DataAccess.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\bin\Debug\Common.pdb
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\bin\Debug\DataAccess.pdb
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\obj\Debug\Domain.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Domain\obj\Debug\Domain.pdb
