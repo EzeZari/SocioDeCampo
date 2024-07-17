@@ -17,7 +17,7 @@ namespace DataAccess.SqlServer
         {
             using (var connection = GetConnection())
             {
-                //connection.Open(); // Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable//
+                connection.Open(); // Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable//
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -48,7 +48,7 @@ namespace DataAccess.SqlServer
             {
                 using (var connection = GetConnection())
                 {
-                    //connection.Open(); // Abrimos la conexión
+                    connection.Open(); // Abrimos la conexión
 
                     using (var command = new SqlCommand())
                     {
@@ -78,8 +78,9 @@ namespace DataAccess.SqlServer
         {
             try
             {
-                using (var connection = GetConnection())
+                using (var connection = GetConnection()) 
                 {
+                    connection.Open(); // Abrimos la conexión
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
@@ -105,10 +106,14 @@ namespace DataAccess.SqlServer
             {
                 using (var connection = GetConnection())
                 {
+                    connection.Open(); // Abrimos la conexión
+
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT FROM dbo.gastos WHERE Fecha BETWEEN @Fechainicio AND @Fechafinal ";
+                        command.CommandText = "SELECT * FROM Gastos WHERE fecha BETWEEN CONVERT(DATETIME, @Fechainicio, 120) AND CONVERT(DATETIME, @Fechafinal, 120)";
+
+
                         command.Parameters.AddWithValue("@Fechainicio", fechainicio);
                         command.Parameters.AddWithValue("@Fechafinal", fechafinal);
                         command.CommandType = CommandType.Text;

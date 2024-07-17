@@ -51,31 +51,21 @@ namespace Presentacion
             // 
             // CbTipoGasto
             // 
+            this.CbTipoGasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbTipoGasto.FormattingEnabled = true;
             this.CbTipoGasto.Items.AddRange(new object[] {
             "Sueldos de jugadores ",
-            "",
             "Alquiler de instalaciones",
-            "",
             "Compra de uniformes",
-            "",
             "Transporte para partidos",
-            "",
             "Costos administrativos",
-            "",
             "Publicidad",
-            " ",
             "Inscripciones a torneos",
-            "",
             "Atención médica",
-            "",
             "Multas y sanciones",
-            "",
             "Mantenimiento de instalaciones",
             "Compra de balones",
-            "",
             "Alojamiento para jugadores y staff",
-            "",
             "Renovaciones y mejoras"});
             this.CbTipoGasto.Location = new System.Drawing.Point(127, 25);
             this.CbTipoGasto.Name = "CbTipoGasto";
