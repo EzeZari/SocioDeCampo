@@ -109,5 +109,23 @@ namespace Presentacion
         {
 
         }
+
+        private void btnGenerarPDF_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DataTable filteredData = (DataTable)dgvDatos.DataSource;
+                Forms_Reporte reporte = new Forms_Reporte();
+                reporte.SetData(filteredData);
+                reporte.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
     }
 }

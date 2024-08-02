@@ -80,6 +80,7 @@ namespace Presentacion
             this.txtCantidad.TabIndex = 2;
             this.txtCantidad.Text = "0";
             this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // TBnota
             // 

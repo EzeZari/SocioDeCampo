@@ -63,8 +63,6 @@ C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\p
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANS\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANT\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
@@ -75,8 +73,6 @@ C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\p
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANS\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
@@ -87,8 +83,6 @@ C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\p
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANS\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANT\Microsoft.ReportViewer.Design.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
@@ -99,8 +93,6 @@ C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\p
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormFinanzas.resources
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormInicio.resources
@@ -120,3 +112,10 @@ C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\P
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\Presentacion.AgregarGasto.resources
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\itextsharp.dll
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\bin\Debug\itextsharp.xml
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\Presentacion.Forms_Reporte.resources
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\RdlCompile.cache
+C:\Users\Maximo\Desktop\Socio de Campo 2.0\SocioDeCampo\Presentacion\obj\Debug\RdlCompile.compiled

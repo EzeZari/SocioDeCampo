@@ -39,17 +39,25 @@ namespace Presentacion
             GastosCache gastos = new GastosCache();
             gastos.tipo_de_gasto = CbTipoGasto.Text;
             gastos.cantidad = decimal.Parse(txtCantidad.Text);
-            gastos.fecha = dateTimePickerGasto.Value.Date;
+            gastos.fecha = dateTimePickerGasto.Value.Date; // Solo la fecha, sin la hora
             gastos.nota = TBnota.Text;
 
-            //formFinanzas.AgregarGasto(CbTipoGasto.Text, double.Parse(txtCantidad.Text), dateTimePickerGasto.Value.Date, TBnota.Text);
             gastosModel.CrearGasto(gastos);
             MessageBox.Show("insertado correctamente");
-
 
             GastoAgregado?.Invoke(this, EventArgs.Empty);
 
             this.Close();
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("solo numeros", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

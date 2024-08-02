@@ -37,6 +37,7 @@ namespace Presentacion
             this.DTPFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
+            this.btnGenerarReportes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +112,7 @@ namespace Presentacion
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(688, 438);
+            this.BtnEliminar.Location = new System.Drawing.Point(146, 438);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(105, 37);
             this.BtnEliminar.TabIndex = 7;
@@ -119,12 +120,23 @@ namespace Presentacion
             this.BtnEliminar.UseVisualStyleBackColor = true;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click_1);
             // 
+            // btnGenerarReportes
+            // 
+            this.btnGenerarReportes.Location = new System.Drawing.Point(627, 438);
+            this.btnGenerarReportes.Name = "btnGenerarReportes";
+            this.btnGenerarReportes.Size = new System.Drawing.Size(143, 37);
+            this.btnGenerarReportes.TabIndex = 8;
+            this.btnGenerarReportes.Text = "GenerarReporte";
+            this.btnGenerarReportes.UseVisualStyleBackColor = true;
+            this.btnGenerarReportes.Click += new System.EventHandler(this.btnGenerarPDF_Click);
+            // 
             // FormFinanzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(805, 506);
+            this.Controls.Add(this.btnGenerarReportes);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.DTPFechaHasta);
@@ -153,5 +165,6 @@ namespace Presentacion
         private System.Windows.Forms.DateTimePicker DTPFechaHasta;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button BtnEliminar;
+        private System.Windows.Forms.Button btnGenerarReportes;
     }
 }
