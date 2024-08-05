@@ -19,8 +19,17 @@ namespace Presentacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'MyCompanyDataSet1.Jugadores' Puede moverla o quitarla según sea necesario.
+            this.JugadoresTableAdapter.Fill(this.MyCompanyDataSet1.Jugadores);
+            // TODO: esta línea de código carga datos en la tabla 'MyCompanyDataSet.gastos' Puede moverla o quitarla según sea necesario.
+            this.gastosTableAdapter.Fill(this.MyCompanyDataSet.gastos);
 
             this.reportViewer1.RefreshReport();
         }
+
+
+
     }
+
+
 }
