@@ -118,5 +118,10 @@ namespace Presentacion
             txtpassword.PasswordChar = '*';
         }
         #endregion
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
