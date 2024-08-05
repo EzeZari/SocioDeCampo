@@ -85,6 +85,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormRepJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRepJugadores.Designer.cs">
+      <DependentUpon>FormRepJugadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms AgregarGasto\AgregarGasto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validations.cs" />
+    <EmbeddedResource Include="FormRepJugadores.resx">
+      <DependentUpon>FormRepJugadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms AgregarGasto\AgregarGasto.resx">
       <DependentUpon>AgregarGasto.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +231,7 @@
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportJugadores.rdlc" />
     <None Include="MyCompanyDataSet.xsc">
       <DependentUpon>MyCompanyDataSet.xsd</DependentUpon>
     </None>

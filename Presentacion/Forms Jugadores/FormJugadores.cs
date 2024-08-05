@@ -123,5 +123,11 @@ namespace Presentacion
             txtNationality.Text = "";
             txtPositionJug.Text = "";
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            FormRepJugadores reporte = new FormRepJugadores();
+            reporte.ShowDialog();
+        }
     }
 }
