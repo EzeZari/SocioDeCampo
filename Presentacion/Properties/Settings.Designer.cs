@@ -26,7 +26,7 @@ namespace Presentacion.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC-ZARI;Initial Catalog=MyCompany;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-UJ1RQKI3;Initial Catalog=MyCompany;Integrated Security=True")]
         public string MyCompanyConnectionString {
             get {
                 return ((string)(this["MyCompanyConnectionString"]));
