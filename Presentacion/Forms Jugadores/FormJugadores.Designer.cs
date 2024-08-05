@@ -40,6 +40,7 @@ namespace Presentacion
             this.btnEditar = new Guna.UI.WinForms.GunaButton();
             this.btnEliminar = new Guna.UI.WinForms.GunaButton();
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
+            this.btnInforme = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,12 +227,37 @@ namespace Presentacion
             this.btnAdd.Text = "Agregar";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnInforme
+            // 
+            this.btnInforme.AnimationHoverSpeed = 0.07F;
+            this.btnInforme.AnimationSpeed = 0.03F;
+            this.btnInforme.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnInforme.BorderColor = System.Drawing.Color.Black;
+            this.btnInforme.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnInforme.FocusedColor = System.Drawing.Color.Empty;
+            this.btnInforme.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnInforme.ForeColor = System.Drawing.Color.White;
+            this.btnInforme.Image = ((System.Drawing.Image)(resources.GetObject("btnInforme.Image")));
+            this.btnInforme.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnInforme.Location = new System.Drawing.Point(446, 464);
+            this.btnInforme.Name = "btnInforme";
+            this.btnInforme.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnInforme.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnInforme.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnInforme.OnHoverImage = null;
+            this.btnInforme.OnPressedColor = System.Drawing.Color.Black;
+            this.btnInforme.Size = new System.Drawing.Size(160, 42);
+            this.btnInforme.TabIndex = 12;
+            this.btnInforme.Text = "Informe";
+            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
+            // 
             // FormJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(876, 543);
+            this.Controls.Add(this.btnInforme);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -261,5 +287,6 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnEditar;
         private Guna.UI.WinForms.GunaButton btnEliminar;
         private Guna.UI.WinForms.GunaButton btnAdd;
+        private Guna.UI.WinForms.GunaButton btnInforme;
     }
 }

@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class Reporte : Form
+    public partial class FormReport : Form
     {
-        public Reporte()
+        public FormReport()
         {
             InitializeComponent();
         }
 
-        private void Reporte_Load(object sender, EventArgs e)
+        private void FormInforme_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'MyCompanyDataSet.Jugadores' Puede moverla o quitarla según sea necesario.
+            this.JugadoresTableAdapter.Fill(this.MyCompanyDataSet.Jugadores);
 
             this.reportViewer1.RefreshReport();
         }
