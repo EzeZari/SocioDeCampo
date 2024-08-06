@@ -48,33 +48,6 @@ namespace Presentacion
         }
 
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
-        {
-            AgregarGasto agregarGasto = new AgregarGasto();
-            agregarGasto.GastoAgregado += (s, args) =>
-            {
-                // Actualizar el DataGridView con los gastos actualizados
-                dgvDatos.DataSource = gatosModel.Mostrargastos();
-                Mostrargastos();
-            };
-            agregarGasto.ShowDialog();
-        }
-
-        private void BtnEliminar_Click_1(object sender, EventArgs e)
-        {
-            if (idGasto != 0)
-            {
-
-                gatosModel.EliminarGasto(idGasto);
-                MessageBox.Show("Gasto eliminado correctamente.");
-                dgvDatos.DataSource = gatosModel.Mostrargastos();
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona una fila para eliminar.");
-            }
-        }
-
         private void dgvDatos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -113,6 +86,37 @@ namespace Presentacion
         private void btnGenerarPDF_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarGasto agregarGasto = new AgregarGasto();
+            agregarGasto.GastoAgregado += (s, args) =>
+            {
+                // Actualizar el DataGridView con los gastos actualizados
+                dgvDatos.DataSource = gatosModel.Mostrargastos();
+                Mostrargastos();
+            };
+            agregarGasto.ShowDialog();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (idGasto != 0)
+            {
+
+                gatosModel.EliminarGasto(idGasto);
+                MessageBox.Show("Gasto eliminado correctamente.");
+                dgvDatos.DataSource = gatosModel.Mostrargastos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.");
+            }
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
             try
             {
                 DataTable filteredData = (DataTable)dgvDatos.DataSource;
@@ -124,8 +128,6 @@ namespace Presentacion
             {
                 MessageBox.Show("Ocurrió un error al generar el reporte: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
     }
 }

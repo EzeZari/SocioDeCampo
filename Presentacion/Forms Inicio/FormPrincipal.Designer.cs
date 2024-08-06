@@ -32,6 +32,7 @@ namespace Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.btnLogout = new Guna.UI.WinForms.GunaButton();
             this.PanelMenu = new Guna.UI.WinForms.GunaPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPerfil = new Guna.UI.WinForms.GunaButton();
             this.btnPartidos = new Guna.UI.WinForms.GunaButton();
             this.btnEntrenadores = new Guna.UI.WinForms.GunaButton();
@@ -39,20 +40,19 @@ namespace Presentacion
             this.btnJugadores = new Guna.UI.WinForms.GunaButton();
             this.btnInicio = new Guna.UI.WinForms.GunaButton();
             this.PanelLogo = new Guna.UI.WinForms.GunaPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChildFrom = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblName = new Guna.UI.WinForms.GunaLabel();
-            this.lblEmail = new Guna.UI.WinForms.GunaLabel();
-            this.lblPosition = new Guna.UI.WinForms.GunaLabel();
             this.lblLastName = new Guna.UI.WinForms.GunaLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblPosition = new Guna.UI.WinForms.GunaLabel();
+            this.lblEmail = new Guna.UI.WinForms.GunaLabel();
+            this.lblName = new Guna.UI.WinForms.GunaLabel();
             this.PanelMenu.SuspendLayout();
             this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelChildFrom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -97,6 +97,14 @@ namespace Presentacion
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(180, 729);
             this.PanelMenu.TabIndex = 6;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(12, 639);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(150, 2);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
             // 
             // btnPerfil
             // 
@@ -259,6 +267,24 @@ namespace Presentacion
             this.PanelLogo.Size = new System.Drawing.Size(180, 80);
             this.PanelLogo.TabIndex = 0;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(12, 78);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(150, 2);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 79);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panelChildFrom
             // 
             this.panelChildFrom.BackColor = System.Drawing.Color.White;
@@ -287,29 +313,17 @@ namespace Presentacion
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // lblName
+            // lblLastName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(17, 521);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 15);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "Nombre";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(17, 491);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(36, 15);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "Email";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
+            this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblLastName.ForeColor = System.Drawing.Color.White;
+            this.lblLastName.Location = new System.Drawing.Point(17, 386);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(51, 15);
+            this.lblLastName.TabIndex = 3;
+            this.lblLastName.Text = "Apellido";
             // 
             // lblPosition
             // 
@@ -323,43 +337,29 @@ namespace Presentacion
             this.lblPosition.TabIndex = 5;
             this.lblPosition.Text = "Puesto";
             // 
-            // lblLastName
+            // lblEmail
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
-            this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblLastName.ForeColor = System.Drawing.Color.White;
-            this.lblLastName.Location = new System.Drawing.Point(17, 386);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(51, 15);
-            this.lblLastName.TabIndex = 3;
-            this.lblLastName.Text = "Apellido";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(17, 491);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(36, 15);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email";
             // 
-            // pictureBox2
+            // lblName
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(167, 79);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(12, 639);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(150, 2);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(12, 78);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(150, 2);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(17, 521);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(51, 15);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Nombre";
             // 
             // FormPrincipal
             // 
@@ -368,16 +368,17 @@ namespace Presentacion
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panelChildFrom);
             this.Controls.Add(this.PanelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "FormPrincipal";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.PanelMenu.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChildFrom.ResumeLayout(false);
             this.panelChildFrom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

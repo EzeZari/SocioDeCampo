@@ -29,7 +29,6 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProfile));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,50 +44,57 @@ namespace Presentacion
             this.btnEditProfile = new Guna.UI.WinForms.GunaButton();
             this.btnConfirm = new Guna.UI.WinForms.GunaButton();
             this.btnCancel = new Guna.UI.WinForms.GunaButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 193);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(171, 272);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(138, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre de Usuario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 110);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(165, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(62, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(447, 110);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(685, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(59, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Apellido";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(447, 193);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(685, 272);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.Size = new System.Drawing.Size(134, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Correo Electronico";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(447, 264);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(685, 348);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.Size = new System.Drawing.Size(85, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Contraseña";
             // 
@@ -102,11 +108,11 @@ namespace Presentacion
             this.txtFirstName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtFirstName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFirstName.Location = new System.Drawing.Point(107, 126);
+            this.txtFirstName.Location = new System.Drawing.Point(168, 210);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
-            this.txtFirstName.Size = new System.Drawing.Size(160, 30);
-            this.txtFirstName.TabIndex = 5;
+            this.txtFirstName.Size = new System.Drawing.Size(348, 30);
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtLoginName
             // 
@@ -118,11 +124,11 @@ namespace Presentacion
             this.txtLoginName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLoginName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLoginName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLoginName.Location = new System.Drawing.Point(107, 209);
+            this.txtLoginName.Location = new System.Drawing.Point(168, 293);
             this.txtLoginName.Name = "txtLoginName";
             this.txtLoginName.PasswordChar = '\0';
-            this.txtLoginName.Size = new System.Drawing.Size(160, 30);
-            this.txtLoginName.TabIndex = 6;
+            this.txtLoginName.Size = new System.Drawing.Size(348, 30);
+            this.txtLoginName.TabIndex = 3;
             // 
             // txtLastName
             // 
@@ -134,11 +140,11 @@ namespace Presentacion
             this.txtLastName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtLastName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtLastName.Location = new System.Drawing.Point(450, 126);
+            this.txtLastName.Location = new System.Drawing.Point(688, 210);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.PasswordChar = '\0';
-            this.txtLastName.Size = new System.Drawing.Size(160, 30);
-            this.txtLastName.TabIndex = 7;
+            this.txtLastName.Size = new System.Drawing.Size(348, 30);
+            this.txtLastName.TabIndex = 2;
             // 
             // txtEmail
             // 
@@ -150,11 +156,11 @@ namespace Presentacion
             this.txtEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.Location = new System.Drawing.Point(450, 209);
+            this.txtEmail.Location = new System.Drawing.Point(688, 293);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.Size = new System.Drawing.Size(160, 30);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.Size = new System.Drawing.Size(348, 30);
+            this.txtEmail.TabIndex = 4;
             // 
             // txtPosition
             // 
@@ -166,11 +172,11 @@ namespace Presentacion
             this.txtPosition.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPosition.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPosition.Location = new System.Drawing.Point(107, 284);
+            this.txtPosition.Location = new System.Drawing.Point(168, 368);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.PasswordChar = '\0';
-            this.txtPosition.Size = new System.Drawing.Size(160, 26);
-            this.txtPosition.TabIndex = 9;
+            this.txtPosition.Size = new System.Drawing.Size(348, 26);
+            this.txtPosition.TabIndex = 5;
             // 
             // txtPassword
             // 
@@ -182,18 +188,19 @@ namespace Presentacion
             this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPassword.Location = new System.Drawing.Point(450, 280);
+            this.txtPassword.Location = new System.Drawing.Point(688, 369);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(160, 30);
-            this.txtPassword.TabIndex = 10;
+            this.txtPassword.Size = new System.Drawing.Size(348, 30);
+            this.txtPassword.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(104, 264);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(165, 348);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.Size = new System.Drawing.Size(102, 18);
             this.label6.TabIndex = 11;
             this.label6.Text = "Rol del equipo";
             // 
@@ -201,17 +208,17 @@ namespace Presentacion
             // 
             this.btnEditProfile.AnimationHoverSpeed = 0.07F;
             this.btnEditProfile.AnimationSpeed = 0.03F;
-            this.btnEditProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnEditProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.btnEditProfile.BorderColor = System.Drawing.Color.Black;
             this.btnEditProfile.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEditProfile.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEditProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEditProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfile.ForeColor = System.Drawing.Color.White;
-            this.btnEditProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnEditProfile.Image")));
+            this.btnEditProfile.Image = null;
             this.btnEditProfile.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditProfile.Location = new System.Drawing.Point(301, 383);
+            this.btnEditProfile.Location = new System.Drawing.Point(524, 538);
             this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEditProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(122)))), ((int)(((byte)(176)))));
             this.btnEditProfile.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnEditProfile.OnHoverForeColor = System.Drawing.Color.White;
             this.btnEditProfile.OnHoverImage = null;
@@ -219,23 +226,24 @@ namespace Presentacion
             this.btnEditProfile.Size = new System.Drawing.Size(160, 42);
             this.btnEditProfile.TabIndex = 12;
             this.btnEditProfile.Text = "Editar Perfil";
+            this.btnEditProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
             // 
             // btnConfirm
             // 
             this.btnConfirm.AnimationHoverSpeed = 0.07F;
             this.btnConfirm.AnimationSpeed = 0.03F;
-            this.btnConfirm.BaseColor = System.Drawing.Color.Green;
+            this.btnConfirm.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.btnConfirm.BorderColor = System.Drawing.Color.Black;
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirm.FocusedColor = System.Drawing.Color.Empty;
-            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
+            this.btnConfirm.Image = null;
             this.btnConfirm.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnConfirm.Location = new System.Drawing.Point(210, 383);
+            this.btnConfirm.Location = new System.Drawing.Point(433, 538);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.OnHoverBaseColor = System.Drawing.Color.PaleGreen;
+            this.btnConfirm.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(122)))), ((int)(((byte)(176)))));
             this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnConfirm.OnHoverForeColor = System.Drawing.Color.White;
             this.btnConfirm.OnHoverImage = null;
@@ -243,6 +251,7 @@ namespace Presentacion
             this.btnConfirm.Size = new System.Drawing.Size(160, 42);
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Confirmar Cambios";
+            this.btnConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnConfirm.Visible = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -250,15 +259,16 @@ namespace Presentacion
             // 
             this.btnCancel.AnimationHoverSpeed = 0.07F;
             this.btnCancel.AnimationSpeed = 0.03F;
-            this.btnCancel.BaseColor = System.Drawing.Color.Brown;
-            this.btnCancel.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.BaseColor = System.Drawing.SystemColors.Window;
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnCancel.BorderSize = 1;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.btnCancel.Image = null;
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(381, 383);
+            this.btnCancel.Location = new System.Drawing.Point(604, 538);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.DarkRed;
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -268,14 +278,36 @@ namespace Presentacion
             this.btnCancel.Size = new System.Drawing.Size(160, 42);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Descartar Cambios";
+            this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // FormPerfil
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(12, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1132, 2);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 24);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Mi perfil";
+            // 
+            // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1154, 690);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnEditProfile);
@@ -291,7 +323,7 @@ namespace Presentacion
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FormPerfil";
+            this.Name = "FormProfile";
             this.Text = "FormPerfil";
             this.Load += new System.EventHandler(this.FormPerfil_Load);
             this.ResumeLayout(false);
@@ -316,5 +348,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnEditProfile;
         private Guna.UI.WinForms.GunaButton btnConfirm;
         private Guna.UI.WinForms.GunaButton btnCancel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
     }
 }

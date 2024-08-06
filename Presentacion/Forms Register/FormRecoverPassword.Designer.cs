@@ -100,6 +100,7 @@ namespace Presentacion
             this.lblResult.Size = new System.Drawing.Size(70, 16);
             this.lblResult.TabIndex = 3;
             this.lblResult.Text = "Resultado";
+            this.lblResult.Visible = false;
             // 
             // pictureBox1
             // 
@@ -122,6 +123,7 @@ namespace Presentacion
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtUserRequest);
             this.Controls.Add(this.lblUserOrEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormRecoverPassword";
             this.Text = "Recuperar Contraseña";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
