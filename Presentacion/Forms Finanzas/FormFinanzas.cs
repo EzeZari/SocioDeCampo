@@ -119,10 +119,7 @@ namespace Presentacion
         {
             try
             {
-                DataTable filteredData = (DataTable)dgvDatos.DataSource;
-                Forms_Reporte reporte = new Forms_Reporte();
-                reporte.SetData(filteredData);
-                reporte.ShowDialog();
+                
             }
             catch (Exception ex)
             {

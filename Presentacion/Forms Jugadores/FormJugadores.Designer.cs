@@ -35,7 +35,6 @@ namespace Presentacion
             this.btnEditar = new Guna.UI.WinForms.GunaButton();
             this.btnEliminar = new Guna.UI.WinForms.GunaButton();
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
-            this.btnReporte = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -148,31 +147,6 @@ namespace Presentacion
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnReporte
-            // 
-            this.btnReporte.AnimationHoverSpeed = 0.07F;
-            this.btnReporte.AnimationSpeed = 0.03F;
-            this.btnReporte.BackColor = System.Drawing.Color.Transparent;
-            this.btnReporte.BaseColor = System.Drawing.Color.Transparent;
-            this.btnReporte.BorderColor = System.Drawing.Color.Black;
-            this.btnReporte.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReporte.FocusedColor = System.Drawing.Color.Empty;
-            this.btnReporte.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReporte.ForeColor = System.Drawing.Color.Black;
-            this.btnReporte.Image = null;
-            this.btnReporte.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnReporte.Location = new System.Drawing.Point(1043, 9);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.btnReporte.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnReporte.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnReporte.OnHoverImage = null;
-            this.btnReporte.OnPressedColor = System.Drawing.Color.Black;
-            this.btnReporte.Size = new System.Drawing.Size(101, 17);
-            this.btnReporte.TabIndex = 12;
-            this.btnReporte.Text = "Generar informe";
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -199,7 +173,6 @@ namespace Presentacion
             this.ClientSize = new System.Drawing.Size(1154, 690);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -218,7 +191,6 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnEditar;
         private Guna.UI.WinForms.GunaButton btnEliminar;
         private Guna.UI.WinForms.GunaButton btnAdd;
-        private Guna.UI.WinForms.GunaButton btnReporte;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
     }
