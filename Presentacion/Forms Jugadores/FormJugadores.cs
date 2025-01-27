@@ -120,5 +120,11 @@ namespace Presentacion
             
           
         }
+
+        private void btnInforme_Click(object sender, EventArgs e)
+        {
+            FormReport report = new FormReport();
+            report.ShowDialog();
+        }
     }
 }

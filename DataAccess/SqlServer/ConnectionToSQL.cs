@@ -11,7 +11,7 @@ namespace DataAccess
     {
         private readonly string connectionString;
         public ConnectionToSQL() {
-            connectionString = connectionString = "server=PC-ZARI;DataBase=MyCompany;integrated security= true";
+            connectionString = "server=PC-ZARI;DataBase=MyCompany;integrated security= true";
         }
         protected SqlConnection GetConnection() {
             return new SqlConnection(connectionString);
