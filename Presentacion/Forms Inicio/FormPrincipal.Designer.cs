@@ -32,6 +32,7 @@ namespace Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.btnLogout = new Guna.UI.WinForms.GunaButton();
             this.PanelMenu = new Guna.UI.WinForms.GunaPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPerfil = new Guna.UI.WinForms.GunaButton();
             this.btnPartidos = new Guna.UI.WinForms.GunaButton();
             this.btnEntrenadores = new Guna.UI.WinForms.GunaButton();
@@ -39,13 +40,19 @@ namespace Presentacion
             this.btnJugadores = new Guna.UI.WinForms.GunaButton();
             this.btnInicio = new Guna.UI.WinForms.GunaButton();
             this.PanelLogo = new Guna.UI.WinForms.GunaPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChildFrom = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLastName = new Guna.UI.WinForms.GunaLabel();
             this.lblPosition = new Guna.UI.WinForms.GunaLabel();
             this.lblEmail = new Guna.UI.WinForms.GunaLabel();
             this.lblName = new Guna.UI.WinForms.GunaLabel();
             this.PanelMenu.SuspendLayout();
+            this.PanelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelChildFrom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -57,13 +64,13 @@ namespace Presentacion
             this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FocusedColor = System.Drawing.Color.Empty;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageSize = new System.Drawing.Size(20, 20);
             this.btnLogout.Location = new System.Drawing.Point(0, 687);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnLogout.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
             this.btnLogout.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnLogout.OnHoverForeColor = System.Drawing.Color.White;
             this.btnLogout.OnHoverImage = null;
@@ -76,6 +83,7 @@ namespace Presentacion
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.PanelMenu.Controls.Add(this.groupBox1);
             this.PanelMenu.Controls.Add(this.btnPerfil);
             this.PanelMenu.Controls.Add(this.btnPartidos);
             this.PanelMenu.Controls.Add(this.btnEntrenadores);
@@ -90,8 +98,17 @@ namespace Presentacion
             this.PanelMenu.Size = new System.Drawing.Size(180, 729);
             this.PanelMenu.TabIndex = 6;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(12, 639);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(150, 2);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            // 
             // btnPerfil
             // 
+            this.btnPerfil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnPerfil.AnimationHoverSpeed = 0.07F;
             this.btnPerfil.AnimationSpeed = 0.03F;
             this.btnPerfil.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -103,7 +120,7 @@ namespace Presentacion
             this.btnPerfil.ForeColor = System.Drawing.Color.White;
             this.btnPerfil.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfil.Image")));
             this.btnPerfil.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPerfil.Location = new System.Drawing.Point(0, 370);
+            this.btnPerfil.Location = new System.Drawing.Point(0, 639);
             this.btnPerfil.Name = "btnPerfil";
             this.btnPerfil.OnHoverBaseColor = System.Drawing.Color.SteelBlue;
             this.btnPerfil.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -242,15 +259,36 @@ namespace Presentacion
             // 
             // PanelLogo
             // 
+            this.PanelLogo.Controls.Add(this.groupBox2);
+            this.PanelLogo.Controls.Add(this.pictureBox2);
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(180, 80);
             this.PanelLogo.TabIndex = 0;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(12, 78);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(150, 2);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 79);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panelChildFrom
             // 
-            this.panelChildFrom.BackColor = System.Drawing.Color.Transparent;
+            this.panelChildFrom.BackColor = System.Drawing.Color.White;
+            this.panelChildFrom.Controls.Add(this.pictureBox1);
             this.panelChildFrom.Controls.Add(this.lblLastName);
             this.panelChildFrom.Controls.Add(this.lblPosition);
             this.panelChildFrom.Controls.Add(this.lblEmail);
@@ -262,11 +300,26 @@ namespace Presentacion
             this.panelChildFrom.TabIndex = 7;
             this.panelChildFrom.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildFrom_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(108, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(857, 533);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblLastName.Location = new System.Drawing.Point(253, 141);
+            this.lblLastName.ForeColor = System.Drawing.Color.White;
+            this.lblLastName.Location = new System.Drawing.Point(17, 386);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(51, 15);
             this.lblLastName.TabIndex = 3;
@@ -275,8 +328,10 @@ namespace Presentacion
             // lblPosition
             // 
             this.lblPosition.AutoSize = true;
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
             this.lblPosition.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPosition.Location = new System.Drawing.Point(251, 205);
+            this.lblPosition.ForeColor = System.Drawing.Color.White;
+            this.lblPosition.Location = new System.Drawing.Point(17, 456);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(43, 15);
             this.lblPosition.TabIndex = 5;
@@ -285,8 +340,10 @@ namespace Presentacion
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblEmail.Location = new System.Drawing.Point(251, 176);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(17, 491);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(36, 15);
             this.lblEmail.TabIndex = 4;
@@ -295,8 +352,10 @@ namespace Presentacion
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblName.Location = new System.Drawing.Point(253, 241);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(17, 521);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(51, 15);
             this.lblName.TabIndex = 2;
@@ -309,13 +368,17 @@ namespace Presentacion
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panelChildFrom);
             this.Controls.Add(this.PanelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "FormPrincipal";
-            this.Text = "Form1";
+            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.PanelMenu.ResumeLayout(false);
+            this.PanelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChildFrom.ResumeLayout(false);
             this.panelChildFrom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,10 +393,14 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnFinanzas;
         private Guna.UI.WinForms.GunaButton btnJugadores;
         private System.Windows.Forms.Panel panelChildFrom;
+        private Guna.UI.WinForms.GunaButton btnPerfil;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaLabel lblLastName;
         private Guna.UI.WinForms.GunaLabel lblPosition;
         private Guna.UI.WinForms.GunaLabel lblEmail;
         private Guna.UI.WinForms.GunaLabel lblName;
-        private Guna.UI.WinForms.GunaButton btnPerfil;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

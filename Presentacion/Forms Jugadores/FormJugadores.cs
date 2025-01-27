@@ -115,13 +115,10 @@ namespace Presentacion
             }
         }
 
-        private void clearForm() // Funcion para que se limpien los textBox una vez que se edite o se agregue un jugador.
+        private void btnReporte_Click(object sender, EventArgs e)
         {
-            txtName.Text = "";
-            txtLastNameJug.Text = "";
-            txtBirthdate.Text = "";
-            txtNationality.Text = "";
-            txtPositionJug.Text = "";
+            
+          
         }
 
         private void btnInforme_Click(object sender, EventArgs e)
