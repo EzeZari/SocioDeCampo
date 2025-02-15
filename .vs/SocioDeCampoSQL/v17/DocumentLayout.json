@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Maximo\\Desktop\\SIN ERRORES\\SocioDeCampo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D84006D2-341D-40FF-8170-54A1686337A2}|Presentacion\\Presentacion.csproj|c:\\users\\maximo\\desktop\\sin errores\\sociodecampo\\presentacion\\forms agregargasto\\agregargasto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D84006D2-341D-40FF-8170-54A1686337A2}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\forms agregargasto\\agregargasto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AgregarGasto.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Maximo\\Desktop\\SIN ERRORES\\SocioDeCampo\\Presentacion\\Forms AgregarGasto\\AgregarGasto.cs",
+              "RelativeDocumentMoniker": "Presentacion\\Forms AgregarGasto\\AgregarGasto.cs",
+              "ToolTip": "C:\\Users\\Maximo\\Desktop\\SIN ERRORES\\SocioDeCampo\\Presentacion\\Forms AgregarGasto\\AgregarGasto.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\Forms AgregarGasto\\AgregarGasto.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T18:40:47.282Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
