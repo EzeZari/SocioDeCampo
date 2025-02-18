@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GastosModel.cs" />
+    <Compile Include="IngresosModel.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
