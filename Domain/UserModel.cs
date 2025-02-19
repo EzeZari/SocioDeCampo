@@ -54,6 +54,17 @@ namespace Domain
             userDao.Eliminar(Convert.ToInt32(idJugador));
         }
         #endregion
+
+        public void AgregarContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula)
+        {
+            userDao.AddContrato(idJugador, fechaInicio, fechaFin, monto, clausula);
+        }
+
+        // Método para obtener los contratos
+        public List<Contrato> ObtenerContratos()
+        {
+            return userDao.GetContratos();
+        }
         public void EditarUser(string LoginName, string FirstName, string LastName, string Email, string Password, string Position, int UserID)
         {
             userDao.EditarDatosPerfil(LoginName, FirstName,LastName, Email, Password, Position, Convert.ToInt32(UserID));

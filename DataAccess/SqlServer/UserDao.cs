@@ -48,7 +48,54 @@ namespace DataAccess
                 }
             }
         }
+        public void AddContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("InsertarContrato", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+                    command.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                    command.Parameters.AddWithValue("@FechaFin", fechaFin);
+                    command.Parameters.AddWithValue("@Monto", monto);
+                    command.Parameters.AddWithValue("@Clausula", clausula);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
+        // Método para obtener todos los contratos
+        public List<Contrato> GetContratos()
+        {
+            List<Contrato> contratos = new List<Contrato>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("ObtenerContratos", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            contratos.Add(new Contrato
+                            {
+                                Id = reader.GetInt32(0),
+                                IdJugador = reader.GetInt32(1),
+                                FechaInicio = reader.GetDateTime(2),
+                                FechaFin = reader.GetDateTime(3),
+                                Monto = reader.GetDecimal(4),
+                                Clausula = reader.GetString(5)
+                            });
+                        }
+                    }
+                }
+            }
+            return contratos;
+        }
 
         #region Registro de Usuario
         public string recoverPassword(string userRequesting) // Funcion para recuperar contraseña
