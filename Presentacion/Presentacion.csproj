@@ -91,6 +91,12 @@
     <Compile Include="Forms AgregarGasto\AgregarGasto.Designer.cs">
       <DependentUpon>AgregarGasto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Contratos\FormContratoActual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Contratos\FormContratoActual.Designer.cs">
+      <DependentUpon>FormContratoActual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Contratos\FormContratoAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     <Compile Include="Validations.cs" />
     <EmbeddedResource Include="Forms AgregarGasto\AgregarGasto.resx">
       <DependentUpon>AgregarGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Contratos\FormContratoActual.resx">
+      <DependentUpon>FormContratoActual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Contratos\FormContratoAdd.resx">
       <DependentUpon>FormContratoAdd.cs</DependentUpon>

@@ -65,6 +65,17 @@ namespace Domain
         {
             return userDao.GetContratos();
         }
+        public DataTable ObtenerContratoPorJugador(string idJugador)
+        {
+            if (int.TryParse(idJugador, out int id))
+            {
+                return userDao.ObtenerContratoPorJugador(id);
+            }
+            else
+            {
+                throw new ArgumentException("El ID del jugador no es válido.");
+            }
+        }
         public void EditarUser(string LoginName, string FirstName, string LastName, string Email, string Password, string Position, int UserID)
         {
             userDao.EditarDatosPerfil(LoginName, FirstName,LastName, Email, Password, Position, Convert.ToInt32(UserID));

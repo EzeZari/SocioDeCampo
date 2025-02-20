@@ -65,6 +65,26 @@ namespace DataAccess
                 }
             }
         }
+        public DataTable ObtenerContratoPorJugador(int idJugador)
+        {
+            DataTable dt = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("ObtenerContratoPorJugador", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(command))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
 
         // Método para obtener todos los contratos
         public List<Contrato> GetContratos()

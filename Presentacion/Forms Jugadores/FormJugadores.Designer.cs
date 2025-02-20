@@ -29,8 +29,8 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJugadores));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEditar = new Guna.UI.WinForms.GunaButton();
@@ -40,6 +40,7 @@ namespace Presentacion
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvContratos = new System.Windows.Forms.DataGridView();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btnVerContrato = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).BeginInit();
             this.SuspendLayout();
@@ -52,14 +53,14 @@ namespace Presentacion
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -67,8 +68,8 @@ namespace Presentacion
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersWidth = 50;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(704, 559);
             this.dataGridView1.TabIndex = 8;
             // 
@@ -202,12 +203,38 @@ namespace Presentacion
             this.gunaButton1.Visible = false;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
+            // btnVerContrato
+            // 
+            this.btnVerContrato.AnimationHoverSpeed = 0.07F;
+            this.btnVerContrato.AnimationSpeed = 0.03F;
+            this.btnVerContrato.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnVerContrato.BorderColor = System.Drawing.Color.Black;
+            this.btnVerContrato.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnVerContrato.FocusedColor = System.Drawing.Color.Empty;
+            this.btnVerContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVerContrato.ForeColor = System.Drawing.Color.White;
+            this.btnVerContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnVerContrato.Image")));
+            this.btnVerContrato.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnVerContrato.Location = new System.Drawing.Point(12, 53);
+            this.btnVerContrato.Name = "btnVerContrato";
+            this.btnVerContrato.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnVerContrato.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnVerContrato.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnVerContrato.OnHoverImage = null;
+            this.btnVerContrato.OnPressedColor = System.Drawing.Color.Black;
+            this.btnVerContrato.Size = new System.Drawing.Size(160, 42);
+            this.btnVerContrato.TabIndex = 17;
+            this.btnVerContrato.Text = "Ver contrato";
+            this.btnVerContrato.Visible = false;
+            this.btnVerContrato.Click += new System.EventHandler(this.btnVerContrato_Click_1);
+            // 
             // FormJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1154, 690);
+            this.Controls.Add(this.btnVerContrato);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.dgvContratos);
             this.Controls.Add(this.groupBox1);
@@ -235,5 +262,6 @@ namespace Presentacion
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvContratos;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton btnVerContrato;
     }
 }
