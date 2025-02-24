@@ -152,8 +152,12 @@ namespace Presentacion
                     string monto = contrato.Rows[0]["Monto"].ToString();
                     string fechaInicio = contrato.Rows[0]["FechaInicio"].ToString();
                     string fechaFin = contrato.Rows[0]["FechaFin"].ToString();
+                    string clausula = contrato.Rows[0]["Clausula"].ToString();
+                    string salario = contrato.Rows[0]["Salario"].ToString();
+                    string bonificacion = contrato.Rows[0]["Bonificacion"].ToString();
+                    string obligacion = contrato.Rows[0]["Obligacion"].ToString();
 
-                    FormContratoActual formContratoActual = new FormContratoActual(idJugador, nombre, apellido, monto, fechaInicio, fechaFin);
+                    FormContratoActual formContratoActual = new FormContratoActual(idJugador, nombre, apellido, monto, fechaInicio, fechaFin, clausula ,salario, bonificacion,obligacion);
                     formContratoActual.ShowDialog();
                 }
                 else

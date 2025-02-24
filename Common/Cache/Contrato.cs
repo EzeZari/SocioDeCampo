@@ -14,5 +14,9 @@ namespace Common.Cache
         public DateTime FechaFin { get; set; }
         public decimal Monto { get; set; }
         public string Clausula { get; set; }
+        public decimal Salario { get; set; }
+        public string Bonificacion { get; set; }
+        public string Obligacion { get; set; }
     }
 }
+

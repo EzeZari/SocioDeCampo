@@ -48,7 +48,7 @@ namespace DataAccess
                 }
             }
         }
-        public void AddContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula)
+        public void AddContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula, decimal salario, string bonificacion, string obligacion)
         {
             using (var connection = GetConnection())
             {
@@ -61,10 +61,14 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@FechaFin", fechaFin);
                     command.Parameters.AddWithValue("@Monto", monto);
                     command.Parameters.AddWithValue("@Clausula", clausula);
+                    command.Parameters.AddWithValue("@Salario", salario);
+                    command.Parameters.AddWithValue("@Bonificacion", bonificacion);
+                    command.Parameters.AddWithValue("@Obligacion", obligacion);
                     command.ExecuteNonQuery();
                 }
             }
         }
+
         public DataTable ObtenerContratoPorJugador(int idJugador)
         {
             DataTable dt = new DataTable();
@@ -103,12 +107,15 @@ namespace DataAccess
                         {
                             contratos.Add(new Contrato
                             {
-                                Id = reader.GetInt32(0),
-                                IdJugador = reader.GetInt32(1),
-                                FechaInicio = reader.GetDateTime(2),
-                                FechaFin = reader.GetDateTime(3),
-                                Monto = reader.GetDecimal(4),
-                                Clausula = reader.GetString(5)
+                                Id = reader.GetInt32(0), // Id
+                                IdJugador = reader.GetInt32(1), // IdJugador
+                                Monto = reader.GetDecimal(2), // Monto
+                                FechaInicio = reader.GetDateTime(3), // FechaInicio
+                                FechaFin = reader.GetDateTime(4), // FechaFin
+                                Clausula = reader.IsDBNull(5) ? null : reader.GetString(5), // Clausula
+                                Salario = reader.IsDBNull(6) ? 0 : reader.GetDecimal(6), // Salario
+                                Bonificacion = reader.IsDBNull(7) ? null : reader.GetString(7), // Bonificacion
+                                Obligacion = reader.IsDBNull(8) ? null : reader.GetString(8) // Obligacion
                             });
                         }
                     }
@@ -116,6 +123,8 @@ namespace DataAccess
             }
             return contratos;
         }
+
+
 
         #region Registro de Usuario
         public string recoverPassword(string userRequesting) // Funcion para recuperar contraseña

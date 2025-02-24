@@ -38,6 +38,9 @@ namespace Presentacion.Forms_Contratos
             this.txtIdJugador = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.NombreJugContrato = new Guna.UI.WinForms.GunaLabel();
+            this.txtSalario = new Guna.UI.WinForms.GunaTextBox();
+            this.txtBonificacion = new Guna.UI.WinForms.GunaTextBox();
+            this.txtObligacion = new Guna.UI.WinForms.GunaTextBox();
             this.SuspendLayout();
             // 
             // txtMonto
@@ -100,6 +103,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.dtFechaInicio.BaseColor = System.Drawing.Color.White;
             this.dtFechaInicio.BorderColor = System.Drawing.Color.Silver;
+            this.dtFechaInicio.Checked = false;
             this.dtFechaInicio.CustomFormat = null;
             this.dtFechaInicio.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtFechaInicio.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -115,7 +119,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaInicio.OnPressedColor = System.Drawing.Color.Black;
             this.dtFechaInicio.Size = new System.Drawing.Size(223, 30);
             this.dtFechaInicio.TabIndex = 5;
-            this.dtFechaInicio.Text = "miércoles, 19 de febrero de 2025";
+            this.dtFechaInicio.Text = "lunes, 24 de febrero de 2025";
             this.dtFechaInicio.Value = new System.DateTime(2025, 2, 19, 16, 34, 31, 864);
             // 
             // dtFechaFinal
@@ -178,11 +182,62 @@ namespace Presentacion.Forms_Contratos
             this.NombreJugContrato.Text = "[Nombre]";
             this.NombreJugContrato.Visible = false;
             // 
+            // txtSalario
+            // 
+            this.txtSalario.BaseColor = System.Drawing.Color.White;
+            this.txtSalario.BorderColor = System.Drawing.Color.Silver;
+            this.txtSalario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSalario.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtSalario.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtSalario.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSalario.Location = new System.Drawing.Point(342, 236);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.PasswordChar = '\0';
+            this.txtSalario.Size = new System.Drawing.Size(160, 30);
+            this.txtSalario.TabIndex = 10;
+            this.txtSalario.Text = "Salario";
+            // 
+            // txtBonificacion
+            // 
+            this.txtBonificacion.BaseColor = System.Drawing.Color.White;
+            this.txtBonificacion.BorderColor = System.Drawing.Color.Silver;
+            this.txtBonificacion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBonificacion.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtBonificacion.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtBonificacion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBonificacion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBonificacion.Location = new System.Drawing.Point(342, 288);
+            this.txtBonificacion.Name = "txtBonificacion";
+            this.txtBonificacion.PasswordChar = '\0';
+            this.txtBonificacion.Size = new System.Drawing.Size(160, 30);
+            this.txtBonificacion.TabIndex = 11;
+            this.txtBonificacion.Text = "Bonificacion";
+            // 
+            // txtObligacion
+            // 
+            this.txtObligacion.BaseColor = System.Drawing.Color.White;
+            this.txtObligacion.BorderColor = System.Drawing.Color.Silver;
+            this.txtObligacion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtObligacion.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtObligacion.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtObligacion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtObligacion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtObligacion.Location = new System.Drawing.Point(342, 334);
+            this.txtObligacion.Name = "txtObligacion";
+            this.txtObligacion.PasswordChar = '\0';
+            this.txtObligacion.Size = new System.Drawing.Size(160, 30);
+            this.txtObligacion.TabIndex = 12;
+            this.txtObligacion.Text = "Obligacion";
+            // 
             // FormContratoAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 450);
+            this.Controls.Add(this.txtObligacion);
+            this.Controls.Add(this.txtBonificacion);
+            this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.NombreJugContrato);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.txtIdJugador);
@@ -207,5 +262,8 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaTextBox txtIdJugador;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel NombreJugContrato;
+        private Guna.UI.WinForms.GunaTextBox txtSalario;
+        private Guna.UI.WinForms.GunaTextBox txtBonificacion;
+        private Guna.UI.WinForms.GunaTextBox txtObligacion;
     }
 }

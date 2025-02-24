@@ -38,13 +38,16 @@ namespace Presentacion.Forms_Contratos
             this.lblApellido = new Guna.UI.WinForms.GunaLabel();
             this.lblIdJugador = new Guna.UI.WinForms.GunaLabel();
             this.btnEntendido = new Guna.UI.WinForms.GunaButton();
+            this.lblBonificacion = new Guna.UI.WinForms.GunaLabel();
+            this.lblObligacion = new Guna.UI.WinForms.GunaLabel();
+            this.lblSalario = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblFechaInicio.Location = new System.Drawing.Point(51, 51);
+            this.lblFechaInicio.Location = new System.Drawing.Point(42, 113);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(82, 15);
             this.lblFechaInicio.TabIndex = 1;
@@ -54,7 +57,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblFechaFin.AutoSize = true;
             this.lblFechaFin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblFechaFin.Location = new System.Drawing.Point(51, 152);
+            this.lblFechaFin.Location = new System.Drawing.Point(51, 150);
             this.lblFechaFin.Name = "lblFechaFin";
             this.lblFechaFin.Size = new System.Drawing.Size(73, 15);
             this.lblFechaFin.TabIndex = 2;
@@ -64,7 +67,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblMonto.AutoSize = true;
             this.lblMonto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblMonto.Location = new System.Drawing.Point(51, 233);
+            this.lblMonto.Location = new System.Drawing.Point(51, 61);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(43, 15);
             this.lblMonto.TabIndex = 3;
@@ -74,7 +77,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblClausula.AutoSize = true;
             this.lblClausula.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblClausula.Location = new System.Drawing.Point(51, 299);
+            this.lblClausula.Location = new System.Drawing.Point(51, 194);
             this.lblClausula.Name = "lblClausula";
             this.lblClausula.Size = new System.Drawing.Size(52, 15);
             this.lblClausula.TabIndex = 4;
@@ -134,11 +137,44 @@ namespace Presentacion.Forms_Contratos
             this.btnEntendido.Text = "gunaButton1";
             this.btnEntendido.Click += new System.EventHandler(this.btnEntendido_Click);
             // 
+            // lblBonificacion
+            // 
+            this.lblBonificacion.AutoSize = true;
+            this.lblBonificacion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblBonificacion.Location = new System.Drawing.Point(52, 289);
+            this.lblBonificacion.Name = "lblBonificacion";
+            this.lblBonificacion.Size = new System.Drawing.Size(73, 15);
+            this.lblBonificacion.TabIndex = 10;
+            this.lblBonificacion.Text = "Bonificacion";
+            // 
+            // lblObligacion
+            // 
+            this.lblObligacion.AutoSize = true;
+            this.lblObligacion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblObligacion.Location = new System.Drawing.Point(52, 332);
+            this.lblObligacion.Name = "lblObligacion";
+            this.lblObligacion.Size = new System.Drawing.Size(65, 15);
+            this.lblObligacion.TabIndex = 11;
+            this.lblObligacion.Text = "Obligacion";
+            // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblSalario.Location = new System.Drawing.Point(52, 239);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(73, 15);
+            this.lblSalario.TabIndex = 12;
+            this.lblSalario.Text = "Bonificacion";
+            // 
             // FormContratoActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSalario);
+            this.Controls.Add(this.lblObligacion);
+            this.Controls.Add(this.lblBonificacion);
             this.Controls.Add(this.btnEntendido);
             this.Controls.Add(this.lblIdJugador);
             this.Controls.Add(this.lblApellido);
@@ -163,5 +199,8 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaLabel lblApellido;
         private Guna.UI.WinForms.GunaLabel lblIdJugador;
         private Guna.UI.WinForms.GunaButton btnEntendido;
+        private Guna.UI.WinForms.GunaLabel lblBonificacion;
+        private Guna.UI.WinForms.GunaLabel lblObligacion;
+        private Guna.UI.WinForms.GunaLabel lblSalario;
     }
 }
