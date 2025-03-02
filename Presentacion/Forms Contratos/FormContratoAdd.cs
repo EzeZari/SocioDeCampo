@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Domain; // Importa UserModel
+using Domain;
 
 namespace Presentacion.Forms_Contratos
 {
@@ -64,6 +64,29 @@ namespace Presentacion.Forms_Contratos
 
         private bool ValidarDatos()
         {
+            // Validar que se haya seleccionado una fecha de inicio
+            if (!dtFechaInicio.Checked)
+            {
+                MessageBox.Show("Debe seleccionar una fecha de inicio.");
+                dtFechaInicio.Focus();
+                return false;
+            }
+
+            // Validar que se haya seleccionado una fecha de fin
+            if (!dtFechaFinal.Checked)
+            {
+                MessageBox.Show("Debe seleccionar una fecha de fin.");
+                dtFechaFinal.Focus();
+                return false;
+            }
+
+            // Verificar que la fecha de fin no sea anterior a la fecha de inicio
+            if (dtFechaFinal.Value < dtFechaInicio.Value)
+            {
+                MessageBox.Show("La fecha de fin no puede ser anterior a la fecha de inicio.");
+                dtFechaFinal.Focus();
+                return false;
+            }
             // Verificar si el monto es un número válido
             if (string.IsNullOrWhiteSpace(txtMonto.Text) || !decimal.TryParse(txtMonto.Text, out _))
             {
@@ -80,27 +103,27 @@ namespace Presentacion.Forms_Contratos
                 return false;
             }
 
-            // Validar que se haya seleccionado una fecha de inicio
-            if (dtFechaInicio.Value == null || dtFechaInicio.Value == DateTime.MinValue)
+            // Verificar si el salario es un número válido
+            if (string.IsNullOrWhiteSpace(txtSalario.Text) || !decimal.TryParse(txtSalario.Text, out _))
             {
-                MessageBox.Show("Debe seleccionar una fecha de inicio.");
-                dtFechaInicio.Focus();
+                MessageBox.Show("El campo 'Salario' debe ser un número válido.");
+                txtSalario.Focus();
                 return false;
             }
 
-            // Validar que se haya seleccionado una fecha de fin
-            if (dtFechaFinal.Value == null || dtFechaFinal.Value == DateTime.MinValue)
+            // Verificar si la bonificación no está vacía
+            if (string.IsNullOrWhiteSpace(txtBonificacion.Text))
             {
-                MessageBox.Show("Debe seleccionar una fecha de fin.");
-                dtFechaFinal.Focus();
+                MessageBox.Show("El campo 'Bonificación' no puede estar vacío.");
+                txtBonificacion.Focus();
                 return false;
             }
 
-            // Verificar que la fecha de fin no sea anterior a la fecha de inicio
-            if (dtFechaFinal.Value < dtFechaInicio.Value)
+            // Verificar si la obligación no está vacía
+            if (string.IsNullOrWhiteSpace(txtObligacion.Text))
             {
-                MessageBox.Show("La fecha de fin no puede ser anterior a la fecha de inicio.");
-                dtFechaFinal.Focus();
+                MessageBox.Show("El campo 'Obligación' no puede estar vacío.");
+                txtObligacion.Focus();
                 return false;
             }
 
@@ -108,9 +131,12 @@ namespace Presentacion.Forms_Contratos
             return true;
         }
 
+
         private void CargarContratos()
         {
             // dgvContratos.DataSource = userModel.ObtenerContratos();
         }
+
     }
+
 }
