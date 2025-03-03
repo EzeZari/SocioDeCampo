@@ -25,6 +25,9 @@ namespace Presentacion
             InitializeComponent();
             dgvDatos.DataSource = gatosModel.Mostrargastos();
             dvgIngresos.DataSource = IngresosModel.MostrarIngresos();
+
+            CalcularBalance();
+            ActualizarGrafico();
         }
 
 
@@ -53,16 +56,10 @@ namespace Presentacion
 
         private void FormFinanzas_Load(object sender, EventArgs e)
         {
-            dgvDatos.DataSource = gatosModel.Mostrargastos();
             Mostrargastos();
-            dgvDatos.DataSource = gatosModel.Mostrargastos();
-            Mostrargastos();
-            dvgIngresos.DataSource = IngresosModel.MostrarIngresos();
             MostrarIngresos();
-
-            dgvDatos.DataSource = gatosModel.Mostrargastos();
-            dvgIngresos.DataSource = IngresosModel.MostrarIngresos();
-
+            CalcularBalance();
+            ActualizarGrafico();
 
         }
 
@@ -79,6 +76,8 @@ namespace Presentacion
                 DateTime fechainicio = DTPFechaDesde.Value;
                 DateTime fechafinal = DTPFechaHasta.Value;
                 dgvDatos.DataSource = gatosModel.FiltrarGasto(fechainicio, fechafinal);
+                CalcularBalanceFiltrado(); // Llamamos al nuevo método
+                ActualizarGrafico();
             }
             catch (Exception ex)
             {
@@ -88,7 +87,18 @@ namespace Presentacion
 
         private void DTPFechaDesde_ValueChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                DateTime fechainicio = DTPFechaDesde.Value;
+                DateTime fechafinal = DTPFechaHasta.Value;
+                dgvDatos.DataSource = gatosModel.FiltrarGasto(fechainicio, fechafinal);
+                CalcularBalanceFiltrado(); // Llamamos al nuevo método
+                ActualizarGrafico();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
@@ -129,7 +139,7 @@ namespace Presentacion
         {
             try
             {
-                
+
             }
             catch (Exception ex)
             {
@@ -156,6 +166,8 @@ namespace Presentacion
                 DateTime fechaInicioIngreso = dtpFechaDesdeIngreso.Value;
                 DateTime fechaFinalIngreso = dtpFechaHastaIngreso.Value;
                 dvgIngresos.DataSource = IngresosModel.FiltrarIngresos(fechaInicioIngreso, fechaFinalIngreso);
+                CalcularBalanceFiltrado(); // Llamamos al nuevo método
+                ActualizarGrafico();
             }
             catch (Exception ex)
             {
@@ -171,6 +183,8 @@ namespace Presentacion
                 DateTime fechaInicioIngreso = dtpFechaDesdeIngreso.Value;
                 DateTime fechaFinalIngreso = dtpFechaHastaIngreso.Value;
                 dvgIngresos.DataSource = IngresosModel.FiltrarIngresos(fechaInicioIngreso, fechaFinalIngreso);
+                CalcularBalanceFiltrado(); // Llamamos al nuevo método
+                ActualizarGrafico();
             }
             catch (Exception ex)
             {
@@ -222,16 +236,40 @@ namespace Presentacion
         private void ActualizarGrafico()
         {
 
-
             chartBalance.Series.Clear();
             chartBalance.Series.Add("Finanzas");
             chartBalance.Series["Finanzas"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
 
-            decimal totalIngresos = IngresosModel.ObtenerTotalIngresos();
-            decimal totalGastos = gatosModel.ObtenerTotalGastos();
+            decimal totalIngresos = 0;
+            decimal totalGastos = 0;
+
+            // Sumar ingresos filtrados
+            if (dvgIngresos.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dvgIngresos.Rows)
+                {
+                    if (row.Cells["monto"].Value != null && row.Cells["monto"].Value != DBNull.Value)
+                    {
+                        totalIngresos += Convert.ToDecimal(row.Cells["monto"].Value);
+                    }
+                }
+            }
+
+            // Sumar gastos filtrados
+            if (dgvDatos.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvDatos.Rows)
+                {
+                    if (row.Cells["cantidad"].Value != null && row.Cells["cantidad"].Value != DBNull.Value)
+                    {
+                        totalGastos += Convert.ToDecimal(row.Cells["cantidad"].Value);
+                    }
+                }
+            }
 
             chartBalance.Series["Finanzas"].Points.AddXY("Ingresos", totalIngresos);
             chartBalance.Series["Finanzas"].Points.AddXY("Gastos", totalGastos);
+
 
 
         }
@@ -285,6 +323,50 @@ namespace Presentacion
         private void chartBalance_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void CalcularBalanceFiltrado()
+        {
+            decimal totalIngresos = 0;
+            decimal totalGastos = 0;
+
+            // Sumar los montos de ingresos mostrados en el DataGridView
+            if (dvgIngresos.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dvgIngresos.Rows)
+                {
+                    if (row.Cells["monto"].Value != null && row.Cells["monto"].Value != DBNull.Value)
+                    {
+                        totalIngresos += Convert.ToDecimal(row.Cells["monto"].Value);
+                    }
+                }
+            }
+
+            // Sumar las cantidades de gastos mostrados en el DataGridView
+            if (dgvDatos.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvDatos.Rows)
+                {
+                    if (row.Cells["cantidad"].Value != null && row.Cells["cantidad"].Value != DBNull.Value)
+                    {
+                        totalGastos += Convert.ToDecimal(row.Cells["cantidad"].Value);
+                    }
+                }
+            }
+
+            // Calcular y mostrar el balance
+            decimal balance = totalIngresos - totalGastos;
+            lblBalance.Text = $"Balance: {balance:C}";
+
+            // Cambiar color del balance según su estado
+            if (balance > 0)
+                lblBalance.ForeColor = Color.Green;  // Superávit
+            else if (balance < 0)
+                lblBalance.ForeColor = Color.Red;    // Déficit
+            else
+                lblBalance.ForeColor = Color.Black;  // Equilibrado
         }
     }
 }
