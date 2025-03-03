@@ -29,26 +29,21 @@ namespace Presentacion.Forms_Contratos
         {
             try
             {
-                // Validar los datos antes de proceder
                 if (!ValidarDatos())
                 {
-                    return; // Detener la ejecución si la validación falla
+                    return;
                 }
 
-                // Usar el ID del jugador ya almacenado
                 int idJugadorInt = Convert.ToInt32(idJugador);
-
-                // Mantener las fechas en DateTime
                 DateTime fechaInicio = dtFechaInicio.Value;
                 DateTime fechaFin = dtFechaFinal.Value;
-
                 decimal monto = Convert.ToDecimal(txtMonto.Text);
                 string clausula = txtClausula.Text;
                 decimal salario = Convert.ToDecimal(txtSalario.Text);
                 string bonificacion = txtBonificacion.Text;
                 string obligacion = txtObligacion.Text;
 
-                // Pasamos los valores correctamente
+                // Llamamos a UserModel para agregar el contrato
                 userModel.AgregarContrato(idJugadorInt, fechaInicio, fechaFin, monto, clausula, salario, bonificacion, obligacion);
 
                 MessageBox.Show("Contrato agregado correctamente.");
@@ -130,13 +125,10 @@ namespace Presentacion.Forms_Contratos
             // Si todos los campos están completos y correctos, devolver verdadero
             return true;
         }
-
-
         private void CargarContratos()
         {
             // dgvContratos.DataSource = userModel.ObtenerContratos();
         }
-
     }
 
 }

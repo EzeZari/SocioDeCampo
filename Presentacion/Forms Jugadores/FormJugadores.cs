@@ -114,14 +114,41 @@ namespace Presentacion
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
-                FormContratoAdd formContratoAdd = new FormContratoAdd(idJugador);
-                formContratoAdd.ShowDialog();
+                string nombre = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells["LastName"].Value.ToString();
+
+                // Consultar si el jugador ya tiene un contrato
+                DataTable contrato = objeto.ObtenerContratoPorJugador(idJugador);
+
+                if (contrato.Rows.Count > 0)
+                {
+                    // Si ya tiene contrato, mostrar un mensaje y abrir la info del contrato
+                    MessageBox.Show("Este jugador ya tiene un contrato registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    string monto = contrato.Rows[0]["Monto"].ToString();
+                    string fechaInicio = contrato.Rows[0]["FechaInicio"].ToString();
+                    string fechaFin = contrato.Rows[0]["FechaFin"].ToString();
+                    string clausula = contrato.Rows[0]["Clausula"].ToString();
+                    string salario = contrato.Rows[0]["Salario"].ToString();
+                    string bonificacion = contrato.Rows[0]["Bonificacion"].ToString();
+                    string obligacion = contrato.Rows[0]["Obligacion"].ToString();
+
+                    FormContratoActual formContratoActual = new FormContratoActual(idJugador, nombre, apellido, monto, fechaInicio, fechaFin, clausula, salario, bonificacion, obligacion);
+                    formContratoActual.ShowDialog();
+                }
+                else
+                {
+                    // Si no tiene contrato, permitir agregar uno nuevo
+                    FormContratoAdd formContratoAdd = new FormContratoAdd(idJugador);
+                    formContratoAdd.ShowDialog();
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione un jugador antes de agregar un contrato.");
             }
         }
+
 
         //private void btnVerContrato_Click_1(object sender, EventArgs e)
         //{
@@ -170,7 +197,5 @@ namespace Presentacion
                 MessageBox.Show("Seleccione un jugador antes de ver su contrato.");
             }
         }
-
-
     }
 }

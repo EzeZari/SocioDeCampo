@@ -12,6 +12,7 @@ namespace Presentacion.Forms_Contratos
 {
     public partial class FormContratoActual : Form
     {
+        private string idJugador;
 
         public FormContratoActual(string idJugador, string nombre, string apellido, string monto, string fechaInicio, string fechaFin, string clausula, string salario, string bonificacion, string obligacion)
         {
@@ -34,5 +35,19 @@ namespace Presentacion.Forms_Contratos
         {
             this.Close();
         }
+
+        private void btnRenovarContrato_Click(object sender, EventArgs e)
+        {
+            // Obtener el id del jugador desde lblIdJugador.Text
+            string idJugador = lblIdJugador.Text;
+
+            // Crear una nueva instancia de FormContratoAdd, pasando solo el idJugador
+            FormContratoAdd formContratoAdd = new FormContratoAdd(idJugador);
+
+            // Mostrar el formulario de manera modal
+            formContratoAdd.Show();
+        }
+
+
     }
 }

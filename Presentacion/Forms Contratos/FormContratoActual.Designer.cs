@@ -41,6 +41,7 @@ namespace Presentacion.Forms_Contratos
             this.lblBonificacion = new Guna.UI.WinForms.GunaLabel();
             this.lblObligacion = new Guna.UI.WinForms.GunaLabel();
             this.lblSalario = new Guna.UI.WinForms.GunaLabel();
+            this.btnRenovarContrato = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // lblFechaInicio
@@ -125,7 +126,7 @@ namespace Presentacion.Forms_Contratos
             this.btnEntendido.ForeColor = System.Drawing.Color.White;
             this.btnEntendido.Image = ((System.Drawing.Image)(resources.GetObject("btnEntendido.Image")));
             this.btnEntendido.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEntendido.Location = new System.Drawing.Point(302, 352);
+            this.btnEntendido.Location = new System.Drawing.Point(148, 377);
             this.btnEntendido.Name = "btnEntendido";
             this.btnEntendido.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnEntendido.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -134,7 +135,7 @@ namespace Presentacion.Forms_Contratos
             this.btnEntendido.OnPressedColor = System.Drawing.Color.Black;
             this.btnEntendido.Size = new System.Drawing.Size(160, 42);
             this.btnEntendido.TabIndex = 8;
-            this.btnEntendido.Text = "gunaButton1";
+            this.btnEntendido.Text = "Volver";
             this.btnEntendido.Click += new System.EventHandler(this.btnEntendido_Click);
             // 
             // lblBonificacion
@@ -167,11 +168,36 @@ namespace Presentacion.Forms_Contratos
             this.lblSalario.TabIndex = 12;
             this.lblSalario.Text = "Bonificacion";
             // 
+            // btnRenovarContrato
+            // 
+            this.btnRenovarContrato.AnimationHoverSpeed = 0.07F;
+            this.btnRenovarContrato.AnimationSpeed = 0.03F;
+            this.btnRenovarContrato.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnRenovarContrato.BorderColor = System.Drawing.Color.Black;
+            this.btnRenovarContrato.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRenovarContrato.FocusedColor = System.Drawing.Color.Empty;
+            this.btnRenovarContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRenovarContrato.ForeColor = System.Drawing.Color.White;
+            this.btnRenovarContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnRenovarContrato.Image")));
+            this.btnRenovarContrato.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnRenovarContrato.Location = new System.Drawing.Point(391, 377);
+            this.btnRenovarContrato.Name = "btnRenovarContrato";
+            this.btnRenovarContrato.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnRenovarContrato.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnRenovarContrato.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnRenovarContrato.OnHoverImage = null;
+            this.btnRenovarContrato.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRenovarContrato.Size = new System.Drawing.Size(160, 42);
+            this.btnRenovarContrato.TabIndex = 13;
+            this.btnRenovarContrato.Text = "RenovarContrato";
+            this.btnRenovarContrato.Click += new System.EventHandler(this.btnRenovarContrato_Click);
+            // 
             // FormContratoActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRenovarContrato);
             this.Controls.Add(this.lblSalario);
             this.Controls.Add(this.lblObligacion);
             this.Controls.Add(this.lblBonificacion);
@@ -202,5 +228,6 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaLabel lblBonificacion;
         private Guna.UI.WinForms.GunaLabel lblObligacion;
         private Guna.UI.WinForms.GunaLabel lblSalario;
+        private Guna.UI.WinForms.GunaButton btnRenovarContrato;
     }
 }

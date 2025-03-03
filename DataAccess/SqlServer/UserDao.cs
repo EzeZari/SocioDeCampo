@@ -50,6 +50,11 @@ namespace DataAccess
         }
         public void AddContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula, decimal salario, string bonificacion, string obligacion)
         {
+            if (ExisteContratoEnRango(idJugador, fechaInicio, fechaFin))
+            {
+                throw new Exception("Ya existe un contrato en este rango de fechas para este jugador.");
+            }
+
             using (var connection = GetConnection())
             {
                 connection.Open();
@@ -69,7 +74,7 @@ namespace DataAccess
             }
         }
 
-        public DataTable ObtenerContratoPorJugador(int idJugador)
+            public DataTable ObtenerContratoPorJugador(int idJugador)
         {
             DataTable dt = new DataTable();
             using (var connection = GetConnection())
@@ -123,8 +128,23 @@ namespace DataAccess
             }
             return contratos;
         }
+        public bool ExisteContratoEnRango(int idJugador, DateTime fechaInicio, DateTime fechaFin)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("VerificarContratoExistente", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+                    command.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                    command.Parameters.AddWithValue("@FechaFin", fechaFin);
 
-
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
 
         #region Registro de Usuario
         public string recoverPassword(string userRequesting) // Funcion para recuperar contraseña
