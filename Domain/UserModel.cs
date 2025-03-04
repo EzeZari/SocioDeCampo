@@ -77,11 +77,22 @@ namespace Domain
                 throw new ArgumentException("El ID del jugador no es válido.");
             }
         }
+        public DataTable ObtenerUltimoContrato(string idJugador)
+        {
+            if (int.TryParse(idJugador, out int id))
+            {
+                return userDao.ObtenerUltimoContrato(id);
+            }
+            else
+            {
+                throw new ArgumentException("El ID del jugador no es válido.");
+            }
+        }
+
         public void EditarUser(string LoginName, string FirstName, string LastName, string Email, string Password, string Position, int UserID)
         {
             userDao.EditarDatosPerfil(LoginName, FirstName,LastName, Email, Password, Position, Convert.ToInt32(UserID));
         }
-
         public bool ConsultLoginName(string LoginName)
         {
             return userDao.ConsultLoginName(LoginName);

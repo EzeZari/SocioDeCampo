@@ -145,6 +145,27 @@ namespace DataAccess
                 }
             }
         }
+        public DataTable ObtenerUltimoContrato(int idJugador)
+        {
+            DataTable dt = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("ObtenerUltimoContrato", connection)) // Asegúrate de tener este SP en la BD
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(command))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+
 
         #region Registro de Usuario
         public string recoverPassword(string userRequesting) // Funcion para recuperar contraseña

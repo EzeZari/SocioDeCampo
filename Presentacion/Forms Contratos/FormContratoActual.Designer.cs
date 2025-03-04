@@ -42,13 +42,22 @@ namespace Presentacion.Forms_Contratos
             this.lblObligacion = new Guna.UI.WinForms.GunaLabel();
             this.lblSalario = new Guna.UI.WinForms.GunaLabel();
             this.btnRenovarContrato = new Guna.UI.WinForms.GunaButton();
+            this.titNombre = new Guna.UI.WinForms.GunaLabel();
+            this.titApellido = new Guna.UI.WinForms.GunaLabel();
+            this.titMonto = new Guna.UI.WinForms.GunaLabel();
+            this.titInicioCon = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblFechaInicio.Location = new System.Drawing.Point(42, 113);
+            this.lblFechaInicio.Location = new System.Drawing.Point(51, 136);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(82, 15);
             this.lblFechaInicio.TabIndex = 1;
@@ -58,7 +67,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblFechaFin.AutoSize = true;
             this.lblFechaFin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblFechaFin.Location = new System.Drawing.Point(51, 150);
+            this.lblFechaFin.Location = new System.Drawing.Point(52, 207);
             this.lblFechaFin.Name = "lblFechaFin";
             this.lblFechaFin.Size = new System.Drawing.Size(73, 15);
             this.lblFechaFin.TabIndex = 2;
@@ -68,7 +77,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblMonto.AutoSize = true;
             this.lblMonto.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblMonto.Location = new System.Drawing.Point(51, 61);
+            this.lblMonto.Location = new System.Drawing.Point(51, 84);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(43, 15);
             this.lblMonto.TabIndex = 3;
@@ -78,7 +87,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblClausula.AutoSize = true;
             this.lblClausula.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblClausula.Location = new System.Drawing.Point(51, 194);
+            this.lblClausula.Location = new System.Drawing.Point(296, 80);
             this.lblClausula.Name = "lblClausula";
             this.lblClausula.Size = new System.Drawing.Size(52, 15);
             this.lblClausula.TabIndex = 4;
@@ -88,7 +97,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNombre.Location = new System.Drawing.Point(376, 61);
+            this.lblNombre.Location = new System.Drawing.Point(585, 159);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(51, 15);
             this.lblNombre.TabIndex = 5;
@@ -98,7 +107,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblApellido.Location = new System.Drawing.Point(376, 98);
+            this.lblApellido.Location = new System.Drawing.Point(585, 97);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(51, 15);
             this.lblApellido.TabIndex = 6;
@@ -142,7 +151,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblBonificacion.AutoSize = true;
             this.lblBonificacion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblBonificacion.Location = new System.Drawing.Point(52, 289);
+            this.lblBonificacion.Location = new System.Drawing.Point(297, 192);
             this.lblBonificacion.Name = "lblBonificacion";
             this.lblBonificacion.Size = new System.Drawing.Size(73, 15);
             this.lblBonificacion.TabIndex = 10;
@@ -152,7 +161,7 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblObligacion.AutoSize = true;
             this.lblObligacion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblObligacion.Location = new System.Drawing.Point(52, 332);
+            this.lblObligacion.Location = new System.Drawing.Point(296, 243);
             this.lblObligacion.Name = "lblObligacion";
             this.lblObligacion.Size = new System.Drawing.Size(65, 15);
             this.lblObligacion.TabIndex = 11;
@@ -162,11 +171,11 @@ namespace Presentacion.Forms_Contratos
             // 
             this.lblSalario.AutoSize = true;
             this.lblSalario.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblSalario.Location = new System.Drawing.Point(52, 239);
+            this.lblSalario.Location = new System.Drawing.Point(297, 136);
             this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(73, 15);
+            this.lblSalario.Size = new System.Drawing.Size(42, 15);
             this.lblSalario.TabIndex = 12;
-            this.lblSalario.Text = "Bonificacion";
+            this.lblSalario.Text = "Salario";
             // 
             // btnRenovarContrato
             // 
@@ -192,11 +201,110 @@ namespace Presentacion.Forms_Contratos
             this.btnRenovarContrato.Text = "RenovarContrato";
             this.btnRenovarContrato.Click += new System.EventHandler(this.btnRenovarContrato_Click);
             // 
+            // titNombre
+            // 
+            this.titNombre.AutoSize = true;
+            this.titNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titNombre.Location = new System.Drawing.Point(585, 134);
+            this.titNombre.Name = "titNombre";
+            this.titNombre.Size = new System.Drawing.Size(57, 17);
+            this.titNombre.TabIndex = 14;
+            this.titNombre.Text = "Nombre";
+            // 
+            // titApellido
+            // 
+            this.titApellido.AutoSize = true;
+            this.titApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titApellido.Location = new System.Drawing.Point(585, 80);
+            this.titApellido.Name = "titApellido";
+            this.titApellido.Size = new System.Drawing.Size(59, 17);
+            this.titApellido.TabIndex = 15;
+            this.titApellido.Text = "Apellido";
+            // 
+            // titMonto
+            // 
+            this.titMonto.AutoSize = true;
+            this.titMonto.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titMonto.Location = new System.Drawing.Point(52, 57);
+            this.titMonto.Name = "titMonto";
+            this.titMonto.Size = new System.Drawing.Size(46, 17);
+            this.titMonto.TabIndex = 16;
+            this.titMonto.Text = "Monto";
+            // 
+            // titInicioCon
+            // 
+            this.titInicioCon.AutoSize = true;
+            this.titInicioCon.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titInicioCon.Location = new System.Drawing.Point(52, 119);
+            this.titInicioCon.Name = "titInicioCon";
+            this.titInicioCon.Size = new System.Drawing.Size(115, 17);
+            this.titInicioCon.TabIndex = 17;
+            this.titInicioCon.Text = "Inicio de contrato";
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(52, 190);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(101, 17);
+            this.gunaLabel1.TabIndex = 18;
+            this.gunaLabel1.Text = "Fin de contrato";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.Location = new System.Drawing.Point(296, 57);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(62, 17);
+            this.gunaLabel2.TabIndex = 19;
+            this.gunaLabel2.Text = "Clausula";
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.Location = new System.Drawing.Point(297, 119);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(51, 17);
+            this.gunaLabel3.TabIndex = 20;
+            this.gunaLabel3.Text = "Salario";
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.Location = new System.Drawing.Point(297, 175);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(83, 17);
+            this.gunaLabel4.TabIndex = 21;
+            this.gunaLabel4.Text = "Bonificacion";
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel5.Location = new System.Drawing.Point(297, 226);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(75, 17);
+            this.gunaLabel5.TabIndex = 22;
+            this.gunaLabel5.Text = "Obligacion";
+            // 
             // FormContratoActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gunaLabel5);
+            this.Controls.Add(this.gunaLabel4);
+            this.Controls.Add(this.gunaLabel3);
+            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.gunaLabel1);
+            this.Controls.Add(this.titInicioCon);
+            this.Controls.Add(this.titMonto);
+            this.Controls.Add(this.titApellido);
+            this.Controls.Add(this.titNombre);
             this.Controls.Add(this.btnRenovarContrato);
             this.Controls.Add(this.lblSalario);
             this.Controls.Add(this.lblObligacion);
@@ -229,5 +337,14 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaLabel lblObligacion;
         private Guna.UI.WinForms.GunaLabel lblSalario;
         private Guna.UI.WinForms.GunaButton btnRenovarContrato;
+        private Guna.UI.WinForms.GunaLabel titNombre;
+        private Guna.UI.WinForms.GunaLabel titApellido;
+        private Guna.UI.WinForms.GunaLabel titMonto;
+        private Guna.UI.WinForms.GunaLabel titInicioCon;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
     }
 }

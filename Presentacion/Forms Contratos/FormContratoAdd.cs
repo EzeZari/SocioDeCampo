@@ -15,6 +15,8 @@ namespace Presentacion.Forms_Contratos
     {
         private UserModel userModel = new UserModel(); // Instancia de UserModel
         private string idJugador; // Variable para almacenar el ID del jugador
+        public event Action ContratoAgregado; // Evento para notificar el cierre
+
 
         public FormContratoAdd(string idJugador)
         {
@@ -22,7 +24,6 @@ namespace Presentacion.Forms_Contratos
             this.idJugador = idJugador; // Almacena el ID recibido
             txtIdJugador.Text = idJugador; // Muestra el ID en el TextBox (opcional)
             CargarContratos();
-
         }
 
         private void btnAgregarContrato_Click(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace Presentacion.Forms_Contratos
                 userModel.AgregarContrato(idJugadorInt, fechaInicio, fechaFin, monto, clausula, salario, bonificacion, obligacion);
 
                 MessageBox.Show("Contrato agregado correctamente.");
+                ContratoAgregado?.Invoke(); // Notificar que se agregó un contrato
                 CargarContratos();
                 this.Close();
             }
