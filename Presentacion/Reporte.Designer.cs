@@ -32,42 +32,42 @@ namespace Presentacion
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.MyCompanyDataSet = new Presentacion.MyCompanyDataSet();
             this.gastosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gastosTableAdapter = new Presentacion.MyCompanyDataSetTableAdapters.gastosTableAdapter();
-            this.MyCompanyDataSet2 = new Presentacion.MyCompanyDataSet2();
+            this.MyCompanyDataSet = new Presentacion.MyCompanyDataSet();
             this.ingresosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MyCompanyDataSet2 = new Presentacion.MyCompanyDataSet2();
+            this.gastosTableAdapter = new Presentacion.MyCompanyDataSetTableAdapters.gastosTableAdapter();
             this.ingresosTableAdapter = new Presentacion.MyCompanyDataSet2TableAdapters.ingresosTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gastosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // MyCompanyDataSet
-            // 
-            this.MyCompanyDataSet.DataSetName = "MyCompanyDataSet";
-            this.MyCompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gastosBindingSource
             // 
             this.gastosBindingSource.DataMember = "gastos";
             this.gastosBindingSource.DataSource = this.MyCompanyDataSet;
             // 
-            // gastosTableAdapter
+            // MyCompanyDataSet
             // 
-            this.gastosTableAdapter.ClearBeforeFill = true;
+            this.MyCompanyDataSet.DataSetName = "MyCompanyDataSet";
+            this.MyCompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ingresosBindingSource
+            // 
+            this.ingresosBindingSource.DataMember = "ingresos";
+            this.ingresosBindingSource.DataSource = this.MyCompanyDataSet2;
             // 
             // MyCompanyDataSet2
             // 
             this.MyCompanyDataSet2.DataSetName = "MyCompanyDataSet2";
             this.MyCompanyDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ingresosBindingSource
+            // gastosTableAdapter
             // 
-            this.ingresosBindingSource.DataMember = "ingresos";
-            this.ingresosBindingSource.DataSource = this.MyCompanyDataSet2;
+            this.gastosTableAdapter.ClearBeforeFill = true;
             // 
             // ingresosTableAdapter
             // 
@@ -88,6 +88,7 @@ namespace Presentacion
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(676, 463);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // Reporte
             // 
@@ -98,10 +99,10 @@ namespace Presentacion
             this.Name = "Reporte";
             this.Text = "Reporte";
             this.Load += new System.EventHandler(this.Reporte_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gastosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ingresosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

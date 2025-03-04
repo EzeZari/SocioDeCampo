@@ -34,5 +34,10 @@ namespace Presentacion
             foreach (MyCompanyDataSet2.gastosRow row in MyCompanyDataSet2.gastos)
                 totalGastos += row.cantidad;
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

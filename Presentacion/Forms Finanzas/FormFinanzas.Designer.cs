@@ -29,9 +29,9 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -309,7 +309,7 @@ namespace Presentacion
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(638, 656);
+            this.lblBalance.Location = new System.Drawing.Point(593, 656);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(242, 32);
             this.lblBalance.TabIndex = 29;
@@ -318,16 +318,16 @@ namespace Presentacion
             // 
             // chartBalance
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartBalance.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartBalance.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartBalance.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartBalance.Legends.Add(legend2);
             this.chartBalance.Location = new System.Drawing.Point(488, 691);
             this.chartBalance.Name = "chartBalance";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartBalance.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartBalance.Series.Add(series2);
             this.chartBalance.Size = new System.Drawing.Size(554, 146);
             this.chartBalance.TabIndex = 30;
             this.chartBalance.Text = "chart1";
