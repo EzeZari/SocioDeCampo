@@ -369,4 +369,8 @@ namespace Presentacion
                 lblBalance.ForeColor = Color.Black;  // Equilibrado
         }
     }
+
+
+
+
 }
