@@ -36,7 +36,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaInicio = new Guna.UI.WinForms.GunaDateTimePicker();
             this.txtIdJugador = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.NombreJugContrato = new Guna.UI.WinForms.GunaLabel();
+            this.txtNombre = new Guna.UI.WinForms.GunaLabel();
             this.txtSalario = new Guna.UI.WinForms.GunaTextBox();
             this.txtBonificacion = new Guna.UI.WinForms.GunaTextBox();
             this.txtObligacion = new Guna.UI.WinForms.GunaTextBox();
@@ -123,7 +123,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaInicio.ShowCheckBox = true;
             this.dtFechaInicio.Size = new System.Drawing.Size(223, 30);
             this.dtFechaInicio.TabIndex = 5;
-            this.dtFechaInicio.Text = "domingo, 2 de marzo de 2025";
+            this.dtFechaInicio.Text = "martes, 4 de marzo de 2025";
             this.dtFechaInicio.Value = new System.DateTime(2025, 2, 19, 16, 34, 31, 864);
             // 
             // txtIdJugador
@@ -153,16 +153,15 @@ namespace Presentacion.Forms_Contratos
             this.gunaLabel1.TabIndex = 8;
             this.gunaLabel1.Text = "Añadir contrato a";
             // 
-            // NombreJugContrato
+            // txtNombre
             // 
-            this.NombreJugContrato.AutoSize = true;
-            this.NombreJugContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NombreJugContrato.Location = new System.Drawing.Point(117, 9);
-            this.NombreJugContrato.Name = "NombreJugContrato";
-            this.NombreJugContrato.Size = new System.Drawing.Size(59, 15);
-            this.NombreJugContrato.TabIndex = 9;
-            this.NombreJugContrato.Text = "[Nombre]";
-            this.NombreJugContrato.Visible = false;
+            this.txtNombre.AutoSize = true;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNombre.Location = new System.Drawing.Point(117, 9);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(59, 15);
+            this.txtNombre.TabIndex = 9;
+            this.txtNombre.Text = "[Nombre]";
             // 
             // txtSalario
             // 
@@ -230,7 +229,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaFinal.ShowCheckBox = true;
             this.dtFechaFinal.Size = new System.Drawing.Size(223, 30);
             this.dtFechaFinal.TabIndex = 13;
-            this.dtFechaFinal.Text = "domingo, 2 de marzo de 2025";
+            this.dtFechaFinal.Text = "martes, 4 de marzo de 2025";
             this.dtFechaFinal.Value = new System.DateTime(2025, 2, 19, 16, 34, 31, 864);
             // 
             // Monto
@@ -292,7 +291,7 @@ namespace Presentacion.Forms_Contratos
             this.Controls.Add(this.txtObligacion);
             this.Controls.Add(this.txtBonificacion);
             this.Controls.Add(this.txtSalario);
-            this.Controls.Add(this.NombreJugContrato);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.txtIdJugador);
             this.Controls.Add(this.dtFechaInicio);
@@ -313,7 +312,7 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaDateTimePicker dtFechaInicio;
         private Guna.UI.WinForms.GunaTextBox txtIdJugador;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaLabel NombreJugContrato;
+        private Guna.UI.WinForms.GunaLabel txtNombre;
         private Guna.UI.WinForms.GunaTextBox txtSalario;
         private Guna.UI.WinForms.GunaTextBox txtBonificacion;
         private Guna.UI.WinForms.GunaTextBox txtObligacion;

@@ -88,6 +88,20 @@ namespace Domain
                 throw new ArgumentException("El ID del jugador no es válido.");
             }
         }
+        public string ObtenerNombreJugador(string idJugador)
+        {
+            // Convertir el idJugador a entero, si es válido
+            if (int.TryParse(idJugador, out int id))
+            {
+                // Llamar al método en UserDao para obtener el nombre completo del jugador
+                return userDao.ObtenerNombreJugador(id);
+            }
+            else
+            {
+                throw new ArgumentException("El ID del jugador no es válido.");
+            }
+        }
+
 
         public void EditarUser(string LoginName, string FirstName, string LastName, string Email, string Password, string Position, int UserID)
         {

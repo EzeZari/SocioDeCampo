@@ -23,6 +23,7 @@ namespace Presentacion.Forms_Contratos
             InitializeComponent();
             this.idJugador = idJugador; // Almacena el ID recibido
             txtIdJugador.Text = idJugador; // Muestra el ID en el TextBox (opcional)
+            txtNombre.Text = userModel.ObtenerNombreJugador(idJugador);
             CargarContratos();
         }
 

@@ -93,6 +93,32 @@ namespace DataAccess
             }
             return dt;
         }
+        public string ObtenerNombreJugador(int idJugador)
+        {
+            string nombreCompleto = string.Empty;
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("ObtenerNombreJugador", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string nombre = reader.IsDBNull(0) ? string.Empty : reader.GetString(0); // Name
+                            string apellido = reader.IsDBNull(1) ? string.Empty : reader.GetString(1); // LastName
+                            nombreCompleto = nombre + " " + apellido; // Concatenar nombre y apellido
+                        }
+                    }
+                }
+            }
+            return nombreCompleto;
+        }
+
+
 
 
         // Método para obtener todos los contratos
