@@ -401,3 +401,6 @@ C:\Users\NATALIA\Desktop\SocioDeCampo\SocioDeCampo\Presentacion\obj\Debug\Presen
 C:\Users\NATALIA\Desktop\SocioDeCampo\SocioDeCampo\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\NATALIA\Desktop\SocioDeCampo\SocioDeCampo\Presentacion\obj\Debug\Presentacion.Forms_Contratos.FormContratoAdd.resources
 C:\Users\NATALIA\Desktop\SocioDeCampo\SocioDeCampo\Presentacion\obj\Debug\Presentacion.Forms_Contratos.FormContratoActual.resources
+C:\Users\NATALIA\Desktop\SocioDeCampo\SocioDeCampo\Presentacion\obj\Debug\Presentacion.Forms_Contratos.FormInforme.resources
+C:\Users\NATALIA\Desktop\SocioDeCampo\SocioDeCampo\Presentacion\obj\Debug\RdlCompile.cache
+C:\Users\NATALIA\Desktop\SocioDeCampo\SocioDeCampo\Presentacion\obj\Debug\RdlCompile.compiled

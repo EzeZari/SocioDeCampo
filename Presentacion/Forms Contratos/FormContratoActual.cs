@@ -56,11 +56,15 @@ namespace Presentacion.Forms_Contratos
             if (contrato.Rows.Count > 0)
             {
                 DataRow row = contrato.Rows[0];
-                lblMonto.Text = row["Monto"].ToString();
+
+                // Formatear Monto, Salario y Clausula en dólares
+                lblMonto.Text = FormatearEnDolares(row["Monto"].ToString());
+                lblSalario.Text = FormatearEnDolares(row["Salario"].ToString());
+                lblClausula.Text = FormatearEnDolares(row["Clausula"].ToString());
+
+                // Asignar otros valores sin formato específico
                 lblFechaInicio.Text = Convert.ToDateTime(row["FechaInicio"]).ToShortDateString();
                 lblFechaFin.Text = Convert.ToDateTime(row["FechaFin"]).ToShortDateString();
-                lblClausula.Text = row["Clausula"].ToString();
-                lblSalario.Text = row["Salario"].ToString();
                 lblBonificacion.Text = row["Bonificacion"].ToString();
                 lblObligacion.Text = row["Obligacion"].ToString();
             }
@@ -70,6 +74,21 @@ namespace Presentacion.Forms_Contratos
                 MessageBox.Show("No se encontró un contrato previo para este jugador.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        // Método auxiliar para formatear en dólares
+        private string FormatearEnDolares(string valor)
+        {
+            if (decimal.TryParse(valor, out decimal valorDecimal))
+            {
+                // Formatear como dólares (USD)
+                return valorDecimal.ToString("C0", new System.Globalization.CultureInfo("en-US"));
+            }
+            else
+            {
+                return "Formato inválido";
+            }
+        }
+
 
         private void btnEliminarContrato_Click(object sender, EventArgs e)
         {
@@ -90,6 +109,10 @@ namespace Presentacion.Forms_Contratos
             }
         }
 
-
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            FormInforme reporte = new FormInforme();
+            reporte.ShowDialog();
+        }
     }
 }

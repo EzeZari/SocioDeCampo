@@ -52,6 +52,7 @@ namespace Presentacion.Forms_Contratos
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.btnEliminarContrato = new Guna.UI.WinForms.GunaButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // lblFechaInicio
@@ -316,11 +317,25 @@ namespace Presentacion.Forms_Contratos
             this.btnEliminarContrato.Text = "Eliminar Contrato";
             this.btnEliminarContrato.Click += new System.EventHandler(this.btnEliminarContrato_Click);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(611, 266);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(114, 40);
+            this.iconButton1.TabIndex = 24;
+            this.iconButton1.Text = "iconButton1";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // FormContratoActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnEliminarContrato);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaLabel4);
@@ -344,7 +359,7 @@ namespace Presentacion.Forms_Contratos
             this.Controls.Add(this.lblFechaFin);
             this.Controls.Add(this.lblFechaInicio);
             this.Name = "FormContratoActual";
-            this.Text = "FormContratoActual";
+            this.Text = "Contrato Actual";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,5 +388,6 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaButton btnEliminarContrato;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
