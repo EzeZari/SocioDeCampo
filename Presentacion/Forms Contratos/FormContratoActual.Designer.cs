@@ -51,6 +51,7 @@ namespace Presentacion.Forms_Contratos
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.btnEliminarContrato = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // lblFechaInicio
@@ -291,11 +292,36 @@ namespace Presentacion.Forms_Contratos
             this.gunaLabel5.TabIndex = 22;
             this.gunaLabel5.Text = "Obligacion";
             // 
+            // btnEliminarContrato
+            // 
+            this.btnEliminarContrato.AnimationHoverSpeed = 0.07F;
+            this.btnEliminarContrato.AnimationSpeed = 0.03F;
+            this.btnEliminarContrato.BaseColor = System.Drawing.Color.Red;
+            this.btnEliminarContrato.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminarContrato.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEliminarContrato.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEliminarContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEliminarContrato.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarContrato.Image")));
+            this.btnEliminarContrato.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEliminarContrato.Location = new System.Drawing.Point(628, 377);
+            this.btnEliminarContrato.Name = "btnEliminarContrato";
+            this.btnEliminarContrato.OnHoverBaseColor = System.Drawing.Color.Red;
+            this.btnEliminarContrato.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEliminarContrato.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEliminarContrato.OnHoverImage = null;
+            this.btnEliminarContrato.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEliminarContrato.Size = new System.Drawing.Size(160, 42);
+            this.btnEliminarContrato.TabIndex = 23;
+            this.btnEliminarContrato.Text = "Eliminar Contrato";
+            this.btnEliminarContrato.Click += new System.EventHandler(this.btnEliminarContrato_Click);
+            // 
             // FormContratoActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminarContrato);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
@@ -346,5 +372,6 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private Guna.UI.WinForms.GunaButton btnEliminarContrato;
     }
 }

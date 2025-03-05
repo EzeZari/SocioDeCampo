@@ -93,7 +93,7 @@ namespace DataAccess
             }
             return dt;
         }
-        public string ObtenerNombreJugador(int idJugador)
+        public string ObtenerNombreJugador(int idJugador) //VER SI LO PUEDO METER DENTRO DE OBTENERCONTRATOPORJUGADOR()
         {
             string nombreCompleto = string.Empty;
             using (var connection = GetConnection())
@@ -117,10 +117,6 @@ namespace DataAccess
             }
             return nombreCompleto;
         }
-
-
-
-
         // Método para obtener todos los contratos
         public List<Contrato> GetContratos()
         {
@@ -190,7 +186,19 @@ namespace DataAccess
             }
             return dt;
         }
-
+        public void EliminarUltimoContrato(int idJugador)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("EliminarUltimoContrato", connection)) // SP en la BD
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IdJugador", idJugador);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
 
         #region Registro de Usuario

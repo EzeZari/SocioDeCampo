@@ -70,5 +70,26 @@ namespace Presentacion.Forms_Contratos
                 MessageBox.Show("No se encontró un contrato previo para este jugador.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnEliminarContrato_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult confirmacion = MessageBox.Show("¿Está seguro de que desea eliminar el último contrato?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    userModel.EliminarUltimoContrato(Convert.ToInt32(lblIdJugador.Text));
+                    MessageBox.Show("Último contrato eliminado correctamente.");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el contrato: " + ex.Message);
+            }
+        }
+
+
     }
 }

@@ -101,7 +101,10 @@ namespace Domain
                 throw new ArgumentException("El ID del jugador no es válido.");
             }
         }
-
+        public void EliminarUltimoContrato(int idJugador)
+        {
+            userDao.EliminarUltimoContrato(idJugador);
+        }
 
         public void EditarUser(string LoginName, string FirstName, string LastName, string Email, string Password, string Position, int UserID)
         {
