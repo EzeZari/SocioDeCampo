@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetContratos" targetNamespace="http://tempuri.org/DataSetContratos.xsd" xmlns:mstns="http://tempuri.org/DataSetContratos.xsd" xmlns="http://tempuri.org/DataSetContratos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MyCompanyContratosJugadores" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MyCompanyContratosJugadores (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.MyCompanyContratosJugadores" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaJugadoresSinModificarTableAdapter" GeneratorDataComponentClassName="VistaJugadoresSinModificarTableAdapter" Name="VistaJugadoresSinModificar" UserDataComponentName="VistaJugadoresSinModificarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MyCompanyContratosJugadores (Settings)" DbObjectName="MyCompany.dbo.VistaJugadoresSinModificar" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdJugador, Name, LastName, Birthdate, Nationality, Position, FechaInicio, FechaFin, Salario FROM dbo.VistaJugadoresSinModificar</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdJugador" DataSetColumn="IdJugador" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="Birthdate" DataSetColumn="Birthdate" />
+              <Mapping SourceColumn="Nationality" DataSetColumn="Nationality" />
+              <Mapping SourceColumn="Position" DataSetColumn="Position" />
+              <Mapping SourceColumn="FechaInicio" DataSetColumn="FechaInicio" />
+              <Mapping SourceColumn="FechaFin" DataSetColumn="FechaFin" />
+              <Mapping SourceColumn="Salario" DataSetColumn="Salario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetContratos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetContratos" msprop:Generator_UserDSName="DataSetContratos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VistaJugadoresSinModificar" msprop:Generator_TableClassName="VistaJugadoresSinModificarDataTable" msprop:Generator_TableVarName="tableVistaJugadoresSinModificar" msprop:Generator_TablePropName="VistaJugadoresSinModificar" msprop:Generator_RowDeletingName="VistaJugadoresSinModificarRowDeleting" msprop:Generator_RowChangingName="VistaJugadoresSinModificarRowChanging" msprop:Generator_RowEvHandlerName="VistaJugadoresSinModificarRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaJugadoresSinModificarRowDeleted" msprop:Generator_UserTableName="VistaJugadoresSinModificar" msprop:Generator_RowChangedName="VistaJugadoresSinModificarRowChanged" msprop:Generator_RowEvArgName="VistaJugadoresSinModificarRowChangeEvent" msprop:Generator_RowClassName="VistaJugadoresSinModificarRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdJugador" msprop:Generator_ColumnVarNameInTable="columnIdJugador" msprop:Generator_ColumnPropNameInRow="IdJugador" msprop:Generator_ColumnPropNameInTable="IdJugadorColumn" msprop:Generator_UserColumnName="IdJugador" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Birthdate" msprop:Generator_ColumnVarNameInTable="columnBirthdate" msprop:Generator_ColumnPropNameInRow="Birthdate" msprop:Generator_ColumnPropNameInTable="BirthdateColumn" msprop:Generator_UserColumnName="Birthdate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nationality" msprop:Generator_ColumnVarNameInTable="columnNationality" msprop:Generator_ColumnPropNameInRow="Nationality" msprop:Generator_ColumnPropNameInTable="NationalityColumn" msprop:Generator_UserColumnName="Nationality" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Position" msprop:Generator_ColumnVarNameInTable="columnPosition" msprop:Generator_ColumnPropNameInRow="Position" msprop:Generator_ColumnPropNameInTable="PositionColumn" msprop:Generator_UserColumnName="Position" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaInicio" msprop:Generator_ColumnVarNameInTable="columnFechaInicio" msprop:Generator_ColumnPropNameInRow="FechaInicio" msprop:Generator_ColumnPropNameInTable="FechaInicioColumn" msprop:Generator_UserColumnName="FechaInicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaFin" msprop:Generator_ColumnVarNameInTable="columnFechaFin" msprop:Generator_ColumnPropNameInRow="FechaFin" msprop:Generator_ColumnPropNameInTable="FechaFinColumn" msprop:Generator_UserColumnName="FechaFin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Salario" msprop:Generator_ColumnVarNameInTable="columnSalario" msprop:Generator_ColumnPropNameInRow="Salario" msprop:Generator_ColumnPropNameInTable="SalarioColumn" msprop:Generator_UserColumnName="Salario" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VistaJugadoresSinModificar" />
+      <xs:field xpath="mstns:IdJugador" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

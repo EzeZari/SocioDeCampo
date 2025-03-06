@@ -91,6 +91,14 @@
     <Compile Include="Forms AgregarGasto\AgregarGasto.Designer.cs">
       <DependentUpon>AgregarGasto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Contratos\DataSetContratos.cs">
+      <DependentUpon>DataSetContratos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Contratos\DataSetContratos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetContratos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms Contratos\FormContratoActual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +110,12 @@
     </Compile>
     <Compile Include="Forms Contratos\FormContratoAdd.Designer.cs">
       <DependentUpon>FormContratoAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Contratos\FormGenerarInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Contratos\FormGenerarInforme.Designer.cs">
+      <DependentUpon>FormGenerarInforme.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Finanzas\FormFinanzas.cs">
       <SubType>Form</SubType>
@@ -168,11 +182,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyCompanyDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MyCompanyDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyCompanyDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -186,6 +195,10 @@
     <EmbeddedResource Include="Forms Contratos\FormContratoAdd.resx">
       <DependentUpon>FormContratoAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Contratos\FormGenerarInforme.resx">
+      <DependentUpon>FormGenerarInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportContratos.rdlc" />
     <EmbeddedResource Include="Forms Finanzas\FormFinanzas.resx">
       <DependentUpon>FormFinanzas.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +238,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Forms Contratos\DataSetContratos.xsc">
+      <DependentUpon>DataSetContratos.xsd</DependentUpon>
+    </None>
+    <None Include="Forms Contratos\DataSetContratos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetContratos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms Contratos\DataSetContratos.xss">
+      <DependentUpon>DataSetContratos.xsd</DependentUpon>
+    </None>
     <None Include="MyCompanyDataSet.xsc">
       <DependentUpon>MyCompanyDataSet.xsd</DependentUpon>
     </None>
@@ -235,17 +259,6 @@
     </None>
     <None Include="MyCompanyDataSet.xss">
       <DependentUpon>MyCompanyDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MyCompanyDataSet1.xsc">
-      <DependentUpon>MyCompanyDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="MyCompanyDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MyCompanyDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MyCompanyDataSet1.xss">
-      <DependentUpon>MyCompanyDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -285,6 +298,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

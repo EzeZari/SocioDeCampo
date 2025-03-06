@@ -123,7 +123,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaInicio.ShowCheckBox = true;
             this.dtFechaInicio.Size = new System.Drawing.Size(223, 30);
             this.dtFechaInicio.TabIndex = 5;
-            this.dtFechaInicio.Text = "martes, 4 de marzo de 2025";
+            this.dtFechaInicio.Text = "miércoles, 5 de marzo de 2025";
             this.dtFechaInicio.Value = new System.DateTime(2025, 2, 19, 16, 34, 31, 864);
             // 
             // txtIdJugador
@@ -141,7 +141,7 @@ namespace Presentacion.Forms_Contratos
             this.txtIdJugador.PasswordChar = '\0';
             this.txtIdJugador.Size = new System.Drawing.Size(160, 30);
             this.txtIdJugador.TabIndex = 7;
-            this.txtIdJugador.Text = "Id jugdaor";
+            this.txtIdJugador.Text = "Id jugador";
             // 
             // gunaLabel1
             // 
@@ -156,10 +156,10 @@ namespace Presentacion.Forms_Contratos
             // txtNombre
             // 
             this.txtNombre.AutoSize = true;
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNombre.Location = new System.Drawing.Point(117, 9);
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(116, 5);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(59, 15);
+            this.txtNombre.Size = new System.Drawing.Size(75, 20);
             this.txtNombre.TabIndex = 9;
             this.txtNombre.Text = "[Nombre]";
             // 
@@ -172,7 +172,7 @@ namespace Presentacion.Forms_Contratos
             this.txtSalario.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSalario.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSalario.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSalario.Location = new System.Drawing.Point(342, 211);
+            this.txtSalario.Location = new System.Drawing.Point(390, 44);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.PasswordChar = '\0';
             this.txtSalario.Size = new System.Drawing.Size(160, 30);
@@ -187,10 +187,11 @@ namespace Presentacion.Forms_Contratos
             this.txtBonificacion.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtBonificacion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBonificacion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBonificacion.Location = new System.Drawing.Point(342, 269);
+            this.txtBonificacion.Location = new System.Drawing.Point(390, 113);
+            this.txtBonificacion.MultiLine = true;
             this.txtBonificacion.Name = "txtBonificacion";
             this.txtBonificacion.PasswordChar = '\0';
-            this.txtBonificacion.Size = new System.Drawing.Size(160, 46);
+            this.txtBonificacion.Size = new System.Drawing.Size(298, 95);
             this.txtBonificacion.TabIndex = 11;
             // 
             // txtObligacion
@@ -202,10 +203,11 @@ namespace Presentacion.Forms_Contratos
             this.txtObligacion.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtObligacion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtObligacion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtObligacion.Location = new System.Drawing.Point(342, 334);
+            this.txtObligacion.Location = new System.Drawing.Point(381, 269);
+            this.txtObligacion.MultiLine = true;
             this.txtObligacion.Name = "txtObligacion";
             this.txtObligacion.PasswordChar = '\0';
-            this.txtObligacion.Size = new System.Drawing.Size(160, 30);
+            this.txtObligacion.Size = new System.Drawing.Size(307, 109);
             this.txtObligacion.TabIndex = 12;
             // 
             // dtFechaFinal
@@ -229,7 +231,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaFinal.ShowCheckBox = true;
             this.dtFechaFinal.Size = new System.Drawing.Size(223, 30);
             this.dtFechaFinal.TabIndex = 13;
-            this.dtFechaFinal.Text = "martes, 4 de marzo de 2025";
+            this.dtFechaFinal.Text = "miércoles, 5 de marzo de 2025";
             this.dtFechaFinal.Value = new System.DateTime(2025, 2, 19, 16, 34, 31, 864);
             // 
             // Monto
@@ -253,7 +255,7 @@ namespace Presentacion.Forms_Contratos
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(339, 195);
+            this.label2.Location = new System.Drawing.Point(387, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 16;
@@ -262,7 +264,7 @@ namespace Presentacion.Forms_Contratos
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(339, 253);
+            this.label3.Location = new System.Drawing.Point(387, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 17;
@@ -271,7 +273,7 @@ namespace Presentacion.Forms_Contratos
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(339, 318);
+            this.label4.Location = new System.Drawing.Point(378, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 18;
@@ -281,7 +283,8 @@ namespace Presentacion.Forms_Contratos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(771, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

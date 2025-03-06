@@ -40,7 +40,9 @@ namespace Presentacion
                 objeto.AddJugador(nombre, apellido, fechaNacimiento, nacionalidad, posicion);
 
                 // Mostrar un mensaje de éxito
-                MessageBox.Show("Se insertó correctamente");
+                MessageBox.Show("Jugador agregado correctamente",
+                                "Excelente",
+                                MessageBoxButtons.OK);
 
                 // Cerrar el formulario después de guardar
                 this.Close();

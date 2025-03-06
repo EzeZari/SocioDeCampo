@@ -47,11 +47,11 @@ namespace Presentacion
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Obtener los datos de la fila seleccionada en el DataGridView
-                string nombre = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
-                string apellido = dataGridView1.CurrentRow.Cells["LastName"].Value.ToString();
-                string fechaNacimiento = dataGridView1.CurrentRow.Cells["Birthdate"].Value.ToString();
-                string nacionalidad = dataGridView1.CurrentRow.Cells["Nationality"].Value.ToString();
-                string posicion = dataGridView1.CurrentRow.Cells["Position"].Value.ToString();
+                string nombre = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
+                string fechaNacimiento = dataGridView1.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString();
+                string nacionalidad = dataGridView1.CurrentRow.Cells["Nacionalidad"].Value.ToString();
+                string posicion = dataGridView1.CurrentRow.Cells["Posición"].Value.ToString();
                 string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
 
                 // Crear una instancia del formulario FormJugadoresEdit
@@ -114,8 +114,8 @@ namespace Presentacion
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
-                string nombre = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
-                string apellido = dataGridView1.CurrentRow.Cells["LastName"].Value.ToString();
+                string nombre = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
 
                 // Consultar si el jugador ya tiene un contrato
                 DataTable contrato = objeto.ObtenerContratoPorJugador(idJugador);
@@ -168,8 +168,8 @@ namespace Presentacion
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
-                string nombre = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
-                string apellido = dataGridView1.CurrentRow.Cells["LastName"].Value.ToString();
+                string nombre = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
 
                 // Llamamos a UserModel en lugar de acceder directamente a la BD
                 DataTable contrato = objeto.ObtenerContratoPorJugador(idJugador);
@@ -196,6 +196,12 @@ namespace Presentacion
             {
                 MessageBox.Show("Seleccione un jugador antes de ver su contrato.");
             }
+        }
+
+        private void btnGenerarInforme_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormGenerarInforme formGenerarInforme = new FormGenerarInforme();
+            formGenerarInforme.ShowDialog();
         }
     }
 }

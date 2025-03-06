@@ -38,11 +38,10 @@ namespace Presentacion
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvContratos = new System.Windows.Forms.DataGridView();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.btnVerContrato = new Guna.UI.WinForms.GunaButton();
+            this.btnGenerarInforme = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -70,7 +69,7 @@ namespace Presentacion
             this.dataGridView1.RowHeadersWidth = 50;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(704, 559);
+            this.dataGridView1.Size = new System.Drawing.Size(919, 559);
             this.dataGridView1.TabIndex = 8;
             // 
             // btnEditar
@@ -170,14 +169,6 @@ namespace Presentacion
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // dgvContratos
-            // 
-            this.dgvContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContratos.Location = new System.Drawing.Point(862, 239);
-            this.dgvContratos.Name = "dgvContratos";
-            this.dgvContratos.Size = new System.Drawing.Size(162, 224);
-            this.dgvContratos.TabIndex = 15;
-            // 
             // gunaButton1
             // 
             this.gunaButton1.AnimationHoverSpeed = 0.07F;
@@ -228,15 +219,26 @@ namespace Presentacion
             this.btnVerContrato.Visible = false;
             this.btnVerContrato.Click += new System.EventHandler(this.btnVerContrato_Click_1);
             // 
+            // btnGenerarInforme
+            // 
+            this.btnGenerarInforme.AutoSize = true;
+            this.btnGenerarInforme.Location = new System.Drawing.Point(1014, 17);
+            this.btnGenerarInforme.Name = "btnGenerarInforme";
+            this.btnGenerarInforme.Size = new System.Drawing.Size(83, 13);
+            this.btnGenerarInforme.TabIndex = 18;
+            this.btnGenerarInforme.TabStop = true;
+            this.btnGenerarInforme.Text = "Generar Informe";
+            this.btnGenerarInforme.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnGenerarInforme_LinkClicked);
+            // 
             // FormJugadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1154, 690);
+            this.Controls.Add(this.btnGenerarInforme);
             this.Controls.Add(this.btnVerContrato);
             this.Controls.Add(this.gunaButton1);
-            this.Controls.Add(this.dgvContratos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
@@ -247,7 +249,6 @@ namespace Presentacion
             this.Text = "FormJugadores";
             this.Load += new System.EventHandler(this.FormJugadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,8 +261,8 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvContratos;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaButton btnVerContrato;
+        private System.Windows.Forms.LinkLabel btnGenerarInforme;
     }
 }
