@@ -111,8 +111,8 @@ namespace Presentacion.Forms_Contratos
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            FormInforme reporte = new FormInforme();
-            reporte.ShowDialog();
+            
+            
         }
     }
 }

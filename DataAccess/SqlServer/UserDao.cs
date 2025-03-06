@@ -258,25 +258,22 @@ namespace DataAccess
         DataTable tabla = new DataTable();      // Agregamos
         SqlCommand comando = new SqlCommand(); // Para ejecutar instrucciones o procedimientos almacenados.
 
-        public DataTable Mostrar() // Mostrar registros de tabla Jugadores
+        public DataTable Mostrar()
         {
             using (var connection = GetConnection())
             {
-                connection.Open(); // Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
-                using (var command = new SqlCommand())
+                connection.Open();
+                using (var command = new SqlCommand("SELECT * FROM VistaJugadores", connection))
                 {
-                    command.Connection = connection;
-                    command.CommandText = "MostrarJugadores"; // Cambiamos select * from Jugadores por MostrarJugadores
-                    command.CommandType = CommandType.StoredProcedure;
-                    leer = command.ExecuteReader(); 
-                    tabla.Load(leer); // Nuestra tabla sera rellenada con el resultado de data reader. 
-                    connection.Close();
-                    return tabla;
+                    using (SqlDataReader leer = command.ExecuteReader())
+                    {
+                        DataTable tabla = new DataTable();
+                        tabla.Load(leer);
+                        return tabla;
+                    }
                 }
             }
         }
-
-
         public void AddJugador(string Name, string LastName, string Birthdate, string Nationality, string Position)
         {
             using (var connection = GetConnection())
