@@ -52,6 +52,10 @@ namespace Presentacion
             this.lblBalance = new System.Windows.Forms.Label();
             this.chartBalance = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnImportar = new Guna.UI.WinForms.GunaButton();
+            this.txtBuscarGasto = new System.Windows.Forms.TextBox();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.txtBuscarIngreso = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBalance)).BeginInit();
@@ -80,6 +84,7 @@ namespace Presentacion
             this.dgvDatos.Size = new System.Drawing.Size(721, 476);
             this.dgvDatos.TabIndex = 1;
             this.dgvDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellClick);
+            this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentClick);
             // 
             // gunaLabel2
             // 
@@ -95,7 +100,7 @@ namespace Presentacion
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(399, 104);
+            this.gunaLabel3.Location = new System.Drawing.Point(552, 103);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(123, 25);
             this.gunaLabel3.TabIndex = 3;
@@ -114,7 +119,7 @@ namespace Presentacion
             // DTPFechaHasta
             // 
             this.DTPFechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPFechaHasta.Location = new System.Drawing.Point(392, 131);
+            this.DTPFechaHasta.Location = new System.Drawing.Point(498, 131);
             this.DTPFechaHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTPFechaHasta.Name = "DTPFechaHasta";
             this.DTPFechaHasta.Size = new System.Drawing.Size(200, 26);
@@ -361,12 +366,52 @@ namespace Presentacion
             this.btnImportar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
+            // txtBuscarGasto
+            // 
+            this.txtBuscarGasto.Location = new System.Drawing.Point(276, 131);
+            this.txtBuscarGasto.Name = "txtBuscarGasto";
+            this.txtBuscarGasto.Size = new System.Drawing.Size(134, 22);
+            this.txtBuscarGasto.TabIndex = 32;
+            this.txtBuscarGasto.TextChanged += new System.EventHandler(this.txtBuscarGasto_TextChanged);
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel6.Location = new System.Drawing.Point(309, 103);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(73, 25);
+            this.gunaLabel6.TabIndex = 33;
+            this.gunaLabel6.Text = "Buscar";
+            // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.Location = new System.Drawing.Point(1074, 103);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(73, 25);
+            this.gunaLabel7.TabIndex = 35;
+            this.gunaLabel7.Text = "Buscar";
+            // 
+            // txtBuscarIngreso
+            // 
+            this.txtBuscarIngreso.Location = new System.Drawing.Point(1041, 131);
+            this.txtBuscarIngreso.Name = "txtBuscarIngreso";
+            this.txtBuscarIngreso.Size = new System.Drawing.Size(134, 22);
+            this.txtBuscarIngreso.TabIndex = 34;
+            this.txtBuscarIngreso.TextChanged += new System.EventHandler(this.txtBuscarIngreso_TextChanged);
+            // 
             // FormFinanzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1539, 849);
+            this.Controls.Add(this.gunaLabel7);
+            this.Controls.Add(this.txtBuscarIngreso);
+            this.Controls.Add(this.gunaLabel6);
+            this.Controls.Add(this.txtBuscarGasto);
             this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.chartBalance);
             this.Controls.Add(this.lblBalance);
@@ -421,5 +466,9 @@ namespace Presentacion
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartBalance;
         private Guna.UI.WinForms.GunaButton btnImportar;
+        private System.Windows.Forms.TextBox txtBuscarGasto;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
+        private System.Windows.Forms.TextBox txtBuscarIngreso;
     }
 }

@@ -20,6 +20,8 @@ namespace Presentacion
         IngresosModel IngresosModel = new IngresosModel();
         int idIngreso = 0;
 
+        private GastosModel gastosModel = new GastosModel();
+
         public FormFinanzas()
         {
             InitializeComponent();
@@ -367,6 +369,135 @@ namespace Presentacion
                 lblBalance.ForeColor = Color.Red;    // Déficit
             else
                 lblBalance.ForeColor = Color.Black;  // Equilibrado
+        }
+
+       
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBuscarGasto_TextChanged(object sender, EventArgs e)
+        {
+            if (dgvDatos.DataSource is DataTable dtGastos)
+            {
+                string searchTerm = txtBuscarGasto.Text.Trim().ToLower();
+
+                if (string.IsNullOrEmpty(searchTerm))
+                {
+                    // If search box is empty, show all records
+                    dgvDatos.DataSource = gatosModel.Mostrargastos();
+                    CalcularBalanceFiltrado();
+                    ActualizarGrafico();
+                    return;
+                }
+
+                try
+                {
+                    // Create a custom filter with the DataTable to search by any column
+                    DataTable filteredTable = dtGastos.Clone();
+
+                    foreach (DataRow row in dtGastos.Rows)
+                    {
+                        bool matchFound = false;
+
+                        // Check each column for a match
+                        foreach (DataColumn col in dtGastos.Columns)
+                        {
+                            if (col.DataType == typeof(string) && row[col] != DBNull.Value)
+                            {
+                                string cellValue = row[col].ToString().ToLower();
+                                if (cellValue.Contains(searchTerm))
+                                {
+                                    matchFound = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        // If a match was found in any column, add the row to the filtered table
+                        if (matchFound)
+                        {
+                            filteredTable.ImportRow(row);
+                        }
+                    }
+
+                    // Display the filtered results
+                    dgvDatos.DataSource = filteredTable;
+
+                    // Update calculations based on filtered data
+                    CalcularBalanceFiltrado();
+                    ActualizarGrafico();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error en la búsqueda: " + ex.Message);
+                    MessageBox.Show("Ocurrió un error al realizar la búsqueda: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+        }
+
+        private void txtBuscarIngreso_TextChanged(object sender, EventArgs e)
+        {
+            if (dvgIngresos.DataSource is DataTable dtIngresos)
+            {
+                string searchTerm = txtBuscarIngreso.Text.Trim().ToLower();
+
+                if (string.IsNullOrEmpty(searchTerm))
+                {
+                    // If search box is empty, show all records
+                    dvgIngresos.DataSource = IngresosModel.MostrarIngresos();
+                    CalcularBalanceFiltrado();
+                    ActualizarGrafico();
+                    return;
+                }
+
+                try
+                {
+                    // Create a custom filter with the DataTable to search by any column
+                    DataTable filteredTable = dtIngresos.Clone();
+
+                    foreach (DataRow row in dtIngresos.Rows)
+                    {
+                        bool matchFound = false;
+
+                        // Check each column for a match
+                        foreach (DataColumn col in dtIngresos.Columns)
+                        {
+                            if (col.DataType == typeof(string) && row[col] != DBNull.Value)
+                            {
+                                string cellValue = row[col].ToString().ToLower();
+                                if (cellValue.Contains(searchTerm))
+                                {
+                                    matchFound = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        // If a match was found in any column, add the row to the filtered table
+                        if (matchFound)
+                        {
+                            filteredTable.ImportRow(row);
+                        }
+                    }
+
+                    // Display the filtered results
+                    dvgIngresos.DataSource = filteredTable;
+
+                    // Update calculations based on filtered data
+                    CalcularBalanceFiltrado();
+                    ActualizarGrafico();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error en la búsqueda de ingresos: " + ex.Message);
+                    MessageBox.Show("Ocurrió un error al realizar la búsqueda de ingresos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 
