@@ -138,9 +138,10 @@ namespace Presentacion
                 }
                 else
                 {
-                    // Si no tiene contrato, permitir agregar uno nuevo
                     FormContratoAdd formContratoAdd = new FormContratoAdd(idJugador);
+                    formContratoAdd.ContratoAgregado += () => MostrarJugadores(); // Suscripción al evento
                     formContratoAdd.ShowDialog();
+
                 }
             }
             else
@@ -148,21 +149,6 @@ namespace Presentacion
                 MessageBox.Show("Seleccione un jugador antes de agregar un contrato.");
             }
         }
-
-
-        //private void btnVerContrato_Click_1(object sender, EventArgs e)
-        //{
-        //    if (dataGridView1.SelectedRows.Count > 0)
-        //    {
-        //        string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
-        //        FormContratoActual formContratoActual = new FormContratoActual( );
-        //        formContratoActual.ShowDialog(); // Cambié ShowDialog por Show
-        //    }
-        //    else
-        //    {
-        //        // Aquí no se muestra el mensaje
-        //    }
-        //}
         private void btnVerContrato_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)

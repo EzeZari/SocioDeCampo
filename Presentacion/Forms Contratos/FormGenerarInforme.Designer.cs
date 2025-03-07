@@ -32,6 +32,8 @@ namespace Presentacion.Forms_Contratos
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGenerarInforme));
+            this.VistaJugadoresSinModificarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetContratos = new Presentacion.Forms_Contratos.DataSetContratos();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.cmbContratosVencimiento = new Guna.UI.WinForms.GunaComboBox();
             this.btnFiltrar = new Guna.UI.WinForms.GunaButton();
@@ -41,13 +43,26 @@ namespace Presentacion.Forms_Contratos
             this.dtpHasta = new Guna.UI.WinForms.GunaDateTimePicker();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.cmbPosicion = new Guna.UI.WinForms.GunaComboBox();
-            this.VistaJugadoresSinModificarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetContratos = new Presentacion.Forms_Contratos.DataSetContratos();
             this.VistaJugadoresSinModificarTableAdapter = new Presentacion.Forms_Contratos.DataSetContratosTableAdapters.VistaJugadoresSinModificarTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.VistaJugadoresSinModificarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetContratos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // VistaJugadoresSinModificarBindingSource
+            // 
+            this.VistaJugadoresSinModificarBindingSource.DataMember = "VistaJugadoresSinModificar";
+            this.VistaJugadoresSinModificarBindingSource.DataSource = this.DataSetContratos;
+            // 
+            // DataSetContratos
+            // 
+            this.DataSetContratos.DataSetName = "DataSetContratos";
+            this.DataSetContratos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -148,7 +163,7 @@ namespace Presentacion.Forms_Contratos
             this.dtpDesde.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtpDesde.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDesde.ForeColor = System.Drawing.Color.Black;
-            this.dtpDesde.Location = new System.Drawing.Point(40, 118);
+            this.dtpDesde.Location = new System.Drawing.Point(40, 107);
             this.dtpDesde.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDesde.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
@@ -170,7 +185,7 @@ namespace Presentacion.Forms_Contratos
             this.dtpHasta.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtpHasta.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpHasta.ForeColor = System.Drawing.Color.Black;
-            this.dtpHasta.Location = new System.Drawing.Point(40, 170);
+            this.dtpHasta.Location = new System.Drawing.Point(40, 143);
             this.dtpHasta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpHasta.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpHasta.Name = "dtpHasta";
@@ -208,19 +223,54 @@ namespace Presentacion.Forms_Contratos
             this.cmbPosicion.Size = new System.Drawing.Size(202, 26);
             this.cmbPosicion.TabIndex = 9;
             // 
-            // VistaJugadoresSinModificarBindingSource
-            // 
-            this.VistaJugadoresSinModificarBindingSource.DataMember = "VistaJugadoresSinModificar";
-            this.VistaJugadoresSinModificarBindingSource.DataSource = this.DataSetContratos;
-            // 
-            // DataSetContratos
-            // 
-            this.DataSetContratos.DataSetName = "DataSetContratos";
-            this.DataSetContratos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // VistaJugadoresSinModificarTableAdapter
             // 
             this.VistaJugadoresSinModificarTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Contrato a vencer en los proximos...";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Salario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(47, 231);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Min";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(185, 231);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Max";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(47, 356);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Posicion";
             // 
             // FormGenerarInforme
             // 
@@ -228,6 +278,11 @@ namespace Presentacion.Forms_Contratos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1215, 540);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbPosicion);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.dtpHasta);
@@ -240,10 +295,11 @@ namespace Presentacion.Forms_Contratos
             this.Name = "FormGenerarInforme";
             this.Text = "Crear informe";
             this.Load += new System.EventHandler(this.FormGenerarInforme_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VistaJugadoresSinModificarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetContratos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -261,5 +317,10 @@ namespace Presentacion.Forms_Contratos
         private Guna.UI.WinForms.GunaDateTimePicker dtpHasta;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private Guna.UI.WinForms.GunaComboBox cmbPosicion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
