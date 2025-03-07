@@ -29,9 +29,9 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -323,16 +323,16 @@ namespace Presentacion
             // 
             // chartBalance
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartBalance.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartBalance.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartBalance.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartBalance.Legends.Add(legend1);
             this.chartBalance.Location = new System.Drawing.Point(488, 691);
             this.chartBalance.Name = "chartBalance";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartBalance.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartBalance.Series.Add(series1);
             this.chartBalance.Size = new System.Drawing.Size(554, 146);
             this.chartBalance.TabIndex = 30;
             this.chartBalance.Text = "chart1";
@@ -372,6 +372,7 @@ namespace Presentacion
             this.txtBuscarGasto.Name = "txtBuscarGasto";
             this.txtBuscarGasto.Size = new System.Drawing.Size(134, 22);
             this.txtBuscarGasto.TabIndex = 32;
+            this.txtBuscarGasto.Text = "Buscar";
             this.txtBuscarGasto.TextChanged += new System.EventHandler(this.txtBuscarGasto_TextChanged);
             // 
             // gunaLabel6
