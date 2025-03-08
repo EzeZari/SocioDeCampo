@@ -499,6 +499,22 @@ namespace Presentacion
                 }
             }
         }
+
+        private void btnPresupuestos_Click(object sender, EventArgs e)
+        {
+            FormPresupuestos formPresupuestos = new FormPresupuestos();
+            formPresupuestos.PresupuestosActualizados += (s, args) =>
+            {
+                // Actualizar la vista si es necesario
+            };
+            formPresupuestos.ShowDialog();
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            FormSeguimientoPresupuestario formSeguimiento = new FormSeguimientoPresupuestario();
+            formSeguimiento.ShowDialog();
+        }
     }
 
 

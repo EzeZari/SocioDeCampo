@@ -103,6 +103,7 @@
     <Compile Include="Cache\GastosCache.cs" />
     <Compile Include="Cache\IngresosCache.cs" />
     <Compile Include="Cache\Position.cs" />
+    <Compile Include="Cache\PresupuestoCache.cs" />
     <Compile Include="Cache\UserCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
