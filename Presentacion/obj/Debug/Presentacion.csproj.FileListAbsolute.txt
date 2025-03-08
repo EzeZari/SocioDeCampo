@@ -511,3 +511,5 @@ C:\Users\Maximo\Desktop\Nueva carpeta (4)\SocioDeCampo\Presentacion\bin\Debug\Sy
 C:\Users\Maximo\Desktop\Nueva carpeta (4)\SocioDeCampo\Presentacion\bin\Debug\System.Memory.xml
 C:\Users\Maximo\Desktop\Nueva carpeta (4)\SocioDeCampo\Presentacion\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Maximo\Desktop\Nueva carpeta (4)\SocioDeCampo\Presentacion\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Maximo\Desktop\Nueva carpeta (4)\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormPresupuestos.resources
+C:\Users\Maximo\Desktop\Nueva carpeta (4)\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormSeguimientoPresupuestario.resources

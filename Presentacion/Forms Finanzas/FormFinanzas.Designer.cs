@@ -56,6 +56,8 @@ namespace Presentacion
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.txtBuscarIngreso = new System.Windows.Forms.TextBox();
+            this.btnPresupuestos = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBalance)).BeginInit();
@@ -404,12 +406,70 @@ namespace Presentacion
             this.txtBuscarIngreso.Text = "Buscar";
             this.txtBuscarIngreso.TextChanged += new System.EventHandler(this.txtBuscarIngreso_TextChanged);
             // 
+            // btnPresupuestos
+            // 
+            this.btnPresupuestos.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnPresupuestos.AnimationHoverSpeed = 0.07F;
+            this.btnPresupuestos.AnimationSpeed = 0.03F;
+            this.btnPresupuestos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPresupuestos.BaseColor = System.Drawing.Color.Green;
+            this.btnPresupuestos.BorderColor = System.Drawing.Color.Black;
+            this.btnPresupuestos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPresupuestos.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPresupuestos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresupuestos.ForeColor = System.Drawing.Color.White;
+            this.btnPresupuestos.Image = null;
+            this.btnPresupuestos.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPresupuestos.Location = new System.Drawing.Point(1186, 725);
+            this.btnPresupuestos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPresupuestos.Name = "btnPresupuestos";
+            this.btnPresupuestos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPresupuestos.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPresupuestos.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPresupuestos.OnHoverImage = null;
+            this.btnPresupuestos.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPresupuestos.Size = new System.Drawing.Size(282, 40);
+            this.btnPresupuestos.TabIndex = 36;
+            this.btnPresupuestos.Text = "Presupuestos";
+            this.btnPresupuestos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPresupuestos.Click += new System.EventHandler(this.btnPresupuestos_Click);
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.gunaButton1.BaseColor = System.Drawing.Color.Green;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(1186, 782);
+            this.gunaButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(300, 37);
+            this.gunaButton1.TabIndex = 37;
+            this.gunaButton1.Text = "SeguimientoPresupuestario";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
             // FormFinanzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1539, 849);
+            this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.btnPresupuestos);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.txtBuscarIngreso);
             this.Controls.Add(this.gunaLabel6);
@@ -472,5 +532,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private System.Windows.Forms.TextBox txtBuscarIngreso;
+        private Guna.UI.WinForms.GunaButton btnPresupuestos;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }
