@@ -29,9 +29,8 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJugadores));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEditar = new Guna.UI.WinForms.GunaButton();
             this.btnEliminar = new Guna.UI.WinForms.GunaButton();
@@ -52,24 +51,24 @@ namespace Presentacion
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 119);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(919, 559);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Size = new System.Drawing.Size(1100, 555);
             this.dataGridView1.TabIndex = 8;
             // 
             // btnEditar
@@ -173,24 +172,25 @@ namespace Presentacion
             // 
             this.gunaButton1.AnimationHoverSpeed = 0.07F;
             this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.gunaButton1.BorderColor = System.Drawing.Color.Black;
             this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(937, 600);
+            this.gunaButton1.Location = new System.Drawing.Point(16, 55);
             this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton1.OnHoverImage = null;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(160, 42);
+            this.gunaButton1.Size = new System.Drawing.Size(120, 42);
             this.gunaButton1.TabIndex = 16;
-            this.gunaButton1.Text = "Contratos";
+            this.gunaButton1.Text = "Agregar Contrato";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.Visible = false;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
@@ -198,36 +198,42 @@ namespace Presentacion
             // 
             this.btnVerContrato.AnimationHoverSpeed = 0.07F;
             this.btnVerContrato.AnimationSpeed = 0.03F;
-            this.btnVerContrato.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnVerContrato.BorderColor = System.Drawing.Color.Black;
+            this.btnVerContrato.BackColor = System.Drawing.Color.White;
+            this.btnVerContrato.BaseColor = System.Drawing.Color.Transparent;
+            this.btnVerContrato.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
+            this.btnVerContrato.BorderSize = 2;
             this.btnVerContrato.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnVerContrato.FocusedColor = System.Drawing.Color.Empty;
-            this.btnVerContrato.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnVerContrato.ForeColor = System.Drawing.Color.White;
-            this.btnVerContrato.Image = ((System.Drawing.Image)(resources.GetObject("btnVerContrato.Image")));
+            this.btnVerContrato.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnVerContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
+            this.btnVerContrato.Image = null;
             this.btnVerContrato.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnVerContrato.Location = new System.Drawing.Point(12, 53);
+            this.btnVerContrato.Location = new System.Drawing.Point(174, 55);
             this.btnVerContrato.Name = "btnVerContrato";
-            this.btnVerContrato.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnVerContrato.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnVerContrato.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
+            this.btnVerContrato.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnVerContrato.OnHoverForeColor = System.Drawing.Color.White;
             this.btnVerContrato.OnHoverImage = null;
-            this.btnVerContrato.OnPressedColor = System.Drawing.Color.Black;
-            this.btnVerContrato.Size = new System.Drawing.Size(160, 42);
+            this.btnVerContrato.OnPressedColor = System.Drawing.Color.BlanchedAlmond;
+            this.btnVerContrato.Size = new System.Drawing.Size(120, 42);
             this.btnVerContrato.TabIndex = 17;
             this.btnVerContrato.Text = "Ver contrato";
+            this.btnVerContrato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnVerContrato.Visible = false;
             this.btnVerContrato.Click += new System.EventHandler(this.btnVerContrato_Click_1);
             // 
             // btnGenerarInforme
             // 
             this.btnGenerarInforme.AutoSize = true;
-            this.btnGenerarInforme.Location = new System.Drawing.Point(1014, 17);
+            this.btnGenerarInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarInforme.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(70)))), ((int)(((byte)(110)))));
+            this.btnGenerarInforme.Location = new System.Drawing.Point(1012, 15);
             this.btnGenerarInforme.Name = "btnGenerarInforme";
-            this.btnGenerarInforme.Size = new System.Drawing.Size(83, 13);
+            this.btnGenerarInforme.Size = new System.Drawing.Size(104, 16);
             this.btnGenerarInforme.TabIndex = 18;
             this.btnGenerarInforme.TabStop = true;
             this.btnGenerarInforme.Text = "Generar Informe";
+            this.btnGenerarInforme.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnGenerarInforme.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnGenerarInforme_LinkClicked);
             // 
             // FormJugadores

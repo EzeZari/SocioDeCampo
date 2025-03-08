@@ -712,7 +712,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.17639cm</Top>
+            <Top>0.14111cm</Top>
+            <Left>0.26141cm</Left>
             <Height>1.2cm</Height>
             <Width>18.7687cm</Width>
             <Style>
@@ -748,9 +749,9 @@
             </Image>
             <Line Name="Line1">
               <Top>3.01377cm</Top>
-              <Left>0.52599cm</Left>
+              <Left>0.26141cm</Left>
               <Height>0cm</Height>
-              <Width>18.93063cm</Width>
+              <Width>18.7687cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

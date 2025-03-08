@@ -89,8 +89,13 @@ namespace Presentacion.Forms_Contratos
             }
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
 
-        private void btnEliminarContrato_Click(object sender, EventArgs e)
+        private void btnEliminarContrato_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
             {
@@ -107,12 +112,6 @@ namespace Presentacion.Forms_Contratos
             {
                 MessageBox.Show("Error al eliminar el contrato: " + ex.Message);
             }
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            
-            
         }
     }
 }

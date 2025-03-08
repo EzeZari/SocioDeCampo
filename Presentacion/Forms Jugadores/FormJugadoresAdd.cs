@@ -114,5 +114,9 @@ namespace Presentacion
                                           out fechaSalida);
         }
 
+        private void FormJugadoresAdd_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
