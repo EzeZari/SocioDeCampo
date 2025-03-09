@@ -14,6 +14,7 @@ namespace Presentacion.Forms_Contratos
     public partial class FormContratoActual : Form
     {
         private UserModel userModel = new UserModel(); // Instancia de UserModel
+        public event Action ContratoEliminado;
 
         public FormContratoActual(string idJugador, string nombre, string apellido, string monto, string fechaInicio, string fechaFin, string clausula, string salario, string bonificacion, string obligacion)
         {
@@ -89,12 +90,6 @@ namespace Presentacion.Forms_Contratos
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
-
         private void btnEliminarContrato_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
@@ -105,6 +100,8 @@ namespace Presentacion.Forms_Contratos
                 {
                     userModel.EliminarUltimoContrato(Convert.ToInt32(lblIdJugador.Text));
                     MessageBox.Show("Último contrato eliminado correctamente.");
+
+                    ContratoEliminado?.Invoke(); // Dispara el evento para actualizar el DataGridView
                     this.Close();
                 }
             }

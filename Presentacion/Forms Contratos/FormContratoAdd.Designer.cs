@@ -80,7 +80,7 @@ namespace Presentacion.Forms_Contratos
             this.txtClausula.Name = "txtClausula";
             this.txtClausula.PasswordChar = '\0';
             this.txtClausula.Size = new System.Drawing.Size(223, 30);
-            this.txtClausula.TabIndex = 3;
+            this.txtClausula.TabIndex = 5;
             // 
             // btnAgregarContrato
             // 
@@ -128,7 +128,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaInicio.OnPressedColor = System.Drawing.Color.Black;
             this.dtFechaInicio.ShowCheckBox = true;
             this.dtFechaInicio.Size = new System.Drawing.Size(223, 30);
-            this.dtFechaInicio.TabIndex = 5;
+            this.dtFechaInicio.TabIndex = 3;
             this.dtFechaInicio.Text = "sábado, 8 de marzo de 2025";
             this.dtFechaInicio.Value = new System.DateTime(2025, 2, 19, 16, 34, 31, 864);
             // 
@@ -146,7 +146,7 @@ namespace Presentacion.Forms_Contratos
             this.txtIdJugador.Name = "txtIdJugador";
             this.txtIdJugador.PasswordChar = '\0';
             this.txtIdJugador.Size = new System.Drawing.Size(223, 30);
-            this.txtIdJugador.TabIndex = 7;
+            this.txtIdJugador.TabIndex = 1;
             // 
             // txtNombre
             // 
@@ -171,7 +171,7 @@ namespace Presentacion.Forms_Contratos
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.PasswordChar = '\0';
             this.txtSalario.Size = new System.Drawing.Size(223, 30);
-            this.txtSalario.TabIndex = 10;
+            this.txtSalario.TabIndex = 6;
             // 
             // txtBonificacion
             // 
@@ -187,7 +187,7 @@ namespace Presentacion.Forms_Contratos
             this.txtBonificacion.Name = "txtBonificacion";
             this.txtBonificacion.PasswordChar = '\0';
             this.txtBonificacion.Size = new System.Drawing.Size(223, 95);
-            this.txtBonificacion.TabIndex = 11;
+            this.txtBonificacion.TabIndex = 7;
             // 
             // txtObligacion
             // 
@@ -203,7 +203,7 @@ namespace Presentacion.Forms_Contratos
             this.txtObligacion.Name = "txtObligacion";
             this.txtObligacion.PasswordChar = '\0';
             this.txtObligacion.Size = new System.Drawing.Size(223, 103);
-            this.txtObligacion.TabIndex = 12;
+            this.txtObligacion.TabIndex = 8;
             // 
             // dtFechaFinal
             // 
@@ -225,7 +225,7 @@ namespace Presentacion.Forms_Contratos
             this.dtFechaFinal.OnPressedColor = System.Drawing.Color.Black;
             this.dtFechaFinal.ShowCheckBox = true;
             this.dtFechaFinal.Size = new System.Drawing.Size(223, 30);
-            this.dtFechaFinal.TabIndex = 13;
+            this.dtFechaFinal.TabIndex = 4;
             this.dtFechaFinal.Text = "sábado, 8 de marzo de 2025";
             this.dtFechaFinal.Value = new System.DateTime(2025, 2, 19, 16, 34, 31, 864);
             // 

@@ -30,7 +30,7 @@ namespace Presentacion.Forms_Contratos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGenerarInforme));
             this.VistaJugadoresSinModificarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetContratos = new Presentacion.Forms_Contratos.DataSetContratos();
@@ -66,9 +66,9 @@ namespace Presentacion.Forms_Contratos
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.VistaJugadoresSinModificarBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.VistaJugadoresSinModificarBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Forms Contratos.ReportContratos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(386, 2);
             this.reportViewer1.Name = "reportViewer1";
@@ -153,7 +153,7 @@ namespace Presentacion.Forms_Contratos
             this.numSalarioMax.Size = new System.Drawing.Size(130, 30);
             this.numSalarioMax.TabIndex = 4;
             this.numSalarioMax.Text = "gunaNumeric2";
-            this.numSalarioMax.Value = ((long)(100000));
+            this.numSalarioMax.Value = ((long)(1000000));
             // 
             // dtpDesde
             // 

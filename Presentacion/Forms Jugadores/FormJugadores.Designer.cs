@@ -45,8 +45,9 @@ namespace Presentacion
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -68,7 +69,8 @@ namespace Presentacion
             this.dataGridView1.RowHeadersWidth = 50;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(1100, 555);
+            this.dataGridView1.RowTemplate.Height = 50;
+            this.dataGridView1.Size = new System.Drawing.Size(1110, 555);
             this.dataGridView1.TabIndex = 8;
             // 
             // btnEditar
@@ -208,7 +210,7 @@ namespace Presentacion
             this.btnVerContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnVerContrato.Image = null;
             this.btnVerContrato.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnVerContrato.Location = new System.Drawing.Point(174, 55);
+            this.btnVerContrato.Location = new System.Drawing.Point(175, 55);
             this.btnVerContrato.Name = "btnVerContrato";
             this.btnVerContrato.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnVerContrato.OnHoverBorderColor = System.Drawing.Color.White;

@@ -26,11 +26,20 @@ namespace Presentacion
         {
             MostrarJugadores();
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+
+            
         }
         private void MostrarJugadores()
         {
             UserModel objetoCD = new UserModel();
             dataGridView1.DataSource = objetoCD.MostrarJugadores();
+
+            // Formatear la columna "Salario" como moneda en USD
+            dataGridView1.Columns["Salario (USD)"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["Salario (USD)"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-US");
+
+            dataGridView1.Columns["Cláusula (USD)"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["Cláusula (USD)"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-US");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -170,7 +179,11 @@ namespace Presentacion
                     string bonificacion = contrato.Rows[0]["Bonificacion"].ToString();
                     string obligacion = contrato.Rows[0]["Obligacion"].ToString();
 
-                    FormContratoActual formContratoActual = new FormContratoActual(idJugador, nombre, apellido, monto, fechaInicio, fechaFin, clausula ,salario, bonificacion,obligacion);
+                    FormContratoActual formContratoActual = new FormContratoActual(idJugador, nombre, apellido, monto, fechaInicio, fechaFin, clausula, salario, bonificacion, obligacion);
+
+                    // Suscribirse al evento para actualizar la lista de jugadores cuando se elimine un contrato
+                    formContratoActual.ContratoEliminado += MostrarJugadores;
+
                     formContratoActual.ShowDialog();
                 }
                 else
@@ -183,6 +196,7 @@ namespace Presentacion
                 MessageBox.Show("Seleccione un jugador antes de ver su contrato.");
             }
         }
+
 
         private void btnGenerarInforme_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
