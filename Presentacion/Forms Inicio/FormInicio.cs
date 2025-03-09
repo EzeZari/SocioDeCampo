@@ -26,7 +26,7 @@ namespace Presentacion
         {
             UserModel objetoCD = new UserModel();
             dataGridView1.DataSource = objetoCD.MostrarJugadores();
-            dataGridView1.Columns["idJugador"].Width = 50;
+           
         }
     }
 }

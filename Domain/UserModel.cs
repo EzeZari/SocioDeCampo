@@ -54,11 +54,62 @@ namespace Domain
             userDao.Eliminar(Convert.ToInt32(idJugador));
         }
         #endregion
+
+        public void AgregarContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula, decimal salario, string bonificacion, string obligacion)
+        {
+            userDao.AddContrato(idJugador, fechaInicio, fechaFin, monto, clausula, salario, bonificacion, obligacion);
+        }
+
+        // Método para obtener los contratos
+        public List<Contrato> ObtenerContratos()
+        {
+            return userDao.GetContratos();
+        }
+
+        public DataTable ObtenerContratoPorJugador(string idJugador)
+        {
+            if (int.TryParse(idJugador, out int id))
+            {
+                return userDao.ObtenerContratoPorJugador(id);
+            }
+            else
+            {
+                throw new ArgumentException("El ID del jugador no es válido.");
+            }
+        }
+        public DataTable ObtenerUltimoContrato(string idJugador)
+        {
+            if (int.TryParse(idJugador, out int id))
+            {
+                return userDao.ObtenerUltimoContrato(id);
+            }
+            else
+            {
+                throw new ArgumentException("El ID del jugador no es válido.");
+            }
+        }
+        public string ObtenerNombreJugador(string idJugador)
+        {
+            // Convertir el idJugador a entero, si es válido
+            if (int.TryParse(idJugador, out int id))
+            {
+                // Llamar al método en UserDao para obtener el nombre completo del jugador
+                return userDao.ObtenerNombreJugador(id);
+            }
+            else
+            {
+                throw new ArgumentException("El ID del jugador no es válido.");
+            }
+        }
+        public void EliminarUltimoContrato(int idJugador)
+        {
+            userDao.EliminarUltimoContrato(idJugador);
+        }
+
         public void EditarUser(string LoginName, string FirstName, string LastName, string Email, string Password, string Position, int UserID)
         {
             userDao.EditarDatosPerfil(LoginName, FirstName,LastName, Email, Password, Position, Convert.ToInt32(UserID));
         }
-
         public bool ConsultLoginName(string LoginName)
         {
             return userDao.ConsultLoginName(LoginName);
