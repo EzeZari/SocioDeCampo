@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using Presentacion.Forms_Contratos;
 
 namespace Presentacion
 {
@@ -24,47 +25,22 @@ namespace Presentacion
         private void FormJugadores_Load(object sender, EventArgs e)
         {
             MostrarJugadores();
+            dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+
+            
         }
         private void MostrarJugadores()
         {
             UserModel objetoCD = new UserModel();
             dataGridView1.DataSource = objetoCD.MostrarJugadores();
+
+            // Formatear la columna "Salario" como moneda en USD
+            dataGridView1.Columns["Salario (USD)"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["Salario (USD)"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-US");
+
+            dataGridView1.Columns["Cláusula (USD)"].DefaultCellStyle.Format = "C0";
+            dataGridView1.Columns["Cláusula (USD)"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-US");
         }
-
-        //private void btnSaveJugador_Click(object sender, EventArgs e)
-        //{
-        //    // INSERTAR
-        //    if (Editar == false) // Si editar es falso, agrega el registro.
-        //    {
-        //        try
-        //        {
-        //            objeto.AddJugador(txtName.Text, txtLastNameJug.Text, txtBirthdate.Text, txtNationality.Text, txtPositionJug.Text); // Los ponemos sin convertirlos pq la capa dominio se encarga de hacer eso.
-        //            MessageBox.Show("Se insertó correctamente");
-        //            MostrarJugadores();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("No se pudo añadir el Jugador debido a:  " + ex);
-        //        }
-        //    }
-
-        //    // EDITAR
-        //    if (Editar == true) // Si editar es verdadero, editará el registro.
-        //    {
-        //        try
-        //        {
-        //            objeto.EditarJugador(txtName.Text, txtLastNameJug.Text, txtBirthdate.Text, txtNationality.Text, txtPositionJug.Text, idJugador);
-        //            MessageBox.Show("Se Editó correctamente");
-        //            MostrarJugadores();
-        //            clearForm();
-        //            Editar = false; // Lo volvemos a pasar a falso para reinicializar y que el botón siga agregando registros.
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("No se pudo editar el jugador debido a:  " + ex);
-        //        }
-        //    }
-        //}
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -80,11 +56,11 @@ namespace Presentacion
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Obtener los datos de la fila seleccionada en el DataGridView
-                string nombre = dataGridView1.CurrentRow.Cells["Name"].Value.ToString();
-                string apellido = dataGridView1.CurrentRow.Cells["LastName"].Value.ToString();
-                string fechaNacimiento = dataGridView1.CurrentRow.Cells["Birthdate"].Value.ToString();
-                string nacionalidad = dataGridView1.CurrentRow.Cells["Nationality"].Value.ToString();
-                string posicion = dataGridView1.CurrentRow.Cells["Position"].Value.ToString();
+                string nombre = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
+                string fechaNacimiento = dataGridView1.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString();
+                string nacionalidad = dataGridView1.CurrentRow.Cells["Nacionalidad"].Value.ToString();
+                string posicion = dataGridView1.CurrentRow.Cells["Posición"].Value.ToString();
                 string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
 
                 // Crear una instancia del formulario FormJugadoresEdit
@@ -99,26 +75,133 @@ namespace Presentacion
                 MessageBox.Show("Seleccione una fila por favor");
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
-                objeto.EliminarJugador(idJugador);
-                MessageBox.Show("Eliminado correctamente");
-                MostrarJugadores();
+                // Mostrar el mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este jugador?",
+                                                      "Confirmación",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                // Si el usuario selecciona "Sí", proceder con la eliminación
+                if (result == DialogResult.Yes)
+                {
+                    idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
+                    objeto.EliminarJugador(idJugador);
+
+                    // Mensaje de éxito con ícono de información
+                    MessageBox.Show("Eliminado correctamente",
+                                    "Éxito",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                    MostrarJugadores();
+                }
             }
             else
             {
-                MessageBox.Show("Seleccione una fila por favor");
+                MessageBox.Show("Seleccione una fila por favor",
+                                "Advertencia",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
         }
 
-        private void btnReporte_Click(object sender, EventArgs e)
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            
-          
+            // Muestra el botón solo si hay una fila seleccionada
+            bool jugadorSeleccionado = dataGridView1.SelectedRows.Count > 0;
+            gunaButton1.Visible = jugadorSeleccionado;
+            btnVerContrato.Visible = jugadorSeleccionado;
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
+                string nombre = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
+
+                // Consultar si el jugador ya tiene un contrato
+                DataTable contrato = objeto.ObtenerContratoPorJugador(idJugador);
+
+                if (contrato.Rows.Count > 0)
+                {
+                    // Si ya tiene contrato, mostrar un mensaje y abrir la info del contrato
+                    MessageBox.Show("Este jugador ya tiene un contrato registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    string monto = contrato.Rows[0]["Monto"].ToString();
+                    string fechaInicio = contrato.Rows[0]["FechaInicio"].ToString();
+                    string fechaFin = contrato.Rows[0]["FechaFin"].ToString();
+                    string clausula = contrato.Rows[0]["Clausula"].ToString();
+                    string salario = contrato.Rows[0]["Salario"].ToString();
+                    string bonificacion = contrato.Rows[0]["Bonificacion"].ToString();
+                    string obligacion = contrato.Rows[0]["Obligacion"].ToString();
+
+                    FormContratoActual formContratoActual = new FormContratoActual(idJugador, nombre, apellido, monto, fechaInicio, fechaFin, clausula, salario, bonificacion, obligacion);
+                    formContratoActual.ShowDialog();
+                }
+                else
+                {
+                    FormContratoAdd formContratoAdd = new FormContratoAdd(idJugador);
+                    formContratoAdd.ContratoAgregado += () => MostrarJugadores(); // Suscripción al evento
+                    formContratoAdd.ShowDialog();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un jugador antes de agregar un contrato.");
+            }
+        }
+        private void btnVerContrato_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                string idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
+                string nombre = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                string apellido = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
+
+                // Llamamos a UserModel en lugar de acceder directamente a la BD
+                DataTable contrato = objeto.ObtenerContratoPorJugador(idJugador);
+
+                if (contrato.Rows.Count > 0)
+                {
+                    string monto = contrato.Rows[0]["Monto"].ToString();
+                    string fechaInicio = contrato.Rows[0]["FechaInicio"].ToString();
+                    string fechaFin = contrato.Rows[0]["FechaFin"].ToString();
+                    string clausula = contrato.Rows[0]["Clausula"].ToString();
+                    string salario = contrato.Rows[0]["Salario"].ToString();
+                    string bonificacion = contrato.Rows[0]["Bonificacion"].ToString();
+                    string obligacion = contrato.Rows[0]["Obligacion"].ToString();
+
+                    FormContratoActual formContratoActual = new FormContratoActual(idJugador, nombre, apellido, monto, fechaInicio, fechaFin, clausula, salario, bonificacion, obligacion);
+
+                    // Suscribirse al evento para actualizar la lista de jugadores cuando se elimine un contrato
+                    formContratoActual.ContratoEliminado += MostrarJugadores;
+
+                    formContratoActual.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("El jugador seleccionado no tiene un contrato registrado.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un jugador antes de ver su contrato.");
+            }
+        }
+
+
+        private void btnGenerarInforme_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormGenerarInforme formGenerarInforme = new FormGenerarInforme();
+            formGenerarInforme.ShowDialog();
         }
 
         private void btnInforme_Click(object sender, EventArgs e)

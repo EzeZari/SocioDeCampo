@@ -51,7 +51,7 @@ namespace Presentacion
             this.txtNationality.BorderColor = System.Drawing.Color.Silver;
             this.txtNationality.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNationality.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtNationality.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtNationality.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.txtNationality.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNationality.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNationality.Location = new System.Drawing.Point(49, 269);
@@ -73,7 +73,7 @@ namespace Presentacion
             this.btnSaveJugador.ForeColor = System.Drawing.Color.White;
             this.btnSaveJugador.Image = null;
             this.btnSaveJugador.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSaveJugador.Location = new System.Drawing.Point(108, 407);
+            this.btnSaveJugador.Location = new System.Drawing.Point(113, 392);
             this.btnSaveJugador.Name = "btnSaveJugador";
             this.btnSaveJugador.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.btnSaveJugador.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -93,7 +93,7 @@ namespace Presentacion
             this.txtLastNameJug.BorderColor = System.Drawing.Color.Silver;
             this.txtLastNameJug.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLastNameJug.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtLastNameJug.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtLastNameJug.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.txtLastNameJug.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLastNameJug.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtLastNameJug.Location = new System.Drawing.Point(48, 145);
@@ -109,7 +109,7 @@ namespace Presentacion
             this.txtName.BorderColor = System.Drawing.Color.Silver;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.txtName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtName.Location = new System.Drawing.Point(48, 80);
@@ -121,10 +121,10 @@ namespace Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 20);
+            this.label1.Size = new System.Drawing.Size(137, 21);
             this.label1.TabIndex = 14;
             this.label1.Text = "Agregar Jugador";
             // 
@@ -155,7 +155,7 @@ namespace Presentacion
             "Delantero"});
             this.cmbPositionJug.Location = new System.Drawing.Point(48, 335);
             this.cmbPositionJug.Name = "cmbPositionJug";
-            this.cmbPositionJug.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmbPositionJug.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.cmbPositionJug.OnHoverItemForeColor = System.Drawing.Color.White;
             this.cmbPositionJug.Size = new System.Drawing.Size(292, 26);
             this.cmbPositionJug.TabIndex = 16;
@@ -212,6 +212,7 @@ namespace Presentacion
             // 
             // txtBirthdate
             // 
+            this.txtBirthdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.txtBirthdate.Location = new System.Drawing.Point(49, 209);
             this.txtBirthdate.Mask = "00/00/0000";
             this.txtBirthdate.Name = "txtBirthdate";
@@ -239,6 +240,7 @@ namespace Presentacion
             this.Controls.Add(this.txtName);
             this.Name = "FormJugadoresAdd";
             this.Text = "Agregar Jugador";
+            this.Load += new System.EventHandler(this.FormJugadoresAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

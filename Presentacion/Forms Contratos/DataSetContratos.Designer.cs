@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Presentacion {
+namespace Presentacion.Forms_Contratos {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace Presentacion {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("MyCompanyDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetContratos")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class MyCompanyDataSet1 : global::System.Data.DataSet {
+    public partial class DataSetContratos : global::System.Data.DataSet {
         
-        private JugadoresDataTable tableJugadores;
+        private VistaJugadoresSinModificarDataTable tableVistaJugadoresSinModificar;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public MyCompanyDataSet1() {
+        public DataSetContratos() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Presentacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected MyCompanyDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetContratos(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Presentacion {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Jugadores"] != null)) {
-                    base.Tables.Add(new JugadoresDataTable(ds.Tables["Jugadores"]));
+                if ((ds.Tables["VistaJugadoresSinModificar"] != null)) {
+                    base.Tables.Add(new VistaJugadoresSinModificarDataTable(ds.Tables["VistaJugadoresSinModificar"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Presentacion {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public JugadoresDataTable Jugadores {
+        public VistaJugadoresSinModificarDataTable VistaJugadoresSinModificar {
             get {
-                return this.tableJugadores;
+                return this.tableVistaJugadoresSinModificar;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Presentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            MyCompanyDataSet1 cln = ((MyCompanyDataSet1)(base.Clone()));
+            DataSetContratos cln = ((DataSetContratos)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Presentacion {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Jugadores"] != null)) {
-                    base.Tables.Add(new JugadoresDataTable(ds.Tables["Jugadores"]));
+                if ((ds.Tables["VistaJugadoresSinModificar"] != null)) {
+                    base.Tables.Add(new VistaJugadoresSinModificarDataTable(ds.Tables["VistaJugadoresSinModificar"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Presentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableJugadores = ((JugadoresDataTable)(base.Tables["Jugadores"]));
+            this.tableVistaJugadoresSinModificar = ((VistaJugadoresSinModificarDataTable)(base.Tables["VistaJugadoresSinModificar"]));
             if ((initTable == true)) {
-                if ((this.tableJugadores != null)) {
-                    this.tableJugadores.InitVars();
+                if ((this.tableVistaJugadoresSinModificar != null)) {
+                    this.tableVistaJugadoresSinModificar.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Presentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "MyCompanyDataSet1";
+            this.DataSetName = "DataSetContratos";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/MyCompanyDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DataSetContratos.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableJugadores = new JugadoresDataTable();
-            base.Tables.Add(this.tableJugadores);
+            this.tableVistaJugadoresSinModificar = new VistaJugadoresSinModificarDataTable();
+            base.Tables.Add(this.tableVistaJugadoresSinModificar);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeJugadores() {
+        private bool ShouldSerializeVistaJugadoresSinModificar() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Presentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            MyCompanyDataSet1 ds = new MyCompanyDataSet1();
+            DataSetContratos ds = new DataSetContratos();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,16 +270,16 @@ namespace Presentacion {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void JugadoresRowChangeEventHandler(object sender, JugadoresRowChangeEvent e);
+        public delegate void VistaJugadoresSinModificarRowChangeEventHandler(object sender, VistaJugadoresSinModificarRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class JugadoresDataTable : global::System.Data.TypedTableBase<JugadoresRow> {
+        public partial class VistaJugadoresSinModificarDataTable : global::System.Data.TypedTableBase<VistaJugadoresSinModificarRow> {
             
-            private global::System.Data.DataColumn columnidJugador;
+            private global::System.Data.DataColumn columnIdJugador;
             
             private global::System.Data.DataColumn columnName;
             
@@ -291,10 +291,16 @@ namespace Presentacion {
             
             private global::System.Data.DataColumn columnPosition;
             
+            private global::System.Data.DataColumn columnFechaInicio;
+            
+            private global::System.Data.DataColumn columnFechaFin;
+            
+            private global::System.Data.DataColumn columnSalario;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JugadoresDataTable() {
-                this.TableName = "Jugadores";
+            public VistaJugadoresSinModificarDataTable() {
+                this.TableName = "VistaJugadoresSinModificar";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +308,7 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal JugadoresDataTable(global::System.Data.DataTable table) {
+            internal VistaJugadoresSinModificarDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,16 +325,16 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected JugadoresDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected VistaJugadoresSinModificarDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idJugadorColumn {
+            public global::System.Data.DataColumn IdJugadorColumn {
                 get {
-                    return this.columnidJugador;
+                    return this.columnIdJugador;
                 }
             }
             
@@ -374,6 +380,30 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FechaInicioColumn {
+                get {
+                    return this.columnFechaInicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FechaFinColumn {
+                get {
+                    return this.columnFechaFin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SalarioColumn {
+                get {
+                    return this.columnSalario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -383,57 +413,60 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JugadoresRow this[int index] {
+            public VistaJugadoresSinModificarRow this[int index] {
                 get {
-                    return ((JugadoresRow)(this.Rows[index]));
+                    return ((VistaJugadoresSinModificarRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event JugadoresRowChangeEventHandler JugadoresRowChanging;
+            public event VistaJugadoresSinModificarRowChangeEventHandler VistaJugadoresSinModificarRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event JugadoresRowChangeEventHandler JugadoresRowChanged;
+            public event VistaJugadoresSinModificarRowChangeEventHandler VistaJugadoresSinModificarRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event JugadoresRowChangeEventHandler JugadoresRowDeleting;
+            public event VistaJugadoresSinModificarRowChangeEventHandler VistaJugadoresSinModificarRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event JugadoresRowChangeEventHandler JugadoresRowDeleted;
+            public event VistaJugadoresSinModificarRowChangeEventHandler VistaJugadoresSinModificarRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddJugadoresRow(JugadoresRow row) {
+            public void AddVistaJugadoresSinModificarRow(VistaJugadoresSinModificarRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JugadoresRow AddJugadoresRow(string Name, string LastName, string Birthdate, string Nationality, string Position) {
-                JugadoresRow rowJugadoresRow = ((JugadoresRow)(this.NewRow()));
+            public VistaJugadoresSinModificarRow AddVistaJugadoresSinModificarRow(int IdJugador, string Name, string LastName, string Birthdate, string Nationality, string Position, System.DateTime FechaInicio, System.DateTime FechaFin, int Salario) {
+                VistaJugadoresSinModificarRow rowVistaJugadoresSinModificarRow = ((VistaJugadoresSinModificarRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        IdJugador,
                         Name,
                         LastName,
                         Birthdate,
                         Nationality,
-                        Position};
-                rowJugadoresRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowJugadoresRow);
-                return rowJugadoresRow;
+                        Position,
+                        FechaInicio,
+                        FechaFin,
+                        Salario};
+                rowVistaJugadoresSinModificarRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVistaJugadoresSinModificarRow);
+                return rowVistaJugadoresSinModificarRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JugadoresRow FindByidJugador(int idJugador) {
-                return ((JugadoresRow)(this.Rows.Find(new object[] {
-                            idJugador})));
+            public VistaJugadoresSinModificarRow FindByIdJugador(int IdJugador) {
+                return ((VistaJugadoresSinModificarRow)(this.Rows.Find(new object[] {
+                            IdJugador})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                JugadoresDataTable cln = ((JugadoresDataTable)(base.Clone()));
+                VistaJugadoresSinModificarDataTable cln = ((VistaJugadoresSinModificarDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -441,25 +474,28 @@ namespace Presentacion {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new JugadoresDataTable();
+                return new VistaJugadoresSinModificarDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnidJugador = base.Columns["idJugador"];
+                this.columnIdJugador = base.Columns["IdJugador"];
                 this.columnName = base.Columns["Name"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnBirthdate = base.Columns["Birthdate"];
                 this.columnNationality = base.Columns["Nationality"];
                 this.columnPosition = base.Columns["Position"];
+                this.columnFechaInicio = base.Columns["FechaInicio"];
+                this.columnFechaFin = base.Columns["FechaFin"];
+                this.columnSalario = base.Columns["Salario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnidJugador = new global::System.Data.DataColumn("idJugador", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidJugador);
+                this.columnIdJugador = new global::System.Data.DataColumn("IdJugador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdJugador);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -470,14 +506,16 @@ namespace Presentacion {
                 base.Columns.Add(this.columnNationality);
                 this.columnPosition = new global::System.Data.DataColumn("Position", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPosition);
+                this.columnFechaInicio = new global::System.Data.DataColumn("FechaInicio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaInicio);
+                this.columnFechaFin = new global::System.Data.DataColumn("FechaFin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaFin);
+                this.columnSalario = new global::System.Data.DataColumn("Salario", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSalario);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidJugador}, true));
-                this.columnidJugador.AutoIncrement = true;
-                this.columnidJugador.AutoIncrementSeed = -1;
-                this.columnidJugador.AutoIncrementStep = -1;
-                this.columnidJugador.AllowDBNull = false;
-                this.columnidJugador.ReadOnly = true;
-                this.columnidJugador.Unique = true;
+                                this.columnIdJugador}, true));
+                this.columnIdJugador.AllowDBNull = false;
+                this.columnIdJugador.Unique = true;
                 this.columnName.MaxLength = 50;
                 this.columnLastName.MaxLength = 50;
                 this.columnBirthdate.MaxLength = 50;
@@ -487,28 +525,28 @@ namespace Presentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JugadoresRow NewJugadoresRow() {
-                return ((JugadoresRow)(this.NewRow()));
+            public VistaJugadoresSinModificarRow NewVistaJugadoresSinModificarRow() {
+                return ((VistaJugadoresSinModificarRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new JugadoresRow(builder);
+                return new VistaJugadoresSinModificarRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(JugadoresRow);
+                return typeof(VistaJugadoresSinModificarRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.JugadoresRowChanged != null)) {
-                    this.JugadoresRowChanged(this, new JugadoresRowChangeEvent(((JugadoresRow)(e.Row)), e.Action));
+                if ((this.VistaJugadoresSinModificarRowChanged != null)) {
+                    this.VistaJugadoresSinModificarRowChanged(this, new VistaJugadoresSinModificarRowChangeEvent(((VistaJugadoresSinModificarRow)(e.Row)), e.Action));
                 }
             }
             
@@ -516,8 +554,8 @@ namespace Presentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.JugadoresRowChanging != null)) {
-                    this.JugadoresRowChanging(this, new JugadoresRowChangeEvent(((JugadoresRow)(e.Row)), e.Action));
+                if ((this.VistaJugadoresSinModificarRowChanging != null)) {
+                    this.VistaJugadoresSinModificarRowChanging(this, new VistaJugadoresSinModificarRowChangeEvent(((VistaJugadoresSinModificarRow)(e.Row)), e.Action));
                 }
             }
             
@@ -525,8 +563,8 @@ namespace Presentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.JugadoresRowDeleted != null)) {
-                    this.JugadoresRowDeleted(this, new JugadoresRowChangeEvent(((JugadoresRow)(e.Row)), e.Action));
+                if ((this.VistaJugadoresSinModificarRowDeleted != null)) {
+                    this.VistaJugadoresSinModificarRowDeleted(this, new VistaJugadoresSinModificarRowChangeEvent(((VistaJugadoresSinModificarRow)(e.Row)), e.Action));
                 }
             }
             
@@ -534,14 +572,14 @@ namespace Presentacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.JugadoresRowDeleting != null)) {
-                    this.JugadoresRowDeleting(this, new JugadoresRowChangeEvent(((JugadoresRow)(e.Row)), e.Action));
+                if ((this.VistaJugadoresSinModificarRowDeleting != null)) {
+                    this.VistaJugadoresSinModificarRowDeleting(this, new VistaJugadoresSinModificarRowChangeEvent(((VistaJugadoresSinModificarRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveJugadoresRow(JugadoresRow row) {
+            public void RemoveVistaJugadoresSinModificarRow(VistaJugadoresSinModificarRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -550,7 +588,7 @@ namespace Presentacion {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MyCompanyDataSet1 ds = new MyCompanyDataSet1();
+                DataSetContratos ds = new DataSetContratos();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -568,7 +606,7 @@ namespace Presentacion {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "JugadoresDataTable";
+                attribute2.FixedValue = "VistaJugadoresSinModificarDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -612,25 +650,25 @@ namespace Presentacion {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class JugadoresRow : global::System.Data.DataRow {
+        public partial class VistaJugadoresSinModificarRow : global::System.Data.DataRow {
             
-            private JugadoresDataTable tableJugadores;
+            private VistaJugadoresSinModificarDataTable tableVistaJugadoresSinModificar;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal JugadoresRow(global::System.Data.DataRowBuilder rb) : 
+            internal VistaJugadoresSinModificarRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableJugadores = ((JugadoresDataTable)(this.Table));
+                this.tableVistaJugadoresSinModificar = ((VistaJugadoresSinModificarDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int idJugador {
+            public int IdJugador {
                 get {
-                    return ((int)(this[this.tableJugadores.idJugadorColumn]));
+                    return ((int)(this[this.tableVistaJugadoresSinModificar.IdJugadorColumn]));
                 }
                 set {
-                    this[this.tableJugadores.idJugadorColumn] = value;
+                    this[this.tableVistaJugadoresSinModificar.IdJugadorColumn] = value;
                 }
             }
             
@@ -639,14 +677,15 @@ namespace Presentacion {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tableJugadores.NameColumn]));
+                        return ((string)(this[this.tableVistaJugadoresSinModificar.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Name\' de la tabla \'Jugadores\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Name\' de la tabla \'VistaJugadoresSinModificar\' es DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableJugadores.NameColumn] = value;
+                    this[this.tableVistaJugadoresSinModificar.NameColumn] = value;
                 }
             }
             
@@ -655,14 +694,15 @@ namespace Presentacion {
             public string LastName {
                 get {
                     try {
-                        return ((string)(this[this.tableJugadores.LastNameColumn]));
+                        return ((string)(this[this.tableVistaJugadoresSinModificar.LastNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'LastName\' de la tabla \'Jugadores\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'LastName\' de la tabla \'VistaJugadoresSinModificar\' es DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableJugadores.LastNameColumn] = value;
+                    this[this.tableVistaJugadoresSinModificar.LastNameColumn] = value;
                 }
             }
             
@@ -671,14 +711,15 @@ namespace Presentacion {
             public string Birthdate {
                 get {
                     try {
-                        return ((string)(this[this.tableJugadores.BirthdateColumn]));
+                        return ((string)(this[this.tableVistaJugadoresSinModificar.BirthdateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Birthdate\' de la tabla \'Jugadores\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Birthdate\' de la tabla \'VistaJugadoresSinModificar\' es DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableJugadores.BirthdateColumn] = value;
+                    this[this.tableVistaJugadoresSinModificar.BirthdateColumn] = value;
                 }
             }
             
@@ -687,14 +728,15 @@ namespace Presentacion {
             public string Nationality {
                 get {
                     try {
-                        return ((string)(this[this.tableJugadores.NationalityColumn]));
+                        return ((string)(this[this.tableVistaJugadoresSinModificar.NationalityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nationality\' de la tabla \'Jugadores\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nationality\' de la tabla \'VistaJugadoresSinModificar\' es " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableJugadores.NationalityColumn] = value;
+                    this[this.tableVistaJugadoresSinModificar.NationalityColumn] = value;
                 }
             }
             
@@ -703,75 +745,163 @@ namespace Presentacion {
             public string Position {
                 get {
                     try {
-                        return ((string)(this[this.tableJugadores.PositionColumn]));
+                        return ((string)(this[this.tableVistaJugadoresSinModificar.PositionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Position\' de la tabla \'Jugadores\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Position\' de la tabla \'VistaJugadoresSinModificar\' es DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableJugadores.PositionColumn] = value;
+                    this[this.tableVistaJugadoresSinModificar.PositionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime FechaInicio {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVistaJugadoresSinModificar.FechaInicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaInicio\' de la tabla \'VistaJugadoresSinModificar\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistaJugadoresSinModificar.FechaInicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime FechaFin {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVistaJugadoresSinModificar.FechaFinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaFin\' de la tabla \'VistaJugadoresSinModificar\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistaJugadoresSinModificar.FechaFinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Salario {
+                get {
+                    try {
+                        return ((int)(this[this.tableVistaJugadoresSinModificar.SalarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Salario\' de la tabla \'VistaJugadoresSinModificar\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableVistaJugadoresSinModificar.SalarioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tableJugadores.NameColumn);
+                return this.IsNull(this.tableVistaJugadoresSinModificar.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNameNull() {
-                this[this.tableJugadores.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableVistaJugadoresSinModificar.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsLastNameNull() {
-                return this.IsNull(this.tableJugadores.LastNameColumn);
+                return this.IsNull(this.tableVistaJugadoresSinModificar.LastNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetLastNameNull() {
-                this[this.tableJugadores.LastNameColumn] = global::System.Convert.DBNull;
+                this[this.tableVistaJugadoresSinModificar.LastNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsBirthdateNull() {
-                return this.IsNull(this.tableJugadores.BirthdateColumn);
+                return this.IsNull(this.tableVistaJugadoresSinModificar.BirthdateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetBirthdateNull() {
-                this[this.tableJugadores.BirthdateColumn] = global::System.Convert.DBNull;
+                this[this.tableVistaJugadoresSinModificar.BirthdateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNationalityNull() {
-                return this.IsNull(this.tableJugadores.NationalityColumn);
+                return this.IsNull(this.tableVistaJugadoresSinModificar.NationalityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNationalityNull() {
-                this[this.tableJugadores.NationalityColumn] = global::System.Convert.DBNull;
+                this[this.tableVistaJugadoresSinModificar.NationalityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPositionNull() {
-                return this.IsNull(this.tableJugadores.PositionColumn);
+                return this.IsNull(this.tableVistaJugadoresSinModificar.PositionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPositionNull() {
-                this[this.tableJugadores.PositionColumn] = global::System.Convert.DBNull;
+                this[this.tableVistaJugadoresSinModificar.PositionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFechaInicioNull() {
+                return this.IsNull(this.tableVistaJugadoresSinModificar.FechaInicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFechaInicioNull() {
+                this[this.tableVistaJugadoresSinModificar.FechaInicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFechaFinNull() {
+                return this.IsNull(this.tableVistaJugadoresSinModificar.FechaFinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFechaFinNull() {
+                this[this.tableVistaJugadoresSinModificar.FechaFinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSalarioNull() {
+                return this.IsNull(this.tableVistaJugadoresSinModificar.SalarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSalarioNull() {
+                this[this.tableVistaJugadoresSinModificar.SalarioColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -779,22 +909,22 @@ namespace Presentacion {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class JugadoresRowChangeEvent : global::System.EventArgs {
+        public class VistaJugadoresSinModificarRowChangeEvent : global::System.EventArgs {
             
-            private JugadoresRow eventRow;
+            private VistaJugadoresSinModificarRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JugadoresRowChangeEvent(JugadoresRow row, global::System.Data.DataRowAction action) {
+            public VistaJugadoresSinModificarRowChangeEvent(VistaJugadoresSinModificarRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public JugadoresRow Row {
+            public VistaJugadoresSinModificarRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -810,7 +940,7 @@ namespace Presentacion {
         }
     }
 }
-namespace Presentacion.MyCompanyDataSet1TableAdapters {
+namespace Presentacion.Forms_Contratos.DataSetContratosTableAdapters {
     
     
     /// <summary>
@@ -822,7 +952,7 @@ namespace Presentacion.MyCompanyDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class JugadoresTableAdapter : global::System.ComponentModel.Component {
+    public partial class VistaJugadoresSinModificarTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -836,7 +966,7 @@ namespace Presentacion.MyCompanyDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public JugadoresTableAdapter() {
+        public VistaJugadoresSinModificarTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -933,86 +1063,54 @@ namespace Presentacion.MyCompanyDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Jugadores";
-            tableMapping.ColumnMappings.Add("idJugador", "idJugador");
+            tableMapping.DataSetTable = "VistaJugadoresSinModificar";
+            tableMapping.ColumnMappings.Add("IdJugador", "IdJugador");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("Birthdate", "Birthdate");
             tableMapping.ColumnMappings.Add("Nationality", "Nationality");
             tableMapping.ColumnMappings.Add("Position", "Position");
+            tableMapping.ColumnMappings.Add("FechaInicio", "FechaInicio");
+            tableMapping.ColumnMappings.Add("FechaFin", "FechaFin");
+            tableMapping.ColumnMappings.Add("Salario", "Salario");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Jugadores] WHERE (([idJugador] = @Original_idJugador) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Nationality = 1 AND [Nationality] IS NULL) OR ([Nationality] = @Original_Nationality)) AND ((@IsNull_Position = 1 AND [Position] IS NULL) OR ([Position] = @Original_Position)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idJugador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idJugador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birthdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nationality", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Jugadores] ([Name], [LastName], [Birthdate], [Nationality], [Position]) VALUES (@Name, @LastName, @Birthdate, @Nationality, @Position);
-SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadores WHERE (idJugador = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Jugadores] SET [Name] = @Name, [LastName] = @LastName, [Birthdate] = @Birthdate, [Nationality] = @Nationality, [Position] = @Position WHERE (([idJugador] = @Original_idJugador) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_Birthdate = 1 AND [Birthdate] IS NULL) OR ([Birthdate] = @Original_Birthdate)) AND ((@IsNull_Nationality = 1 AND [Nationality] IS NULL) OR ([Nationality] = @Original_Nationality)) AND ((@IsNull_Position = 1 AND [Position] IS NULL) OR ([Position] = @Original_Position)));
-SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadores WHERE (idJugador = @idJugador)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idJugador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idJugador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Birthdate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nationality", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nationality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Position", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Position", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idJugador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idJugador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Presentacion.Properties.Settings.Default.MyCompanyConnectionString;
+            this._connection.ConnectionString = global::Presentacion.Properties.Settings.Default.MyCompanyContratosJugadores;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM dbo.Jugad" +
-                "ores";
+            this._commandCollection[0].CommandText = "SELECT IdJugador, Name, LastName, Birthdate, Nationality, Position, FechaInicio, " +
+                "FechaFin, Salario FROM dbo.VistaJugadoresSinModificar";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT * FROM VistaJugadoresSinModificar \r\nWHERE FechaFin BETWEEN @fechaDesde AND" +
+                " @fechaHasta\r\nAND Salario BETWEEN @salarioMin AND @salarioMax\r\nAND FechaFin <= @" +
+                "fechaVencimiento\r\nAND (@position IS NULL OR Position = @position);\r\n\r\n";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaDesde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaHasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salarioMin", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Salario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salarioMax", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Salario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaVencimiento", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FechaFin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@position", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Position", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MyCompanyDataSet1.JugadoresDataTable dataTable) {
+        public virtual int Fill(DataSetContratos.VistaJugadoresSinModificarDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1025,9 +1123,9 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MyCompanyDataSet1.JugadoresDataTable GetData() {
+        public virtual DataSetContratos.VistaJugadoresSinModificarDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            MyCompanyDataSet1.JugadoresDataTable dataTable = new MyCompanyDataSet1.JugadoresDataTable();
+            DataSetContratos.VistaJugadoresSinModificarDataTable dataTable = new DataSetContratos.VistaJugadoresSinModificarDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1035,244 +1133,97 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MyCompanyDataSet1.JugadoresDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByFiltros(DataSetContratos.VistaJugadoresSinModificarDataTable dataTable, string fechaDesde, string fechaHasta, global::System.Nullable<int> salarioMin, global::System.Nullable<int> salarioMax, string fechaVencimiento, string position) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((fechaDesde == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fechaDesde));
+            }
+            if ((fechaHasta == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fechaHasta));
+            }
+            if ((salarioMin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(salarioMin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((salarioMax.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(salarioMax.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((fechaVencimiento == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(fechaVencimiento));
+            }
+            if ((position == null)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(position));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MyCompanyDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Jugadores");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idJugador, string Original_Name, string Original_LastName, string Original_Birthdate, string Original_Nationality, string Original_Position) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idJugador));
-            if ((Original_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetContratos.VistaJugadoresSinModificarDataTable GetDataByFiltros(string fechaDesde, string fechaHasta, global::System.Nullable<int> salarioMin, global::System.Nullable<int> salarioMax, string fechaVencimiento, string position) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((fechaDesde == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Name));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fechaDesde));
             }
-            if ((Original_LastName == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((fechaHasta == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_LastName));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fechaHasta));
             }
-            if ((Original_Birthdate == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((salarioMin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(salarioMin.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Birthdate));
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_Nationality == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((salarioMax.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(salarioMax.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Nationality));
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_Position == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((fechaVencimiento == null)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Position));
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(fechaVencimiento));
             }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, string LastName, string Birthdate, string Nationality, string Position) {
-            if ((Name == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            if ((position == null)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
+                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(position));
             }
-            if ((LastName == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(LastName));
-            }
-            if ((Birthdate == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Birthdate));
-            }
-            if ((Nationality == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Nationality));
-            }
-            if ((Position == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Position));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string LastName, string Birthdate, string Nationality, string Position, int Original_idJugador, string Original_Name, string Original_LastName, string Original_Birthdate, string Original_Nationality, string Original_Position, int idJugador) {
-            if ((Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
-            }
-            if ((LastName == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(LastName));
-            }
-            if ((Birthdate == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Birthdate));
-            }
-            if ((Nationality == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Nationality));
-            }
-            if ((Position == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Position));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idJugador));
-            if ((Original_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Name));
-            }
-            if ((Original_LastName == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_LastName));
-            }
-            if ((Original_Birthdate == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Birthdate));
-            }
-            if ((Original_Nationality == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Nationality));
-            }
-            if ((Original_Position == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Position));
-            }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(idJugador));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string LastName, string Birthdate, string Nationality, string Position, int Original_idJugador, string Original_Name, string Original_LastName, string Original_Birthdate, string Original_Nationality, string Original_Position) {
-            return this.Update(Name, LastName, Birthdate, Nationality, Position, Original_idJugador, Original_Name, Original_LastName, Original_Birthdate, Original_Nationality, Original_Position, Original_idJugador);
+            DataSetContratos.VistaJugadoresSinModificarDataTable dataTable = new DataSetContratos.VistaJugadoresSinModificarDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -1288,8 +1239,6 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         
         private UpdateOrderOption _updateOrder;
         
-        private JugadoresTableAdapter _jugadoresTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1302,20 +1251,6 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public JugadoresTableAdapter JugadoresTableAdapter {
-            get {
-                return this._jugadoresTableAdapter;
-            }
-            set {
-                this._jugadoresTableAdapter = value;
             }
         }
         
@@ -1338,10 +1273,6 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._jugadoresTableAdapter != null) 
-                            && (this._jugadoresTableAdapter.Connection != null))) {
-                    return this._jugadoresTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1355,9 +1286,6 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._jugadoresTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1367,17 +1295,8 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(MyCompanyDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetContratos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._jugadoresTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Jugadores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._jugadoresTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1386,16 +1305,8 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(MyCompanyDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetContratos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._jugadoresTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Jugadores.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._jugadoresTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1404,16 +1315,8 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(MyCompanyDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetContratos dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._jugadoresTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Jugadores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._jugadoresTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1446,17 +1349,12 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(MyCompanyDataSet1 dataSet) {
+        public virtual int UpdateAll(DataSetContratos dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._jugadoresTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._jugadoresTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
-                        "sma cadena de conexión.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1490,15 +1388,6 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._jugadoresTableAdapter != null)) {
-                    revertConnections.Add(this._jugadoresTableAdapter, this._jugadoresTableAdapter.Connection);
-                    this._jugadoresTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._jugadoresTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._jugadoresTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._jugadoresTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._jugadoresTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1556,10 +1445,6 @@ SELECT idJugador, Name, LastName, Birthdate, Nationality, Position FROM Jugadore
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._jugadoresTableAdapter != null)) {
-                    this._jugadoresTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._jugadoresTableAdapter]));
-                    this._jugadoresTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -91,7 +91,7 @@ namespace Presentacion
             this.txtuser.PasswordChar = '\0';
             this.txtuser.Size = new System.Drawing.Size(207, 30);
             this.txtuser.TabIndex = 1;
-            this.txtuser.Text = "Usuario";
+            this.txtuser.Text = "admin";
             this.txtuser.Enter += new System.EventHandler(this.clearTxt_Enter);
             // 
             // txtpassword
@@ -110,7 +110,7 @@ namespace Presentacion
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(207, 30);
             this.txtpassword.TabIndex = 2;
-            this.txtpassword.Text = "Contraseña";
+            this.txtpassword.Text = "admin";
             this.txtpassword.Enter += new System.EventHandler(this.clearTxt_Enter);
             // 
             // lblErrorMessagge
