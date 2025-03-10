@@ -26,22 +26,28 @@ namespace Presentacion
 
         private void FormPresupuestos_Load(object sender, EventArgs e)
         {
-            DataTable categorias = _presupuestoModel.ObtenerCategoriasGastos();
+            // Limpiar y agregar las categorías al ComboBox
             cmbCategoria.Items.Clear();
-            foreach (DataRow row in categorias.Rows)
+            cmbCategoria.Items.AddRange(new string[]
             {
-                cmbCategoria.Items.Add(row["categoria"].ToString());
-            }
+        "Sueldos de jugadores", "Alquiler de instalaciones", "Compra de uniformes",
+        "Transporte para partidos", "Costos administrativos", "Publicidad",
+        "Inscripciones a torneos", "Atención médica", "Multas y sanciones",
+        "Mantenimiento de instalaciones", "Compra de balones",
+        "Alojamiento para jugadores y staff", "Renovaciones y mejoras",
+        "Mantenimiento", "Servicios", "Compra de equipación",
+        "Alquiler", "Impuestos", "Marketing"
+            });
 
-            // Configurar DateTimePickers para temporada
-            dtpFechaInicio.Value = new DateTime(DateTime.Now.Year, 7, 1); // Inicio de temporada típico: 1 de julio
-            dtpFechaFin.Value = new DateTime(DateTime.Now.Year + 1, 6, 30); // Fin de temporada típico: 30 de junio
+            // Configurar DateTimePickers para la temporada
+            dtpFechaInicio.Value = new DateTime(DateTime.Now.Year, 7, 1);
+            dtpFechaFin.Value = new DateTime(DateTime.Now.Year + 1, 6, 30);
 
-            // Generar nombre temporada automáticamente
             GenerarNombreTemporada();
-
-            // Cargar presupuestos existentes
             CargarPresupuestos();
+
+
+
         }
 
 
