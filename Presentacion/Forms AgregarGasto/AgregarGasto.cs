@@ -29,6 +29,15 @@ namespace Presentacion
         }
 
 
+        public AgregarGasto(int id, string tipo, decimal cantidad, DateTime fecha, string nota)
+        {
+            InitializeComponent();
+            CbTipoGasto.Text = tipo;
+            txtCantidad.Text = cantidad.ToString();
+            dateTimePickerGasto.Value = fecha;
+            TBnota.Text = nota;
+        }
+
         private void AgregarGasto_Load(object sender, EventArgs e)
         {
 
@@ -36,15 +45,34 @@ namespace Presentacion
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            GastosCache gastos = new GastosCache();
-            gastos.tipo_de_gasto = CbTipoGasto.Text;
-            gastos.cantidad = decimal.Parse(txtCantidad.Text);
-            gastos.fecha = dateTimePickerGasto.Value.Date; // Solo la fecha, sin la hora
-            gastos.nota = TBnota.Text;
+            if (string.IsNullOrWhiteSpace(CbTipoGasto.Text) ||
+         string.IsNullOrWhiteSpace(txtCantidad.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            gastosModel.CrearGasto(gastos);
-            MessageBox.Show("insertado correctamente");
+            // Validar que la cantidad sea un número positivo
+            if (!decimal.TryParse(txtCantidad.Text, out decimal cantidad) || cantidad <= 0)
+            {
+                MessageBox.Show("La cantidad debe ser un número positivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Crear y asignar valores al objeto de gasto
+            GastosCache gasto = new GastosCache
+            {
+                tipo_de_gasto = CbTipoGasto.Text,
+                cantidad = cantidad,
+                fecha = dateTimePickerGasto.Value.Date,
+                nota = TBnota.Text
+            };
+
+            // Insertar en la base de datos
+            gastosModel.CrearGasto(gasto);
+            MessageBox.Show("Gasto registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // 🔹 Notificar que se agregó un gasto y actualizar balance
             GastoAgregado?.Invoke(this, EventArgs.Empty);
 
             this.Close();
@@ -59,5 +87,9 @@ namespace Presentacion
                 return;
             }
         }
+
+
+
+
     }
 }

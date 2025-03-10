@@ -66,7 +66,13 @@ namespace Presentacion
             "Mantenimiento de instalaciones",
             "Compra de balones",
             "Alojamiento para jugadores y staff",
-            "Renovaciones y mejoras"});
+            "Renovaciones y mejoras",
+            "Mantenimiento ",
+            "Servicios ",
+            "Compra de equipacion ",
+            "Alquiler ",
+            "Impuestos",
+            "Marketing"});
             this.CbTipoGasto.Location = new System.Drawing.Point(127, 25);
             this.CbTipoGasto.Name = "CbTipoGasto";
             this.CbTipoGasto.Size = new System.Drawing.Size(174, 24);

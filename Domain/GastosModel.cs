@@ -38,6 +38,15 @@ namespace Domain
             return tabla;
         }
 
+        public decimal ObtenerTotalGastos()
+        {
+            DataTable tabla = gastosDao.Mostrar();
+            if (tabla.Rows.Count > 0)
+            {
+                return tabla.AsEnumerable().Sum(row => row.Field<decimal>("cantidad"));
+            }
+            return 0;
+        }
 
     }
 
