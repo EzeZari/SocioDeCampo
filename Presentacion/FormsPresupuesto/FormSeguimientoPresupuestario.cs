@@ -32,6 +32,7 @@ namespace Presentacion
             {
                 cmbTemporada.SelectedIndex = 0;
             }
+           
         }
 
 

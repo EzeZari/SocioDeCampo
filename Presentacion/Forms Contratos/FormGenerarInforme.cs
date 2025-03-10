@@ -19,9 +19,20 @@ namespace Presentacion.Forms_Contratos
 
         private void FormGenerarInforme_Load(object sender, EventArgs e)
         {
+            // Primero llenamos el dataset
             this.VistaJugadoresSinModificarTableAdapter.Fill(this.DataSetContratos.VistaJugadoresSinModificar);
+
+            // Configuramos el origen de datos para el ReportViewer
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource();
+            reportDataSource.Name = "DataSet2"; // Nombre que espera el reporte RDLC
+            reportDataSource.Value = this.DataSetContratos.VistaJugadoresSinModificar;
+
+            // Limpiamos y agregamos el origen de datos
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+
+            // Establecemos el recurso del reporte
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.ReportContratos.rdlc";
-            this.reportViewer1.RefreshReport();
 
             // Opciones del ComboBox de vencimiento
             cmbContratosVencimiento.Items.AddRange(new string[] { "Todos", "6 meses", "1 año", "2 años", "Fecha personalizada" });
@@ -38,6 +49,7 @@ namespace Presentacion.Forms_Contratos
             // Eventos
             cmbContratosVencimiento.SelectedIndexChanged += cmbContratosVencimiento_SelectedIndexChanged;
 
+            // Aplicamos filtros y actualizamos el reporte
             CargarInforme();
         }
 
@@ -91,6 +103,13 @@ namespace Presentacion.Forms_Contratos
                 fechaDesdeStr, fechaHastaStr, salarioMinInt, salarioMaxInt, fechaVencimientoStr, posicionSeleccionada
             );
 
+            // Actualizamos el origen de datos después de aplicar los filtros
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource();
+            reportDataSource.Name = "DataSet2"; // Nombre que espera el reporte RDLC
+            reportDataSource.Value = this.DataSetContratos.VistaJugadoresSinModificar;
+
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource);
             this.reportViewer1.RefreshReport();
         }
 

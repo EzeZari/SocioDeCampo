@@ -230,6 +230,9 @@
     <Compile Include="FormsPresupuesto\FormSeguimientoPresupuestario.Designer.cs">
       <DependentUpon>FormSeguimientoPresupuestario.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyCompanyDataSet.cs">
+      <DependentUpon>MyCompanyDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MyCompanyDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -244,6 +247,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyCompanyDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MyCompanyDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyCompanyDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -270,6 +278,7 @@
     <EmbeddedResource Include="Forms Contratos\FormGenerarInforme.resx">
       <DependentUpon>FormGenerarInforme.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1presu.rdlc" />
     <EmbeddedResource Include="ReportContratos.rdlc" />
     <EmbeddedResource Include="Forms Finanzas\FormFinanzas.resx">
       <DependentUpon>FormFinanzas.cs</DependentUpon>
@@ -363,6 +372,17 @@
     </None>
     <None Include="MyCompanyDataSet2.xss">
       <DependentUpon>MyCompanyDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet3.xsc">
+      <DependentUpon>MyCompanyDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyCompanyDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MyCompanyDataSet3.xss">
+      <DependentUpon>MyCompanyDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

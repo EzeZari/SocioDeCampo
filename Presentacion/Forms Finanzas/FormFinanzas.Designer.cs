@@ -29,9 +29,9 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -58,6 +58,8 @@ namespace Presentacion
             this.txtBuscarIngreso = new System.Windows.Forms.TextBox();
             this.btnPresupuestos = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBalance)).BeginInit();
@@ -78,7 +80,7 @@ namespace Presentacion
             // 
             this.dgvDatos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(16, 174);
+            this.dgvDatos.Location = new System.Drawing.Point(12, 174);
             this.dgvDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
@@ -92,7 +94,7 @@ namespace Presentacion
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(12, 104);
+            this.gunaLabel2.Location = new System.Drawing.Point(12, 78);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(129, 25);
             this.gunaLabel2.TabIndex = 2;
@@ -102,7 +104,7 @@ namespace Presentacion
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(552, 103);
+            this.gunaLabel3.Location = new System.Drawing.Point(567, 78);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(123, 25);
             this.gunaLabel3.TabIndex = 3;
@@ -111,7 +113,7 @@ namespace Presentacion
             // DTPFechaDesde
             // 
             this.DTPFechaDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPFechaDesde.Location = new System.Drawing.Point(16, 131);
+            this.DTPFechaDesde.Location = new System.Drawing.Point(16, 105);
             this.DTPFechaDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTPFechaDesde.Name = "DTPFechaDesde";
             this.DTPFechaDesde.Size = new System.Drawing.Size(200, 26);
@@ -121,7 +123,7 @@ namespace Presentacion
             // DTPFechaHasta
             // 
             this.DTPFechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPFechaHasta.Location = new System.Drawing.Point(498, 131);
+            this.DTPFechaHasta.Location = new System.Drawing.Point(512, 105);
             this.DTPFechaHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTPFechaHasta.Name = "DTPFechaHasta";
             this.DTPFechaHasta.Size = new System.Drawing.Size(200, 26);
@@ -163,7 +165,7 @@ namespace Presentacion
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = null;
             this.btnAgregar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAgregar.Location = new System.Drawing.Point(16, 656);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 656);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -275,7 +277,7 @@ namespace Presentacion
             // dtpFechaDesdeIngreso
             // 
             this.dtpFechaDesdeIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaDesdeIngreso.Location = new System.Drawing.Point(756, 131);
+            this.dtpFechaDesdeIngreso.Location = new System.Drawing.Point(756, 105);
             this.dtpFechaDesdeIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaDesdeIngreso.Name = "dtpFechaDesdeIngreso";
             this.dtpFechaDesdeIngreso.Size = new System.Drawing.Size(200, 26);
@@ -285,7 +287,7 @@ namespace Presentacion
             // dtpFechaHastaIngreso
             // 
             this.dtpFechaHastaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaHastaIngreso.Location = new System.Drawing.Point(1307, 131);
+            this.dtpFechaHastaIngreso.Location = new System.Drawing.Point(1307, 107);
             this.dtpFechaHastaIngreso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaHastaIngreso.Name = "dtpFechaHastaIngreso";
             this.dtpFechaHastaIngreso.Size = new System.Drawing.Size(200, 26);
@@ -296,7 +298,7 @@ namespace Presentacion
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(751, 104);
+            this.gunaLabel4.Location = new System.Drawing.Point(751, 78);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(129, 25);
             this.gunaLabel4.TabIndex = 25;
@@ -306,7 +308,7 @@ namespace Presentacion
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(1302, 104);
+            this.gunaLabel5.Location = new System.Drawing.Point(1384, 78);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(123, 25);
             this.gunaLabel5.TabIndex = 26;
@@ -325,16 +327,16 @@ namespace Presentacion
             // 
             // chartBalance
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartBalance.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartBalance.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.chartBalance.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartBalance.Legends.Add(legend6);
             this.chartBalance.Location = new System.Drawing.Point(488, 691);
             this.chartBalance.Name = "chartBalance";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartBalance.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartBalance.Series.Add(series6);
             this.chartBalance.Size = new System.Drawing.Size(554, 146);
             this.chartBalance.TabIndex = 30;
             this.chartBalance.Text = "chart1";
@@ -354,7 +356,7 @@ namespace Presentacion
             this.btnImportar.ForeColor = System.Drawing.Color.White;
             this.btnImportar.Image = null;
             this.btnImportar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnImportar.Location = new System.Drawing.Point(1331, 30);
+            this.btnImportar.Location = new System.Drawing.Point(1350, 3);
             this.btnImportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -370,7 +372,7 @@ namespace Presentacion
             // 
             // txtBuscarGasto
             // 
-            this.txtBuscarGasto.Location = new System.Drawing.Point(276, 131);
+            this.txtBuscarGasto.Location = new System.Drawing.Point(279, 103);
             this.txtBuscarGasto.Name = "txtBuscarGasto";
             this.txtBuscarGasto.Size = new System.Drawing.Size(134, 22);
             this.txtBuscarGasto.TabIndex = 32;
@@ -381,7 +383,7 @@ namespace Presentacion
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.Location = new System.Drawing.Point(309, 103);
+            this.gunaLabel6.Location = new System.Drawing.Point(309, 78);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(73, 25);
             this.gunaLabel6.TabIndex = 33;
@@ -391,7 +393,7 @@ namespace Presentacion
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.Location = new System.Drawing.Point(1074, 103);
+            this.gunaLabel7.Location = new System.Drawing.Point(1074, 78);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(73, 25);
             this.gunaLabel7.TabIndex = 35;
@@ -399,7 +401,7 @@ namespace Presentacion
             // 
             // txtBuscarIngreso
             // 
-            this.txtBuscarIngreso.Location = new System.Drawing.Point(1041, 131);
+            this.txtBuscarIngreso.Location = new System.Drawing.Point(1048, 107);
             this.txtBuscarIngreso.Name = "txtBuscarIngreso";
             this.txtBuscarIngreso.Size = new System.Drawing.Size(134, 22);
             this.txtBuscarIngreso.TabIndex = 34;
@@ -420,7 +422,7 @@ namespace Presentacion
             this.btnPresupuestos.ForeColor = System.Drawing.Color.White;
             this.btnPresupuestos.Image = null;
             this.btnPresupuestos.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPresupuestos.Location = new System.Drawing.Point(1186, 725);
+            this.btnPresupuestos.Location = new System.Drawing.Point(1186, 752);
             this.btnPresupuestos.Margin = new System.Windows.Forms.Padding(4);
             this.btnPresupuestos.Name = "btnPresupuestos";
             this.btnPresupuestos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -448,7 +450,7 @@ namespace Presentacion
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(1186, 782);
+            this.gunaButton1.Location = new System.Drawing.Point(1186, 800);
             this.gunaButton1.Margin = new System.Windows.Forms.Padding(4);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -462,12 +464,34 @@ namespace Presentacion
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
+            // gunaLabel8
+            // 
+            this.gunaLabel8.AutoSize = true;
+            this.gunaLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel8.Location = new System.Drawing.Point(284, 147);
+            this.gunaLabel8.Name = "gunaLabel8";
+            this.gunaLabel8.Size = new System.Drawing.Size(74, 25);
+            this.gunaLabel8.TabIndex = 38;
+            this.gunaLabel8.Text = "Gastos";
+            // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel9.Location = new System.Drawing.Point(1074, 147);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(87, 25);
+            this.gunaLabel9.TabIndex = 39;
+            this.gunaLabel9.Text = "Ingresos";
+            // 
             // FormFinanzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1539, 849);
+            this.Controls.Add(this.gunaLabel9);
+            this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.btnPresupuestos);
             this.Controls.Add(this.gunaLabel7);
@@ -534,5 +558,7 @@ namespace Presentacion
         private System.Windows.Forms.TextBox txtBuscarIngreso;
         private Guna.UI.WinForms.GunaButton btnPresupuestos;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel8;
+        private Guna.UI.WinForms.GunaLabel gunaLabel9;
     }
 }

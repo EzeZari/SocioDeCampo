@@ -29,6 +29,7 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
@@ -43,9 +44,14 @@ namespace Presentacion
             this.dgvSeguimiento = new System.Windows.Forms.DataGridView();
             this.chartBarras = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPie = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.MyCompanyDataSet3 = new Presentacion.MyCompanyDataSet3();
+            this.PresupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PresupuestosTableAdapter = new Presentacion.MyCompanyDataSet3TableAdapters.PresupuestosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeguimiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PresupuestosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -128,6 +134,20 @@ namespace Presentacion
             this.chartPie.TabIndex = 6;
             this.chartPie.Text = "chart1";
             // 
+            // MyCompanyDataSet3
+            // 
+            this.MyCompanyDataSet3.DataSetName = "MyCompanyDataSet3";
+            this.MyCompanyDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // PresupuestosBindingSource
+            // 
+            this.PresupuestosBindingSource.DataMember = "Presupuestos";
+            this.PresupuestosBindingSource.DataSource = this.MyCompanyDataSet3;
+            // 
+            // PresupuestosTableAdapter
+            // 
+            this.PresupuestosTableAdapter.ClearBeforeFill = true;
+            // 
             // FormSeguimientoPresupuestario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,6 +166,8 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeguimiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PresupuestosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +182,8 @@ namespace Presentacion
         private System.Windows.Forms.DataGridView dgvSeguimiento;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartBarras;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPie;
+        private System.Windows.Forms.BindingSource PresupuestosBindingSource;
+        private MyCompanyDataSet3 MyCompanyDataSet3;
+        private MyCompanyDataSet3TableAdapters.PresupuestosTableAdapter PresupuestosTableAdapter;
     }
 }
