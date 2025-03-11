@@ -26,7 +26,7 @@ namespace DataAccess
                     command.CommandType = CommandType.Text;
                     using (var reader = command.ExecuteReader())
                     {
-                        // SqlDataAdapter reader = command.ExecuteReader(); // SI ALGO NO ANDA, VER ACA EL ERROR
+                       
                         if (reader.HasRows)
                         {
                             while (reader.Read())
@@ -74,13 +74,13 @@ namespace DataAccess
             }
         }
 
-            public DataTable ObtenerContratoPorJugador(int idJugador)
+        public DataTable ObtenerContratoPorJugador(int idJugador) 
         {
             DataTable dt = new DataTable();
-            using (var connection = GetConnection())
+            using (var connection = GetConnection()) //Conectamos a la bd
             {
-                connection.Open();
-                using (var command = new SqlCommand("ObtenerContratoPorJugador", connection))
+                connection.Open(); //Abrimos la conexion
+                using (var command = new SqlCommand("ObtenerContratoPorJugador", connection)) //Usamos un sqlCommand el cual es un proc almacenado
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@IdJugador", idJugador);
@@ -108,9 +108,9 @@ namespace DataAccess
                     {
                         if (reader.Read())
                         {
-                            string nombre = reader.IsDBNull(0) ? string.Empty : reader.GetString(0); // Name
-                            string apellido = reader.IsDBNull(1) ? string.Empty : reader.GetString(1); // LastName
-                            nombreCompleto = nombre + " " + apellido; // Concatenar nombre y apellido
+                            string nombre = reader.IsDBNull(0) ? string.Empty : reader.GetString(0);
+                            string apellido = reader.IsDBNull(1) ? string.Empty : reader.GetString(1); 
+                            nombreCompleto = nombre + " " + apellido;
                         }
                     }
                 }
@@ -134,15 +134,15 @@ namespace DataAccess
                         {
                             contratos.Add(new Contrato
                             {
-                                Id = reader.GetInt32(0), // Id
-                                IdJugador = reader.GetInt32(1), // IdJugador
-                                Monto = reader.GetDecimal(2), // Monto
-                                FechaInicio = reader.GetDateTime(3), // FechaInicio
-                                FechaFin = reader.GetDateTime(4), // FechaFin
-                                Clausula = reader.IsDBNull(5) ? null : reader.GetString(5), // Clausula
-                                Salario = reader.IsDBNull(6) ? 0 : reader.GetDecimal(6), // Salario
-                                Bonificacion = reader.IsDBNull(7) ? null : reader.GetString(7), // Bonificacion
-                                Obligacion = reader.IsDBNull(8) ? null : reader.GetString(8) // Obligacion
+                                Id = reader.GetInt32(0), 
+                                IdJugador = reader.GetInt32(1), 
+                                Monto = reader.GetDecimal(2), 
+                                FechaInicio = reader.GetDateTime(3),
+                                FechaFin = reader.GetDateTime(4), 
+                                Clausula = reader.IsDBNull(5) ? null : reader.GetString(5), 
+                                Salario = reader.IsDBNull(6) ? 0 : reader.GetDecimal(6), 
+                                Bonificacion = reader.IsDBNull(7) ? null : reader.GetString(7), 
+                                Obligacion = reader.IsDBNull(8) ? null : reader.GetString(8) 
                             });
                         }
                     }
@@ -150,7 +150,7 @@ namespace DataAccess
             }
             return contratos;
         }
-        public bool ExisteContratoEnRango(int idJugador, DateTime fechaInicio, DateTime fechaFin)
+        public bool ExisteContratoEnRango(int idJugador, DateTime fechaInicio, DateTime fechaFin) //Ver si hay contrato registrado en determinada fecha.
         {
             using (var connection = GetConnection())
             {
@@ -173,7 +173,7 @@ namespace DataAccess
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new SqlCommand("ObtenerUltimoContrato", connection)) // Asegúrate de tener este SP en la BD
+                using (var command = new SqlCommand("ObtenerUltimoContrato", connection)) 
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@IdJugador", idJugador);
@@ -191,7 +191,7 @@ namespace DataAccess
             using (var connection = GetConnection())
             {
                 connection.Open();
-                using (var command = new SqlCommand("EliminarUltimoContrato", connection)) // SP en la BD
+                using (var command = new SqlCommand("EliminarUltimoContrato", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@IdJugador", idJugador);
@@ -255,7 +255,7 @@ namespace DataAccess
 
         #region Mostrar, Añadir, Editar y Eliminar Jugador
         SqlDataReader leer;
-        DataTable tabla = new DataTable();      // Agregamos
+        DataTable tabla = new DataTable();     
         SqlCommand comando = new SqlCommand(); // Para ejecutar instrucciones o procedimientos almacenados.
 
         public DataTable Mostrar()
@@ -282,8 +282,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "InsertarJugador"; //Remplazamos esto por lo de abajo.
-                    //"insert into Jugadores values ('" + Name + "','" + LastName + "','" + Brithdate + "','" + Nationality + "','" + Position + "') ";
+                    command.CommandText = "InsertarJugador"; 
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@Name", Name);
                     command.Parameters.AddWithValue("@LastName", LastName);
@@ -292,7 +291,7 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@Position", Position);
                     command.ExecuteNonQuery();
 
-                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+                    command.Parameters.Clear();
                     //Y asi reutilizamos el mismo "Command" y no creamos uno nuevo.
 
                 }
@@ -305,7 +304,7 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
-                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                connection.Open(); 
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -329,10 +328,10 @@ namespace DataAccess
 
             using (var connection = GetConnection())
             {
-                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                connection.Open(); 
                 using (var command = new SqlCommand())
                 {
-                    command.Connection = connection; //Abrimos la conexion
+                    command.Connection = connection; 
                     command.CommandText = "EliminarJugador";
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@idJugador", idJugador);
@@ -350,7 +349,7 @@ namespace DataAccess
         {
             using (var connection = GetConnection())
             {
-                connection.Open(); //Abrimos la conexion, no hace falta cerrarlo, pq al usar "Using" es desechable
+                connection.Open(); 
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -366,7 +365,7 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@UserID", UserID);
                     command.ExecuteNonQuery();
 
-                    command.Parameters.Clear();//Limpiamos los parametros cada vez que termino de hacer una consulta, para que no tenga muchos almacenados.
+                    command.Parameters.Clear();
                 }
             }
         }

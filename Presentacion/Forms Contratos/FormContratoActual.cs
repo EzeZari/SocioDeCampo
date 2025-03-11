@@ -20,7 +20,6 @@ namespace Presentacion.Forms_Contratos
         {
             InitializeComponent();
 
-            // Asignar los valores a los controles antes de cargar el contrato
             lblIdJugador.Text = idJugador;
             lblNombre.Text = nombre;
             lblApellido.Text = apellido;
@@ -43,9 +42,7 @@ namespace Presentacion.Forms_Contratos
 
         private void btnRenovarContrato_Click(object sender, EventArgs e)
         {
-            // Crear y abrir el formulario de renovación con el idJugador
             FormContratoAdd formContratoAdd = new FormContratoAdd(lblIdJugador.Text);
-            // Suscribirse al evento para cerrar este formulario cuando se agregue un contrato
             formContratoAdd.ContratoAgregado += () => this.Close();
             formContratoAdd.Show();
         }
@@ -58,12 +55,9 @@ namespace Presentacion.Forms_Contratos
             {
                 DataRow row = contrato.Rows[0];
 
-                // Formatear Monto, Salario y Clausula en dólares
                 lblMonto.Text = FormatearEnDolares(row["Monto"].ToString());
                 lblSalario.Text = FormatearEnDolares(row["Salario"].ToString());
                 lblClausula.Text = FormatearEnDolares(row["Clausula"].ToString());
-
-                // Asignar otros valores sin formato específico
                 lblFechaInicio.Text = Convert.ToDateTime(row["FechaInicio"]).ToShortDateString();
                 lblFechaFin.Text = Convert.ToDateTime(row["FechaFin"]).ToShortDateString();
                 lblBonificacion.Text = row["Bonificacion"].ToString();
@@ -71,17 +65,13 @@ namespace Presentacion.Forms_Contratos
             }
             else
             {
-                // En caso de que no haya contratos, puedes mostrar un mensaje o dejar los valores iniciales
                 MessageBox.Show("No se encontró un contrato previo para este jugador.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        // Método auxiliar para formatear en dólares
         private string FormatearEnDolares(string valor)
         {
             if (decimal.TryParse(valor, out decimal valorDecimal))
             {
-                // Formatear como dólares (USD)
                 return valorDecimal.ToString("C0", new System.Globalization.CultureInfo("en-US"));
             }
             else
@@ -89,7 +79,6 @@ namespace Presentacion.Forms_Contratos
                 return "Formato inválido";
             }
         }
-
         private void btnEliminarContrato_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try

@@ -23,13 +23,10 @@ namespace Presentacion
         {
             try
             {
-                // Validar los datos antes de proceder
                 if (!ValidarDatos())
                 {
-                    return; // Detener la ejecución si la validación falla
+                    return;
                 }
-
-                // Obtener los valores de los controles
                 string nombre = txtName.Text;
                 string apellido = txtLastNameJug.Text;
                 string fechaNacimiento = txtBirthdate.Text;
@@ -38,61 +35,49 @@ namespace Presentacion
 
                 // Llamar al método en tu capa de negocio o dominio para guardar los datos en la base de datos
                 objeto.AddJugador(nombre, apellido, fechaNacimiento, nacionalidad, posicion);
-
-                // Mostrar un mensaje de éxito
                 MessageBox.Show("Jugador agregado correctamente",
-                                "Excelente",
-                                MessageBoxButtons.OK);
+                                "Excelente", MessageBoxButtons.OK);
 
-                // Cerrar el formulario después de guardar
                 this.Close();
             }
             catch (Exception ex)
             {
-                // Mostrar un mensaje de error si ocurre alguna excepción
                 MessageBox.Show("No se pudo añadir el Jugador debido a: " + ex.Message);
             }
         }
 
         private bool ValidarDatos()
         {
-            // Verificar si los TextBox están vacíos
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 MessageBox.Show("El campo 'Nombre' no puede estar vacío.");
                 txtName.Focus();
                 return false;
             }
-
             if (string.IsNullOrWhiteSpace(txtLastNameJug.Text))
             {
                 MessageBox.Show("El campo 'Apellido' no puede estar vacío.");
                 txtLastNameJug.Focus();
                 return false;
             }
-
             if (string.IsNullOrWhiteSpace(txtBirthdate.Text))
             {
                 MessageBox.Show("El campo 'Fecha de Nacimiento' no puede estar vacío.");
                 txtBirthdate.Focus();
                 return false;
             }
-
             if (!ValidarFecha(txtBirthdate.Text))
             {
                 MessageBox.Show("El campo 'Fecha de Nacimiento' debe tener el formato --/--/----.");
                 txtBirthdate.Focus();
                 return false;
             }
-
             if (string.IsNullOrWhiteSpace(txtNationality.Text))
             {
                 MessageBox.Show("El campo 'Nacionalidad' no puede estar vacío.");
                 txtNationality.Focus();
                 return false;
             }
-
-            // Verificar si se ha seleccionado una posición en el ComboBox
             if (cmbPositionJug.SelectedItem == null)
             {
                 MessageBox.Show("Por favor, seleccione una posición.");
@@ -100,7 +85,6 @@ namespace Presentacion
                 return false;
             }
 
-            // Si todos los campos están completos, devolver verdadero
             return true;
         }
 

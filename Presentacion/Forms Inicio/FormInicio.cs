@@ -32,8 +32,8 @@ namespace Presentacion
             // Ocultar las últimas dos columnas
             if (dataGridView1.Columns.Count >= 2)
             {
-                dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false; // Última columna (Cláusula USD)
-                dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false; // Penúltima columna (Fin de Contrato)
+                dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false; 
+                dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false; 
             }
         }
 

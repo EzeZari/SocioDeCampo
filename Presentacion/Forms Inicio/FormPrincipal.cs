@@ -29,7 +29,7 @@ namespace Presentacion
 
         private void LoadUserData()
         {
-            lblName.Text = UserCache.FirstName;   //+", "+UserLoginCache.LastName
+            lblName.Text = UserCache.FirstName;   
             lblLastName.Text = UserCache.LastName;
             lblEmail.Text = UserCache.Email; //Mostrarlos en pantalla
             lblPosition.Text = UserCache.Position;
@@ -46,12 +46,12 @@ namespace Presentacion
             }
             if (UserCache.Position == Position.Entrenador)
             {
-                // btnLogout.Enabled = false; Le desactivamos el acceso a tal boton
+                
             } //EN EL FORM QUE YO QUIERA OCULTAR UN BOTON, LO HAGO DE LA MISMA MANERA. //Lo puedo hacer asi, o hacer una funcion y desp llamarla en "FormPrincipal_Load"
         }
 
         
-        private void ActivateButton (Object btnSender) //Activamos el boton cuando esta presionado
+        private void ActivateButton (Object btnSender) 
         {
             if (btnSender != null) // Comprobar si el objeto enviado es un botón
             {
@@ -60,8 +60,8 @@ namespace Presentacion
                     DisableButton();
                     Color color = Color.FromArgb(70,130,180) ;
                     currentButton = (Guna.UI.WinForms.GunaButton)btnSender;
-                    currentButton.BaseColor = color;        //Fondo
-                    currentButton.ForeColor = Color.White; //Letras 
+                    currentButton.BaseColor = color;       
+                    currentButton.ForeColor = Color.White; 
                 }
             }
         }
@@ -72,7 +72,7 @@ namespace Presentacion
                 if (previousBtn.GetType() == typeof(Guna.UI.WinForms.GunaButton)) // Verifica si el botón es de tipo GunaButton
                 {
                     Guna.UI.WinForms.GunaButton gunaButton = (Guna.UI.WinForms.GunaButton)previousBtn;
-                    gunaButton.BaseColor = Color.FromArgb(38, 84, 124); // Restablece el color de fondo a su estado normal
+                    gunaButton.BaseColor = Color.FromArgb(38, 84, 124); 
                     gunaButton.ForeColor = Color.White; 
 
                 }
@@ -81,17 +81,17 @@ namespace Presentacion
         private Form activeForm = null;
         private void OpenChildForm(Form childForm) //Metodo para abrir los formularios hijos en el metodo contenedor. (ONLY FORM)
         {
-            if (activeForm != null) //Si form activo es diferente a null.
-                activeForm.Close(); //Cerramos el form activo.
+            if (activeForm != null) 
+                activeForm.Close(); 
 
                 activeForm = childForm; //Almacenamos el form activo.
                 childForm.TopLevel = false;
-                childForm.FormBorderStyle = FormBorderStyle.None; //Sacamos el borde del form.
+                childForm.FormBorderStyle = FormBorderStyle.None; 
                 childForm.Dock = DockStyle.Fill; //Establecemos que rellene todo el panel.
                 panelChildFrom.Controls.Add(childForm);
                 panelChildFrom.Tag = childForm;//Asociamos el form con el panel contenedor.
-                childForm.BringToFront();//Traemos el form al frente por si hay un logo en el fondo.
-                childForm.Show();// Mostramos el Form hijo
+                childForm.BringToFront();
+                childForm.Show();
 
             
         }
@@ -99,13 +99,13 @@ namespace Presentacion
         private void btnInicio_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormInicio()); // Abrir el formulario hijo primero
-            ActivateButton(sender); // Llamar a ActivateButton después de abrir el formulario hijo
+            ActivateButton(sender); // Llamamos a ActivateButton y pasamos el botón actual (sender)
         }
 
         private void btnJugadores_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormJugadores()); // Abrir el formulario hijo primero
-            ActivateButton(sender); // Llamamos a ActivateButton y pasamos el botón actual (sender)
+            OpenChildForm(new FormJugadores()); 
+            ActivateButton(sender); 
         }
 
         private void btnFinanzas_Click(object sender, EventArgs e)
@@ -135,6 +135,5 @@ namespace Presentacion
 
         }
 
-        
     }
 }

@@ -55,15 +55,14 @@ namespace Domain
         }
         #endregion
 
-        public void AgregarContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula, decimal salario, string bonificacion, string obligacion)
-        {
-            userDao.AddContrato(idJugador, fechaInicio, fechaFin, monto, clausula, salario, bonificacion, obligacion);
-        }
-
-        // Método para obtener los contratos
         public List<Contrato> ObtenerContratos()
         {
             return userDao.GetContratos();
+        }
+
+        public void AgregarContrato(int idJugador, DateTime fechaInicio, DateTime fechaFin, decimal monto, string clausula, decimal salario, string bonificacion, string obligacion)
+        {
+            userDao.AddContrato(idJugador, fechaInicio, fechaFin, monto, clausula, salario, bonificacion, obligacion);
         }
 
         public DataTable ObtenerContratoPorJugador(string idJugador)
@@ -90,7 +89,7 @@ namespace Domain
         }
         public string ObtenerNombreJugador(string idJugador)
         {
-            // Convertir el idJugador a entero, si es válido
+            
             if (int.TryParse(idJugador, out int id))
             {
                 // Llamar al método en UserDao para obtener el nombre completo del jugador

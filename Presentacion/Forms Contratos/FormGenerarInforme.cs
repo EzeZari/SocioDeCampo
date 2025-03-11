@@ -24,7 +24,7 @@ namespace Presentacion.Forms_Contratos
 
             // Configuramos el origen de datos para el ReportViewer
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource();
-            reportDataSource.Name = "DataSet2"; // Nombre que espera el reporte RDLC
+            reportDataSource.Name = "DataSet2"; 
             reportDataSource.Value = this.DataSetContratos.VistaJugadoresSinModificar;
 
             // Limpiamos y agregamos el origen de datos

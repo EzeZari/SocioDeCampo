@@ -26,15 +26,12 @@ namespace Presentacion
         {
             MostrarJugadores();
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
-
-            
         }
         private void MostrarJugadores()
         {
             UserModel objetoCD = new UserModel();
             dataGridView1.DataSource = objetoCD.MostrarJugadores();
 
-            // Formatear la columna "Salario" como moneda en USD
             dataGridView1.Columns["Salario (USD)"].DefaultCellStyle.Format = "C0";
             dataGridView1.Columns["Salario (USD)"].DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("en-US");
 
@@ -55,7 +52,6 @@ namespace Presentacion
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Obtener los datos de la fila seleccionada en el DataGridView
                 string nombre = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
                 string apellido = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 string fechaNacimiento = dataGridView1.CurrentRow.Cells["Fecha de Nacimiento"].Value.ToString();
@@ -66,7 +62,7 @@ namespace Presentacion
                 // Crear una instancia del formulario FormJugadoresEdit
                 var FormJugadoresEdit = new FormJugadoresEdit(nombre, apellido, fechaNacimiento, nacionalidad, posicion, idJugador);
                 FormJugadoresEdit.FormClosed += (s, args) => {
-                    MostrarJugadores(); // Llamar a MostrarJugadores() cuando se cierre el formulario de edición
+                    MostrarJugadores();
                 };
                 FormJugadoresEdit.ShowDialog();
             }
@@ -79,19 +75,15 @@ namespace Presentacion
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Mostrar el mensaje de confirmación
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este jugador?",
                                                       "Confirmación",
                                                       MessageBoxButtons.YesNo,
                                                       MessageBoxIcon.Question);
-
-                // Si el usuario selecciona "Sí", proceder con la eliminación
                 if (result == DialogResult.Yes)
                 {
                     idJugador = dataGridView1.CurrentRow.Cells["idJugador"].Value.ToString();
                     objeto.EliminarJugador(idJugador);
 
-                    // Mensaje de éxito con ícono de información
                     MessageBox.Show("Eliminado correctamente",
                                     "Éxito",
                                     MessageBoxButtons.OK,
@@ -112,9 +104,8 @@ namespace Presentacion
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            // Muestra el botón solo si hay una fila seleccionada
             bool jugadorSeleccionado = dataGridView1.SelectedRows.Count > 0;
-            gunaButton1.Visible = jugadorSeleccionado;
+            btnAddContrato.Visible = jugadorSeleccionado;
             btnVerContrato.Visible = jugadorSeleccionado;
         }
 
@@ -131,7 +122,6 @@ namespace Presentacion
 
                 if (contrato.Rows.Count > 0)
                 {
-                    // Si ya tiene contrato, mostrar un mensaje y abrir la info del contrato
                     MessageBox.Show("Este jugador ya tiene un contrato registrado.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     string monto = contrato.Rows[0]["Monto"].ToString();
@@ -150,7 +140,6 @@ namespace Presentacion
                     FormContratoAdd formContratoAdd = new FormContratoAdd(idJugador);
                     formContratoAdd.ContratoAgregado += () => MostrarJugadores(); // Suscripción al evento
                     formContratoAdd.ShowDialog();
-
                 }
             }
             else
@@ -190,10 +179,6 @@ namespace Presentacion
                 {
                     MessageBox.Show("El jugador seleccionado no tiene un contrato registrado.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un jugador antes de ver su contrato.");
             }
         }
 
