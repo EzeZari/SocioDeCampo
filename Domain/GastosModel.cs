@@ -47,6 +47,13 @@ namespace Domain
             }
             return 0;
         }
+        // Añade este método al GastosModel existente
+        public DataTable MostrarUltimosMovimientos()
+        {
+            DataTable tabla = new DataTable();//Creamos un registro para guardar lo q nos devuelve el DataAcces.
+            tabla = gastosDao.MostrarUltimosMovimientos();
+            return tabla;
+        }
 
     }
 

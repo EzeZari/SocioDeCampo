@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
 
+
 namespace Presentacion
 {
     public partial class FormInicio : Form
@@ -21,12 +22,25 @@ namespace Presentacion
         private void FormInicio_Load(object sender, EventArgs e)
         {
             MostrarJugadores();
+            MostrarUltimosMovimientos();
         }
         private void MostrarJugadores()
         {
             UserModel objetoCD = new UserModel();
             dataGridView1.DataSource = objetoCD.MostrarJugadores();
-           
+
+            // Ocultar las últimas dos columnas
+            if (dataGridView1.Columns.Count >= 2)
+            {
+                dataGridView1.Columns[dataGridView1.Columns.Count - 1].Visible = false; // Última columna (Cláusula USD)
+                dataGridView1.Columns[dataGridView1.Columns.Count - 2].Visible = false; // Penúltima columna (Fin de Contrato)
+            }
+        }
+
+        private void MostrarUltimosMovimientos()
+        {
+            GastosModel objetoGastos = new GastosModel();
+            dataGridView2.DataSource = objetoGastos.MostrarUltimosMovimientos();
         }
     }
 }

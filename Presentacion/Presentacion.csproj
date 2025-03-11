@@ -278,7 +278,6 @@
     <EmbeddedResource Include="Forms Contratos\FormGenerarInforme.resx">
       <DependentUpon>FormGenerarInforme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1presu.rdlc" />
     <EmbeddedResource Include="ReportContratos.rdlc" />
     <EmbeddedResource Include="Forms Finanzas\FormFinanzas.resx">
       <DependentUpon>FormFinanzas.cs</DependentUpon>

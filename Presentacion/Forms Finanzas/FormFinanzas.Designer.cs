@@ -29,11 +29,14 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.DTPFechaDesde = new System.Windows.Forms.DateTimePicker();
@@ -42,7 +45,6 @@ namespace Presentacion
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregar = new Guna.UI.WinForms.GunaButton();
             this.BtnEliminar = new Guna.UI.WinForms.GunaButton();
-            this.dvgIngresos = new System.Windows.Forms.DataGridView();
             this.btnEliminarIngresos = new Guna.UI.WinForms.GunaButton();
             this.btnAgregarIngreso = new Guna.UI.WinForms.GunaButton();
             this.dtpFechaDesdeIngreso = new System.Windows.Forms.DateTimePicker();
@@ -60,9 +62,11 @@ namespace Presentacion
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.dvgIngresos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.chartBalance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgIngresos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartBalance)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLabel1
@@ -75,20 +79,6 @@ namespace Presentacion
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(0, 37);
             this.gunaLabel1.TabIndex = 0;
-            // 
-            // dgvDatos
-            // 
-            this.dgvDatos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(12, 174);
-            this.dgvDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.RowHeadersWidth = 51;
-            this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(721, 476);
-            this.dgvDatos.TabIndex = 1;
-            this.dgvDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellClick);
-            this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentClick);
             // 
             // gunaLabel2
             // 
@@ -206,19 +196,6 @@ namespace Presentacion
             this.BtnEliminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // dvgIngresos
-            // 
-            this.dvgIngresos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dvgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgIngresos.Location = new System.Drawing.Point(743, 174);
-            this.dvgIngresos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dvgIngresos.Name = "dvgIngresos";
-            this.dvgIngresos.RowHeadersWidth = 51;
-            this.dvgIngresos.RowTemplate.Height = 24;
-            this.dvgIngresos.Size = new System.Drawing.Size(782, 476);
-            this.dvgIngresos.TabIndex = 20;
-            this.dvgIngresos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgIngresos_CellClick);
-            // 
             // btnEliminarIngresos
             // 
             this.btnEliminarIngresos.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -327,16 +304,16 @@ namespace Presentacion
             // 
             // chartBalance
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartBalance.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartBalance.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.chartBalance.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartBalance.Legends.Add(legend1);
             this.chartBalance.Location = new System.Drawing.Point(488, 691);
             this.chartBalance.Name = "chartBalance";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartBalance.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartBalance.Series.Add(series1);
             this.chartBalance.Size = new System.Drawing.Size(554, 146);
             this.chartBalance.TabIndex = 30;
             this.chartBalance.Text = "chart1";
@@ -484,12 +461,76 @@ namespace Presentacion
             this.gunaLabel9.TabIndex = 39;
             this.gunaLabel9.Text = "Ingresos";
             // 
+            // dgvDatos
+            // 
+            this.dgvDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvDatos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDatos.ColumnHeadersHeight = 30;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDatos.EnableHeadersVisualStyles = false;
+            this.dgvDatos.Location = new System.Drawing.Point(12, 147);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvDatos.RowHeadersWidth = 50;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.dgvDatos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDatos.RowTemplate.Height = 50;
+            this.dgvDatos.Size = new System.Drawing.Size(678, 428);
+            this.dgvDatos.TabIndex = 40;
+            // 
+            // dvgIngresos
+            // 
+            this.dvgIngresos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dvgIngresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgIngresos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dvgIngresos.BackgroundColor = System.Drawing.Color.White;
+            this.dvgIngresos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgIngresos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgIngresos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dvgIngresos.ColumnHeadersHeight = 30;
+            this.dvgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dvgIngresos.EnableHeadersVisualStyles = false;
+            this.dvgIngresos.Location = new System.Drawing.Point(848, 147);
+            this.dvgIngresos.Margin = new System.Windows.Forms.Padding(4);
+            this.dvgIngresos.Name = "dvgIngresos";
+            this.dvgIngresos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dvgIngresos.RowHeadersWidth = 50;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.dvgIngresos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dvgIngresos.RowTemplate.Height = 50;
+            this.dvgIngresos.Size = new System.Drawing.Size(678, 428);
+            this.dvgIngresos.TabIndex = 41;
+            // 
             // FormFinanzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1539, 849);
+            this.Controls.Add(this.dvgIngresos);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.gunaLabel9);
             this.Controls.Add(this.gunaLabel8);
             this.Controls.Add(this.gunaButton1);
@@ -507,7 +548,6 @@ namespace Presentacion
             this.Controls.Add(this.dtpFechaDesdeIngreso);
             this.Controls.Add(this.btnAgregarIngreso);
             this.Controls.Add(this.btnEliminarIngresos);
-            this.Controls.Add(this.dvgIngresos);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox1);
@@ -516,15 +556,14 @@ namespace Presentacion
             this.Controls.Add(this.DTPFechaDesde);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel2);
-            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.gunaLabel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormFinanzas";
             this.Text = "Finanzas";
             this.Load += new System.EventHandler(this.FormFinanzas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.chartBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgIngresos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartBalance)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,7 +572,6 @@ namespace Presentacion
         #endregion
 
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.DataGridView dgvDatos;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private System.Windows.Forms.DateTimePicker DTPFechaDesde;
@@ -542,7 +580,6 @@ namespace Presentacion
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton btnAgregar;
         private Guna.UI.WinForms.GunaButton BtnEliminar;
-        private System.Windows.Forms.DataGridView dvgIngresos;
         private Guna.UI.WinForms.GunaButton btnEliminarIngresos;
         private Guna.UI.WinForms.GunaButton btnAgregarIngreso;
         private System.Windows.Forms.DateTimePicker dtpFechaDesdeIngreso;
@@ -560,5 +597,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridView dvgIngresos;
     }
 }

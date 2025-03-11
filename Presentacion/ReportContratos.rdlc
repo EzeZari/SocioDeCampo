@@ -453,10 +453,11 @@
                     </SortExpression>
                   </SortExpressions>
                   <Label>=Switch(
-    Fields!Salario.Value &lt;= 5000, "0-5000",
-    Fields!Salario.Value &lt;= 10000, "5001-10000",
-    Fields!Salario.Value &lt;= 15000, "10001-15000",
-    True, "15001+"
+    Fields!Salario.Value &gt;= 0 AND Fields!Salario.Value &lt;= 2000, "0-4000",
+    Fields!Salario.Value &gt; 2000 AND Fields!Salario.Value &lt;= 4000, "2001-4000",
+    Fields!Salario.Value &gt; 4000 AND Fields!Salario.Value &lt;= 6000, "4001-8000",
+    Fields!Salario.Value &gt; 6000 AND Fields!Salario.Value &lt;= 8000, "6001-8000",
+    Fields!Salario.Value &gt; 8000, "8001+"
 )</Label>
                 </ChartMember>
               </ChartMembers>
@@ -864,13 +865,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Name</Value>
+                                  <Value>Nombre</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox27</rd:DefaultName>
@@ -897,13 +900,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Last Name</Value>
+                                  <Value>Apellido</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -930,13 +935,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Birthdate</Value>
+                                  <Value>Fecha de Nacimiento</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox31</rd:DefaultName>
@@ -963,13 +970,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Nationality</Value>
+                                  <Value>Nacionalidad</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox33</rd:DefaultName>
@@ -996,13 +1005,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Position</Value>
+                                  <Value>Posicion</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox35</rd:DefaultName>
@@ -1029,13 +1040,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha Inicio</Value>
+                                  <Value>Inicio de Contrato</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox37</rd:DefaultName>
@@ -1062,13 +1075,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Fecha Fin</Value>
+                                  <Value>Fin de Contrato</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox39</rd:DefaultName>
@@ -1095,13 +1110,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Salario</Value>
+                                  <Value>Salario Por Mes</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox41</rd:DefaultName>

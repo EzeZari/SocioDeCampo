@@ -32,7 +32,7 @@ namespace Presentacion
             {
                 cmbTemporada.SelectedIndex = 0;
             }
-           
+
         }
 
 
@@ -114,12 +114,7 @@ namespace Presentacion
             {
                 string categoria = row["categoria"].ToString();
                 double presupuestado = Convert.ToDouble(row["monto_presupuestado"]);
-
-                // Validamos el gasto actual antes de convertir
                 double gastoActual = row["gasto_actual"] != DBNull.Value ? Convert.ToDouble(row["gasto_actual"]) : 0;
-
-                // Mostrar los valores en un MessageBox para depuración
-                MessageBox.Show($"Categoría: {categoria}\nPresupuestado: {presupuestado}\nGasto Actual: {gastoActual}");
 
                 seriePresupuesto.Points.AddXY(categoria, presupuestado);
                 serieGastos.Points.AddXY(categoria, gastoActual);
@@ -131,31 +126,28 @@ namespace Presentacion
             chartBarras.Update();
         }
 
+
         private void ActualizarGraficoPie(DataTable datos)
         {
             chartPie.Series.Clear();
             Series serie = new Series("Porcentaje de Presupuesto") { ChartType = SeriesChartType.Pie };
-
             decimal totalPresupuestado = datos.AsEnumerable().Sum(row => row.Field<decimal>("monto_presupuestado"));
 
             foreach (DataRow row in datos.Rows)
             {
                 string categoria = row["categoria"].ToString();
                 decimal presupuestado = Convert.ToDecimal(row["monto_presupuestado"]);
-
                 if (presupuestado > 0)
                 {
                     double porcentaje = (double)((presupuestado / totalPresupuestado) * 100);
                     int indice = serie.Points.AddXY(categoria, porcentaje);
-                    serie.Points[indice].Label = $"{categoria}: {porcentaje:0.0}%";
+                    // Modified label to show only the category name
+                    serie.Points[indice].Label = categoria;
                 }
             }
 
             chartPie.Series.Add(serie);
             chartPie.Legends[0].Enabled = true;
         }
-
-
-
     }
 }

@@ -107,8 +107,26 @@ namespace DataAccess.SqlServer
             }
             return tabla;
         }
+        // Añade este método al GastosDao existente
+        public DataTable MostrarUltimosMovimientos()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("SELECT * FROM vw_UltimosMovimientos ORDER BY fecha DESC", connection))
+                {
+                    using (SqlDataReader leer = command.ExecuteReader())
+                    {
+                        DataTable tabla = new DataTable();
+                        tabla.Load(leer);
+                        return tabla;
+                    }
+                }
+            }
+        }
+    }
     }
 
 
 
-}
+
