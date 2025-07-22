@@ -23,6 +23,33 @@ namespace Presentacion
             var formAddPartido = new FormAddPartido();
             formAddPartido.ShowDialog();
 
+            // ✅ Refrescar lista al volver
+            CargarPartidos();
         }
+
+
+        private void FormPartidos_Load(object sender, EventArgs e)
+        {
+            CargarPartidos();
+        }
+
+        private void CargarPartidos()
+        {
+            PartidoModel model = new PartidoModel();
+            var lista = model.ObtenerTodosLosPartidos();
+
+            dgvPartidos.DataSource = lista;
+
+            if (dgvPartidos.Columns["Hora"] != null)
+            {
+                dgvPartidos.Columns["Hora"].DefaultCellStyle.Format = @"hh\:mm";
+            }
+
+            dgvPartidos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPartidos.ReadOnly = true;
+            dgvPartidos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+
     }
 }

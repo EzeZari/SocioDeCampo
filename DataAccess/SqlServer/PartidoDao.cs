@@ -31,6 +31,39 @@ namespace DataAccess.SqlServer
                 }
             }
         }
+        public List<Partido> ObtenerTodos()
+        {
+            List<Partido> lista = new List<Partido>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("SELECT * FROM Partidos", connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Partido
+                            {
+                                IdPartido = Convert.ToInt32(reader["IdPartido"]),
+                                Fecha = Convert.ToDateTime(reader["Fecha"]),
+                                Hora = (TimeSpan)reader["Hora"],
+                                Ubicacion = reader["Ubicacion"].ToString(),
+                                EquipoLocal = reader["EquipoLocal"].ToString(),
+                                EquipoVisitante = reader["EquipoVisitante"].ToString(),
+                                ResultadoLocal = Convert.ToInt32(reader["ResultadoLocal"]),
+                                ResultadoVisitante = Convert.ToInt32(reader["ResultadoVisitante"]),
+                                Observaciones = reader["Observaciones"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lista;
+        }
+
     }
 }
 

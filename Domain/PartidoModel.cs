@@ -26,6 +26,12 @@ namespace Domain
 
             partidoDao.AddPartido(nuevoPartido);
         }
+        public List<Partido> ObtenerTodosLosPartidos()
+        {
+            PartidoDao dao = new PartidoDao();
+            return dao.ObtenerTodos();
+        }
+
     }
 }
 

@@ -45,6 +45,7 @@ namespace Presentacion
             {
                 MessageBox.Show("Error al guardar el partido: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
     }
