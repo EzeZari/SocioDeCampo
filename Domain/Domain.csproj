@@ -102,6 +102,7 @@
   <ItemGroup>
     <Compile Include="GastosModel.cs" />
     <Compile Include="IngresosModel.cs" />
+    <Compile Include="PartidoModel.cs" />
     <Compile Include="PresupuestoModel.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserModel.cs" />

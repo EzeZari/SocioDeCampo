@@ -120,6 +120,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form Partidos\FormAddPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Partidos\FormAddPartido.Designer.cs">
+      <DependentUpon>FormAddPartido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form Partidos\FormPartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Partidos\FormPartidos.Designer.cs">
+      <DependentUpon>FormPartidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsPresupuesto\FormPresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +275,12 @@
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validations.cs" />
+    <EmbeddedResource Include="Form Partidos\FormAddPartido.resx">
+      <DependentUpon>FormAddPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Partidos\FormPartidos.resx">
+      <DependentUpon>FormPartidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsPresupuesto\FormPresupuestos.resx">
       <DependentUpon>FormPresupuestos.cs</DependentUpon>
     </EmbeddedResource>

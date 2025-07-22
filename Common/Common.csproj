@@ -103,6 +103,7 @@
     <Compile Include="Cache\Contrato.cs" />
     <Compile Include="Cache\GastosCache.cs" />
     <Compile Include="Cache\IngresosCache.cs" />
+    <Compile Include="Cache\Partido.cs" />
     <Compile Include="Cache\Position.cs" />
     <Compile Include="Cache\PresupuestoCache.cs" />
     <Compile Include="Cache\UserCache.cs" />
