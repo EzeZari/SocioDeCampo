@@ -121,7 +121,9 @@ namespace Presentacion
 
         private void btnPartidos_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new FormPartidos());
             ActivateButton(sender);
+            
         }
         private void btnPerfil_Click(object sender, EventArgs e)
         {
