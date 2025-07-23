@@ -31,6 +31,10 @@ namespace Domain
             PartidoDao dao = new PartidoDao();
             return dao.ObtenerTodos();
         }
+        public void ActualizarPartidoResultado(Partido partido)
+        {
+            partidoDao.ActualizarResultado(partido);
+        }
 
     }
 }

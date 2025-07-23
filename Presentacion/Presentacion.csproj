@@ -132,6 +132,18 @@
     <Compile Include="Form Partidos\FormPartidos.Designer.cs">
       <DependentUpon>FormPartidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form Partidos\FormCargarDatosPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Partidos\FormCargarDatosPartido.Designer.cs">
+      <DependentUpon>FormCargarDatosPartido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form Partidos\FormEditarPartidoJugado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Partidos\FormEditarPartidoJugado.Designer.cs">
+      <DependentUpon>FormEditarPartidoJugado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsPresupuesto\FormPresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +254,12 @@
     <Compile Include="FormsPresupuesto\FormSeguimientoPresupuestario.Designer.cs">
       <DependentUpon>FormSeguimientoPresupuestario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form Partidos\FormVerDetallePartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Partidos\FormVerDetallePartido.Designer.cs">
+      <DependentUpon>FormVerDetallePartido.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyCompanyDataSet.cs">
       <DependentUpon>MyCompanyDataSet.xsd</DependentUpon>
     </Compile>
@@ -277,6 +295,12 @@
     <Compile Include="Validations.cs" />
     <EmbeddedResource Include="Form Partidos\FormAddPartido.resx">
       <DependentUpon>FormAddPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Partidos\FormCargarDatosPartido.resx">
+      <DependentUpon>FormCargarDatosPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Partidos\FormEditarPartidoJugado.resx">
+      <DependentUpon>FormEditarPartidoJugado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form Partidos\FormPartidos.resx">
       <DependentUpon>FormPartidos.cs</DependentUpon>

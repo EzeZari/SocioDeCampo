@@ -29,11 +29,12 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPartidos));
             this.btnAñadirPartido = new System.Windows.Forms.Button();
-            this.dgvPartidos = new Guna.UI.WinForms.GunaDataGridView();
+            this.btnEditarResultado = new Guna.UI.WinForms.GunaButton();
+            this.btnCargarDatos = new Guna.UI.WinForms.GunaButton();
+            this.btnVerDetalles = new Guna.UI.WinForms.GunaButton();
+            this.dgvPartidos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,62 +48,86 @@ namespace Presentacion
             this.btnAñadirPartido.UseVisualStyleBackColor = true;
             this.btnAñadirPartido.Click += new System.EventHandler(this.btnAñadirPartido_Click);
             // 
+            // btnEditarResultado
+            // 
+            this.btnEditarResultado.AnimationHoverSpeed = 0.07F;
+            this.btnEditarResultado.AnimationSpeed = 0.03F;
+            this.btnEditarResultado.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnEditarResultado.BorderColor = System.Drawing.Color.Black;
+            this.btnEditarResultado.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEditarResultado.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEditarResultado.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEditarResultado.ForeColor = System.Drawing.Color.White;
+            this.btnEditarResultado.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarResultado.Image")));
+            this.btnEditarResultado.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEditarResultado.Location = new System.Drawing.Point(258, 51);
+            this.btnEditarResultado.Name = "btnEditarResultado";
+            this.btnEditarResultado.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEditarResultado.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEditarResultado.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEditarResultado.OnHoverImage = null;
+            this.btnEditarResultado.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEditarResultado.Size = new System.Drawing.Size(160, 42);
+            this.btnEditarResultado.TabIndex = 2;
+            this.btnEditarResultado.Text = "Editar resultado";
+            this.btnEditarResultado.Click += new System.EventHandler(this.btnEditarResultado_Click);
+            // 
+            // btnCargarDatos
+            // 
+            this.btnCargarDatos.AnimationHoverSpeed = 0.07F;
+            this.btnCargarDatos.AnimationSpeed = 0.03F;
+            this.btnCargarDatos.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnCargarDatos.BorderColor = System.Drawing.Color.Black;
+            this.btnCargarDatos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCargarDatos.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCargarDatos.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCargarDatos.ForeColor = System.Drawing.Color.White;
+            this.btnCargarDatos.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarDatos.Image")));
+            this.btnCargarDatos.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCargarDatos.Location = new System.Drawing.Point(87, 103);
+            this.btnCargarDatos.Name = "btnCargarDatos";
+            this.btnCargarDatos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnCargarDatos.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCargarDatos.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCargarDatos.OnHoverImage = null;
+            this.btnCargarDatos.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCargarDatos.Size = new System.Drawing.Size(160, 42);
+            this.btnCargarDatos.TabIndex = 3;
+            this.btnCargarDatos.Text = "Cargar datos";
+            this.btnCargarDatos.Click += new System.EventHandler(this.btnCargarDatos_Click);
+            // 
+            // btnVerDetalles
+            // 
+            this.btnVerDetalles.AnimationHoverSpeed = 0.07F;
+            this.btnVerDetalles.AnimationSpeed = 0.03F;
+            this.btnVerDetalles.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnVerDetalles.BorderColor = System.Drawing.Color.Black;
+            this.btnVerDetalles.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnVerDetalles.FocusedColor = System.Drawing.Color.Empty;
+            this.btnVerDetalles.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVerDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnVerDetalles.Image = ((System.Drawing.Image)(resources.GetObject("btnVerDetalles.Image")));
+            this.btnVerDetalles.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnVerDetalles.Location = new System.Drawing.Point(284, 103);
+            this.btnVerDetalles.Name = "btnVerDetalles";
+            this.btnVerDetalles.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnVerDetalles.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnVerDetalles.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnVerDetalles.OnHoverImage = null;
+            this.btnVerDetalles.OnPressedColor = System.Drawing.Color.Black;
+            this.btnVerDetalles.Size = new System.Drawing.Size(160, 42);
+            this.btnVerDetalles.TabIndex = 4;
+            this.btnVerDetalles.Text = "Ver detalles";
+            this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
+            // 
             // dgvPartidos
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPartidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPartidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPartidos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPartidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPartidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPartidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartidos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPartidos.EnableHeadersVisualStyles = false;
-            this.dgvPartidos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPartidos.Location = new System.Drawing.Point(36, 151);
+            this.dgvPartidos.Location = new System.Drawing.Point(56, 201);
             this.dgvPartidos.Name = "dgvPartidos";
-            this.dgvPartidos.RowHeadersVisible = false;
-            this.dgvPartidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPartidos.Size = new System.Drawing.Size(559, 287);
-            this.dgvPartidos.TabIndex = 1;
-            this.dgvPartidos.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dgvPartidos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPartidos.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvPartidos.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvPartidos.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvPartidos.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvPartidos.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPartidos.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPartidos.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvPartidos.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPartidos.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvPartidos.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvPartidos.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPartidos.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvPartidos.ThemeStyle.ReadOnly = false;
-            this.dgvPartidos.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPartidos.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPartidos.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgvPartidos.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvPartidos.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvPartidos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPartidos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPartidos.Size = new System.Drawing.Size(630, 251);
+            this.dgvPartidos.TabIndex = 5;
+            this.dgvPartidos.SelectionChanged += new System.EventHandler(this.dgvPartidos_SelectionChanged);
             // 
             // FormPartidos
             // 
@@ -110,6 +135,9 @@ namespace Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvPartidos);
+            this.Controls.Add(this.btnVerDetalles);
+            this.Controls.Add(this.btnCargarDatos);
+            this.Controls.Add(this.btnEditarResultado);
             this.Controls.Add(this.btnAñadirPartido);
             this.Name = "FormPartidos";
             this.Text = "FormPatidos";
@@ -122,6 +150,9 @@ namespace Presentacion
         #endregion
 
         private System.Windows.Forms.Button btnAñadirPartido;
-        private Guna.UI.WinForms.GunaDataGridView dgvPartidos;
+        private Guna.UI.WinForms.GunaButton btnEditarResultado;
+        private Guna.UI.WinForms.GunaButton btnCargarDatos;
+        private Guna.UI.WinForms.GunaButton btnVerDetalles;
+        private System.Windows.Forms.DataGridView dgvPartidos;
     }
 }

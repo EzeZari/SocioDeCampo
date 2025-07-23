@@ -17,6 +17,8 @@ namespace Common.Cache
         public int ResultadoLocal { get; set; }
         public int ResultadoVisitante { get; set; }
         public string Observaciones { get; set; }
+        public bool PartidoJugado { get; set; }
+
     }
 }
 

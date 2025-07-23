@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using Common.Cache;
+
 
 namespace Presentacion
 {
@@ -45,11 +47,56 @@ namespace Presentacion
                 dgvPartidos.Columns["Hora"].DefaultCellStyle.Format = @"hh\:mm";
             }
 
-            dgvPartidos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            // dgvPartidos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPartidos.ReadOnly = true;
-            dgvPartidos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //dgvPartidos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
+        private void btnCargarDatos_Click(object sender, EventArgs e)
+        {
+            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+            var form = new FormCargarDatosPartido(partido);
+            form.ShowDialog();
+            CargarPartidos(); // Recargar grilla
+        }
+
+        private void btnEditarResultado_Click(object sender, EventArgs e)
+        {
+            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+            var form = new FormEditarPartidoJugado(partido);
+            form.ShowDialog();
+            CargarPartidos();
+        }
+
+        private void btnVerDetalles_Click(object sender, EventArgs e)
+        {
+            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+            var form = new FormVerDetallePartido(partido);
+            form.ShowDialog();
+        }
+
+
+        private void dgvPartidos_SelectionChanged(object sender, EventArgs e)
+        {
+            btnCargarDatos.Enabled = false;
+            btnEditarResultado.Enabled = false;
+            btnVerDetalles.Enabled = false;
+
+            if (dgvPartidos.SelectedRows.Count > 0)
+            {
+                Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+
+                if (partido.PartidoJugado)
+                {
+                    btnEditarResultado.Enabled = true;
+                    btnVerDetalles.Enabled = true;
+                }
+                else
+                {
+                    btnCargarDatos.Enabled = true;
+                }
+            }
+        }
 
     }
 }

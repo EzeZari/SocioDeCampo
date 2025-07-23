@@ -54,15 +54,34 @@ namespace DataAccess.SqlServer
                                 EquipoVisitante = reader["EquipoVisitante"].ToString(),
                                 ResultadoLocal = Convert.ToInt32(reader["ResultadoLocal"]),
                                 ResultadoVisitante = Convert.ToInt32(reader["ResultadoVisitante"]),
-                                Observaciones = reader["Observaciones"].ToString()
+                                Observaciones = reader["Observaciones"].ToString(),
+                                PartidoJugado = Convert.ToBoolean(reader["PartidoJugado"])
                             });
                         }
                     }
                 }
+
             }
 
             return lista;
         }
+        public void ActualizarResultado(Partido partido)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("UPDATE Partidos SET ResultadoLocal = @ResultadoLocal, ResultadoVisitante = @ResultadoVisitante, Observaciones = @Observaciones, PartidoJugado = 1 WHERE IdPartido = @IdPartido", connection))
+                {
+                    command.Parameters.AddWithValue("@ResultadoLocal", partido.ResultadoLocal);
+                    command.Parameters.AddWithValue("@ResultadoVisitante", partido.ResultadoVisitante);
+                    command.Parameters.AddWithValue("@Observaciones", partido.Observaciones ?? "");
+                    command.Parameters.AddWithValue("@IdPartido", partido.IdPartido);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
 
     }
 }
