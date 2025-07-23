@@ -305,6 +305,9 @@
     <EmbeddedResource Include="Form Partidos\FormPartidos.resx">
       <DependentUpon>FormPartidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form Partidos\FormVerDetallePartido.resx">
+      <DependentUpon>FormVerDetallePartido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsPresupuesto\FormPresupuestos.resx">
       <DependentUpon>FormPresupuestos.cs</DependentUpon>
     </EmbeddedResource>
