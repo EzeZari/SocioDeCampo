@@ -20,5 +20,20 @@ namespace Common.Cache
         public bool PartidoJugado { get; set; }
 
     }
+    public class Gol
+    {
+        public int IdPartido { get; set; }
+        public int IdJugador { get; set; }
+        public int Minuto { get; set; }
+        public string NombreJugador { get; set; } // solo para mostrar en UI
+    }
+    public class Tarjeta
+    {
+        public int IdPartido { get; set; }
+        public int IdJugador { get; set; }
+        public string Tipo { get; set; } // "Amarilla" o "Roja"
+        public int Minuto { get; set; }
+        public string NombreJugador { get; set; } // solo para mostrar en UI
+    }
 }
 

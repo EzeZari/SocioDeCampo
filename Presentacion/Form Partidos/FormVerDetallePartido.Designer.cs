@@ -38,6 +38,8 @@ namespace Presentacion
             this.lblResultadoVisitante = new System.Windows.Forms.Label();
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.btnCerrar = new Guna.UI.WinForms.GunaButton();
+            this.panelGoles = new System.Windows.Forms.Panel();
+            this.panelTarjetas = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -127,11 +129,29 @@ namespace Presentacion
             this.btnCerrar.Text = "gunaButton1";
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // panelGoles
+            // 
+            this.panelGoles.AutoScroll = true;
+            this.panelGoles.Location = new System.Drawing.Point(234, 80);
+            this.panelGoles.Name = "panelGoles";
+            this.panelGoles.Size = new System.Drawing.Size(183, 158);
+            this.panelGoles.TabIndex = 8;
+            // 
+            // panelTarjetas
+            // 
+            this.panelTarjetas.AutoScroll = true;
+            this.panelTarjetas.Location = new System.Drawing.Point(436, 80);
+            this.panelTarjetas.Name = "panelTarjetas";
+            this.panelTarjetas.Size = new System.Drawing.Size(236, 158);
+            this.panelTarjetas.TabIndex = 9;
+            // 
             // FormVerDetallePartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelTarjetas);
+            this.Controls.Add(this.panelGoles);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblResultadoVisitante);
@@ -158,5 +178,7 @@ namespace Presentacion
         private System.Windows.Forms.Label lblResultadoVisitante;
         private System.Windows.Forms.Label lblObservaciones;
         private Guna.UI.WinForms.GunaButton btnCerrar;
+        private System.Windows.Forms.Panel panelGoles;
+        private System.Windows.Forms.Panel panelTarjetas;
     }
 }

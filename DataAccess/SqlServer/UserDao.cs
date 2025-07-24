@@ -419,5 +419,31 @@ namespace DataAccess
                 //Codigo
             }
         }
+        public List<Jugador> ObtenerTodos()
+        {
+            List<Jugador> jugadores = new List<Jugador>();
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("SELECT IdJugador, Nombre FROM Jugadores", connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            jugadores.Add(new Jugador
+                            {
+                                IdJugador = Convert.ToInt32(reader["IdJugador"]),
+                                Nombre = reader["Nombre"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return jugadores;
+        }
+
     }
 }

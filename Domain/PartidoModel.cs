@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;               // ✅ ESTE ES EL QUE FALTABA
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,35 @@ namespace Domain
         public void ActualizarPartidoResultado(Partido partido)
         {
             partidoDao.ActualizarResultado(partido);
+        }
+        public void GuardarGoles(List<Gol> goles)
+        {
+            new PartidoDao().InsertarListaDeGoles(goles);
+        }
+
+        public void GuardarTarjetas(List<Tarjeta> tarjetas)
+        {
+            new PartidoDao().InsertarListaDeTarjetas(tarjetas);
+        }
+
+        public void GuardarTarjetas(int idPartido, List<Tarjeta> tarjetas)
+        {
+            foreach (var tarjeta in tarjetas)
+            {
+                tarjeta.IdPartido = idPartido; // por las dudas
+            }
+
+            PartidoDao dao = new PartidoDao();
+            dao.InsertarListaDeTarjetas(tarjetas);
+        }
+        public DataTable ObtenerGolesPorPartido(int idPartido)
+        {
+            return new PartidoDao().ObtenerGolesPorPartido(idPartido);
+        }
+
+        public DataTable ObtenerTarjetasPorPartido(int idPartido)
+        {
+            return new PartidoDao().ObtenerTarjetasPorPartido(idPartido);
         }
 
     }

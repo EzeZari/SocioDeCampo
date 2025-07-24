@@ -81,7 +81,113 @@ namespace DataAccess.SqlServer
                 }
             }
         }
+        public void InsertarGol(Gol gol)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("INSERT INTO Goles (IdPartido, IdJugador, Minuto) VALUES (@IdPartido, @IdJugador, @Minuto)", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", gol.IdPartido);
+                    command.Parameters.AddWithValue("@IdJugador", gol.IdJugador);
+                    command.Parameters.AddWithValue("@Minuto", gol.Minuto);
 
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        
+        public void InsertarTarjeta(Tarjeta tarjeta)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("INSERT INTO Tarjetas (IdPartido, IdJugador, Tipo, Minuto) VALUES (@IdPartido, @IdJugador, @Tipo, @Minuto)", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", tarjeta.IdPartido);
+                    command.Parameters.AddWithValue("@IdJugador", tarjeta.IdJugador);
+                    command.Parameters.AddWithValue("@Tipo", tarjeta.Tipo);
+                    command.Parameters.AddWithValue("@Minuto", tarjeta.Minuto);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        
+        public void InsertarListaDeGoles(List<Gol> goles)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                foreach (var gol in goles)
+                {
+                    using (var command = new SqlCommand("INSERT INTO Goles (IdPartido, IdJugador, Minuto) VALUES (@IdPartido, @IdJugador, @Minuto)", connection))
+                    {
+                        command.Parameters.AddWithValue("@IdPartido", gol.IdPartido);
+                        command.Parameters.AddWithValue("@IdJugador", gol.IdJugador);
+                        command.Parameters.AddWithValue("@Minuto", gol.Minuto);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        public void InsertarListaDeTarjetas(List<Tarjeta> tarjetas)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                foreach (var tarjeta in tarjetas)
+                {
+                    using (var command = new SqlCommand("INSERT INTO Tarjetas (IdPartido, IdJugador, Tipo, Minuto) VALUES (@IdPartido, @IdJugador, @Tipo, @Minuto)", connection))
+                    {
+                        command.Parameters.AddWithValue("@IdPartido", tarjeta.IdPartido);
+                        command.Parameters.AddWithValue("@IdJugador", tarjeta.IdJugador);
+                        command.Parameters.AddWithValue("@Tipo", tarjeta.Tipo);
+                        command.Parameters.AddWithValue("@Minuto", tarjeta.Minuto);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+        public DataTable ObtenerGolesPorPartido(int idPartido)
+        {
+            DataTable tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand(
+                    "SELECT (j.Name + ' ' + j.LastName) AS NombreJugador, g.Minuto FROM Goles g INNER JOIN Jugadores j ON g.IdJugador = j.IdJugador WHERE g.IdPartido = @IdPartido", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", idPartido);
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(tabla);
+                    }
+                }
+            }
+            return tabla;
+        }
+
+        public DataTable ObtenerTarjetasPorPartido(int idPartido)
+        {
+            DataTable tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand(
+                    "SELECT (j.Name + ' ' + j.LastName) AS NombreJugador, t.Tipo, t.Minuto FROM Tarjetas t INNER JOIN Jugadores j ON t.IdJugador = j.IdJugador WHERE t.IdPartido = @IdPartido", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", idPartido);
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(tabla);
+                    }
+                }
+            }
+            return tabla;
+        }
 
     }
 }
