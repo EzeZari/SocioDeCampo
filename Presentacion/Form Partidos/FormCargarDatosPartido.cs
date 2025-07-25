@@ -92,18 +92,63 @@ namespace Presentacion
             }
 
             DataRowView jugadorSeleccionado = (DataRowView)cmbJugadoresTarjeta.SelectedItem;
+            int idJugador = Convert.ToInt32(jugadorSeleccionado["IdJugador"]);
+            string tipo = cmbTipoTarjeta.SelectedItem.ToString();
 
+            // Validar tarjeta duplicada exacta
+            bool yaExiste = tarjetasCargadas.Any(t =>
+                t.IdJugador == idJugador &&
+                t.Tipo == tipo &&
+                t.Minuto == minuto
+            );
+
+            if (yaExiste)
+            {
+                MessageBox.Show("Ya existe una tarjeta igual para ese jugador en ese minuto.", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Agregar tarjeta
             var nuevaTarjeta = new Tarjeta
             {
                 IdPartido = partido.IdPartido,
-                IdJugador = Convert.ToInt32(jugadorSeleccionado["IdJugador"]),
+                IdJugador = idJugador,
                 NombreJugador = jugadorSeleccionado["Nombre"].ToString(),
-                Tipo = cmbTipoTarjeta.SelectedItem.ToString(),
+                Tipo = tipo,
                 Minuto = minuto
             };
 
             tarjetasCargadas.Add(nuevaTarjeta);
 
+            // Ver si el jugador ahora tiene 2 amarillas → agregar roja automática
+            if (tipo == "Amarilla")
+            {
+                int cantidadAmarillas = tarjetasCargadas.Count(t =>
+                    t.IdJugador == idJugador &&
+                    t.Tipo == "Amarilla"
+                );
+
+                bool yaTieneRoja = tarjetasCargadas.Any(t =>
+                    t.IdJugador == idJugador &&
+                    t.Tipo == "Roja"
+                );
+
+                if (cantidadAmarillas == 2 && !yaTieneRoja)
+                {
+                    tarjetasCargadas.Add(new Tarjeta
+                    {
+                        IdPartido = partido.IdPartido,
+                        IdJugador = idJugador,
+                        NombreJugador = jugadorSeleccionado["Nombre"].ToString(),
+                        Tipo = "Roja", // Se guarda como roja
+                        Minuto = minuto + 1
+                    });
+
+                    MessageBox.Show("⚠️ El jugador recibió su segunda amarilla. Se ha agregado automáticamente una tarjeta roja.", "Doble amarilla", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            // Refrescar grilla
             dgvTarjetas.DataSource = null;
             dgvTarjetas.DataSource = tarjetasCargadas;
 
@@ -112,12 +157,15 @@ namespace Presentacion
             txtMinutoTarjeta.Text = "";
         }
 
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(txtResultadoLocal.Text, out int resLocal) ||
-                !int.TryParse(txtResultadoVisitante.Text, out int resVisitante))
+                !int.TryParse(txtResultadoVisitante.Text, out int resVisitante) ||
+                resLocal < 0 || resVisitante < 0)
             {
-                MessageBox.Show("Los resultados deben ser números válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Los resultados deben ser números válidos y no negativos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -159,6 +207,7 @@ namespace Presentacion
                 MessageBox.Show("Ocurrió un error al guardar los datos:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnEliminarGol_Click(object sender, EventArgs e)
         {

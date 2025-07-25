@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using Common.Cache;
 using Domain;
 using System.Data;
+using System.Linq;
+
 
 namespace Presentacion
 {
@@ -65,9 +67,6 @@ namespace Presentacion
             }
         }
 
-
-
-
         private void MostrarTarjetas()
         {
             PartidoModel model = new PartidoModel();
@@ -81,29 +80,69 @@ namespace Presentacion
                 return;
             }
 
-            int y = 0;
-            foreach (DataRow row in tarjetas.Select("", "Minuto ASC")) // 👈 ordena por minuto
+            // Agrupar por jugador
+            var resumenPorJugador = new Dictionary<string, List<(string tipo, int minuto)>>();
+
+            foreach (DataRow row in tarjetas.Rows)
             {
                 string nombre = row["NombreJugador"].ToString();
                 string tipo = row["Tipo"].ToString();
                 int minuto = Convert.ToInt32(row["Minuto"]);
 
+                if (!resumenPorJugador.ContainsKey(nombre))
+                    resumenPorJugador[nombre] = new List<(string tipo, int minuto)>();
+
+                resumenPorJugador[nombre].Add((tipo, minuto));
+            }
+
+            int y = 0;
+
+            foreach (var jugador in resumenPorJugador)
+            {
+                string nombre = jugador.Key;
+                var eventos = jugador.Value.OrderBy(e => e.minuto).ToList();
+
+                int amarillas = eventos.Count(e => e.tipo == "Amarilla");
+                int rojas = eventos.Count(e => e.tipo == "Roja");
+                string texto;
+                Color color;
+
+                if (amarillas >= 2)
+                {
+                    var minutos = string.Join(", ", eventos.Where(e => e.tipo == "Amarilla").Select(e => $"{e.minuto}'"));
+                    texto = $"• {nombre} - Doble Amarilla (min. {minutos})";
+                    color = Color.Red;
+                }
+                else if (rojas >= 1)
+                {
+                    var minuto = eventos.First(e => e.tipo == "Roja").minuto;
+                    texto = $"• {nombre} - Roja directa (min. {minuto}')";
+                    color = Color.Red;
+                }
+                else if (amarillas == 1)
+                {
+                    var minuto = eventos.First(e => e.tipo == "Amarilla").minuto;
+                    texto = $"• {nombre} - Amarilla (min. {minuto}')";
+                    color = Color.DarkGoldenrod;
+                }
+                else
+                {
+                    continue;
+                }
+
                 var label = new Label
                 {
-                    Text = $"• {nombre} - {tipo} ({minuto}')",
+                    Text = texto,
                     AutoSize = true,
-                    ForeColor = tipo == "Roja" ? Color.Red : Color.DarkGoldenrod,
+                    ForeColor = color,
                     Font = new Font("Segoe UI", 9),
                     Location = new Point(0, y)
                 };
 
                 panelTarjetas.Controls.Add(label);
-                y += 20;
+                y += 22;
             }
         }
-
-
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
