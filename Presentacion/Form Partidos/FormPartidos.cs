@@ -81,10 +81,13 @@ namespace Presentacion
             btnCargarDatos.Enabled = false;
             btnEditarResultado.Enabled = false;
             btnVerDetalles.Enabled = false;
+            btnEliminarPartido.Enabled = false;
 
             if (dgvPartidos.SelectedRows.Count > 0)
             {
                 Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+
+                btnEliminarPartido.Enabled = true;
 
                 if (partido.PartidoJugado)
                 {
@@ -98,5 +101,27 @@ namespace Presentacion
             }
         }
 
+
+        private void btnEliminarPartido_Click(object sender, EventArgs e)
+        {
+            if (dgvPartidos.SelectedRows.Count == 0)
+                return;
+
+            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+
+            var confirm = MessageBox.Show(
+                $"¿Estás seguro de que querés eliminar el partido entre {partido.EquipoLocal} y {partido.EquipoVisitante}?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirm == DialogResult.Yes)
+            {
+                PartidoModel model = new PartidoModel();
+                model.EliminarPartido(partido.IdPartido);
+                MessageBox.Show("Partido eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarPartidos();
+            }
+        }
     }
 }

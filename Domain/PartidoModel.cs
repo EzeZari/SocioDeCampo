@@ -65,6 +65,10 @@ namespace Domain
         {
             return new PartidoDao().ObtenerTarjetasPorPartido(idPartido);
         }
+        public void EliminarPartido(int idPartido)
+        {
+            partidoDao.EliminarPartido(idPartido);
+        }
 
     }
 }

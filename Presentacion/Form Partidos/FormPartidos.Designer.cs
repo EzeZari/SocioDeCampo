@@ -35,6 +35,7 @@ namespace Presentacion
             this.btnCargarDatos = new Guna.UI.WinForms.GunaButton();
             this.btnVerDetalles = new Guna.UI.WinForms.GunaButton();
             this.dgvPartidos = new System.Windows.Forms.DataGridView();
+            this.btnEliminarPartido = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,17 +124,42 @@ namespace Presentacion
             // dgvPartidos
             // 
             this.dgvPartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPartidos.Location = new System.Drawing.Point(56, 201);
+            this.dgvPartidos.Location = new System.Drawing.Point(5, 201);
             this.dgvPartidos.Name = "dgvPartidos";
-            this.dgvPartidos.Size = new System.Drawing.Size(630, 251);
+            this.dgvPartidos.Size = new System.Drawing.Size(965, 251);
             this.dgvPartidos.TabIndex = 5;
             this.dgvPartidos.SelectionChanged += new System.EventHandler(this.dgvPartidos_SelectionChanged);
+            // 
+            // btnEliminarPartido
+            // 
+            this.btnEliminarPartido.AnimationHoverSpeed = 0.07F;
+            this.btnEliminarPartido.AnimationSpeed = 0.03F;
+            this.btnEliminarPartido.BaseColor = System.Drawing.Color.Red;
+            this.btnEliminarPartido.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminarPartido.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEliminarPartido.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEliminarPartido.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEliminarPartido.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarPartido.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarPartido.Image")));
+            this.btnEliminarPartido.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEliminarPartido.Location = new System.Drawing.Point(487, 103);
+            this.btnEliminarPartido.Name = "btnEliminarPartido";
+            this.btnEliminarPartido.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEliminarPartido.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEliminarPartido.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEliminarPartido.OnHoverImage = null;
+            this.btnEliminarPartido.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEliminarPartido.Size = new System.Drawing.Size(160, 42);
+            this.btnEliminarPartido.TabIndex = 6;
+            this.btnEliminarPartido.Text = "Editar resultado";
+            this.btnEliminarPartido.Click += new System.EventHandler(this.btnEliminarPartido_Click);
             // 
             // FormPartidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1040, 450);
+            this.Controls.Add(this.btnEliminarPartido);
             this.Controls.Add(this.dgvPartidos);
             this.Controls.Add(this.btnVerDetalles);
             this.Controls.Add(this.btnCargarDatos);
@@ -154,5 +180,6 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnCargarDatos;
         private Guna.UI.WinForms.GunaButton btnVerDetalles;
         private System.Windows.Forms.DataGridView dgvPartidos;
+        private Guna.UI.WinForms.GunaButton btnEliminarPartido;
     }
 }

@@ -188,6 +188,18 @@ namespace DataAccess.SqlServer
             }
             return tabla;
         }
+        public void EliminarPartido(int idPartido)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("DELETE FROM Partidos WHERE IdPartido = @IdPartido", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", idPartido);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
     }
 }

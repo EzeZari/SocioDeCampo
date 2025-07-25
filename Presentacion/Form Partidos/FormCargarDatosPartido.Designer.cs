@@ -48,6 +48,8 @@ namespace Presentacion
             this.txtMinutoTarjeta = new Guna.UI.WinForms.GunaTextBox();
             this.btnAgregarTarjeta = new Guna.UI.WinForms.GunaButton();
             this.dgvTarjetas = new System.Windows.Forms.DataGridView();
+            this.btnEliminarGol = new Guna.UI.WinForms.GunaButton();
+            this.btnEliminarTarjeta = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).BeginInit();
             this.SuspendLayout();
@@ -171,7 +173,7 @@ namespace Presentacion
             // cmbJugadoresGol
             // 
             this.cmbJugadoresGol.FormattingEnabled = true;
-            this.cmbJugadoresGol.Location = new System.Drawing.Point(301, 61);
+            this.cmbJugadoresGol.Location = new System.Drawing.Point(299, 33);
             this.cmbJugadoresGol.Name = "cmbJugadoresGol";
             this.cmbJugadoresGol.Size = new System.Drawing.Size(162, 21);
             this.cmbJugadoresGol.TabIndex = 9;
@@ -185,7 +187,7 @@ namespace Presentacion
             this.txtMinutoGol.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtMinutoGol.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtMinutoGol.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMinutoGol.Location = new System.Drawing.Point(301, 116);
+            this.txtMinutoGol.Location = new System.Drawing.Point(299, 88);
             this.txtMinutoGol.Name = "txtMinutoGol";
             this.txtMinutoGol.PasswordChar = '\0';
             this.txtMinutoGol.Size = new System.Drawing.Size(160, 30);
@@ -204,7 +206,7 @@ namespace Presentacion
             this.btnAgregarGol.ForeColor = System.Drawing.Color.White;
             this.btnAgregarGol.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarGol.Image")));
             this.btnAgregarGol.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAgregarGol.Location = new System.Drawing.Point(303, 184);
+            this.btnAgregarGol.Location = new System.Drawing.Point(301, 156);
             this.btnAgregarGol.Name = "btnAgregarGol";
             this.btnAgregarGol.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAgregarGol.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -219,7 +221,7 @@ namespace Presentacion
             // dgvGoles
             // 
             this.dgvGoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGoles.Location = new System.Drawing.Point(303, 276);
+            this.dgvGoles.Location = new System.Drawing.Point(301, 248);
             this.dgvGoles.Name = "dgvGoles";
             this.dgvGoles.Size = new System.Drawing.Size(160, 150);
             this.dgvGoles.TabIndex = 12;
@@ -227,7 +229,7 @@ namespace Presentacion
             // cmbJugadoresTarjeta
             // 
             this.cmbJugadoresTarjeta.FormattingEnabled = true;
-            this.cmbJugadoresTarjeta.Location = new System.Drawing.Point(557, 61);
+            this.cmbJugadoresTarjeta.Location = new System.Drawing.Point(554, 13);
             this.cmbJugadoresTarjeta.Name = "cmbJugadoresTarjeta";
             this.cmbJugadoresTarjeta.Size = new System.Drawing.Size(121, 21);
             this.cmbJugadoresTarjeta.TabIndex = 13;
@@ -235,7 +237,7 @@ namespace Presentacion
             // cmbTipoTarjeta
             // 
             this.cmbTipoTarjeta.FormattingEnabled = true;
-            this.cmbTipoTarjeta.Location = new System.Drawing.Point(557, 116);
+            this.cmbTipoTarjeta.Location = new System.Drawing.Point(554, 68);
             this.cmbTipoTarjeta.Name = "cmbTipoTarjeta";
             this.cmbTipoTarjeta.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoTarjeta.TabIndex = 14;
@@ -249,7 +251,7 @@ namespace Presentacion
             this.txtMinutoTarjeta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtMinutoTarjeta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtMinutoTarjeta.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMinutoTarjeta.Location = new System.Drawing.Point(557, 182);
+            this.txtMinutoTarjeta.Location = new System.Drawing.Point(554, 134);
             this.txtMinutoTarjeta.Name = "txtMinutoTarjeta";
             this.txtMinutoTarjeta.PasswordChar = '\0';
             this.txtMinutoTarjeta.Size = new System.Drawing.Size(160, 30);
@@ -268,7 +270,7 @@ namespace Presentacion
             this.btnAgregarTarjeta.ForeColor = System.Drawing.Color.White;
             this.btnAgregarTarjeta.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTarjeta.Image")));
             this.btnAgregarTarjeta.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAgregarTarjeta.Location = new System.Drawing.Point(557, 248);
+            this.btnAgregarTarjeta.Location = new System.Drawing.Point(554, 200);
             this.btnAgregarTarjeta.Name = "btnAgregarTarjeta";
             this.btnAgregarTarjeta.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAgregarTarjeta.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -283,16 +285,66 @@ namespace Presentacion
             // dgvTarjetas
             // 
             this.dgvTarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTarjetas.Location = new System.Drawing.Point(557, 296);
+            this.dgvTarjetas.Location = new System.Drawing.Point(554, 248);
             this.dgvTarjetas.Name = "dgvTarjetas";
             this.dgvTarjetas.Size = new System.Drawing.Size(160, 150);
             this.dgvTarjetas.TabIndex = 17;
+            // 
+            // btnEliminarGol
+            // 
+            this.btnEliminarGol.AnimationHoverSpeed = 0.07F;
+            this.btnEliminarGol.AnimationSpeed = 0.03F;
+            this.btnEliminarGol.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnEliminarGol.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminarGol.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEliminarGol.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEliminarGol.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEliminarGol.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarGol.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGol.Image")));
+            this.btnEliminarGol.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEliminarGol.Location = new System.Drawing.Point(299, 404);
+            this.btnEliminarGol.Name = "btnEliminarGol";
+            this.btnEliminarGol.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEliminarGol.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEliminarGol.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEliminarGol.OnHoverImage = null;
+            this.btnEliminarGol.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEliminarGol.Size = new System.Drawing.Size(160, 42);
+            this.btnEliminarGol.TabIndex = 18;
+            this.btnEliminarGol.Text = "Eliminar Gol";
+            this.btnEliminarGol.Click += new System.EventHandler(this.btnEliminarGol_Click);
+            // 
+            // btnEliminarTarjeta
+            // 
+            this.btnEliminarTarjeta.AnimationHoverSpeed = 0.07F;
+            this.btnEliminarTarjeta.AnimationSpeed = 0.03F;
+            this.btnEliminarTarjeta.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnEliminarTarjeta.BorderColor = System.Drawing.Color.Black;
+            this.btnEliminarTarjeta.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEliminarTarjeta.FocusedColor = System.Drawing.Color.Empty;
+            this.btnEliminarTarjeta.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEliminarTarjeta.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarTarjeta.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarTarjeta.Image")));
+            this.btnEliminarTarjeta.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnEliminarTarjeta.Location = new System.Drawing.Point(554, 404);
+            this.btnEliminarTarjeta.Name = "btnEliminarTarjeta";
+            this.btnEliminarTarjeta.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEliminarTarjeta.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnEliminarTarjeta.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnEliminarTarjeta.OnHoverImage = null;
+            this.btnEliminarTarjeta.OnPressedColor = System.Drawing.Color.Black;
+            this.btnEliminarTarjeta.Size = new System.Drawing.Size(160, 42);
+            this.btnEliminarTarjeta.TabIndex = 19;
+            this.btnEliminarTarjeta.Text = "Eliminar Tarjeta";
+            this.btnEliminarTarjeta.Click += new System.EventHandler(this.btnEliminarTarjeta_Click);
             // 
             // FormCargarDatosPartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEliminarTarjeta);
+            this.Controls.Add(this.btnEliminarGol);
             this.Controls.Add(this.dgvTarjetas);
             this.Controls.Add(this.btnAgregarTarjeta);
             this.Controls.Add(this.txtMinutoTarjeta);
@@ -341,5 +393,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaTextBox txtMinutoTarjeta;
         private Guna.UI.WinForms.GunaButton btnAgregarTarjeta;
         private System.Windows.Forms.DataGridView dgvTarjetas;
+        private Guna.UI.WinForms.GunaButton btnEliminarGol;
+        private Guna.UI.WinForms.GunaButton btnEliminarTarjeta;
     }
 }
