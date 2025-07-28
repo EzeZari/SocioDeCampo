@@ -144,6 +144,12 @@
     <Compile Include="Form Partidos\FormEditarPartidoJugado.Designer.cs">
       <DependentUpon>FormEditarPartidoJugado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form Partidos\FormReportePartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Partidos\FormReportePartido.Designer.cs">
+      <DependentUpon>FormReportePartido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsPresupuesto\FormPresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyCompanyDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MyCompanyDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyCompanyDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MyCompanyDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyCompanyDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MyCompanyDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyCompanyDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporte.cs">
@@ -304,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form Partidos\FormPartidos.resx">
       <DependentUpon>FormPartidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Partidos\FormReportePartido.resx">
+      <DependentUpon>FormReportePartido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form Partidos\FormVerDetallePartido.resx">
       <DependentUpon>FormVerDetallePartido.cs</DependentUpon>
@@ -369,6 +393,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportePartido.rdlc" />
     <None Include="Forms Contratos\DataSetContratos.xsc">
       <DependentUpon>DataSetContratos.xsd</DependentUpon>
     </None>
@@ -427,6 +452,39 @@
     </None>
     <None Include="MyCompanyDataSet3.xss">
       <DependentUpon>MyCompanyDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet4.xsc">
+      <DependentUpon>MyCompanyDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyCompanyDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MyCompanyDataSet4.xss">
+      <DependentUpon>MyCompanyDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet5.xsc">
+      <DependentUpon>MyCompanyDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyCompanyDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MyCompanyDataSet5.xss">
+      <DependentUpon>MyCompanyDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet6.xsc">
+      <DependentUpon>MyCompanyDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="MyCompanyDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MyCompanyDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MyCompanyDataSet6.xss">
+      <DependentUpon>MyCompanyDataSet6.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

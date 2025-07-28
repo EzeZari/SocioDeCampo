@@ -40,6 +40,8 @@ namespace Presentacion
             this.btnCerrar = new Guna.UI.WinForms.GunaButton();
             this.panelGoles = new System.Windows.Forms.Panel();
             this.panelTarjetas = new System.Windows.Forms.Panel();
+            this.btnImprimirReporte = new Guna.UI.WinForms.GunaButton();
+            this.lblUbicacion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -145,11 +147,46 @@ namespace Presentacion
             this.panelTarjetas.Size = new System.Drawing.Size(236, 158);
             this.panelTarjetas.TabIndex = 9;
             // 
+            // btnImprimirReporte
+            // 
+            this.btnImprimirReporte.AnimationHoverSpeed = 0.07F;
+            this.btnImprimirReporte.AnimationSpeed = 0.03F;
+            this.btnImprimirReporte.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnImprimirReporte.BorderColor = System.Drawing.Color.Black;
+            this.btnImprimirReporte.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnImprimirReporte.FocusedColor = System.Drawing.Color.Empty;
+            this.btnImprimirReporte.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnImprimirReporte.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirReporte.Image")));
+            this.btnImprimirReporte.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnImprimirReporte.Location = new System.Drawing.Point(278, 25);
+            this.btnImprimirReporte.Name = "btnImprimirReporte";
+            this.btnImprimirReporte.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnImprimirReporte.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnImprimirReporte.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnImprimirReporte.OnHoverImage = null;
+            this.btnImprimirReporte.OnPressedColor = System.Drawing.Color.Black;
+            this.btnImprimirReporte.Size = new System.Drawing.Size(160, 42);
+            this.btnImprimirReporte.TabIndex = 10;
+            this.btnImprimirReporte.Text = "gunaButton1";
+            this.btnImprimirReporte.Click += new System.EventHandler(this.btnImprimirReporte_Click);
+            // 
+            // lblUbicacion
+            // 
+            this.lblUbicacion.AutoSize = true;
+            this.lblUbicacion.Location = new System.Drawing.Point(152, 278);
+            this.lblUbicacion.Name = "lblUbicacion";
+            this.lblUbicacion.Size = new System.Drawing.Size(35, 13);
+            this.lblUbicacion.TabIndex = 11;
+            this.lblUbicacion.Text = "label1";
+            // 
             // FormVerDetallePartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblUbicacion);
+            this.Controls.Add(this.btnImprimirReporte);
             this.Controls.Add(this.panelTarjetas);
             this.Controls.Add(this.panelGoles);
             this.Controls.Add(this.btnCerrar);
@@ -180,5 +217,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnCerrar;
         private System.Windows.Forms.Panel panelGoles;
         private System.Windows.Forms.Panel panelTarjetas;
+        private Guna.UI.WinForms.GunaButton btnImprimirReporte;
+        private System.Windows.Forms.Label lblUbicacion;
     }
 }

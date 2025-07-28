@@ -26,6 +26,8 @@ namespace Presentacion
             lblHora.Text = partido.Hora.ToString(@"hh\:mm");
             lblLocal.Text = partido.EquipoLocal;
             lblVisitante.Text = partido.EquipoVisitante;
+            lblUbicacion.Text = partido.Ubicacion;
+
 
             lblResultadoLocal.Text = partido.ResultadoLocal.ToString();
             lblResultadoVisitante.Text = partido.ResultadoVisitante.ToString();
@@ -33,8 +35,9 @@ namespace Presentacion
 
             MostrarGoles();
             MostrarTarjetas();
+            //this.reportViewer1.RefreshReport();
         }
-
+         
         private void MostrarGoles()
         {
             PartidoModel model = new PartidoModel();
@@ -147,6 +150,13 @@ namespace Presentacion
         {
             this.Close();
         }
+
+        private void btnImprimirReporte_Click(object sender, EventArgs e)
+        {
+            var formReporte = new FormReportePartido(partido);
+            formReporte.ShowDialog();
+        }
+
     }
 
 }
