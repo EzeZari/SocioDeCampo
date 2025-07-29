@@ -29,7 +29,6 @@ namespace Presentacion
             CargarPartidos();
         }
 
-
         private void FormPartidos_Load(object sender, EventArgs e)
         {
             CargarPartidos();
@@ -75,7 +74,6 @@ namespace Presentacion
             form.ShowDialog();
         }
 
-
         private void dgvPartidos_SelectionChanged(object sender, EventArgs e)
         {
             btnCargarDatos.Enabled = false;
@@ -101,7 +99,6 @@ namespace Presentacion
             }
         }
 
-
         private void btnEliminarPartido_Click(object sender, EventArgs e)
         {
             if (dgvPartidos.SelectedRows.Count == 0)
@@ -122,6 +119,109 @@ namespace Presentacion
                 MessageBox.Show("Partido eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarPartidos();
             }
+        }
+        private void FiltrarPartidos()
+        {
+            PartidoModel model = new PartidoModel();
+            var partidos = model.ObtenerTodosLosPartidos();
+
+            // 🔍 Filtro por nombre de equipo (local o visitante) según selección
+            string equipo = txtBuscarEquipo.Text.Trim().ToLower();
+            string tipoEquipo = cmbTipoEquipo.SelectedItem?.ToString() ?? "Ambos";
+
+            if (!string.IsNullOrEmpty(equipo))
+            {
+                partidos = partidos.Where(p =>
+                    (tipoEquipo == "Ambos" &&
+                        ((p.EquipoLocal != null && p.EquipoLocal.ToLower().Contains(equipo)) ||
+                         (p.EquipoVisitante != null && p.EquipoVisitante.ToLower().Contains(equipo))))
+                    ||
+                    (tipoEquipo == "Local" &&
+                        (p.EquipoLocal != null && p.EquipoLocal.ToLower().Contains(equipo)))
+                    ||
+                    (tipoEquipo == "Visitante" &&
+                        (p.EquipoVisitante != null && p.EquipoVisitante.ToLower().Contains(equipo)))
+                ).ToList();
+            }
+
+            // 📅 Filtro por fecha
+            if (chkFecha.Checked)
+            {
+                DateTime desde = dtpDesde.Value.Date;
+                DateTime hasta = dtpHasta.Value.Date;
+                partidos = partidos.Where(p => p.Fecha.Date >= desde && p.Fecha.Date <= hasta).ToList();
+            }
+
+            // ✅ Filtro por estado (Todos / Jugados / No Jugados)
+            if (cmbEstado.SelectedItem != null)
+            {
+                string estado = cmbEstado.SelectedItem.ToString();
+                if (estado == "Jugados")
+                    partidos = partidos.Where(p => p.PartidoJugado).ToList();
+                else if (estado == "No Jugados")
+                    partidos = partidos.Where(p => !p.PartidoJugado).ToList();
+            }
+
+            // 📍 Filtro por ubicación
+            if (!string.IsNullOrWhiteSpace(txtUbicacion.Text))
+            {
+                string ubicacion = txtUbicacion.Text.Trim().ToLower();
+                partidos = partidos.Where(p =>
+                    p.Ubicacion != null && p.Ubicacion.ToLower().Contains(ubicacion)
+                ).ToList();
+            }
+
+            // Mostrar resultado en la grilla
+            dgvPartidos.DataSource = partidos;
+
+            if (dgvPartidos.Columns["Hora"] != null)
+                dgvPartidos.Columns["Hora"].DefaultCellStyle.Format = @"hh\:mm";
+        }
+
+        private void btnLimpiarFiltro_Click(object sender, EventArgs e)
+        {
+            txtBuscarEquipo.Text = "";
+            txtUbicacion.Text = "";
+
+            chkFecha.Checked = false;
+            dtpDesde.Value = DateTime.Today;
+            dtpHasta.Value = DateTime.Today;
+
+            cmbEstado.SelectedIndex = -1;        // Limpiar selección de Estado
+            cmbTipoEquipo.SelectedIndex = -1;    // Limpiar selección de tipo de equipo
+
+            CargarPartidos(); // Recargar todo sin filtros
+        }
+
+        private void chkFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpDesde.Enabled = chkFecha.Checked;
+            dtpHasta.Enabled = chkFecha.Checked;
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarPartidos();
+        }
+
+        private void txtUbicacion_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarPartidos();
+        }
+
+        private void txtBuscarEquipo_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarPartidos();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            FiltrarPartidos();
+        }
+
+        private void cmbTipoEquipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarPartidos();
         }
     }
 }

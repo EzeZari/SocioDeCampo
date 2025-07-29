@@ -36,6 +36,17 @@ namespace Presentacion
             this.btnVerDetalles = new Guna.UI.WinForms.GunaButton();
             this.dgvPartidos = new System.Windows.Forms.DataGridView();
             this.btnEliminarPartido = new Guna.UI.WinForms.GunaButton();
+            this.txtBuscarEquipo = new Guna.UI.WinForms.GunaTextBox();
+            this.chkFecha = new System.Windows.Forms.CheckBox();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.btnLimpiarFiltro = new Guna.UI.WinForms.GunaButton();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.txtUbicacion = new Guna.UI.WinForms.GunaTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnFiltrar = new Guna.UI.WinForms.GunaButton();
+            this.cmbTipoEquipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +137,7 @@ namespace Presentacion
             this.dgvPartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartidos.Location = new System.Drawing.Point(5, 201);
             this.dgvPartidos.Name = "dgvPartidos";
-            this.dgvPartidos.Size = new System.Drawing.Size(965, 251);
+            this.dgvPartidos.Size = new System.Drawing.Size(792, 251);
             this.dgvPartidos.TabIndex = 5;
             this.dgvPartidos.SelectionChanged += new System.EventHandler(this.dgvPartidos_SelectionChanged);
             // 
@@ -154,11 +165,175 @@ namespace Presentacion
             this.btnEliminarPartido.Text = "Editar resultado";
             this.btnEliminarPartido.Click += new System.EventHandler(this.btnEliminarPartido_Click);
             // 
+            // txtBuscarEquipo
+            // 
+            this.txtBuscarEquipo.BaseColor = System.Drawing.Color.White;
+            this.txtBuscarEquipo.BorderColor = System.Drawing.Color.Silver;
+            this.txtBuscarEquipo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscarEquipo.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtBuscarEquipo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtBuscarEquipo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBuscarEquipo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBuscarEquipo.Location = new System.Drawing.Point(816, 39);
+            this.txtBuscarEquipo.Name = "txtBuscarEquipo";
+            this.txtBuscarEquipo.PasswordChar = '\0';
+            this.txtBuscarEquipo.Size = new System.Drawing.Size(133, 26);
+            this.txtBuscarEquipo.TabIndex = 7;
+            this.txtBuscarEquipo.TextChanged += new System.EventHandler(this.txtBuscarEquipo_TextChanged);
+            // 
+            // chkFecha
+            // 
+            this.chkFecha.AutoSize = true;
+            this.chkFecha.Location = new System.Drawing.Point(912, 127);
+            this.chkFecha.Name = "chkFecha";
+            this.chkFecha.Size = new System.Drawing.Size(99, 17);
+            this.chkFecha.TabIndex = 8;
+            this.chkFecha.Text = "Filtrar por fecha";
+            this.chkFecha.UseVisualStyleBackColor = true;
+            this.chkFecha.CheckedChanged += new System.EventHandler(this.chkFecha_CheckedChanged);
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Enabled = false;
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(816, 103);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(82, 20);
+            this.dtpDesde.TabIndex = 9;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Enabled = false;
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(816, 151);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(82, 20);
+            this.dtpHasta.TabIndex = 10;
+            // 
+            // btnLimpiarFiltro
+            // 
+            this.btnLimpiarFiltro.AnimationHoverSpeed = 0.07F;
+            this.btnLimpiarFiltro.AnimationSpeed = 0.03F;
+            this.btnLimpiarFiltro.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnLimpiarFiltro.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiarFiltro.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLimpiarFiltro.FocusedColor = System.Drawing.Color.Empty;
+            this.btnLimpiarFiltro.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLimpiarFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarFiltro.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiarFiltro.Image")));
+            this.btnLimpiarFiltro.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnLimpiarFiltro.Location = new System.Drawing.Point(816, 391);
+            this.btnLimpiarFiltro.Name = "btnLimpiarFiltro";
+            this.btnLimpiarFiltro.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnLimpiarFiltro.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnLimpiarFiltro.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnLimpiarFiltro.OnHoverImage = null;
+            this.btnLimpiarFiltro.OnPressedColor = System.Drawing.Color.Black;
+            this.btnLimpiarFiltro.Size = new System.Drawing.Size(101, 42);
+            this.btnLimpiarFiltro.TabIndex = 12;
+            this.btnLimpiarFiltro.Text = "Limpiar";
+            this.btnLimpiarFiltro.Click += new System.EventHandler(this.btnLimpiarFiltro_Click);
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Todos",
+            "Jugados",
+            "No Jugados"});
+            this.cmbEstado.Location = new System.Drawing.Point(816, 220);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.TabIndex = 13;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            // 
+            // txtUbicacion
+            // 
+            this.txtUbicacion.BaseColor = System.Drawing.Color.White;
+            this.txtUbicacion.BorderColor = System.Drawing.Color.Silver;
+            this.txtUbicacion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUbicacion.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtUbicacion.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtUbicacion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtUbicacion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUbicacion.Location = new System.Drawing.Point(816, 263);
+            this.txtUbicacion.Name = "txtUbicacion";
+            this.txtUbicacion.PasswordChar = '\0';
+            this.txtUbicacion.Size = new System.Drawing.Size(133, 26);
+            this.txtUbicacion.TabIndex = 14;
+            this.txtUbicacion.TextChanged += new System.EventHandler(this.txtUbicacion_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(970, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "txtBuscarEquipo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(955, 263);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "txtUbicacion";
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.AnimationHoverSpeed = 0.07F;
+            this.btnFiltrar.AnimationSpeed = 0.03F;
+            this.btnFiltrar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnFiltrar.BorderColor = System.Drawing.Color.Black;
+            this.btnFiltrar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnFiltrar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
+            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
+            this.btnFiltrar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnFiltrar.Location = new System.Drawing.Point(921, 151);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnFiltrar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnFiltrar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnFiltrar.OnHoverImage = null;
+            this.btnFiltrar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnFiltrar.Size = new System.Drawing.Size(81, 31);
+            this.btnFiltrar.TabIndex = 11;
+            this.btnFiltrar.Text = "Aplicar Filtro";
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // cmbTipoEquipo
+            // 
+            this.cmbTipoEquipo.FormattingEnabled = true;
+            this.cmbTipoEquipo.Items.AddRange(new object[] {
+            "Ambos ",
+            "Local",
+            "Visitante"});
+            this.cmbTipoEquipo.Location = new System.Drawing.Point(816, 330);
+            this.cmbTipoEquipo.Name = "cmbTipoEquipo";
+            this.cmbTipoEquipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoEquipo.TabIndex = 19;
+            this.cmbTipoEquipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoEquipo_SelectedIndexChanged);
+            // 
             // FormPartidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 450);
+            this.Controls.Add(this.cmbTipoEquipo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtUbicacion);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.btnLimpiarFiltro);
+            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.dtpDesde);
+            this.Controls.Add(this.chkFecha);
+            this.Controls.Add(this.txtBuscarEquipo);
             this.Controls.Add(this.btnEliminarPartido);
             this.Controls.Add(this.dgvPartidos);
             this.Controls.Add(this.btnVerDetalles);
@@ -170,6 +345,7 @@ namespace Presentacion
             this.Load += new System.EventHandler(this.FormPartidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,5 +357,16 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaButton btnVerDetalles;
         private System.Windows.Forms.DataGridView dgvPartidos;
         private Guna.UI.WinForms.GunaButton btnEliminarPartido;
+        private Guna.UI.WinForms.GunaTextBox txtBuscarEquipo;
+        private System.Windows.Forms.CheckBox chkFecha;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private Guna.UI.WinForms.GunaButton btnLimpiarFiltro;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private Guna.UI.WinForms.GunaTextBox txtUbicacion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI.WinForms.GunaButton btnFiltrar;
+        private System.Windows.Forms.ComboBox cmbTipoEquipo;
     }
 }
