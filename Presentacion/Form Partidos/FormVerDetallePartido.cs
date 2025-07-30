@@ -27,6 +27,8 @@ namespace Presentacion
             lblLocal.Text = partido.EquipoLocal;
             lblVisitante.Text = partido.EquipoVisitante;
             lblUbicacion.Text = partido.Ubicacion;
+            lblEstadio.Text = partido.Estadio;
+            lblNumeroFecha.Text = partido.NumeroFecha.ToString();
 
 
             lblResultadoLocal.Text = partido.ResultadoLocal.ToString();

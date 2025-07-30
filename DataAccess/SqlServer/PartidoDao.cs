@@ -26,6 +26,8 @@ namespace DataAccess.SqlServer
                     command.Parameters.AddWithValue("@EquipoLocal", partido.EquipoLocal);
                     command.Parameters.AddWithValue("@EquipoVisitante", partido.EquipoVisitante);
                     command.Parameters.AddWithValue("@Observaciones", partido.Observaciones ?? "");
+                    command.Parameters.AddWithValue("@Estadio", partido.Estadio ?? "");
+                    command.Parameters.AddWithValue("@NumeroFecha", partido.NumeroFecha);
 
                     command.ExecuteNonQuery();
                 }
@@ -55,7 +57,11 @@ namespace DataAccess.SqlServer
                                 ResultadoLocal = Convert.ToInt32(reader["ResultadoLocal"]),
                                 ResultadoVisitante = Convert.ToInt32(reader["ResultadoVisitante"]),
                                 Observaciones = reader["Observaciones"].ToString(),
-                                PartidoJugado = Convert.ToBoolean(reader["PartidoJugado"])
+                                PartidoJugado = Convert.ToBoolean(reader["PartidoJugado"]),
+                                Estadio = reader["Estadio"]?.ToString(),
+                                NumeroFecha = reader["NumeroFecha"] != DBNull.Value ? Convert.ToInt32(reader["NumeroFecha"]) : 0,
+
+
                             });
                         }
                     }

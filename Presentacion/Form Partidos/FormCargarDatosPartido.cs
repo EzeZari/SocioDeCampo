@@ -24,6 +24,8 @@ namespace Presentacion
         {
             lblLocal.Text = partido.EquipoLocal;
             lblVisitante.Text = partido.EquipoVisitante;
+            lblEstadio.Text = partido.Estadio;
+            lblNumeroFecha.Text = partido.NumeroFecha.ToString();
             CargarJugadores();
         }
 

@@ -33,7 +33,9 @@ namespace Presentacion
                 new ReportParameter("Visitante", partido.EquipoVisitante),
                 new ReportParameter("Resultado", $"{partido.ResultadoLocal} - {partido.ResultadoVisitante}"),
                 new ReportParameter("Observaciones", partido.Observaciones ?? ""),
-                new ReportParameter("Ubicacion", partido.Ubicacion ?? "")
+                new ReportParameter("Ubicacion", partido.Ubicacion ?? ""),
+                new ReportParameter("Estadio", partido.Estadio ?? ""),
+                new ReportParameter("NumeroFecha", partido.NumeroFecha.ToString())
             };
 
             // Obtener los datos de goles y tarjetas

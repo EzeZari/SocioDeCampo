@@ -13,7 +13,7 @@ namespace Domain
     {
         private readonly PartidoDao partidoDao = new PartidoDao();
 
-        public void AgregarPartido(DateTime fecha, TimeSpan hora, string ubicacion, string equipoLocal, string equipoVisitante, string observaciones)
+        public void AgregarPartido(DateTime fecha, TimeSpan hora, string ubicacion, string equipoLocal, string equipoVisitante, string observaciones, string estadio, int numeroFecha)
         {
             Partido nuevoPartido = new Partido
             {
@@ -22,11 +22,15 @@ namespace Domain
                 Ubicacion = ubicacion,
                 EquipoLocal = equipoLocal,
                 EquipoVisitante = equipoVisitante,
-                Observaciones = observaciones
+                Observaciones = observaciones,
+                Estadio = estadio,
+                NumeroFecha = numeroFecha
             };
 
             partidoDao.AddPartido(nuevoPartido);
         }
+
+
         public List<Partido> ObtenerTodosLosPartidos()
         {
             PartidoDao dao = new PartidoDao();

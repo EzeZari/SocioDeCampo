@@ -18,6 +18,9 @@ namespace Common.Cache
         public int ResultadoVisitante { get; set; }
         public string Observaciones { get; set; }
         public bool PartidoJugado { get; set; }
+        public string Estadio { get; set; }
+        public int NumeroFecha { get; set; }
+
 
     }
     public class Gol

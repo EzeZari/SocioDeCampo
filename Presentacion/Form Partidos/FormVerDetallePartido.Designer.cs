@@ -42,6 +42,8 @@ namespace Presentacion
             this.panelTarjetas = new System.Windows.Forms.Panel();
             this.btnImprimirReporte = new Guna.UI.WinForms.GunaButton();
             this.lblUbicacion = new System.Windows.Forms.Label();
+            this.lblEstadio = new System.Windows.Forms.Label();
+            this.lblNumeroFecha = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -180,11 +182,31 @@ namespace Presentacion
             this.lblUbicacion.TabIndex = 11;
             this.lblUbicacion.Text = "label1";
             // 
+            // lblEstadio
+            // 
+            this.lblEstadio.AutoSize = true;
+            this.lblEstadio.Location = new System.Drawing.Point(136, 94);
+            this.lblEstadio.Name = "lblEstadio";
+            this.lblEstadio.Size = new System.Drawing.Size(35, 13);
+            this.lblEstadio.TabIndex = 12;
+            this.lblEstadio.Text = "label1";
+            // 
+            // lblNumeroFecha
+            // 
+            this.lblNumeroFecha.AutoSize = true;
+            this.lblNumeroFecha.Location = new System.Drawing.Point(136, 136);
+            this.lblNumeroFecha.Name = "lblNumeroFecha";
+            this.lblNumeroFecha.Size = new System.Drawing.Size(35, 13);
+            this.lblNumeroFecha.TabIndex = 13;
+            this.lblNumeroFecha.Text = "label2";
+            // 
             // FormVerDetallePartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNumeroFecha);
+            this.Controls.Add(this.lblEstadio);
             this.Controls.Add(this.lblUbicacion);
             this.Controls.Add(this.btnImprimirReporte);
             this.Controls.Add(this.panelTarjetas);
@@ -219,5 +241,7 @@ namespace Presentacion
         private System.Windows.Forms.Panel panelTarjetas;
         private Guna.UI.WinForms.GunaButton btnImprimirReporte;
         private System.Windows.Forms.Label lblUbicacion;
+        private System.Windows.Forms.Label lblEstadio;
+        private System.Windows.Forms.Label lblNumeroFecha;
     }
 }

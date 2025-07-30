@@ -50,6 +50,8 @@ namespace Presentacion
             this.dgvTarjetas = new System.Windows.Forms.DataGridView();
             this.btnEliminarGol = new Guna.UI.WinForms.GunaButton();
             this.btnEliminarTarjeta = new Guna.UI.WinForms.GunaButton();
+            this.lblEstadio = new System.Windows.Forms.Label();
+            this.lblNumeroFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).BeginInit();
             this.SuspendLayout();
@@ -338,11 +340,31 @@ namespace Presentacion
             this.btnEliminarTarjeta.Text = "Eliminar Tarjeta";
             this.btnEliminarTarjeta.Click += new System.EventHandler(this.btnEliminarTarjeta_Click);
             // 
+            // lblEstadio
+            // 
+            this.lblEstadio.AutoSize = true;
+            this.lblEstadio.Location = new System.Drawing.Point(21, 68);
+            this.lblEstadio.Name = "lblEstadio";
+            this.lblEstadio.Size = new System.Drawing.Size(35, 13);
+            this.lblEstadio.TabIndex = 20;
+            this.lblEstadio.Text = "label1";
+            // 
+            // lblNumeroFecha
+            // 
+            this.lblNumeroFecha.AutoSize = true;
+            this.lblNumeroFecha.Location = new System.Drawing.Point(149, 71);
+            this.lblNumeroFecha.Name = "lblNumeroFecha";
+            this.lblNumeroFecha.Size = new System.Drawing.Size(35, 13);
+            this.lblNumeroFecha.TabIndex = 21;
+            this.lblNumeroFecha.Text = "label1";
+            // 
             // FormCargarDatosPartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNumeroFecha);
+            this.Controls.Add(this.lblEstadio);
             this.Controls.Add(this.btnEliminarTarjeta);
             this.Controls.Add(this.btnEliminarGol);
             this.Controls.Add(this.dgvTarjetas);
@@ -395,5 +417,7 @@ namespace Presentacion
         private System.Windows.Forms.DataGridView dgvTarjetas;
         private Guna.UI.WinForms.GunaButton btnEliminarGol;
         private Guna.UI.WinForms.GunaButton btnEliminarTarjeta;
+        private System.Windows.Forms.Label lblEstadio;
+        private System.Windows.Forms.Label lblNumeroFecha;
     }
 }

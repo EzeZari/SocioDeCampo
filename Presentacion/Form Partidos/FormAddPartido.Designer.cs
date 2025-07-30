@@ -38,6 +38,9 @@ namespace Presentacion
             this.txtObservaciones = new Guna.UI.WinForms.GunaTextBox();
             this.btnGuardar = new Guna.UI.WinForms.GunaButton();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtEstadio = new Guna.UI.WinForms.GunaTextBox();
+            this.nudNumeroFecha = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroFecha)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpFecha
@@ -153,11 +156,36 @@ namespace Presentacion
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox1.TabIndex = 10;
             // 
+            // txtEstadio
+            // 
+            this.txtEstadio.BaseColor = System.Drawing.Color.White;
+            this.txtEstadio.BorderColor = System.Drawing.Color.Silver;
+            this.txtEstadio.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEstadio.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtEstadio.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtEstadio.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtEstadio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEstadio.Location = new System.Drawing.Point(301, 228);
+            this.txtEstadio.Name = "txtEstadio";
+            this.txtEstadio.PasswordChar = '\0';
+            this.txtEstadio.Size = new System.Drawing.Size(160, 30);
+            this.txtEstadio.TabIndex = 11;
+            this.txtEstadio.Text = "Estadio ";
+            // 
+            // nudNumeroFecha
+            // 
+            this.nudNumeroFecha.Location = new System.Drawing.Point(301, 271);
+            this.nudNumeroFecha.Name = "nudNumeroFecha";
+            this.nudNumeroFecha.Size = new System.Drawing.Size(120, 20);
+            this.nudNumeroFecha.TabIndex = 12;
+            // 
             // FormAddPartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nudNumeroFecha);
+            this.Controls.Add(this.txtEstadio);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtObservaciones);
@@ -168,6 +196,7 @@ namespace Presentacion
             this.Controls.Add(this.dtpFecha);
             this.Name = "FormAddPartido";
             this.Text = "FormAddPartido";
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroFecha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +212,7 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaTextBox txtObservaciones;
         private Guna.UI.WinForms.GunaButton btnGuardar;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private Guna.UI.WinForms.GunaTextBox txtEstadio;
+        private System.Windows.Forms.NumericUpDown nudNumeroFecha;
     }
 }
