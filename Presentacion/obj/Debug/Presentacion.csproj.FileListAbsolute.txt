@@ -754,3 +754,8 @@ C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Prese
 C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormPartidos.resources
 C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormAddPartido.resources
+C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormCargarDatosPartido.resources
+C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormEditarPartidoJugado.resources
+C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormVerDetallePartido.resources
+C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormReportePartido.resources
+C:\Users\NATALIA\Desktop\Nueva carpeta\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormReporteListaPartidos.resources

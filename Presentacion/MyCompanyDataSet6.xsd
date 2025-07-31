@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MyCompanyDataSet6" targetNamespace="http://tempuri.org/MyCompanyDataSet6.xsd" xmlns:mstns="http://tempuri.org/MyCompanyDataSet6.xsd" xmlns="http://tempuri.org/MyCompanyDataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MyCompanyContratosJugadores" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MyCompanyContratosJugadores (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.MyCompanyContratosJugadores" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vista_TarjetasPartidoTableAdapter" GeneratorDataComponentClassName="Vista_TarjetasPartidoTableAdapter" Name="Vista_TarjetasPartido" UserDataComponentName="Vista_TarjetasPartidoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MyCompanyContratosJugadores (Settings)" DbObjectName="MyCompany.dbo.Vista_TarjetasPartido" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdPartido, NombreJugador, Tipo, Minuto FROM dbo.Vista_TarjetasPartido</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdPartido" DataSetColumn="IdPartido" />
+              <Mapping SourceColumn="NombreJugador" DataSetColumn="NombreJugador" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Minuto" DataSetColumn="Minuto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MyCompanyDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MyCompanyDataSet6" msprop:Generator_UserDSName="MyCompanyDataSet6">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vista_TarjetasPartido" msprop:Generator_TableClassName="Vista_TarjetasPartidoDataTable" msprop:Generator_TableVarName="tableVista_TarjetasPartido" msprop:Generator_TablePropName="Vista_TarjetasPartido" msprop:Generator_RowDeletingName="Vista_TarjetasPartidoRowDeleting" msprop:Generator_RowChangingName="Vista_TarjetasPartidoRowChanging" msprop:Generator_RowEvHandlerName="Vista_TarjetasPartidoRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_TarjetasPartidoRowDeleted" msprop:Generator_UserTableName="Vista_TarjetasPartido" msprop:Generator_RowChangedName="Vista_TarjetasPartidoRowChanged" msprop:Generator_RowEvArgName="Vista_TarjetasPartidoRowChangeEvent" msprop:Generator_RowClassName="Vista_TarjetasPartidoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPartido" msprop:Generator_ColumnVarNameInTable="columnIdPartido" msprop:Generator_ColumnPropNameInRow="IdPartido" msprop:Generator_ColumnPropNameInTable="IdPartidoColumn" msprop:Generator_UserColumnName="IdPartido" type="xs:int" />
+              <xs:element name="NombreJugador" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNombreJugador" msprop:Generator_ColumnPropNameInRow="NombreJugador" msprop:Generator_ColumnPropNameInTable="NombreJugadorColumn" msprop:Generator_UserColumnName="NombreJugador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Minuto" msprop:Generator_ColumnVarNameInTable="columnMinuto" msprop:Generator_ColumnPropNameInRow="Minuto" msprop:Generator_ColumnPropNameInTable="MinutoColumn" msprop:Generator_UserColumnName="Minuto" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
