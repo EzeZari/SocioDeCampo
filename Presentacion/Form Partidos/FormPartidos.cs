@@ -223,5 +223,20 @@ namespace Presentacion
         {
             FiltrarPartidos();
         }
+
+        private void btnReporteLista_Click(object sender, EventArgs e)
+        {
+            // Obtener lista actualmente mostrada en la grilla
+            var partidos = dgvPartidos.DataSource as List<Partido>;
+
+            if (partidos == null || partidos.Count == 0)
+            {
+                MessageBox.Show("No hay partidos para mostrar en el reporte.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var formReporte = new FormReporteListaPartidos(partidos);
+            formReporte.ShowDialog();
+        }
     }
 }

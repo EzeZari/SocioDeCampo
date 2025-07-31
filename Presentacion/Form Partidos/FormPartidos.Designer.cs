@@ -47,6 +47,7 @@ namespace Presentacion
             this.label2 = new System.Windows.Forms.Label();
             this.btnFiltrar = new Guna.UI.WinForms.GunaButton();
             this.cmbTipoEquipo = new System.Windows.Forms.ComboBox();
+            this.btnReporteLista = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -318,11 +319,36 @@ namespace Presentacion
             this.cmbTipoEquipo.TabIndex = 19;
             this.cmbTipoEquipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoEquipo_SelectedIndexChanged);
             // 
+            // btnReporteLista
+            // 
+            this.btnReporteLista.AnimationHoverSpeed = 0.07F;
+            this.btnReporteLista.AnimationSpeed = 0.03F;
+            this.btnReporteLista.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnReporteLista.BorderColor = System.Drawing.Color.Black;
+            this.btnReporteLista.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReporteLista.FocusedColor = System.Drawing.Color.Empty;
+            this.btnReporteLista.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReporteLista.ForeColor = System.Drawing.Color.White;
+            this.btnReporteLista.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteLista.Image")));
+            this.btnReporteLista.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnReporteLista.Location = new System.Drawing.Point(513, 25);
+            this.btnReporteLista.Name = "btnReporteLista";
+            this.btnReporteLista.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnReporteLista.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnReporteLista.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnReporteLista.OnHoverImage = null;
+            this.btnReporteLista.OnPressedColor = System.Drawing.Color.Black;
+            this.btnReporteLista.Size = new System.Drawing.Size(160, 42);
+            this.btnReporteLista.TabIndex = 20;
+            this.btnReporteLista.Text = "REPORTE";
+            this.btnReporteLista.Click += new System.EventHandler(this.btnReporteLista_Click);
+            // 
             // FormPartidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 450);
+            this.Controls.Add(this.btnReporteLista);
             this.Controls.Add(this.cmbTipoEquipo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -368,5 +394,6 @@ namespace Presentacion
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaButton btnFiltrar;
         private System.Windows.Forms.ComboBox cmbTipoEquipo;
+        private Guna.UI.WinForms.GunaButton btnReporteLista;
     }
 }
