@@ -155,10 +155,14 @@ namespace Presentacion
 
         private void btnImprimirReporte_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnImprimirReporte_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
             var formReporte = new FormReportePartido(partido);
             formReporte.ShowDialog();
         }
-
     }
 
 }

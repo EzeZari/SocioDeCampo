@@ -22,10 +22,10 @@ namespace Presentacion
 
         private void FormCargarDatosPartido_Load(object sender, EventArgs e)
         {
-            lblLocal.Text = partido.EquipoLocal;
-            lblVisitante.Text = partido.EquipoVisitante;
-            lblEstadio.Text = partido.Estadio;
-            lblNumeroFecha.Text = partido.NumeroFecha.ToString();
+            lblLocal.Text = $" {partido.EquipoLocal}";
+            lblVisitante.Text = $" {partido.EquipoVisitante}";
+            lblEstadio.Text = $"{partido.Estadio}";
+            lblNumeroFecha.Text = $"{partido.NumeroFecha}";
             CargarJugadores();
         }
 
@@ -60,17 +60,15 @@ namespace Presentacion
                 return;
             }
 
-            DataRowView jugadorSeleccionado = (DataRowView)cmbJugadoresGol.SelectedItem;
+            DataRowView jugador = (DataRowView)cmbJugadoresGol.SelectedItem;
 
-            var nuevoGol = new Gol
+            golesCargados.Add(new Gol
             {
                 IdPartido = partido.IdPartido,
-                IdJugador = Convert.ToInt32(jugadorSeleccionado["IdJugador"]),
-                NombreJugador = jugadorSeleccionado["Nombre"].ToString(),
+                IdJugador = Convert.ToInt32(jugador["IdJugador"]),
+                NombreJugador = jugador["Nombre"].ToString(),
                 Minuto = minuto
-            };
-
-            golesCargados.Add(nuevoGol);
+            });
 
             dgvGoles.DataSource = null;
             dgvGoles.DataSource = golesCargados;
@@ -93,64 +91,47 @@ namespace Presentacion
                 return;
             }
 
-            DataRowView jugadorSeleccionado = (DataRowView)cmbJugadoresTarjeta.SelectedItem;
-            int idJugador = Convert.ToInt32(jugadorSeleccionado["IdJugador"]);
+            DataRowView jugador = (DataRowView)cmbJugadoresTarjeta.SelectedItem;
+            int idJugador = Convert.ToInt32(jugador["IdJugador"]);
             string tipo = cmbTipoTarjeta.SelectedItem.ToString();
 
-            // Validar tarjeta duplicada exacta
-            bool yaExiste = tarjetasCargadas.Any(t =>
-                t.IdJugador == idJugador &&
-                t.Tipo == tipo &&
-                t.Minuto == minuto
-            );
-
-            if (yaExiste)
+            // Validar duplicado exacto
+            if (tarjetasCargadas.Any(t => t.IdJugador == idJugador && t.Tipo == tipo && t.Minuto == minuto))
             {
                 MessageBox.Show("Ya existe una tarjeta igual para ese jugador en ese minuto.", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Agregar tarjeta
-            var nuevaTarjeta = new Tarjeta
+            tarjetasCargadas.Add(new Tarjeta
             {
                 IdPartido = partido.IdPartido,
                 IdJugador = idJugador,
-                NombreJugador = jugadorSeleccionado["Nombre"].ToString(),
+                NombreJugador = jugador["Nombre"].ToString(),
                 Tipo = tipo,
                 Minuto = minuto
-            };
+            });
 
-            tarjetasCargadas.Add(nuevaTarjeta);
-
-            // Ver si el jugador ahora tiene 2 amarillas → agregar roja automática
+            // Verificar doble amarilla
             if (tipo == "Amarilla")
             {
-                int cantidadAmarillas = tarjetasCargadas.Count(t =>
-                    t.IdJugador == idJugador &&
-                    t.Tipo == "Amarilla"
-                );
+                int cantAmarillas = tarjetasCargadas.Count(t => t.IdJugador == idJugador && t.Tipo == "Amarilla");
+                bool yaTieneRoja = tarjetasCargadas.Any(t => t.IdJugador == idJugador && t.Tipo == "Roja");
 
-                bool yaTieneRoja = tarjetasCargadas.Any(t =>
-                    t.IdJugador == idJugador &&
-                    t.Tipo == "Roja"
-                );
-
-                if (cantidadAmarillas == 2 && !yaTieneRoja)
+                if (cantAmarillas == 2 && !yaTieneRoja)
                 {
                     tarjetasCargadas.Add(new Tarjeta
                     {
                         IdPartido = partido.IdPartido,
                         IdJugador = idJugador,
-                        NombreJugador = jugadorSeleccionado["Nombre"].ToString(),
-                        Tipo = "Roja", // Se guarda como roja
+                        NombreJugador = jugador["Nombre"].ToString(),
+                        Tipo = "Roja",
                         Minuto = minuto + 1
                     });
 
-                    MessageBox.Show("⚠️ El jugador recibió su segunda amarilla. Se ha agregado automáticamente una tarjeta roja.", "Doble amarilla", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("⚠️ Segunda amarilla: se agregó automáticamente una tarjeta roja.", "Doble amarilla", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
-            // Refrescar grilla
             dgvTarjetas.DataSource = null;
             dgvTarjetas.DataSource = tarjetasCargadas;
 
@@ -159,27 +140,21 @@ namespace Presentacion
             txtMinutoTarjeta.Text = "";
         }
 
-
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtResultadoLocal.Text, out int resLocal) ||
-                !int.TryParse(txtResultadoVisitante.Text, out int resVisitante) ||
-                resLocal < 0 || resVisitante < 0)
+            if (!int.TryParse(txtResultadoLocal.Text, out int resLocal) || !int.TryParse(txtResultadoVisitante.Text, out int resVisitante) || resLocal < 0 || resVisitante < 0)
             {
                 MessageBox.Show("Los resultados deben ser números válidos y no negativos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var confirmacion = MessageBox.Show(
+            var confirmar = MessageBox.Show(
                 "¿Estás seguro de que querés guardar este resultado, los goles y las tarjetas cargadas?",
                 "Confirmar",
                 MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+                MessageBoxIcon.Question);
 
-            if (confirmacion != DialogResult.Yes)
-                return;
+            if (confirmar != DialogResult.Yes) return;
 
             partido.ResultadoLocal = resLocal;
             partido.ResultadoVisitante = resVisitante;
@@ -192,38 +167,27 @@ namespace Presentacion
                 model.ActualizarPartidoResultado(partido);
 
                 if (golesCargados.Count > 0)
-                {
                     model.GuardarGoles(golesCargados);
-                }
 
                 if (tarjetasCargadas.Count > 0)
-                {
                     model.GuardarTarjetas(partido.IdPartido, tarjetasCargadas);
-                }
 
                 MessageBox.Show("Datos del partido guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al guardar los datos:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al guardar los datos:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
-        private void btnEliminarGol_Click(object sender, EventArgs e)
+        private void btnEliminarGol_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvGoles.SelectedRows.Count > 0)
             {
                 var seleccionado = (Gol)dgvGoles.SelectedRows[0].DataBoundItem;
 
-                var confirm = MessageBox.Show(
-                    $"¿Eliminar gol de {seleccionado.NombreJugador} al minuto {seleccionado.Minuto}?",
-                    "Confirmar eliminación",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (confirm == DialogResult.Yes)
+                if (MessageBox.Show($"¿Eliminar gol de {seleccionado.NombreJugador} al minuto {seleccionado.Minuto}?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     golesCargados.Remove(seleccionado);
                     dgvGoles.DataSource = null;
@@ -232,19 +196,13 @@ namespace Presentacion
             }
         }
 
-        private void btnEliminarTarjeta_Click(object sender, EventArgs e)
+        private void btnEliminarTarjeta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dgvTarjetas.SelectedRows.Count > 0)
             {
                 var seleccionado = (Tarjeta)dgvTarjetas.SelectedRows[0].DataBoundItem;
 
-                var confirm = MessageBox.Show(
-                    $"¿Eliminar tarjeta {seleccionado.Tipo} de {seleccionado.NombreJugador} al minuto {seleccionado.Minuto}?",
-                    "Confirmar eliminación",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (confirm == DialogResult.Yes)
+                if (MessageBox.Show($"¿Eliminar tarjeta {seleccionado.Tipo} de {seleccionado.NombreJugador} al minuto {seleccionado.Minuto}?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tarjetasCargadas.Remove(seleccionado);
                     dgvTarjetas.DataSource = null;
@@ -252,6 +210,5 @@ namespace Presentacion
                 }
             }
         }
-
     }
 }
