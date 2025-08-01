@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\Contrato.cs" />
+    <Compile Include="Cache\EntrenamientoCache.cs" />
     <Compile Include="Cache\GastosCache.cs" />
     <Compile Include="Cache\IngresosCache.cs" />
     <Compile Include="Cache\Jugador.cs" />

@@ -20,18 +20,19 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void btnAñadirPartido_Click(object sender, EventArgs e)
-        {
-            var formAddPartido = new FormAddPartido();
-            formAddPartido.ShowDialog();
-
-            // ✅ Refrescar lista al volver
-            CargarPartidos();
-        }
-
         private void FormPartidos_Load(object sender, EventArgs e)
         {
             CargarPartidos();
+            InicializarBotones();
+        }
+
+        private void InicializarBotones()
+        {
+            btnCargarDatos.Enabled = false;
+            btnEditarResultado.Enabled = false;
+            btnVerDetalles.Enabled = false;
+            btnEliminarPartido.Enabled = false;
+            btnAñadirPartido.Enabled = true;
         }
 
         private void CargarPartidos()
@@ -46,9 +47,15 @@ namespace Presentacion
                 dgvPartidos.Columns["Hora"].DefaultCellStyle.Format = @"hh\:mm";
             }
 
-            // dgvPartidos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPartidos.ReadOnly = true;
-            //dgvPartidos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        #region Botones Acción
+        private void btnAñadirPartido_Click(object sender, EventArgs e)
+        {
+            var formAddPartido = new FormAddPartido();
+            formAddPartido.ShowDialog();
+            CargarPartidos();
         }
 
         private void btnCargarDatos_Click(object sender, EventArgs e)
@@ -56,7 +63,7 @@ namespace Presentacion
             Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
             var form = new FormCargarDatosPartido(partido);
             form.ShowDialog();
-            CargarPartidos(); // Recargar grilla
+            CargarPartidos();
         }
 
         private void btnEditarResultado_Click(object sender, EventArgs e)
@@ -74,17 +81,33 @@ namespace Presentacion
             form.ShowDialog();
         }
 
+        private void btnEliminarPartido_Click(object sender, EventArgs e)
+        {
+            if (dgvPartidos.SelectedRows.Count == 0) return;
+
+            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+
+            var confirm = MessageBox.Show(
+                $"¿Estás seguro de que querés eliminar el partido entre {partido.EquipoLocal} y {partido.EquipoVisitante}?",
+                "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirm == DialogResult.Yes)
+            {
+                new PartidoModel().EliminarPartido(partido.IdPartido);
+                MessageBox.Show("Partido eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarPartidos();
+            }
+        }
+        #endregion
+
+        #region Selección
         private void dgvPartidos_SelectionChanged(object sender, EventArgs e)
         {
-            btnCargarDatos.Enabled = false;
-            btnEditarResultado.Enabled = false;
-            btnVerDetalles.Enabled = false;
-            btnEliminarPartido.Enabled = false;
+            InicializarBotones();
 
             if (dgvPartidos.SelectedRows.Count > 0)
             {
                 Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
-
                 btnEliminarPartido.Enabled = true;
 
                 if (partido.PartidoJugado)
@@ -98,34 +121,14 @@ namespace Presentacion
                 }
             }
         }
+        #endregion
 
-        private void btnEliminarPartido_Click(object sender, EventArgs e)
-        {
-            if (dgvPartidos.SelectedRows.Count == 0)
-                return;
-
-            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
-
-            var confirm = MessageBox.Show(
-                $"¿Estás seguro de que querés eliminar el partido entre {partido.EquipoLocal} y {partido.EquipoVisitante}?",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (confirm == DialogResult.Yes)
-            {
-                PartidoModel model = new PartidoModel();
-                model.EliminarPartido(partido.IdPartido);
-                MessageBox.Show("Partido eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarPartidos();
-            }
-        }
+        #region Filtros
         private void FiltrarPartidos()
         {
             PartidoModel model = new PartidoModel();
             var partidos = model.ObtenerTodosLosPartidos();
 
-            // 🔍 Filtro por nombre de equipo (local o visitante) según selección
             string equipo = txtBuscarEquipo.Text.Trim().ToLower();
             string tipoEquipo = cmbTipoEquipo.SelectedItem?.ToString() ?? "Ambos";
 
@@ -133,18 +136,13 @@ namespace Presentacion
             {
                 partidos = partidos.Where(p =>
                     (tipoEquipo == "Ambos" &&
-                        ((p.EquipoLocal != null && p.EquipoLocal.ToLower().Contains(equipo)) ||
-                         (p.EquipoVisitante != null && p.EquipoVisitante.ToLower().Contains(equipo))))
-                    ||
-                    (tipoEquipo == "Local" &&
-                        (p.EquipoLocal != null && p.EquipoLocal.ToLower().Contains(equipo)))
-                    ||
-                    (tipoEquipo == "Visitante" &&
-                        (p.EquipoVisitante != null && p.EquipoVisitante.ToLower().Contains(equipo)))
+                        ((p.EquipoLocal?.ToLower().Contains(equipo) ?? false) ||
+                         (p.EquipoVisitante?.ToLower().Contains(equipo) ?? false))) ||
+                    (tipoEquipo == "Local" && (p.EquipoLocal?.ToLower().Contains(equipo) ?? false)) ||
+                    (tipoEquipo == "Visitante" && (p.EquipoVisitante?.ToLower().Contains(equipo) ?? false))
                 ).ToList();
             }
 
-            // 📅 Filtro por fecha
             if (chkFecha.Checked)
             {
                 DateTime desde = dtpDesde.Value.Date;
@@ -152,45 +150,36 @@ namespace Presentacion
                 partidos = partidos.Where(p => p.Fecha.Date >= desde && p.Fecha.Date <= hasta).ToList();
             }
 
-            // ✅ Filtro por estado (Todos / Jugados / No Jugados)
             if (cmbEstado.SelectedItem != null)
             {
                 string estado = cmbEstado.SelectedItem.ToString();
-                if (estado == "Jugados")
-                    partidos = partidos.Where(p => p.PartidoJugado).ToList();
-                else if (estado == "No Jugados")
-                    partidos = partidos.Where(p => !p.PartidoJugado).ToList();
+                partidos = partidos.Where(p => estado == "Jugados" ? p.PartidoJugado : !p.PartidoJugado).ToList();
             }
 
-            // 📍 Filtro por ubicación
             if (!string.IsNullOrWhiteSpace(txtUbicacion.Text))
             {
                 string ubicacion = txtUbicacion.Text.Trim().ToLower();
-                partidos = partidos.Where(p =>
-                    p.Ubicacion != null && p.Ubicacion.ToLower().Contains(ubicacion)
-                ).ToList();
+                partidos = partidos.Where(p => p.Ubicacion?.ToLower().Contains(ubicacion) ?? false).ToList();
             }
 
-            // Mostrar resultado en la grilla
             dgvPartidos.DataSource = partidos;
 
             if (dgvPartidos.Columns["Hora"] != null)
                 dgvPartidos.Columns["Hora"].DefaultCellStyle.Format = @"hh\:mm";
         }
 
+        private void btnFiltrar_Click(object sender, EventArgs e) => FiltrarPartidos();
+
         private void btnLimpiarFiltro_Click(object sender, EventArgs e)
         {
             txtBuscarEquipo.Text = "";
             txtUbicacion.Text = "";
-
             chkFecha.Checked = false;
             dtpDesde.Value = DateTime.Today;
             dtpHasta.Value = DateTime.Today;
-
-            cmbEstado.SelectedIndex = -1;        // Limpiar selección de Estado
-            cmbTipoEquipo.SelectedIndex = -1;    // Limpiar selección de tipo de equipo
-
-            CargarPartidos(); // Recargar todo sin filtros
+            cmbEstado.SelectedIndex = -1;
+            cmbTipoEquipo.SelectedIndex = -1;
+            CargarPartidos();
         }
 
         private void chkFecha_CheckedChanged(object sender, EventArgs e)
@@ -199,34 +188,14 @@ namespace Presentacion
             dtpHasta.Enabled = chkFecha.Checked;
         }
 
-        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FiltrarPartidos();
-        }
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e) => FiltrarPartidos();
+        private void txtUbicacion_TextChanged(object sender, EventArgs e) => FiltrarPartidos();
+        private void txtBuscarEquipo_TextChanged(object sender, EventArgs e) => FiltrarPartidos();
+        private void cmbTipoEquipo_SelectedIndexChanged(object sender, EventArgs e) => FiltrarPartidos();
+        #endregion
 
-        private void txtUbicacion_TextChanged(object sender, EventArgs e)
+        private void btnGenerarInforme_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FiltrarPartidos();
-        }
-
-        private void txtBuscarEquipo_TextChanged(object sender, EventArgs e)
-        {
-            FiltrarPartidos();
-        }
-
-        private void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            FiltrarPartidos();
-        }
-
-        private void cmbTipoEquipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FiltrarPartidos();
-        }
-
-        private void btnReporteLista_Click(object sender, EventArgs e)
-        {
-            // Obtener lista actualmente mostrada en la grilla
             var partidos = dgvPartidos.DataSource as List<Partido>;
 
             if (partidos == null || partidos.Count == 0)
@@ -239,4 +208,6 @@ namespace Presentacion
             formReporte.ShowDialog();
         }
     }
+
 }
+

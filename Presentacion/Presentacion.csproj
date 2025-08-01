@@ -156,6 +156,18 @@
     <Compile Include="Form Partidos\FormReporteListaPartidos.Designer.cs">
       <DependentUpon>FormReporteListaPartidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEntrenamientos\FormEntrenamientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntrenamientos\FormEntrenamientos.Designer.cs">
+      <DependentUpon>FormEntrenamientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Hitorialjugadores\FormHistorialJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Hitorialjugadores\FormHistorialJugador.Designer.cs">
+      <DependentUpon>FormHistorialJugador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsPresupuesto\FormPresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +357,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form Partidos\FormVerDetallePartido.resx">
       <DependentUpon>FormVerDetallePartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntrenamientos\FormEntrenamientos.resx">
+      <DependentUpon>FormEntrenamientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Hitorialjugadores\FormHistorialJugador.resx">
+      <DependentUpon>FormHistorialJugador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsPresupuesto\FormPresupuestos.resx">
       <DependentUpon>FormPresupuestos.cs</DependentUpon>
