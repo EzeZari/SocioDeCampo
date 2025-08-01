@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
+using Presentacion;
 
 namespace Presentacion
 {
@@ -116,7 +117,7 @@ namespace Presentacion
 
         private void btnEntrenadores_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Presentacion.FormEntrenamientos.FormEntrenamientos());
         }
 
         private void btnPartidos_Click(object sender, EventArgs e)
