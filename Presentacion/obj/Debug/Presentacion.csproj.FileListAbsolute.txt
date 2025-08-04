@@ -631,3 +631,4 @@ C:\Users\Maximo\OneDrive\Escritorio\proyectoClub\Presentacion\obj\Debug\Presenta
 C:\Users\Maximo\OneDrive\Escritorio\proyectoClub\Presentacion\bin\Debug\System.Security.Cryptography.Xml.dll
 C:\Users\Maximo\OneDrive\Escritorio\proyectoClub\Presentacion\bin\Debug\System.Security.Cryptography.Xml.xml
 C:\Users\Maximo\OneDrive\Escritorio\proyectoClub\Presentacion\obj\Debug\Presentacion.FormHistorialJugador.resources
+C:\Users\Maximo\OneDrive\Escritorio\proyectoClub\Presentacion\obj\Debug\Presentacion.FormEstadisticasAuditoria.FormEstadisticasAuditoria.resources

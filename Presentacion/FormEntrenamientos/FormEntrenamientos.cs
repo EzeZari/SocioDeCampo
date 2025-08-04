@@ -13,6 +13,7 @@ using OfficeOpenXml;
 using System.IO;
 
 
+
 namespace Presentacion.FormEntrenamientos
 {
     public partial class FormEntrenamientos : Form
@@ -25,7 +26,7 @@ namespace Presentacion.FormEntrenamientos
         {
             InitializeComponent();
             this.dataGridViewEntrenamientos.SelectionChanged += new System.EventHandler(this.dataGridViewEntrenamientos_SelectionChanged);
-           
+
         }
 
         private void FormEntrenamientos_Load(object sender, EventArgs e)
@@ -103,10 +104,6 @@ namespace Presentacion.FormEntrenamientos
         }
 
 
-
-
-
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtTitulo.Text) || string.IsNullOrWhiteSpace(txtLugar.Text) || string.IsNullOrWhiteSpace(txtDuracion.Text))
@@ -143,10 +140,35 @@ namespace Presentacion.FormEntrenamientos
                 dataGridViewEntrenamientos.Rows[lastRowIndex].Selected = true;
                 dataGridViewEntrenamientos.CurrentCell = dataGridViewEntrenamientos.Rows[lastRowIndex].Cells[0];
 
+                // ✅ Obtener el ID del nuevo entrenamiento
+                int nuevoId = Convert.ToInt32(dataGridViewEntrenamientos.Rows[lastRowIndex].Cells["id"].Value);
+
+                // ✅ Registrar en la auditoría la creación del entrenamiento
+                using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security=true"))
+                {
+                    conn.Open();
+
+                    SqlCommand auditCmd = new SqlCommand(@"
+                INSERT INTO AuditoriaEntrenamientos 
+                (entrenamiento_id, jugador_id, entrenador_id, fecha_asignacion, accion) 
+                VALUES 
+                (@entrenamiento_id, NULL, @entrenador_id, @fecha_asignacion, @accion)", conn);
+
+                    auditCmd.Parameters.AddWithValue("@entrenamiento_id", nuevoId);
+                    auditCmd.Parameters.AddWithValue("@entrenador_id", UserCache.UserID);
+                    auditCmd.Parameters.AddWithValue("@fecha_asignacion", DateTime.Now);
+                    auditCmd.Parameters.AddWithValue("@accion", "Entrenamiento creado");
+                    auditCmd.ExecuteNonQuery();
+                }
+
                 // ✅ Llamar manualmente al evento para actualizar jugadores asignados
                 dataGridViewEntrenamientos_SelectionChanged(null, null);
+                CargarAuditoria(); // Refrescar la grilla de auditoría
             }
         }
+
+
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -159,14 +181,49 @@ namespace Presentacion.FormEntrenamientos
             var confirm = MessageBox.Show("¿Estás seguro que querés eliminar este entrenamiento? Se borrarán también sus asignaciones y auditoría.", "Confirmar eliminación", MessageBoxButtons.YesNo);
             if (confirm != DialogResult.Yes) return;
 
-            int id = Convert.ToInt32(dataGridViewEntrenamientos.CurrentRow.Cells["id"].Value);
+            int entrenamientoId = Convert.ToInt32(dataGridViewEntrenamientos.CurrentRow.Cells["id"].Value);
 
-            entrenamientoModel.EliminarEntrenamiento(id);
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security= true"))
+                {
+                    conn.Open();
 
-            CargarEntrenamientos();     // refresca la grilla
-            CargarAuditoria();          // refresca la auditoría también
-            MessageBox.Show("Entrenamiento eliminado correctamente.");
+                    // ✅ Registrar en auditoría antes de eliminar el entrenamiento
+                    SqlCommand auditCmd = new SqlCommand(@"
+                INSERT INTO AuditoriaEntrenamientos 
+                (entrenamiento_id, jugador_id, entrenador_id, fecha_asignacion, accion) 
+                VALUES 
+                (@entrenamiento_id, NULL, @entrenador_id, @fecha_asignacion, @accion)", conn);
+
+                    auditCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
+                    auditCmd.Parameters.AddWithValue("@entrenador_id", UserCache.UserID);
+                    auditCmd.Parameters.AddWithValue("@fecha_asignacion", DateTime.Now);
+                    auditCmd.Parameters.AddWithValue("@accion", "Entrenamiento eliminado");
+                    auditCmd.ExecuteNonQuery();
+                }
+
+                // ✅ Eliminar el entrenamiento y luego refrescar
+                entrenamientoModel.EliminarEntrenamiento(entrenamientoId);
+
+                CargarEntrenamientos();
+                CargarAuditoria();
+
+                MessageBox.Show("Entrenamiento eliminado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar entrenamiento:\n" + ex.Message);
+            }
         }
+
+
+
+
+
+
+
+
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -175,7 +232,6 @@ namespace Presentacion.FormEntrenamientos
 
             dataGridViewEntrenamientos.DataSource = entrenamientoModel.FiltrarEntrenamientos(fechaInicio, fechaFin);
         }
-
 
 
         private void btnAsignarJugadores_Click(object sender, EventArgs e)
@@ -194,18 +250,10 @@ namespace Presentacion.FormEntrenamientos
                 return;
             }
 
-            // ✅ Verificar si hay al menos un jugador seleccionado
-            bool haySeleccionados = false;
-            foreach (DataGridViewRow row in dataGridViewJugadores.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                if (row.Cells["Seleccionado"].Value != null && Convert.ToBoolean(row.Cells["Seleccionado"].Value))
-                {
-                    haySeleccionados = true;
-                    break;
-                }
-            }
+            // ✅ Verificar si hay al menos un jugador tildado
+            bool haySeleccionados = dataGridViewJugadores.Rows
+                .Cast<DataGridViewRow>()
+                .Any(r => !(r.IsNewRow) && Convert.ToBoolean(r.Cells["Seleccionado"].Value ?? false));
 
             if (!haySeleccionados)
             {
@@ -213,7 +261,7 @@ namespace Presentacion.FormEntrenamientos
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security= true"))
+            using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security=true"))
             {
                 conn.Open();
 
@@ -221,68 +269,63 @@ namespace Presentacion.FormEntrenamientos
                 {
                     if (row.IsNewRow) continue;
 
-                    bool seleccionado = false;
-                    if (row.Cells["Seleccionado"].Value != DBNull.Value && row.Cells["Seleccionado"].Value != null)
+                    bool seleccionado = Convert.ToBoolean(row.Cells["Seleccionado"].Value ?? false);
+                    if (!seleccionado) continue;
+
+                    int jugadorId = Convert.ToInt32(row.Cells["idJugador"].Value);
+
+                    // Verificar si ya está asignado
+                    SqlCommand checkCmd = new SqlCommand(@"
+                SELECT COUNT(*) 
+                FROM Entrenamiento_Jugador 
+                WHERE entrenamiento_id = @entrenamiento_id AND jugador_id = @jugador_id", conn);
+
+                    checkCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
+                    checkCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
+                    int existe = (int)checkCmd.ExecuteScalar();
+
+                    if (existe == 0)
                     {
-                        bool.TryParse(row.Cells["Seleccionado"].Value.ToString(), out seleccionado);
-                    }
+                        // ✅ Insertar en Entrenamiento_Jugador
+                        SqlCommand insertCmd = new SqlCommand(@"
+                    INSERT INTO Entrenamiento_Jugador (entrenamiento_id, jugador_id) 
+                    VALUES (@entrenamiento_id, @jugador_id)", conn);
 
-                    if (seleccionado)
-                    {
-                        try
-                        {
-                            int jugadorId = Convert.ToInt32(row.Cells["idJugador"].Value);
+                        insertCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
+                        insertCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
+                        insertCmd.ExecuteNonQuery();
 
-                            // Verificar si ya existe la asignación
-                            SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Entrenamiento_Jugador WHERE entrenamiento_id = @entrenamiento_id AND jugador_id = @jugador_id", conn);
-                            checkCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
-                            checkCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
-                            int existe = (int)checkCmd.ExecuteScalar();
+                        // ✅ Registrar en auditoría
+                        SqlCommand auditCmd = new SqlCommand(@"
+                    INSERT INTO AuditoriaEntrenamientos 
+                    (entrenamiento_id, jugador_id, entrenador_id, fecha_asignacion, accion) 
+                    VALUES 
+                    (@entrenamiento_id, @jugador_id, @entrenador_id, @fecha, 'Asignación')", conn);
 
-                            if (existe == 0)
-                            {
-                                // Insertar asignación
-                                SqlCommand insertCmd = new SqlCommand("INSERT INTO Entrenamiento_Jugador (entrenamiento_id, jugador_id) VALUES (@entrenamiento_id, @jugador_id)", conn);
-                                insertCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
-                                insertCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
-                                insertCmd.ExecuteNonQuery();
-
-                                // Insertar en auditoría
-                                SqlCommand auditCmd = new SqlCommand(@"
-                            INSERT INTO AuditoriaEntrenamientos 
-                            (entrenamiento_id, jugador_id, entrenador_id, fecha_asignacion, accion) 
-                            VALUES 
-                            (@entrenamiento_id, @jugador_id, @entrenador_id, @fecha_asignacion, @accion)", conn);
-
-                                auditCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
-                                auditCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
-                                auditCmd.Parameters.AddWithValue("@entrenador_id", UserCache.UserID);
-                                auditCmd.Parameters.AddWithValue("@fecha_asignacion", DateTime.Now);
-                                auditCmd.Parameters.AddWithValue("@accion", "Asignación");
-                                auditCmd.ExecuteNonQuery();
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al asignar jugador o registrar auditoría:\n" + ex.Message);
-                        }
+                        auditCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
+                        auditCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
+                        auditCmd.Parameters.AddWithValue("@entrenador_id", UserCache.UserID);
+                        auditCmd.Parameters.AddWithValue("@fecha", DateTime.Now);
+                        auditCmd.ExecuteNonQuery();
                     }
                 }
-
-                // 🔄 Limpiar los checkboxes luego de la asignación
-                foreach (DataGridViewRow row in dataGridViewJugadores.Rows)
-                {
-                    if (row.Cells["Seleccionado"] != null)
-                        row.Cells["Seleccionado"].Value = false;
-                }
-
-                // 🔁 Refrescar grillas
-                CargarAuditoria();
-                CargarJugadoresAsignados(entrenamientoId);
-
-                MessageBox.Show("Jugadores asignados y auditoría registrada correctamente.");
             }
+
+            // 🔄 Refrescar grillas
+            CargarJugadoresAsignados(entrenamientoId);
+            CargarAuditoria();
+
+            // ✅ Limpiar tildados
+            foreach (DataGridViewRow row in dataGridViewJugadores.Rows)
+            {
+                if (row.Cells["Seleccionado"] != null)
+                    row.Cells["Seleccionado"].Value = false;
+            }
+
+            MessageBox.Show("Jugadores asignados y auditoría registrada correctamente.");
         }
+
+
 
 
 
@@ -403,5 +446,13 @@ namespace Presentacion.FormEntrenamientos
 
         }
 
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            var form = new Presentacion.FormEstadisticasAuditoria.FormEstadisticasAuditoria();
+            form.ShowDialog();
+        }
     }
+
+
+
 }

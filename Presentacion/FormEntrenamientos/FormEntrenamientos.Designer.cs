@@ -54,6 +54,7 @@ namespace Presentacion.FormEntrenamientos
             this.btnVerHistorial = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntrenamientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJugadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAuditoria)).BeginInit();
@@ -179,7 +180,7 @@ namespace Presentacion.FormEntrenamientos
             this.dataGridViewAuditoria.Name = "dataGridViewAuditoria";
             this.dataGridViewAuditoria.RowHeadersWidth = 51;
             this.dataGridViewAuditoria.RowTemplate.Height = 24;
-            this.dataGridViewAuditoria.Size = new System.Drawing.Size(510, 301);
+            this.dataGridViewAuditoria.Size = new System.Drawing.Size(732, 301);
             this.dataGridViewAuditoria.TabIndex = 14;
             // 
             // label1
@@ -225,7 +226,7 @@ namespace Presentacion.FormEntrenamientos
             this.dataGridViewAsignados.Name = "dataGridViewAsignados";
             this.dataGridViewAsignados.RowHeadersWidth = 51;
             this.dataGridViewAsignados.RowTemplate.Height = 24;
-            this.dataGridViewAsignados.Size = new System.Drawing.Size(510, 274);
+            this.dataGridViewAsignados.Size = new System.Drawing.Size(732, 274);
             this.dataGridViewAsignados.TabIndex = 19;
             // 
             // label5
@@ -250,7 +251,7 @@ namespace Presentacion.FormEntrenamientos
             // 
             this.btnExportarAuditoria.Location = new System.Drawing.Point(578, 333);
             this.btnExportarAuditoria.Name = "btnExportarAuditoria";
-            this.btnExportarAuditoria.Size = new System.Drawing.Size(510, 23);
+            this.btnExportarAuditoria.Size = new System.Drawing.Size(679, 23);
             this.btnExportarAuditoria.TabIndex = 22;
             this.btnExportarAuditoria.Text = "Exportar";
             this.btnExportarAuditoria.UseVisualStyleBackColor = true;
@@ -284,11 +285,22 @@ namespace Presentacion.FormEntrenamientos
             this.label8.TabIndex = 25;
             this.label8.Text = "Entrenamientos";
             // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Location = new System.Drawing.Point(629, 685);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(194, 31);
+            this.btnEstadisticas.TabIndex = 26;
+            this.btnEstadisticas.Text = "📊 Ver Estadísticas";
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
             // FormEntrenamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1331, 735);
+            this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnVerHistorial);
@@ -353,5 +365,6 @@ namespace Presentacion.FormEntrenamientos
         private System.Windows.Forms.Button btnVerHistorial;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnEstadisticas;
     }
 }
