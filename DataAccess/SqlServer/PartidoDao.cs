@@ -194,8 +194,12 @@ namespace DataAccess.SqlServer
             }
             return tabla;
         }
+
+
         public void EliminarPartido(int idPartido)
         {
+            string datosAntes = ObtenerDatosPartido(idPartido); // Método auxiliar que consultás el partido actual
+
             using (var connection = GetConnection())
             {
                 connection.Open();
@@ -205,8 +209,122 @@ namespace DataAccess.SqlServer
                     command.ExecuteNonQuery();
                 }
             }
+
+            RegistrarAuditoria("DELETE", idPartido, datosAntes, null);
+        }
+
+
+        // MÉTODO ÚNICO DE AUDITORÍA (adaptado a tu estructura de BD)
+        public void RegistrarAuditoria(string operacion, int? idPartido, string datosAntes, string datosDespues)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("INSERT INTO AuditoriaPartidos (IdPartido, Accion, Usuario, DatosAnteriores, DatosNuevos) VALUES (@IdPartido, @Accion, @Usuario, @DatosAnteriores, @DatosNuevos)", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", (object)idPartido ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@Accion", operacion);
+                    command.Parameters.AddWithValue("@Usuario", UserCache.LoginName);
+                    command.Parameters.AddWithValue("@DatosAnteriores", (object)datosAntes ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@DatosNuevos", (object)datosDespues ?? DBNull.Value);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public string ObtenerDatosPartido(int idPartido)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("SELECT * FROM Partidos WHERE IdPartido = @IdPartido", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", idPartido);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var datos = new StringBuilder();
+                            datos.Append("Fecha: " + reader["Fecha"]);
+                            datos.Append(", Hora: " + reader["Hora"]);
+                            datos.Append(", Ubicacion: " + reader["Ubicacion"]);
+                            datos.Append(", Local: " + reader["EquipoLocal"]);
+                            datos.Append(", Visitante: " + reader["EquipoVisitante"]);
+                            datos.Append(", Resultado: " + reader["ResultadoLocal"] + "-" + reader["ResultadoVisitante"]);
+                            datos.Append(", Observaciones: " + reader["Observaciones"]);
+                            datos.Append(", Estadio: " + reader["Estadio"]);
+                            datos.Append(", NumeroFecha: " + reader["NumeroFecha"]);
+                            return datos.ToString();
+                        }
+                    }
+                }
+            }
+            return "";
+        }
+
+        // MÉTODO FALTANTE: Obtener auditoría por partido (adaptado a tu BD)
+        public DataTable ObtenerAuditoriaPorPartido(int idPartido)
+        {
+            DataTable tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand(
+                    "SELECT IdAuditoria, Accion, FechaHora, Usuario, DatosAnteriores, DatosNuevos FROM AuditoriaPartidos WHERE IdPartido = @IdPartido ORDER BY FechaHora DESC", connection))
+                {
+                    command.Parameters.AddWithValue("@IdPartido", idPartido);
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(tabla);
+                    }
+                }
+            }
+            return tabla;
+        }
+
+        // MÉTODO ADICIONAL: Obtener toda la auditoría (adaptado a tu BD)
+        public DataTable ObtenerTodasLasAuditorias()
+        {
+            DataTable tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand(
+                    "SELECT IdAuditoria, IdPartido, Accion, FechaHora, Usuario, DatosAnteriores, DatosNuevos FROM AuditoriaPartidos ORDER BY FechaHora DESC", connection))
+                {
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(tabla);
+                    }
+                }
+            }
+            return tabla;
+        }
+        public void RegistrarMensajeAuditoria(string mensaje)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand("INSERT INTO AuditoriaPartidos (Accion, Usuario, DatosAnteriores, DatosNuevos) VALUES (@Accion, @Usuario, @DatosAnteriores, @DatosNuevos)", connection))
+                {
+                    command.Parameters.AddWithValue("@Accion", "INFO");
+                    command.Parameters.AddWithValue("@Usuario", UserCache.LoginName);
+                    command.Parameters.AddWithValue("@DatosAnteriores", DBNull.Value);
+                    command.Parameters.AddWithValue("@DatosNuevos", mensaje);
+
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
     }
+
+
+
+
+
 }
+
 

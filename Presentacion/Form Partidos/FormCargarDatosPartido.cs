@@ -170,8 +170,11 @@ namespace Presentacion
                     model.GuardarGoles(golesCargados);
 
                 if (tarjetasCargadas.Count > 0)
-                    model.GuardarTarjetas(partido.IdPartido, tarjetasCargadas);
+                {
 
+                }
+                    model.GuardarTarjetas(partido.IdPartido, tarjetasCargadas);
+                model.RegistrarMensajeAuditoria(partido.EquipoLocal, partido.EquipoVisitante);
                 MessageBox.Show("Datos del partido guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

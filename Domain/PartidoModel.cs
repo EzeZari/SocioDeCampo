@@ -74,6 +74,40 @@ namespace Domain
             partidoDao.EliminarPartido(idPartido);
         }
 
+
+
+        public DataTable ObtenerAuditoria(int idPartido)
+        {
+            return partidoDao.ObtenerAuditoriaPorPartido(idPartido);
+        }
+
+        // MÉTODO ADICIONAL: Obtener toda la auditoría
+        public DataTable ObtenerTodasLasAuditorias()
+        {
+            return partidoDao.ObtenerTodasLasAuditorias();
+        }
+        public void RegistrarMensajeAuditoria(string EquipoLocal, string EquipoVisitante)
+        {
+            string mensaje = $"{UserCache.LoginName} cargó los datos del partido {EquipoLocal} - {EquipoVisitante}.";
+            partidoDao.RegistrarMensajeAuditoria(mensaje);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 

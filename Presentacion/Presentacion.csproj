@@ -156,6 +156,12 @@
     <Compile Include="Form Partidos\FormReporteListaPartidos.Designer.cs">
       <DependentUpon>FormReporteListaPartidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form Partidos\FormAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Partidos\FormAuditoria.Designer.cs">
+      <DependentUpon>FormAuditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEntrenamientos\FormEntrenamientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
     <Compile Include="Validations.cs" />
     <EmbeddedResource Include="Form Partidos\FormAddPartido.resx">
       <DependentUpon>FormAddPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form Partidos\FormAuditoria.resx">
+      <DependentUpon>FormAuditoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form Partidos\FormCargarDatosPartido.resx">
       <DependentUpon>FormCargarDatosPartido.cs</DependentUpon>

@@ -31,13 +31,23 @@ namespace Presentacion
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.MyCompanyDataSetPartidos = new Presentacion.MyCompanyDataSetPartidos();
             this.PartidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MyCompanyDataSetPartidos = new Presentacion.MyCompanyDataSetPartidos();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.PartidosTableAdapter = new Presentacion.MyCompanyDataSetPartidosTableAdapters.PartidosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSetPartidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PartidosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSetPartidos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PartidosBindingSource
+            // 
+            this.PartidosBindingSource.DataMember = "Partidos";
+            this.PartidosBindingSource.DataSource = this.MyCompanyDataSetPartidos;
+            // 
+            // MyCompanyDataSetPartidos
+            // 
+            this.MyCompanyDataSetPartidos.DataSetName = "MyCompanyDataSetPartidos";
+            this.MyCompanyDataSetPartidos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,20 +57,11 @@ namespace Presentacion
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.ReporteListaPartidos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(1067, 554);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // MyCompanyDataSetPartidos
-            // 
-            this.MyCompanyDataSetPartidos.DataSetName = "MyCompanyDataSetPartidos";
-            this.MyCompanyDataSetPartidos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // PartidosBindingSource
-            // 
-            this.PartidosBindingSource.DataMember = "Partidos";
-            this.PartidosBindingSource.DataSource = this.MyCompanyDataSetPartidos;
             // 
             // PartidosTableAdapter
             // 
@@ -68,15 +69,16 @@ namespace Presentacion
             // 
             // FormReporteListaPartidos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormReporteListaPartidos";
             this.Text = "FormReporteListaPartidos";
             this.Load += new System.EventHandler(this.FormReporteListaPartidos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSetPartidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PartidosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyCompanyDataSetPartidos)).EndInit();
             this.ResumeLayout(false);
 
         }

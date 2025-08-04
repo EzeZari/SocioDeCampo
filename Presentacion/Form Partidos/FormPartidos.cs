@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
 using Common.Cache;
-
+using Domain.Composite;
 
 namespace Presentacion
 {
     public partial class FormPartidos : Form
     {
+        private Permiso permisosUsuario;
+
         public FormPartidos()
         {
             InitializeComponent();
@@ -22,8 +24,27 @@ namespace Presentacion
 
         private void FormPartidos_Load(object sender, EventArgs e)
         {
+            permisosUsuario = FabricaPermisos.ObtenerPermisosPorCargo(UserCache.Position);
+
             CargarPartidos();
             InicializarBotones();
+            AplicarPermisos();
+        }
+        private void AplicarPermisos()
+        {
+            // Deshabilita los botones si NO tiene el permiso de Gestión de Partidos
+            if (!permisosUsuario.TienePermiso("GestionPartidos"))
+            {
+                btnAñadirPartido.Visible = false;
+                btnEliminarPartido.Visible = false;
+                btnCargarDatos.Visible = false;
+
+            }
+
+            // Acá podés seguir agregando condiciones para otros botones
+            // Por ejemplo:
+            // if (!permisosUsuario.TienePermiso("GestionFinanzas"))
+            //     btnVerFinanzas.Enabled = false;
         }
 
         private void InicializarBotones()
@@ -206,6 +227,12 @@ namespace Presentacion
 
             var formReporte = new FormReporteListaPartidos(partidos);
             formReporte.ShowDialog();
+        }
+
+        private void btnVerAuditoria_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var formAuditoria = new FormAuditoria();
+            formAuditoria.ShowDialog();
         }
     }
 

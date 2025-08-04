@@ -12,6 +12,7 @@ namespace Common.Cache
         public const string Entrenador = "Entrenador";
         public const string AyudanteDeCampo = "Ayudante de campo";
         public const string PreparadorFisico = "Preparador Fisico";
+        public const string Finanzas = "Finanzas";
 
     }
 }

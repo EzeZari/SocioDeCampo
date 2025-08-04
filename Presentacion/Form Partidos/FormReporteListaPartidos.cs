@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Domain;
 using Common.Cache;
 using Microsoft.Reporting.WinForms;
-
+using System.Data.SqlClient;
 
 namespace Presentacion
 {
@@ -26,13 +26,19 @@ namespace Presentacion
 
         private void FormReporteListaPartidos_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'MyCompanyDataSetPartidos.Partidos' Puede moverla o quitarla según sea necesario.
-            this.PartidosTableAdapter.Fill(this.MyCompanyDataSetPartidos.Partidos);
-            var ds = new ReportDataSource("DataSetPartidos", _partidos);
-           // reportViewer1.LocalReport.ReportPath = "ReporteListaPartidos.rdlc";
+            var dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;Database=MyCompany;Integrated Security=true"))
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Partidos", conn);
+                da.Fill(dt);
+            }
+
+            var ds = new ReportDataSource("DataSetPartidos", dt);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(ds);
             reportViewer1.RefreshReport();
+
         }
     }
 }
