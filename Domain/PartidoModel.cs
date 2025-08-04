@@ -27,7 +27,10 @@ namespace Domain
                 NumeroFecha = numeroFecha
             };
 
-            partidoDao.AddPartido(nuevoPartido);
+            int idGenerado = partidoDao.AddPartido(nuevoPartido);
+
+            string mensaje = $"{UserCache.LoginName} agregó un nuevo partido: {equipoLocal} vs {equipoVisitante}.";
+            RegistrarMensajeAuditoria(equipoLocal, equipoVisitante); // ahora sí: el mensaje está completo
         }
 
 
@@ -91,22 +94,6 @@ namespace Domain
             string mensaje = $"{UserCache.LoginName} cargó los datos del partido {EquipoLocal} - {EquipoVisitante}.";
             partidoDao.RegistrarMensajeAuditoria(mensaje);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

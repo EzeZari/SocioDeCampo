@@ -11,7 +11,7 @@ namespace DataAccess.SqlServer
 {
     public class PartidoDao : ConnectionToSQL
     {
-        public void AddPartido(Partido partido)
+        public int AddPartido(Partido partido)
         {
             using (var connection = GetConnection())
             {
@@ -29,7 +29,13 @@ namespace DataAccess.SqlServer
                     command.Parameters.AddWithValue("@Estadio", partido.Estadio ?? "");
                     command.Parameters.AddWithValue("@NumeroFecha", partido.NumeroFecha);
 
-                    command.ExecuteNonQuery();
+                    int idGenerado = Convert.ToInt32(command.ExecuteScalar());
+
+                    // Auditoría
+                    string datosNuevos = $"Fecha: {partido.Fecha}, Hora: {partido.Hora}, Local: {partido.EquipoLocal}, Visitante: {partido.EquipoVisitante}, Ubicación: {partido.Ubicacion}, Estadio: {partido.Estadio}, FechaNro: {partido.NumeroFecha}";
+                    RegistrarAuditoria("INSERT", idGenerado, null, datosNuevos);
+
+                    return idGenerado;
                 }
             }
         }
