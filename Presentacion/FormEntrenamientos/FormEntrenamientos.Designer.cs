@@ -116,7 +116,6 @@ namespace Presentacion.FormEntrenamientos
             this.txtDescripcion.Size = new System.Drawing.Size(550, 58);
             this.txtDescripcion.TabIndex = 5;
             this.txtDescripcion.Text = "";
-            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // dateTimePickerFecha
             // 
