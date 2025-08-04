@@ -1012,3 +1012,4 @@ C:\Users\Maximo\OneDrive\Escritorio\Socio de campo 2do cuatri\SocioDeCampo\Prese
 C:\Users\Maximo\OneDrive\Escritorio\Socio de campo 2do cuatri\SocioDeCampo\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\Maximo\OneDrive\Escritorio\Socio de campo 2do cuatri\SocioDeCampo\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\Maximo\OneDrive\Escritorio\Socio de campo 2do cuatri\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormAuditoria.resources
+C:\Users\Maximo\OneDrive\Escritorio\Socio de campo 2do cuatri\SocioDeCampo\Presentacion\obj\Debug\Presentacion.FormEstadisticasAuditoria.FormEstadisticasAuditoria.resources

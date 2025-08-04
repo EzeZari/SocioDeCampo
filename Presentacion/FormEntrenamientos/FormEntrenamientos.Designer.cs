@@ -54,6 +54,7 @@ namespace Presentacion.FormEntrenamientos
             this.btnVerHistorial = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntrenamientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJugadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAuditoria)).BeginInit();
@@ -115,7 +116,6 @@ namespace Presentacion.FormEntrenamientos
             this.txtDescripcion.Size = new System.Drawing.Size(550, 58);
             this.txtDescripcion.TabIndex = 5;
             this.txtDescripcion.Text = "";
-            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // dateTimePickerFecha
             // 
@@ -284,11 +284,22 @@ namespace Presentacion.FormEntrenamientos
             this.label8.TabIndex = 25;
             this.label8.Text = "Entrenamientos";
             // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Location = new System.Drawing.Point(678, 685);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(160, 38);
+            this.btnEstadisticas.TabIndex = 26;
+            this.btnEstadisticas.Text = "Ver Estadísticas";
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
             // FormEntrenamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1331, 735);
+            this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnVerHistorial);
@@ -353,5 +364,6 @@ namespace Presentacion.FormEntrenamientos
         private System.Windows.Forms.Button btnVerHistorial;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnEstadisticas;
     }
 }

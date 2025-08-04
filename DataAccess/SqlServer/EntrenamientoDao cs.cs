@@ -1,98 +1,123 @@
-﻿using Common.Cache;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Common.Cache;
 
-namespace DataAccess.SqlServer
+namespace DataAccess
 {
-    public class EntrenamientoDao : ConnectionToSQL
+    public class EntrenamientoDao
     {
-        public void CrearEntrenamiento(EntrenamientoCache entrenamiento)
+        private readonly string connectionString = "server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security=true";
+
+        public void Crear(EntrenamientoCache entrenamiento)
         {
-            using (var connection = GetConnection())
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                connection.Open();
-                using (var command = new SqlCommand("CrearEntrenamiento", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@titulo", entrenamiento.Titulo);
-                    command.Parameters.AddWithValue("@descripcion", entrenamiento.Descripcion);
-                    command.Parameters.AddWithValue("@fecha", entrenamiento.Fecha);
-                    command.Parameters.AddWithValue("@duracion", entrenamiento.Duracion);
-                    command.Parameters.AddWithValue("@lugar", entrenamiento.Lugar);
-                    command.Parameters.AddWithValue("@entrenador_id", entrenamiento.EntrenadorId);
-                    command.ExecuteNonQuery();
-                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(@"INSERT INTO Entrenamientos (titulo, descripcion, fecha, duracion, lugar, entrenador_id)
+                                                  VALUES (@titulo, @descripcion, @fecha, @duracion, @lugar, @entrenador_id)", conn);
+                cmd.Parameters.AddWithValue("@titulo", entrenamiento.Titulo);
+                cmd.Parameters.AddWithValue("@descripcion", entrenamiento.Descripcion);
+                cmd.Parameters.AddWithValue("@fecha", entrenamiento.Fecha);
+                cmd.Parameters.AddWithValue("@duracion", entrenamiento.Duracion);
+                cmd.Parameters.AddWithValue("@lugar", entrenamiento.Lugar);
+                cmd.Parameters.AddWithValue("@entrenador_id", entrenamiento.EntrenadorId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void Eliminar(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Entrenamientos WHERE id = @id", conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
             }
         }
 
         public DataTable MostrarEntrenamientos()
         {
-            var tabla = new DataTable();
-            using (var connection = GetConnection())
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                connection.Open();
-                using (var command = new SqlCommand("MostrarEntrenamientos", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    using (var reader = command.ExecuteReader())
-                    {
-                        tabla.Load(reader);
-                    }
-                }
-            }
-            return tabla;
-        }
-
-        public void EliminarEntrenamiento(int id)
-        {
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand("EliminarEntrenamiento", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@id", id);
-                    command.ExecuteNonQuery();
-                }
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Entrenamientos", conn);
+                DataTable tabla = new DataTable();
+                da.Fill(tabla);
+                return tabla;
             }
         }
 
-
-
-        public DataTable FiltrarEntrenamientos(DateTime fechaInicio, DateTime fechaFin)
+        public int ObtenerUltimoId()
         {
-            var tabla = new DataTable();
-            try
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (var connection = GetConnection())
-                {
-                    connection.Open();
-                    using (var command = new SqlCommand(@"
-                SELECT * FROM Entrenamientos 
-                WHERE fecha >= @FechaInicio AND fecha < @FechaFin
-                ORDER BY fecha DESC", connection))
-                    {
-                        command.Parameters.AddWithValue("@FechaInicio", fechaInicio);
-                        command.Parameters.AddWithValue("@FechaFin", fechaFin);
-
-                        using (var reader = command.ExecuteReader())
-                        {
-                            tabla.Load(reader);
-                        }
-                    }
-                }
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT MAX(id) FROM Entrenamientos", conn);
+                return (int)cmd.ExecuteScalar();
             }
-            catch (Exception ex)
+        }
+
+        public DataTable FiltrarPorFechas(DateTime desde, DateTime hasta)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                Console.WriteLine("Error al filtrar entrenamientos: " + ex.Message);
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Entrenamientos WHERE fecha BETWEEN @desde AND @hasta", conn);
+                da.SelectCommand.Parameters.AddWithValue("@desde", desde);
+                da.SelectCommand.Parameters.AddWithValue("@hasta", hasta);
+                DataTable tabla = new DataTable();
+                da.Fill(tabla);
+                return tabla;
             }
+        }
 
-            return tabla;
+
+
+        public DataTable ObtenerJugadores()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT idJugador, Name, LastName FROM Jugadores", conn);
+                DataTable tabla = new DataTable();
+                da.Fill(tabla);
+                return tabla;
+            }
+        }
+
+        public DataTable ObtenerJugadoresAsignados(int entrenamientoId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(@"
+            SELECT j.idJugador, j.Name, j.LastName
+            FROM Entrenamiento_Jugador ej
+            INNER JOIN Jugadores j ON ej.jugador_id = j.idJugador
+            WHERE ej.entrenamiento_id = @entrenamiento_id", conn);
+
+                da.SelectCommand.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
+                DataTable tabla = new DataTable();
+                da.Fill(tabla);
+                return tabla;
+            }
+        }
+
+        public void AsignarJugador(int entrenamientoId, int jugadorId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(@"
+            INSERT INTO Entrenamiento_Jugador (entrenamiento_id, jugador_id) 
+            VALUES (@entrenamiento_id, @jugador_id)", conn);
+
+                cmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
+                cmd.Parameters.AddWithValue("@jugador_id", jugadorId);
+                cmd.ExecuteNonQuery();
+            }
         }
 
     }

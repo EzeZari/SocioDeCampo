@@ -1,15 +1,10 @@
 ﻿using Common.Cache;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Domain;
-using System.Data.SqlClient;
 using OfficeOpenXml;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 using System.IO;
 
 
@@ -17,16 +12,16 @@ namespace Presentacion.FormEntrenamientos
 {
     public partial class FormEntrenamientos : Form
     {
-
-
-        private EntrenamientoModel entrenamientoModel = new EntrenamientoModel();
+        private readonly EntrenamientoModel entrenamientoModel = new EntrenamientoModel();
+        private readonly AuditoriaModel auditoriaModel = new AuditoriaModel();
 
         public FormEntrenamientos()
         {
             InitializeComponent();
-            this.dataGridViewEntrenamientos.SelectionChanged += new System.EventHandler(this.dataGridViewEntrenamientos_SelectionChanged);
-           
+            dataGridViewEntrenamientos.SelectionChanged += dataGridViewEntrenamientos_SelectionChanged;
+
         }
+
 
         private void FormEntrenamientos_Load(object sender, EventArgs e)
         {
@@ -35,39 +30,6 @@ namespace Presentacion.FormEntrenamientos
             CargarAuditoria();
         }
 
-        private void CargarAuditoria()
-        {
-            using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security= true"))
-            {
-                conn.Open();
-
-                SqlCommand cmd = new SqlCommand(@"
-            SELECT 
-                ae.id,
-                ae.entrenamiento_id,
-                ISNULL(e.titulo, '(Entrenamiento eliminado)') AS entrenamiento,
-                ae.jugador_id,
-                ISNULL(j.Name + ' ' + j.LastName, '(Jugador eliminado)') AS jugador,
-                ae.entrenador_id,
-                ISNULL(u.FirstName + ' ' + u.LastName, '(Entrenador eliminado)') AS entrenador,
-                ae.fecha_asignacion,
-                ae.accion
-            FROM AuditoriaEntrenamientos ae
-            LEFT JOIN Entrenamientos e ON ae.entrenamiento_id = e.id
-            LEFT JOIN Jugadores j ON ae.jugador_id = j.idJugador
-            LEFT JOIN Users u ON ae.entrenador_id = u.UserID
-            ORDER BY ae.fecha_asignacion DESC", conn);
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dataGridViewAuditoria.DataSource = dt;
-            }
-        }
-
-
-
         private void CargarEntrenamientos()
         {
             dataGridViewEntrenamientos.DataSource = entrenamientoModel.MostrarEntrenamientos();
@@ -75,37 +37,31 @@ namespace Presentacion.FormEntrenamientos
 
         private void CargarJugadores()
         {
-            using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security= true"))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT idJugador, Name, LastName FROM Jugadores", conn);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+            var jugadores = entrenamientoModel.ObtenerJugadores();
+            jugadores.Columns.Add("Seleccionado", typeof(bool));
+            foreach (DataRow row in jugadores.Rows)
+                row["Seleccionado"] = false;
 
-                // Agregar columna "Seleccionado" e inicializar en false para todas las filas
-                dt.Columns.Add("Seleccionado", typeof(bool));
-                foreach (DataRow row in dt.Rows)
-                {
-                    row["Seleccionado"] = false;
-                }
-
-                // Asignar al DataGridView
-                dataGridViewJugadores.DataSource = dt;
-
-                // Ajustar encabezados (opcional)
-                dataGridViewJugadores.Columns["idJugador"].HeaderText = "ID";
-                dataGridViewJugadores.Columns["Name"].HeaderText = "Nombre";
-                dataGridViewJugadores.Columns["LastName"].HeaderText = "Apellido";
-                dataGridViewJugadores.Columns["Seleccionado"].HeaderText = "✔ Seleccionar";
-            }
-
+            dataGridViewJugadores.DataSource = jugadores;
+            dataGridViewJugadores.Columns["idJugador"].HeaderText = "ID";
+            dataGridViewJugadores.Columns["Name"].HeaderText = "Nombre";
+            dataGridViewJugadores.Columns["LastName"].HeaderText = "Apellido";
+            dataGridViewJugadores.Columns["Seleccionado"].HeaderText = "✔ Seleccionar";
         }
 
+        private void CargarJugadoresAsignados(int entrenamientoId)
+        {
+            var asignados = entrenamientoModel.ObtenerJugadoresAsignados(entrenamientoId);
+            dataGridViewAsignados.DataSource = asignados;
+            dataGridViewAsignados.Columns["idJugador"].HeaderText = "ID";
+            dataGridViewAsignados.Columns["Name"].HeaderText = "Nombre";
+            dataGridViewAsignados.Columns["LastName"].HeaderText = "Apellido";
+        }
 
-
-
-
+        private void CargarAuditoria()
+        {
+            dataGridViewAuditoria.DataSource = auditoriaModel.ObtenerAuditorias();
+        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -121,32 +77,25 @@ namespace Presentacion.FormEntrenamientos
                 return;
             }
 
-            var entrenamiento = new EntrenamientoCache
+            var nuevoEntrenamiento = new Common.Cache.EntrenamientoCache
             {
                 Titulo = txtTitulo.Text,
                 Descripcion = txtDescripcion.Text,
-                Fecha = dateTimePickerFecha.Value,
-                Duracion = duracion,
                 Lugar = txtLugar.Text,
+                Duracion = duracion,
+                Fecha = dateTimePickerFecha.Value,
                 EntrenadorId = UserCache.UserID
             };
 
-            entrenamientoModel.CrearEntrenamiento(entrenamiento);
-            MessageBox.Show("Entrenamiento agregado con éxito.");
+            entrenamientoModel.CrearEntrenamiento(nuevoEntrenamiento);
+            int idNuevo = entrenamientoModel.ObtenerUltimoEntrenamientoId();
+            auditoriaModel.RegistrarCreacionEntrenamiento(idNuevo);
+
             CargarEntrenamientos();
-
-            // ✅ Seleccionar el último entrenamiento recién agregado
-            if (dataGridViewEntrenamientos.Rows.Count > 0)
-            {
-                int lastRowIndex = dataGridViewEntrenamientos.Rows.Count - 1;
-                dataGridViewEntrenamientos.ClearSelection();
-                dataGridViewEntrenamientos.Rows[lastRowIndex].Selected = true;
-                dataGridViewEntrenamientos.CurrentCell = dataGridViewEntrenamientos.Rows[lastRowIndex].Cells[0];
-
-                // ✅ Llamar manualmente al evento para actualizar jugadores asignados
-                dataGridViewEntrenamientos_SelectionChanged(null, null);
-            }
+            CargarAuditoria();
+            MessageBox.Show("Entrenamiento agregado con éxito.");
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -156,25 +105,20 @@ namespace Presentacion.FormEntrenamientos
                 return;
             }
 
-            var confirm = MessageBox.Show("¿Estás seguro que querés eliminar este entrenamiento? Se borrarán también sus asignaciones y auditoría.", "Confirmar eliminación", MessageBoxButtons.YesNo);
+            var confirm = MessageBox.Show("¿Estás seguro que querés eliminar este entrenamiento?", "Confirmar", MessageBoxButtons.YesNo);
             if (confirm != DialogResult.Yes) return;
 
-            int id = Convert.ToInt32(dataGridViewEntrenamientos.CurrentRow.Cells["id"].Value);
+            int entrenamientoId = Convert.ToInt32(dataGridViewEntrenamientos.CurrentRow.Cells["id"].Value);
 
-            entrenamientoModel.EliminarEntrenamiento(id);
+            auditoriaModel.RegistrarEliminacionEntrenamiento(entrenamientoId);
+            entrenamientoModel.EliminarEntrenamiento(entrenamientoId);
 
-            CargarEntrenamientos();     // refresca la grilla
-            CargarAuditoria();          // refresca la auditoría también
+            CargarEntrenamientos();
+            CargarAuditoria();
+
             MessageBox.Show("Entrenamiento eliminado correctamente.");
         }
 
-        private void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            DateTime fechaInicio = dateTimePickerInicio.Value.Date;
-            DateTime fechaFin = dateTimePickerFin.Value.Date.AddDays(1); // Incluye todo el día final
-
-            dataGridViewEntrenamientos.DataSource = entrenamientoModel.FiltrarEntrenamientos(fechaInicio, fechaFin);
-        }
 
 
 
@@ -182,167 +126,51 @@ namespace Presentacion.FormEntrenamientos
         {
             if (dataGridViewEntrenamientos.CurrentRow == null)
             {
-                MessageBox.Show("Debés seleccionar un entrenamiento antes de asignar jugadores.");
+                MessageBox.Show("Seleccioná un entrenamiento.");
                 return;
             }
 
             int entrenamientoId = Convert.ToInt32(dataGridViewEntrenamientos.CurrentRow.Cells["id"].Value);
+            bool haySeleccionado = false;
 
-            if (UserCache.UserID <= 0)
-            {
-                MessageBox.Show("Usuario no válido. No se puede registrar la auditoría.");
-                return;
-            }
-
-            // ✅ Verificar si hay al menos un jugador seleccionado
-            bool haySeleccionados = false;
             foreach (DataGridViewRow row in dataGridViewJugadores.Rows)
             {
-                if (row.IsNewRow) continue;
-
-                if (row.Cells["Seleccionado"].Value != null && Convert.ToBoolean(row.Cells["Seleccionado"].Value))
+                bool seleccionado = Convert.ToBoolean(row.Cells["Seleccionado"].Value ?? false);
+                if (seleccionado)
                 {
-                    haySeleccionados = true;
-                    break;
+                    haySeleccionado = true;
+                    int jugadorId = Convert.ToInt32(row.Cells["idJugador"].Value);
+                    entrenamientoModel.AsignarJugador(entrenamientoId, jugadorId);
+                    auditoriaModel.RegistrarAsignacionJugador(entrenamientoId, jugadorId);
                 }
             }
 
-            if (!haySeleccionados)
+            if (!haySeleccionado)
             {
-                MessageBox.Show("Debés tildar al menos un jugador para asignar.");
+                MessageBox.Show("Debés seleccionar al menos un jugador.");
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security= true"))
-            {
-                conn.Open();
-
-                foreach (DataGridViewRow row in dataGridViewJugadores.Rows)
-                {
-                    if (row.IsNewRow) continue;
-
-                    bool seleccionado = false;
-                    if (row.Cells["Seleccionado"].Value != DBNull.Value && row.Cells["Seleccionado"].Value != null)
-                    {
-                        bool.TryParse(row.Cells["Seleccionado"].Value.ToString(), out seleccionado);
-                    }
-
-                    if (seleccionado)
-                    {
-                        try
-                        {
-                            int jugadorId = Convert.ToInt32(row.Cells["idJugador"].Value);
-
-                            // Verificar si ya existe la asignación
-                            SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Entrenamiento_Jugador WHERE entrenamiento_id = @entrenamiento_id AND jugador_id = @jugador_id", conn);
-                            checkCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
-                            checkCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
-                            int existe = (int)checkCmd.ExecuteScalar();
-
-                            if (existe == 0)
-                            {
-                                // Insertar asignación
-                                SqlCommand insertCmd = new SqlCommand("INSERT INTO Entrenamiento_Jugador (entrenamiento_id, jugador_id) VALUES (@entrenamiento_id, @jugador_id)", conn);
-                                insertCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
-                                insertCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
-                                insertCmd.ExecuteNonQuery();
-
-                                // Insertar en auditoría
-                                SqlCommand auditCmd = new SqlCommand(@"
-                            INSERT INTO AuditoriaEntrenamientos 
-                            (entrenamiento_id, jugador_id, entrenador_id, fecha_asignacion, accion) 
-                            VALUES 
-                            (@entrenamiento_id, @jugador_id, @entrenador_id, @fecha_asignacion, @accion)", conn);
-
-                                auditCmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
-                                auditCmd.Parameters.AddWithValue("@jugador_id", jugadorId);
-                                auditCmd.Parameters.AddWithValue("@entrenador_id", UserCache.UserID);
-                                auditCmd.Parameters.AddWithValue("@fecha_asignacion", DateTime.Now);
-                                auditCmd.Parameters.AddWithValue("@accion", "Asignación");
-                                auditCmd.ExecuteNonQuery();
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error al asignar jugador o registrar auditoría:\n" + ex.Message);
-                        }
-                    }
-                }
-
-                // 🔄 Limpiar los checkboxes luego de la asignación
-                foreach (DataGridViewRow row in dataGridViewJugadores.Rows)
-                {
-                    if (row.Cells["Seleccionado"] != null)
-                        row.Cells["Seleccionado"].Value = false;
-                }
-
-                // 🔁 Refrescar grillas
-                CargarAuditoria();
-                CargarJugadoresAsignados(entrenamientoId);
-
-                MessageBox.Show("Jugadores asignados y auditoría registrada correctamente.");
-            }
+            CargarJugadoresAsignados(entrenamientoId);
+            CargarAuditoria();
+            MessageBox.Show("Asignación completada.");
         }
-
-
-
-
-
 
         private void dataGridViewEntrenamientos_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewEntrenamientos.CurrentRow != null)
             {
                 CargarJugadores();
-
                 int entrenamientoId = Convert.ToInt32(dataGridViewEntrenamientos.CurrentRow.Cells["id"].Value);
                 CargarJugadoresAsignados(entrenamientoId);
             }
-        }
-
-
-        private void CargarJugadoresAsignados(int entrenamientoId)
-        {
-            using (SqlConnection conn = new SqlConnection("server=LAPTOP-UJ1RQKI3;DataBase=MyCompany;integrated security= true"))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(@"
-            SELECT j.idJugador, j.Name, j.LastName
-            FROM Entrenamiento_Jugador ej
-            INNER JOIN Jugadores j ON ej.jugador_id = j.idJugador
-            WHERE ej.entrenamiento_id = @entrenamiento_id", conn);
-
-                cmd.Parameters.AddWithValue("@entrenamiento_id", entrenamientoId);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable tabla = new DataTable();
-                adapter.Fill(tabla);
-
-                dataGridViewAsignados.DataSource = tabla;
-
-                // Cambiar nombres de columna si querés
-                dataGridViewAsignados.Columns["idJugador"].HeaderText = "ID";
-                dataGridViewAsignados.Columns["Name"].HeaderText = "Nombre";
-                dataGridViewAsignados.Columns["LastName"].HeaderText = "Apellido";
-            }
-        }
-
-
-
-
-
-
-
-        private void txtDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnExportarAuditoria_Click(object sender, EventArgs e)
         {
             if (dataGridViewAuditoria.Rows.Count == 0)
             {
-                MessageBox.Show("No hay datos en la auditoría para exportar.");
+                MessageBox.Show("No hay datos para exportar.");
                 return;
             }
 
@@ -354,31 +182,21 @@ namespace Presentacion.FormEntrenamientos
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    // ✅ EPPlus 8+ requiere esto
                     ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
 
                     using (var package = new ExcelPackage())
                     {
-                        var worksheet = package.Workbook.Worksheets.Add("Auditoría");
+                        var ws = package.Workbook.Worksheets.Add("Auditoría");
 
-                        // Encabezados
                         for (int i = 0; i < dataGridViewAuditoria.Columns.Count; i++)
-                        {
-                            worksheet.Cells[1, i + 1].Value = dataGridViewAuditoria.Columns[i].HeaderText;
-                        }
+                            ws.Cells[1, i + 1].Value = dataGridViewAuditoria.Columns[i].HeaderText;
 
-                        // Filas
                         for (int i = 0; i < dataGridViewAuditoria.Rows.Count; i++)
-                        {
                             for (int j = 0; j < dataGridViewAuditoria.Columns.Count; j++)
-                            {
-                                worksheet.Cells[i + 2, j + 1].Value = dataGridViewAuditoria.Rows[i].Cells[j].Value?.ToString();
-                            }
-                        }
+                                ws.Cells[i + 2, j + 1].Value = dataGridViewAuditoria.Rows[i].Cells[j].Value?.ToString();
 
                         package.SaveAs(new FileInfo(sfd.FileName));
-                        MessageBox.Show("Auditoría exportada exitosamente.");
+                        MessageBox.Show("Exportación exitosa.");
                     }
                 }
             }
@@ -389,19 +207,29 @@ namespace Presentacion.FormEntrenamientos
             if (dataGridViewJugadores.CurrentRow != null)
             {
                 int jugadorId = Convert.ToInt32(dataGridViewJugadores.CurrentRow.Cells["idJugador"].Value);
-                FormHistorialJugador historialForm = new FormHistorialJugador(jugadorId);
-                historialForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Seleccioná un jugador para ver su historial.");
+                var historial = new FormHistorialJugador(jugadorId);
+                historial.ShowDialog();
             }
         }
 
-        private void btnDesasignarJugador_Click(object sender, EventArgs e)
+       
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
         {
 
+
+            DateTime fechaInicio = dateTimePickerInicio.Value.Date;
+            DateTime fechaFin = dateTimePickerFin.Value.Date.AddDays(1); // Incluye todo el día final
+
+            dataGridViewEntrenamientos.DataSource = entrenamientoModel.FiltrarEntrenamientos(fechaInicio, fechaFin);
+
+
         }
 
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            var form = new Presentacion.FormEstadisticasAuditoria.FormEstadisticasAuditoria();
+            form.ShowDialog();
+        }
     }
 }

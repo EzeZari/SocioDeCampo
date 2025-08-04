@@ -168,6 +168,12 @@
     <Compile Include="FormEntrenamientos\FormEntrenamientos.Designer.cs">
       <DependentUpon>FormEntrenamientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEstadisticasAuditorias\FormEstadisticasAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstadisticasAuditorias\FormEstadisticasAuditoria.Designer.cs">
+      <DependentUpon>FormEstadisticasAuditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Hitorialjugadores\FormHistorialJugador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEntrenamientos\FormEntrenamientos.resx">
       <DependentUpon>FormEntrenamientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstadisticasAuditorias\FormEstadisticasAuditoria.resx">
+      <DependentUpon>FormEstadisticasAuditoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Hitorialjugadores\FormHistorialJugador.resx">
       <DependentUpon>FormHistorialJugador.cs</DependentUpon>
