@@ -29,8 +29,8 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEditar = new Guna.UI.WinForms.GunaButton();
             this.btnEliminar = new Guna.UI.WinForms.GunaButton();
@@ -52,25 +52,26 @@ namespace Presentacion
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 103);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 127);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersWidth = 50;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(1110, 555);
+            this.dataGridView1.Size = new System.Drawing.Size(1480, 683);
             this.dataGridView1.TabIndex = 8;
             // 
             // btnEditar
@@ -86,14 +87,15 @@ namespace Presentacion
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = null;
             this.btnEditar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditar.Location = new System.Drawing.Point(862, 55);
+            this.btnEditar.Location = new System.Drawing.Point(1149, 68);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
             this.btnEditar.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnEditar.OnHoverForeColor = System.Drawing.Color.White;
             this.btnEditar.OnHoverImage = null;
             this.btnEditar.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditar.Size = new System.Drawing.Size(120, 40);
+            this.btnEditar.Size = new System.Drawing.Size(160, 49);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -112,14 +114,15 @@ namespace Presentacion
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = null;
             this.btnEliminar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEliminar.Location = new System.Drawing.Point(1006, 55);
+            this.btnEliminar.Location = new System.Drawing.Point(1341, 68);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnEliminar.OnHoverForeColor = System.Drawing.Color.White;
             this.btnEliminar.OnHoverImage = null;
             this.btnEliminar.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEliminar.Size = new System.Drawing.Size(120, 40);
+            this.btnEliminar.Size = new System.Drawing.Size(160, 49);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -139,14 +142,15 @@ namespace Presentacion
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = null;
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.Location = new System.Drawing.Point(718, 55);
+            this.btnAdd.Location = new System.Drawing.Point(957, 68);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAdd.OnHoverImage = null;
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Size = new System.Drawing.Size(120, 40);
+            this.btnAdd.Size = new System.Drawing.Size(160, 49);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -156,17 +160,20 @@ namespace Presentacion
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 24);
+            this.label1.Size = new System.Drawing.Size(270, 29);
             this.label1.TabIndex = 13;
             this.label1.Text = "Gestion de Jugadores";
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(12, 36);
+            this.groupBox1.Location = new System.Drawing.Point(16, 44);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1132, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1509, 2);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
@@ -182,14 +189,15 @@ namespace Presentacion
             this.btnAddContrato.ForeColor = System.Drawing.Color.White;
             this.btnAddContrato.Image = null;
             this.btnAddContrato.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddContrato.Location = new System.Drawing.Point(16, 55);
+            this.btnAddContrato.Location = new System.Drawing.Point(21, 68);
+            this.btnAddContrato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddContrato.Name = "btnAddContrato";
             this.btnAddContrato.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnAddContrato.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddContrato.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddContrato.OnHoverImage = null;
             this.btnAddContrato.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddContrato.Size = new System.Drawing.Size(120, 42);
+            this.btnAddContrato.Size = new System.Drawing.Size(160, 52);
             this.btnAddContrato.TabIndex = 16;
             this.btnAddContrato.Text = "Agregar Contrato";
             this.btnAddContrato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -210,14 +218,15 @@ namespace Presentacion
             this.btnVerContrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnVerContrato.Image = null;
             this.btnVerContrato.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnVerContrato.Location = new System.Drawing.Point(175, 55);
+            this.btnVerContrato.Location = new System.Drawing.Point(233, 68);
+            this.btnVerContrato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerContrato.Name = "btnVerContrato";
             this.btnVerContrato.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnVerContrato.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnVerContrato.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnVerContrato.OnHoverForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnVerContrato.OnHoverImage = null;
             this.btnVerContrato.OnPressedColor = System.Drawing.Color.BlanchedAlmond;
-            this.btnVerContrato.Size = new System.Drawing.Size(120, 42);
+            this.btnVerContrato.Size = new System.Drawing.Size(160, 52);
             this.btnVerContrato.TabIndex = 17;
             this.btnVerContrato.Text = "Ver contrato";
             this.btnVerContrato.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -229,9 +238,10 @@ namespace Presentacion
             this.btnGenerarInforme.AutoSize = true;
             this.btnGenerarInforme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarInforme.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(70)))), ((int)(((byte)(110)))));
-            this.btnGenerarInforme.Location = new System.Drawing.Point(1012, 15);
+            this.btnGenerarInforme.Location = new System.Drawing.Point(1349, 18);
+            this.btnGenerarInforme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnGenerarInforme.Name = "btnGenerarInforme";
-            this.btnGenerarInforme.Size = new System.Drawing.Size(104, 16);
+            this.btnGenerarInforme.Size = new System.Drawing.Size(131, 20);
             this.btnGenerarInforme.TabIndex = 18;
             this.btnGenerarInforme.TabStop = true;
             this.btnGenerarInforme.Text = "Generar Informe";
@@ -240,10 +250,10 @@ namespace Presentacion
             // 
             // FormJugadores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1154, 690);
+            this.ClientSize = new System.Drawing.Size(1539, 849);
             this.Controls.Add(this.btnGenerarInforme);
             this.Controls.Add(this.btnVerContrato);
             this.Controls.Add(this.btnAddContrato);
@@ -253,6 +263,7 @@ namespace Presentacion
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormJugadores";
             this.Text = "FormJugadores";
             this.Load += new System.EventHandler(this.FormJugadores_Load);

@@ -29,8 +29,8 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCargarDatos = new Guna.UI.WinForms.GunaButton();
             this.btnVerDetalles = new Guna.UI.WinForms.GunaButton();
             this.btnEliminarPartido = new Guna.UI.WinForms.GunaButton();
@@ -63,19 +63,20 @@ namespace Presentacion
             // 
             this.btnCargarDatos.AnimationHoverSpeed = 0.07F;
             this.btnCargarDatos.AnimationSpeed = 0.03F;
-            this.btnCargarDatos.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.btnCargarDatos.BorderColor = System.Drawing.Color.Black;
+            this.btnCargarDatos.BaseColor = System.Drawing.Color.White;
+            this.btnCargarDatos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
+            this.btnCargarDatos.BorderSize = 2;
             this.btnCargarDatos.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCargarDatos.FocusedColor = System.Drawing.Color.Empty;
             this.btnCargarDatos.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnCargarDatos.ForeColor = System.Drawing.Color.White;
+            this.btnCargarDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnCargarDatos.Image = null;
             this.btnCargarDatos.ImageSize = new System.Drawing.Size(20, 20);
             this.btnCargarDatos.Location = new System.Drawing.Point(205, 68);
             this.btnCargarDatos.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargarDatos.Name = "btnCargarDatos";
-            this.btnCargarDatos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnCargarDatos.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCargarDatos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
+            this.btnCargarDatos.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnCargarDatos.OnHoverForeColor = System.Drawing.Color.White;
             this.btnCargarDatos.OnHoverImage = null;
             this.btnCargarDatos.OnPressedColor = System.Drawing.Color.Black;
@@ -89,18 +90,19 @@ namespace Presentacion
             // 
             this.btnVerDetalles.AnimationHoverSpeed = 0.07F;
             this.btnVerDetalles.AnimationSpeed = 0.03F;
-            this.btnVerDetalles.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.btnVerDetalles.BorderColor = System.Drawing.Color.Black;
+            this.btnVerDetalles.BaseColor = System.Drawing.Color.White;
+            this.btnVerDetalles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
+            this.btnVerDetalles.BorderSize = 2;
             this.btnVerDetalles.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnVerDetalles.FocusedColor = System.Drawing.Color.Empty;
             this.btnVerDetalles.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnVerDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnVerDetalles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnVerDetalles.Image = null;
             this.btnVerDetalles.ImageSize = new System.Drawing.Size(20, 20);
             this.btnVerDetalles.Location = new System.Drawing.Point(442, 68);
             this.btnVerDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerDetalles.Name = "btnVerDetalles";
-            this.btnVerDetalles.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnVerDetalles.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnVerDetalles.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnVerDetalles.OnHoverForeColor = System.Drawing.Color.White;
             this.btnVerDetalles.OnHoverImage = null;
@@ -181,7 +183,7 @@ namespace Presentacion
             this.btnLimpiarFiltro.Location = new System.Drawing.Point(1352, 783);
             this.btnLimpiarFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarFiltro.Name = "btnLimpiarFiltro";
-            this.btnLimpiarFiltro.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnLimpiarFiltro.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnLimpiarFiltro.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnLimpiarFiltro.OnHoverForeColor = System.Drawing.Color.White;
             this.btnLimpiarFiltro.OnHoverImage = null;
@@ -224,7 +226,7 @@ namespace Presentacion
             this.btnFiltrar.Location = new System.Drawing.Point(1160, 783);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnFiltrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnFiltrar.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnFiltrar.OnHoverForeColor = System.Drawing.Color.White;
             this.btnFiltrar.OnHoverImage = null;
@@ -271,7 +273,7 @@ namespace Presentacion
             this.btnAñadirPartido.Location = new System.Drawing.Point(21, 68);
             this.btnAñadirPartido.Margin = new System.Windows.Forms.Padding(4);
             this.btnAñadirPartido.Name = "btnAñadirPartido";
-            this.btnAñadirPartido.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAñadirPartido.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnAñadirPartido.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAñadirPartido.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAñadirPartido.OnHoverImage = null;
@@ -477,14 +479,14 @@ namespace Presentacion
             this.dgvPartidos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPartidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPartidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPartidos.ColumnHeadersHeight = 30;
             this.dgvPartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPartidos.EnableHeadersVisualStyles = false;
@@ -493,8 +495,8 @@ namespace Presentacion
             this.dgvPartidos.Name = "dgvPartidos";
             this.dgvPartidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvPartidos.RowHeadersWidth = 50;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.dgvPartidos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
+            this.dgvPartidos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPartidos.RowTemplate.Height = 50;
             this.dgvPartidos.Size = new System.Drawing.Size(1057, 683);
             this.dgvPartidos.TabIndex = 36;
@@ -558,7 +560,6 @@ namespace Presentacion
 
         #endregion
         private Guna.UI.WinForms.GunaButton btnCargarDatos;
-        private Guna.UI.WinForms.GunaButton btnVerDetalles;
         private Guna.UI.WinForms.GunaButton btnEliminarPartido;
         private Guna.UI.WinForms.GunaTextBox txtBuscarEquipo;
         private System.Windows.Forms.CheckBox chkFecha;
@@ -582,5 +583,6 @@ namespace Presentacion
         private Guna.UI.WinForms.GunaDateTimePicker dtpHasta;
         private System.Windows.Forms.DataGridView dgvPartidos;
         private System.Windows.Forms.LinkLabel btnVerAuditoria;
+        private Guna.UI.WinForms.GunaButton btnVerDetalles;
     }
 }
