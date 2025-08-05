@@ -109,6 +109,7 @@ namespace Presentacion
             this.btnVerDetalles.TabIndex = 4;
             this.btnVerDetalles.Text = "Ver detalles";
             this.btnVerDetalles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
             // 
             // btnEliminarPartido
             // 

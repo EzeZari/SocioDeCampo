@@ -204,11 +204,27 @@ namespace DataAccess.SqlServer
 
         public void EliminarPartido(int idPartido)
         {
-            string datosAntes = ObtenerDatosPartido(idPartido); // Método auxiliar que consultás el partido actual
+            string datosAntes = ObtenerDatosPartido(idPartido);
 
             using (var connection = GetConnection())
             {
                 connection.Open();
+
+                // 1. Eliminar Tarjetas
+                using (var cmdTarjetas = new SqlCommand("DELETE FROM Tarjetas WHERE IdPartido = @IdPartido", connection))
+                {
+                    cmdTarjetas.Parameters.AddWithValue("@IdPartido", idPartido);
+                    cmdTarjetas.ExecuteNonQuery();
+                }
+
+                // 2. Eliminar Goles (si aplicás esto también)
+                using (var cmdGoles = new SqlCommand("DELETE FROM Goles WHERE IdPartido = @IdPartido", connection))
+                {
+                    cmdGoles.Parameters.AddWithValue("@IdPartido", idPartido);
+                    cmdGoles.ExecuteNonQuery();
+                }
+
+                // 3. Eliminar Partido
                 using (var command = new SqlCommand("DELETE FROM Partidos WHERE IdPartido = @IdPartido", connection))
                 {
                     command.Parameters.AddWithValue("@IdPartido", idPartido);
@@ -218,6 +234,7 @@ namespace DataAccess.SqlServer
 
             RegistrarAuditoria("DELETE", idPartido, datosAntes, null);
         }
+
 
 
         // MÉTODO ÚNICO DE AUDITORÍA (adaptado a tu estructura de BD)
@@ -326,11 +343,6 @@ namespace DataAccess.SqlServer
         }
 
     }
-
-
-
-
-
 }
 
 

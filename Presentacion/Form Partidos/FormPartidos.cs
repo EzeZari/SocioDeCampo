@@ -43,7 +43,6 @@ namespace Presentacion
 
             }
         }
-
         private void InicializarBotones()
         {
             btnCargarDatos.Enabled = false;
@@ -56,13 +55,22 @@ namespace Presentacion
         {
             PartidoModel model = new PartidoModel();
             var lista = model.ObtenerTodosLosPartidos();
-
             dgvPartidos.DataSource = lista;
 
             if (dgvPartidos.Columns["Hora"] != null)
-            {
                 dgvPartidos.Columns["Hora"].DefaultCellStyle.Format = @"hh\:mm";
-            }
+
+            // NumeroFecha al principio
+            if (dgvPartidos.Columns["NumeroFecha"] != null)
+                dgvPartidos.Columns["NumeroFecha"].DisplayIndex = 0;
+
+            // Estadio justo después de Ubicacion
+            if (dgvPartidos.Columns["Ubicacion"] != null && dgvPartidos.Columns["Estadio"] != null)
+                dgvPartidos.Columns["Estadio"].DisplayIndex = dgvPartidos.Columns["Ubicacion"].DisplayIndex ;
+
+            // PartidoJugado al final
+            if (dgvPartidos.Columns["PartidoJugado"] != null)
+                dgvPartidos.Columns["PartidoJugado"].DisplayIndex = dgvPartidos.Columns.Count - 1;
 
             dgvPartidos.ReadOnly = true;
         }
@@ -90,9 +98,6 @@ namespace Presentacion
             form.ShowDialog();
             CargarPartidos();
         }
-
-
-
         private void btnEliminarPartido_Click(object sender, EventArgs e)
         {
             if (dgvPartidos.SelectedRows.Count == 0) return;
@@ -208,15 +213,23 @@ namespace Presentacion
 
         private void btnGenerarInforme_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var partidos = dgvPartidos.DataSource as List<Partido>;
+            var partidosVisibles = new List<Partido>();
 
-            if (partidos == null || partidos.Count == 0)
+            foreach (DataGridViewRow row in dgvPartidos.Rows)
+            {
+                if (!row.IsNewRow && row.DataBoundItem is Partido partido)
+                {
+                    partidosVisibles.Add(partido);
+                }
+            }
+
+            if (partidosVisibles.Count == 0)
             {
                 MessageBox.Show("No hay partidos para mostrar en el reporte.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            var formReporte = new FormReporteListaPartidos(partidos);
+            var formReporte = new FormReporteListaPartidos(partidosVisibles);
             formReporte.ShowDialog();
         }
 
@@ -224,6 +237,12 @@ namespace Presentacion
         {
             var formAuditoria = new FormAuditoria();
             formAuditoria.ShowDialog();
+        }
+        private void btnVerDetalles_Click(object sender, EventArgs e)
+        {
+            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
+            var form = new FormVerDetallePartido(partido);
+            form.ShowDialog();
         }
     }
 
