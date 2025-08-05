@@ -28,6 +28,7 @@ namespace Domain.Composite
 
                 case Position.AyudanteDeCampo:
                     permisoRaiz.Agregar(new PermisoSimple("VerEstadisticas"));
+                    permisoRaiz.Agregar(new PermisoSimple("GestionPartidos"));
                     break;
 
                 case Position.PreparadorFisico:

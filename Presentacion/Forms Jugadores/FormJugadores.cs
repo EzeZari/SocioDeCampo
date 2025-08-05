@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
 using Presentacion.Forms_Contratos;
+using Domain.Composite;
+using Common.Cache;
+
 
 namespace Presentacion
 {
@@ -17,6 +20,8 @@ namespace Presentacion
         UserModel objeto = new UserModel();
         private string idJugador = null; //Creamos una variable para almacenar d manera nula.
         private bool Editar = false;
+        private Permiso permisosUsuario;
+
         public FormJugadores()
         {
             InitializeComponent();
@@ -24,8 +29,25 @@ namespace Presentacion
 
         private void FormJugadores_Load(object sender, EventArgs e)
         {
+            permisosUsuario = FabricaPermisos.ObtenerPermisosPorCargo(UserCache.Position);
+
             MostrarJugadores();
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            AplicarPermisos();
+
+        }
+        private void AplicarPermisos()
+        {
+            // Deshabilita los botones si NO tiene el permiso de Gestión de Partidos
+            if (!permisosUsuario.TienePermiso("GestionUsuarios"))
+            {
+                btnAddContrato.Visible = false;
+                btnVerContrato.Visible = false;
+                btnAdd.Visible = false;
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+
+            }
         }
         private void MostrarJugadores()
         {
@@ -105,8 +127,12 @@ namespace Presentacion
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             bool jugadorSeleccionado = dataGridView1.SelectedRows.Count > 0;
-            btnAddContrato.Visible = jugadorSeleccionado;
-            btnVerContrato.Visible = jugadorSeleccionado;
+
+            // Solo mostrar los botones si hay un jugador seleccionado Y tiene permisos
+            bool puedeGestionarContratos = jugadorSeleccionado && permisosUsuario.TienePermiso("GestionUsuarios");
+
+            btnAddContrato.Visible = puedeGestionarContratos;
+            btnVerContrato.Visible = puedeGestionarContratos;
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)

@@ -60,10 +60,11 @@ namespace Presentacion
             this.txtFirstName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFirstName.ForeColor = System.Drawing.Color.Black;
-            this.txtFirstName.Location = new System.Drawing.Point(23, 23);
+            this.txtFirstName.Location = new System.Drawing.Point(31, 28);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
-            this.txtFirstName.Size = new System.Drawing.Size(140, 30);
+            this.txtFirstName.Size = new System.Drawing.Size(187, 37);
             this.txtFirstName.TabIndex = 0;
             this.txtFirstName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
@@ -79,10 +80,11 @@ namespace Presentacion
             this.txtLastName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtLastName.ForeColor = System.Drawing.Color.Black;
-            this.txtLastName.Location = new System.Drawing.Point(217, 23);
+            this.txtLastName.Location = new System.Drawing.Point(289, 28);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.PasswordChar = '\0';
-            this.txtLastName.Size = new System.Drawing.Size(160, 30);
+            this.txtLastName.Size = new System.Drawing.Size(213, 37);
             this.txtLastName.TabIndex = 1;
             this.txtLastName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyLetters_KeyPress);
@@ -98,10 +100,11 @@ namespace Presentacion
             this.txtLoginName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLoginName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtLoginName.ForeColor = System.Drawing.Color.Black;
-            this.txtLoginName.Location = new System.Drawing.Point(23, 101);
+            this.txtLoginName.Location = new System.Drawing.Point(31, 124);
+            this.txtLoginName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLoginName.Name = "txtLoginName";
             this.txtLoginName.PasswordChar = '\0';
-            this.txtLoginName.Size = new System.Drawing.Size(354, 30);
+            this.txtLoginName.Size = new System.Drawing.Size(472, 37);
             this.txtLoginName.TabIndex = 2;
             this.txtLoginName.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtLoginName.Leave += new System.EventHandler(this.TextEmpty_Leave);
@@ -116,10 +119,11 @@ namespace Presentacion
             this.txtEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(23, 166);
+            this.txtEmail.Location = new System.Drawing.Point(31, 204);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.Size = new System.Drawing.Size(354, 30);
+            this.txtEmail.Size = new System.Drawing.Size(472, 37);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
@@ -137,12 +141,15 @@ namespace Presentacion
             this.txtPosition.FormattingEnabled = true;
             this.txtPosition.Items.AddRange(new object[] {
             "Entrenador",
-            "Ayudante de campo"});
-            this.txtPosition.Location = new System.Drawing.Point(23, 247);
+            "Ayudante de campo",
+            "PreparadorFisico",
+            "Finanzas"});
+            this.txtPosition.Location = new System.Drawing.Point(31, 304);
+            this.txtPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPosition.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.txtPosition.Size = new System.Drawing.Size(354, 26);
+            this.txtPosition.Size = new System.Drawing.Size(471, 31);
             this.txtPosition.TabIndex = 4;
             this.txtPosition.SelectedIndexChanged += new System.EventHandler(this.txtFull_TextChanged);
             this.txtPosition.Leave += new System.EventHandler(this.ComboBoxEmpty_Leave);
@@ -157,10 +164,11 @@ namespace Presentacion
             this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(23, 322);
+            this.txtPassword.Location = new System.Drawing.Point(31, 396);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
-            this.txtPassword.Size = new System.Drawing.Size(354, 30);
+            this.txtPassword.Size = new System.Drawing.Size(472, 37);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.TextChanged += new System.EventHandler(this.passwordLogic_TextChanged);
             this.txtPassword.Leave += new System.EventHandler(this.TextEmpty_Leave);
@@ -175,10 +183,11 @@ namespace Presentacion
             this.txtPasswordRepeat.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPasswordRepeat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPasswordRepeat.ForeColor = System.Drawing.Color.Black;
-            this.txtPasswordRepeat.Location = new System.Drawing.Point(23, 394);
+            this.txtPasswordRepeat.Location = new System.Drawing.Point(31, 485);
+            this.txtPasswordRepeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPasswordRepeat.Name = "txtPasswordRepeat";
             this.txtPasswordRepeat.PasswordChar = '\0';
-            this.txtPasswordRepeat.Size = new System.Drawing.Size(354, 30);
+            this.txtPasswordRepeat.Size = new System.Drawing.Size(472, 37);
             this.txtPasswordRepeat.TabIndex = 6;
             this.txtPasswordRepeat.TextChanged += new System.EventHandler(this.txtPasswordRepeat_TextChanged);
             this.txtPasswordRepeat.Leave += new System.EventHandler(this.TextEmpty_Leave);
@@ -196,14 +205,15 @@ namespace Presentacion
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Image = null;
             this.btnRegister.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRegister.Location = new System.Drawing.Point(25, 500);
+            this.btnRegister.Location = new System.Drawing.Point(33, 615);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(190)))));
             this.btnRegister.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnRegister.OnHoverForeColor = System.Drawing.Color.White;
             this.btnRegister.OnHoverImage = null;
             this.btnRegister.OnPressedColor = System.Drawing.Color.Black;
-            this.btnRegister.Size = new System.Drawing.Size(354, 37);
+            this.btnRegister.Size = new System.Drawing.Size(472, 46);
             this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "Registrarse";
             this.btnRegister.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -213,9 +223,10 @@ namespace Presentacion
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(20, 7);
+            this.lblName.Location = new System.Drawing.Point(27, 9);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(44, 13);
+            this.lblName.Size = new System.Drawing.Size(58, 17);
             this.lblName.TabIndex = 8;
             this.lblName.Text = "Nombre";
             // 
@@ -223,9 +234,10 @@ namespace Presentacion
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.ForeColor = System.Drawing.Color.White;
-            this.lblLastName.Location = new System.Drawing.Point(214, 7);
+            this.lblLastName.Location = new System.Drawing.Point(285, 9);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(44, 13);
+            this.lblLastName.Size = new System.Drawing.Size(58, 17);
             this.lblLastName.TabIndex = 9;
             this.lblLastName.Text = "Apellido";
             // 
@@ -233,9 +245,10 @@ namespace Presentacion
             // 
             this.lblLoginName.AutoSize = true;
             this.lblLoginName.ForeColor = System.Drawing.Color.White;
-            this.lblLoginName.Location = new System.Drawing.Point(20, 85);
+            this.lblLoginName.Location = new System.Drawing.Point(27, 105);
+            this.lblLoginName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginName.Name = "lblLoginName";
-            this.lblLoginName.Size = new System.Drawing.Size(98, 13);
+            this.lblLoginName.Size = new System.Drawing.Size(131, 17);
             this.lblLoginName.TabIndex = 11;
             this.lblLoginName.Text = "Nombre de Usuario";
             // 
@@ -243,9 +256,10 @@ namespace Presentacion
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 231);
+            this.label2.Location = new System.Drawing.Point(27, 284);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.Size = new System.Drawing.Size(120, 17);
             this.label2.TabIndex = 12;
             this.label2.Text = "Puesto de trabajo";
             // 
@@ -253,9 +267,10 @@ namespace Presentacion
             // 
             this.lblCorreoelectronico.AutoSize = true;
             this.lblCorreoelectronico.ForeColor = System.Drawing.Color.White;
-            this.lblCorreoelectronico.Location = new System.Drawing.Point(26, 152);
+            this.lblCorreoelectronico.Location = new System.Drawing.Point(35, 187);
+            this.lblCorreoelectronico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorreoelectronico.Name = "lblCorreoelectronico";
-            this.lblCorreoelectronico.Size = new System.Drawing.Size(93, 13);
+            this.lblCorreoelectronico.Size = new System.Drawing.Size(124, 17);
             this.lblCorreoelectronico.TabIndex = 13;
             this.lblCorreoelectronico.Text = "Correo electronico";
             // 
@@ -263,9 +278,10 @@ namespace Presentacion
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.ForeColor = System.Drawing.Color.White;
-            this.lblContraseña.Location = new System.Drawing.Point(20, 308);
+            this.lblContraseña.Location = new System.Drawing.Point(27, 379);
+            this.lblContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(61, 13);
+            this.lblContraseña.Size = new System.Drawing.Size(81, 17);
             this.lblContraseña.TabIndex = 14;
             this.lblContraseña.Text = "Contraseña";
             // 
@@ -273,9 +289,10 @@ namespace Presentacion
             // 
             this.lblRepeatPass.AutoSize = true;
             this.lblRepeatPass.ForeColor = System.Drawing.Color.White;
-            this.lblRepeatPass.Location = new System.Drawing.Point(20, 378);
+            this.lblRepeatPass.Location = new System.Drawing.Point(27, 465);
+            this.lblRepeatPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRepeatPass.Name = "lblRepeatPass";
-            this.lblRepeatPass.Size = new System.Drawing.Size(97, 13);
+            this.lblRepeatPass.Size = new System.Drawing.Size(129, 17);
             this.lblRepeatPass.TabIndex = 15;
             this.lblRepeatPass.Text = "Repetir contraseña";
             // 
@@ -298,9 +315,11 @@ namespace Presentacion
             this.gBoxTxt.Controls.Add(this.txtFirstName);
             this.gBoxTxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gBoxTxt.ForeColor = System.Drawing.Color.Transparent;
-            this.gBoxTxt.Location = new System.Drawing.Point(7, 37);
+            this.gBoxTxt.Location = new System.Drawing.Point(9, 46);
+            this.gBoxTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gBoxTxt.Name = "gBoxTxt";
-            this.gBoxTxt.Size = new System.Drawing.Size(385, 457);
+            this.gBoxTxt.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gBoxTxt.Size = new System.Drawing.Size(513, 562);
             this.gBoxTxt.TabIndex = 16;
             this.gBoxTxt.TabStop = false;
             // 
@@ -310,23 +329,25 @@ namespace Presentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(132, 9);
+            this.label1.Location = new System.Drawing.Point(176, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.Size = new System.Drawing.Size(165, 31);
             this.label1.TabIndex = 17;
             this.label1.Text = "Registrarse";
             // 
             // FormRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.ClientSize = new System.Drawing.Size(404, 549);
+            this.ClientSize = new System.Drawing.Size(539, 676);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gBoxTxt);
             this.Controls.Add(this.btnRegister);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormRegister";
             this.Text = "Registrarse";
             this.Load += new System.EventHandler(this.FormRegister_Load);

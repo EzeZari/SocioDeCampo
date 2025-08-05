@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Domain;
+using Domain.Composite;
+using System.Windows.Forms;
+using Common.Cache;
+
 
 namespace Presentacion
 {
@@ -21,6 +25,9 @@ namespace Presentacion
         int idIngreso = 0;
 
         private GastosModel gastosModel = new GastosModel();
+        private Permiso permisosUsuario;
+
+
 
         public FormFinanzas()
         {
@@ -30,8 +37,22 @@ namespace Presentacion
 
             CalcularBalance();
             ActualizarGrafico();
+            
         }
+        private void AplicarPermisos()
+        {
+            // Deshabilita los botones si NO tiene el permiso de Gestión de Finanzas
+            if (!permisosUsuario.TienePermiso("GestionFinanzas"))
+            {
+                btnAgregar.Visible = false;
+                BtnEliminar.Visible = false;
+                btnAgregarIngreso.Visible = false;
+                btnEliminarIngresos.Visible = false;
+                gunaButton1.Visible = false;
+                btnImportar.Visible = false;
 
+            }
+        }
 
         private void Mostrargastos()
         {
@@ -58,10 +79,13 @@ namespace Presentacion
 
         private void FormFinanzas_Load(object sender, EventArgs e)
         {
+            permisosUsuario = FabricaPermisos.ObtenerPermisosPorCargo(UserCache.Position);
+
             Mostrargastos();
             MostrarIngresos();
             CalcularBalance();
             ActualizarGrafico();
+            AplicarPermisos();
 
         }
 

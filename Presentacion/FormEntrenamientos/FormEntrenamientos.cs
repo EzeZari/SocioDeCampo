@@ -6,6 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using Common.Cache;
+using Domain.Composite;
+using Domain;
 
 
 namespace Presentacion.FormEntrenamientos
@@ -14,6 +17,7 @@ namespace Presentacion.FormEntrenamientos
     {
         private readonly EntrenamientoModel entrenamientoModel = new EntrenamientoModel();
         private readonly AuditoriaModel auditoriaModel = new AuditoriaModel();
+        private Permiso permisosUsuario;
 
         public FormEntrenamientos()
         {
@@ -25,11 +29,27 @@ namespace Presentacion.FormEntrenamientos
 
         private void FormEntrenamientos_Load(object sender, EventArgs e)
         {
+            permisosUsuario = FabricaPermisos.ObtenerPermisosPorCargo(UserCache.Position);
+
             CargarEntrenamientos();
             CargarJugadores();
             CargarAuditoria();
-        }
+            AplicarPermisos();
 
+        }
+        private void AplicarPermisos()
+        {
+            // Deshabilita los botones si NO tiene el permiso de Gestión de Partidos
+            if (!permisosUsuario.TienePermiso("GestionPartidos"))
+            {
+                btnAgregar.Visible = false;
+                btnEliminar.Visible = false;
+                btnVerHistorial.Visible = false;
+                btnAsignarJugadores.Visible = false;
+                btnExportarAuditoria.Visible = false;
+
+            }
+        }
         private void CargarEntrenamientos()
         {
             dataGridViewEntrenamientos.DataSource = entrenamientoModel.MostrarEntrenamientos();
