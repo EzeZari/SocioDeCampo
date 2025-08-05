@@ -38,19 +38,15 @@ namespace Presentacion
                 btnAñadirPartido.Visible = false;
                 btnEliminarPartido.Visible = false;
                 btnCargarDatos.Visible = false;
+                btnVerAuditoria.Visible = false;
+                btnGenerarInforme.Visible = false;
 
             }
-
-            // Acá podés seguir agregando condiciones para otros botones
-            // Por ejemplo:
-            // if (!permisosUsuario.TienePermiso("GestionFinanzas"))
-            //     btnVerFinanzas.Enabled = false;
         }
 
         private void InicializarBotones()
         {
             btnCargarDatos.Enabled = false;
-            btnEditarResultado.Enabled = false;
             btnVerDetalles.Enabled = false;
             btnEliminarPartido.Enabled = false;
             btnAñadirPartido.Enabled = true;
@@ -95,12 +91,7 @@ namespace Presentacion
             CargarPartidos();
         }
 
-        private void btnVerDetalles_Click(object sender, EventArgs e)
-        {
-            Partido partido = (Partido)dgvPartidos.CurrentRow.DataBoundItem;
-            var form = new FormVerDetallePartido(partido);
-            form.ShowDialog();
-        }
+
 
         private void btnEliminarPartido_Click(object sender, EventArgs e)
         {
@@ -133,7 +124,7 @@ namespace Presentacion
 
                 if (partido.PartidoJugado)
                 {
-                    btnEditarResultado.Enabled = true;
+                    
                     btnVerDetalles.Enabled = true;
                 }
                 else

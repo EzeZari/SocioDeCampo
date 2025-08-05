@@ -35,11 +35,11 @@ namespace Presentacion
             DataTable tablaJugadores = model.MostrarJugadores();
 
             cmbJugadoresGol.DataSource = tablaJugadores.Copy();
-            cmbJugadoresGol.DisplayMember = "Nombre";
+            cmbJugadoresGol.DisplayMember = "Apellido";
             cmbJugadoresGol.ValueMember = "IdJugador";
 
             cmbJugadoresTarjeta.DataSource = tablaJugadores;
-            cmbJugadoresTarjeta.DisplayMember = "Nombre";
+            cmbJugadoresTarjeta.DisplayMember = "Apellido";
             cmbJugadoresTarjeta.ValueMember = "IdJugador";
 
             cmbTipoTarjeta.Items.Add("Amarilla");

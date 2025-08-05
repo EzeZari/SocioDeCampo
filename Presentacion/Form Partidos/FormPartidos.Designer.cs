@@ -31,7 +31,6 @@ namespace Presentacion
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnEditarResultado = new Guna.UI.WinForms.GunaButton();
             this.btnCargarDatos = new Guna.UI.WinForms.GunaButton();
             this.btnVerDetalles = new Guna.UI.WinForms.GunaButton();
             this.btnEliminarPartido = new Guna.UI.WinForms.GunaButton();
@@ -60,32 +59,6 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnEditarResultado
-            // 
-            this.btnEditarResultado.AnimationHoverSpeed = 0.07F;
-            this.btnEditarResultado.AnimationSpeed = 0.03F;
-            this.btnEditarResultado.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(84)))), ((int)(((byte)(124)))));
-            this.btnEditarResultado.BorderColor = System.Drawing.Color.Black;
-            this.btnEditarResultado.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEditarResultado.FocusedColor = System.Drawing.Color.Empty;
-            this.btnEditarResultado.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnEditarResultado.ForeColor = System.Drawing.Color.White;
-            this.btnEditarResultado.Image = null;
-            this.btnEditarResultado.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditarResultado.Location = new System.Drawing.Point(433, 68);
-            this.btnEditarResultado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEditarResultado.Name = "btnEditarResultado";
-            this.btnEditarResultado.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
-            this.btnEditarResultado.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnEditarResultado.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnEditarResultado.OnHoverImage = null;
-            this.btnEditarResultado.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditarResultado.Size = new System.Drawing.Size(149, 52);
-            this.btnEditarResultado.TabIndex = 2;
-            this.btnEditarResultado.Text = "Editar resultado";
-            this.btnEditarResultado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnEditarResultado.Click += new System.EventHandler(this.btnEditarResultado_Click);
-            // 
             // btnCargarDatos
             // 
             this.btnCargarDatos.AnimationHoverSpeed = 0.07F;
@@ -99,7 +72,7 @@ namespace Presentacion
             this.btnCargarDatos.Image = null;
             this.btnCargarDatos.ImageSize = new System.Drawing.Size(20, 20);
             this.btnCargarDatos.Location = new System.Drawing.Point(205, 68);
-            this.btnCargarDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCargarDatos.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargarDatos.Name = "btnCargarDatos";
             this.btnCargarDatos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnCargarDatos.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -124,8 +97,8 @@ namespace Presentacion
             this.btnVerDetalles.ForeColor = System.Drawing.Color.White;
             this.btnVerDetalles.Image = null;
             this.btnVerDetalles.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnVerDetalles.Location = new System.Drawing.Point(591, 68);
-            this.btnVerDetalles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerDetalles.Location = new System.Drawing.Point(442, 68);
+            this.btnVerDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerDetalles.Name = "btnVerDetalles";
             this.btnVerDetalles.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnVerDetalles.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -136,7 +109,6 @@ namespace Presentacion
             this.btnVerDetalles.TabIndex = 4;
             this.btnVerDetalles.Text = "Ver detalles";
             this.btnVerDetalles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
             // 
             // btnEliminarPartido
             // 
@@ -150,8 +122,8 @@ namespace Presentacion
             this.btnEliminarPartido.ForeColor = System.Drawing.Color.White;
             this.btnEliminarPartido.Image = null;
             this.btnEliminarPartido.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEliminarPartido.Location = new System.Drawing.Point(755, 68);
-            this.btnEliminarPartido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarPartido.Location = new System.Drawing.Point(606, 68);
+            this.btnEliminarPartido.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarPartido.Name = "btnEliminarPartido";
             this.btnEliminarPartido.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnEliminarPartido.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -174,7 +146,7 @@ namespace Presentacion
             this.txtBuscarEquipo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtBuscarEquipo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscarEquipo.Location = new System.Drawing.Point(1159, 213);
-            this.txtBuscarEquipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarEquipo.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarEquipo.Name = "txtBuscarEquipo";
             this.txtBuscarEquipo.PasswordChar = '\0';
             this.txtBuscarEquipo.Size = new System.Drawing.Size(339, 37);
@@ -185,7 +157,7 @@ namespace Presentacion
             // 
             this.chkFecha.AutoSize = true;
             this.chkFecha.Location = new System.Drawing.Point(1157, 641);
-            this.chkFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkFecha.Margin = new System.Windows.Forms.Padding(4);
             this.chkFecha.Name = "chkFecha";
             this.chkFecha.Size = new System.Drawing.Size(130, 21);
             this.chkFecha.TabIndex = 8;
@@ -206,7 +178,7 @@ namespace Presentacion
             this.btnLimpiarFiltro.Image = null;
             this.btnLimpiarFiltro.ImageSize = new System.Drawing.Size(20, 20);
             this.btnLimpiarFiltro.Location = new System.Drawing.Point(1352, 783);
-            this.btnLimpiarFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarFiltro.Name = "btnLimpiarFiltro";
             this.btnLimpiarFiltro.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnLimpiarFiltro.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -229,7 +201,7 @@ namespace Presentacion
             this.txtUbicacion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtUbicacion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUbicacion.Location = new System.Drawing.Point(1159, 447);
-            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.PasswordChar = '\0';
             this.txtUbicacion.Size = new System.Drawing.Size(339, 37);
@@ -249,7 +221,7 @@ namespace Presentacion
             this.btnFiltrar.Image = null;
             this.btnFiltrar.ImageSize = new System.Drawing.Size(20, 20);
             this.btnFiltrar.Location = new System.Drawing.Point(1160, 783);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnFiltrar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -265,9 +237,9 @@ namespace Presentacion
             // groupBox1
             // 
             this.groupBox1.Location = new System.Drawing.Point(13, 44);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1509, 2);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
@@ -296,7 +268,7 @@ namespace Presentacion
             this.btnAñadirPartido.Image = null;
             this.btnAñadirPartido.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAñadirPartido.Location = new System.Drawing.Point(21, 68);
-            this.btnAñadirPartido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAñadirPartido.Margin = new System.Windows.Forms.Padding(4);
             this.btnAñadirPartido.Name = "btnAñadirPartido";
             this.btnAñadirPartido.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAñadirPartido.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -382,7 +354,7 @@ namespace Presentacion
             "Jugados",
             "No Jugados"});
             this.cmbEstado.Location = new System.Drawing.Point(1159, 368);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmbEstado.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -426,7 +398,7 @@ namespace Presentacion
             "Local",
             "Visitante"});
             this.cmbTipoEquipo.Location = new System.Drawing.Point(1160, 292);
-            this.cmbTipoEquipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoEquipo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEquipo.Name = "cmbTipoEquipo";
             this.cmbTipoEquipo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmbTipoEquipo.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -446,7 +418,7 @@ namespace Presentacion
             this.dtpDesde.ForeColor = System.Drawing.Color.Black;
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(1159, 535);
-            this.dtpDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDesde.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDesde.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDesde.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
@@ -482,7 +454,7 @@ namespace Presentacion
             this.dtpHasta.ForeColor = System.Drawing.Color.Black;
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(1157, 580);
-            this.dtpHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpHasta.Margin = new System.Windows.Forms.Padding(4);
             this.dtpHasta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpHasta.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpHasta.Name = "dtpHasta";
@@ -516,7 +488,7 @@ namespace Presentacion
             this.dgvPartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPartidos.EnableHeadersVisualStyles = false;
             this.dgvPartidos.Location = new System.Drawing.Point(21, 151);
-            this.dgvPartidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPartidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPartidos.Name = "dgvPartidos";
             this.dgvPartidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvPartidos.RowHeadersWidth = 50;
@@ -532,13 +504,13 @@ namespace Presentacion
             this.btnVerAuditoria.AutoSize = true;
             this.btnVerAuditoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerAuditoria.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(70)))), ((int)(((byte)(110)))));
-            this.btnVerAuditoria.Location = new System.Drawing.Point(1213, 18);
+            this.btnVerAuditoria.Location = new System.Drawing.Point(1270, 18);
             this.btnVerAuditoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnVerAuditoria.Name = "btnVerAuditoria";
-            this.btnVerAuditoria.Size = new System.Drawing.Size(131, 20);
+            this.btnVerAuditoria.Size = new System.Drawing.Size(106, 20);
             this.btnVerAuditoria.TabIndex = 37;
             this.btnVerAuditoria.TabStop = true;
-            this.btnVerAuditoria.Text = "Generar Informe";
+            this.btnVerAuditoria.Text = "Ver Auditoria";
             this.btnVerAuditoria.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(115)))), ((int)(((byte)(171)))));
             this.btnVerAuditoria.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnVerAuditoria_LinkClicked);
             // 
@@ -573,8 +545,7 @@ namespace Presentacion
             this.Controls.Add(this.btnEliminarPartido);
             this.Controls.Add(this.btnVerDetalles);
             this.Controls.Add(this.btnCargarDatos);
-            this.Controls.Add(this.btnEditarResultado);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPartidos";
             this.Text = "FormPatidos";
             this.Load += new System.EventHandler(this.FormPartidos_Load);
@@ -585,7 +556,6 @@ namespace Presentacion
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaButton btnEditarResultado;
         private Guna.UI.WinForms.GunaButton btnCargarDatos;
         private Guna.UI.WinForms.GunaButton btnVerDetalles;
         private Guna.UI.WinForms.GunaButton btnEliminarPartido;
